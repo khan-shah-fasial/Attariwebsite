@@ -36,6 +36,9 @@
 
     <!--javascript-->
     @include('frontend.partials.js')
+
+    @include('frontend.component.modal_form')
+
     @yield('page.scripts')
     @yield('component.scripts')
 

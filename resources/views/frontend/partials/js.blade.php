@@ -30,6 +30,13 @@
 <!--Google capcha js-->
 <!--<script src="/assets/frontend/js/api.js"></script>-->
 
+<script src="/assets/frontend/js/owl.carousel.min.js"></script>
+<script src="/assets/frontend/js/kit.fontawesome.js"></script>
+<script src="/assets/frontend/js/fancybox.min.js"></script>
+<script src="/assets/frontend/js/lazysizes.min.js"></script>
+
 <!--Custom Js-->
 <script src="/assets/frontend/js/Init.js"></script>
 <script src="/assets/frontend/js/script.js"></script>
+
+<script src="/assets/frontend/js/custom.js"></script>
