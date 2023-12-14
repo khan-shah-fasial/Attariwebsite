@@ -390,6 +390,30 @@ class IndexController extends Controller
         return view('frontend.pages.refund_policy.index');
     }
 
+// =================--------------------- NEW ---------------------=========================
 
+    public function success_stories(){
+        return view('frontend.pages.success_stories.index');
+    }
+
+    public function reviews(){
+        return view('frontend.pages.reviews.index');
+    }
+
+    public function batch(){
+        return view('frontend.pages.batch.index');
+    }
+
+    public function training_option(){
+        return view('frontend.pages.training_option.index');
+    }
+
+    public function courses(){
+        return view('frontend.pages.courses.index');
+    }
+
+    public function photo_gallery(){
+        return view('frontend.pages.photo_gallery.index');
+    }
 
 }

@@ -367,7 +367,7 @@ li.menu_item i {
 
 /* hero section */
 .hero {
-  background-image: url("./images/new_dktp_banner.jpg");
+  background-image: url("/assets/frontend/images/new_dktp_banner.jpg");
   background-position: center center;
   background-size: 100%;
   height: 60vh;
@@ -945,11 +945,15 @@ li.menu_item i {
   height: 0;
   overflow: hidden;
   transition: all 0.5s ease;
+  /*--new--*/
+  display: none;
 }
 .query_form.active {
   background: white;
   padding: 0 0.5rem 0 0.5rem;
   height: auto;
+  /*--new--*/
+  display: block;
 }
 
 .query_form.active .query_heading i {
@@ -2434,7 +2438,7 @@ h5.batch_subhed {
 }
 
 .photogallery_banner {
-    background-image: url(./images/Photo-Gallery-1.jpg);
+    background-image: url(/assets/frontend/images/Photo-Gallery-1.jpg);
     background-position: center center;
     width: 100%;
     height: auto;
@@ -2868,7 +2872,7 @@ button.owl-dot.active span {
 }
 /* privacy policy */
 .privecy_banner {
-  background-image: url("./images/privacypolicy.jpg");
+  background-image: url("/assets/frontend/images/privacypolicy.jpg");
   background-position: center center;
   width: 100%;
   height: auto;

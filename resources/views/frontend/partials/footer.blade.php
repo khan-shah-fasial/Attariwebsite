@@ -61,14 +61,14 @@
             <div class="col-md-2 col-6">
                 <h6 class="footer_links_heading">Quick Links</h6>
                 <ul class="footer_links">
-                    <li><a href="training-option-attari-classes.php">Training</a></li>
-                    <li><a href="batch.php">Batch Schedule</a></li>
-                    <li><a href="about.php">About Us</a></li>
-                    <li><a href="reviews.php">Reviews</a></li>
-                    <li><a href="success.php">Success Stories</a></li>
-                    <li><a href="blog.php">Blog</a></li>
-                    <li><a href="photo-gallery.php">Photo Gallery</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="{{ url(route('training-option')) }}">Training</a></li>
+                    <li><a href="{{ url(route('batch')) }}">Batch Schedule</a></li>
+                    <li><a href="{{ url(route('about')) }}">About Us</a></li>
+                    <li><a href="{{ url(route('reviews')) }}">Reviews</a></li>
+                    <li><a href="{{ url(route('success-stories')) }}">Success Stories</a></li>
+                    <li><a href="{{ url(route('blog')) }}">Blog</a></li>
+                    <li><a href="{{ url(route('photo-gallery')) }}">Photo Gallery</a></li>
+                    <li><a href="{{ url(route('contact')) }}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -112,8 +112,8 @@
             <div class="col-md-6 d-flex justify-content-between footer_privacy">
                 <ul>
                     <li><a href="refunds-cancellations.php" class="text-secondary">Refunds & Cancellations</a></li>
-                    <li><a href="terms-of-service.php" class="text-secondary">Terms of Service</a></li>
-                    <li><a href="privacy-policy.php" class="text-secondary">Privacy Policy</a></li>
+                    <li><a href="{{ url(route('terms')) }}" class="text-secondary">Terms of Service</a></li>
+                    <li><a href="{{ url(route('privacy-policy')) }}" class="text-secondary">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>

@@ -1,255 +1,305 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', 'Seedling Associates: Top Lawyers &amp; Law Firms in Delhi, India')
+@section('page.title', ' ')
 
-@section('page.description', 'Seedling & Associates is one of the best law firms in Delhi, India. We provide legal assistance for startups, FDI, Property law, IP, and more')
+@section('page.description', ' ')
 
 @section('page.type', 'website')
 
 @section('page.content')
 
-<!-- -------------------- About banner start ---------------- -->
+    <!-- -------------------- About banner start ---------------- -->
 
-<section class="about_page_banner breadcrumes_padd">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <h4 class="heading">About Us</h4>
-                    <nav aria-label="breadcrumb" class="breadcrumb d-flex justify-content-center mb-0">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item home">
-                                <a href="#" data-aos="fade-up" data-aos-once="true">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                About Us
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- -------------------- About banner end   ---------------- -->
-
-<!-- -------------------- About Content start ---------------- -->
-
-<section class="about_page_content pb-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 padd00mb">
-              
-                <p class="desc" data-aos-once="true" data-aos="fade-up">
-                    Ahlawat & Associates (“A&A”) is one of the leading full-service
-                    law firms in India, catering to domestic and international
-                    clients.
-                </p>
-                <p class="desc mb-3" data-aos-once="true" data-aos="fade-up">
-                    Incorporated in 1978 as a primary litigation practice by Mrs.
-                    Avnish Ahlawat, A&A gradually expanded its field of services and
-                    expertise and is now one of the leading law firms in India. A&A
-                    offers comprehensive counsel on a range of legal services
-                    including Mergers & Acquisitions, Private Equity, Real Estate,
-                    Education, Intellectual Property, Employment and Labour, Licensing
-                    and Registrations, Taxation (Direct & Indirect), Business Setup
-                    (globally), thus catering to every legal need from across the
-                    globe.
-                </p>
-                <p class="desc mb-3" data-aos-once="true" data-aos="fade-up">
-                    Our services extend through diverse sectors of industry including
-                    assistance to facilitate foreign direct investments and business
-                    setup in India and our clientele include an array of domestic and
-                    international individuals and companies.
-                </p>
-                <p class="desc mb-3" data-aos-once="true" data-aos="fade-up">
-                    A&A has been recognized for its expertise in addressing an array
-                    of legal issues especially those relating to Foreign Direct
-                    Investment, Joint Ventures, Corporate Compliance & Governance as
-                    well as advisory support to the booming startup ecosystem, in both
-                    the domestic and international space. Since our diversification,
-                    A&A has assisted and continues to assist clients from over 20
-                    jurisdictions to enter and flourish in India by providing various
-                    options to best suit their needs. A&A takes pride in being amongst
-                    the most sought-after qualitative legal service provider globally.
-                </p>
-                <p class="desc mb-lg-5 mb-3" data-aos-once="true" data-aos="fade-up">
-                    With an aim to provide valued, practical and strategic legal
-                    solutions to help clients achieve their goals, A&A combines the
-                    highest global standards with local expertise.
-                </p>
-                <img src="/assets/frontend/images/aboutUs.png" alt="" class="about_content_img" data-aos-once="true"
-                    data-aos="fade-up" />
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- -------------------- About Content end   ---------------- -->
-
-<!------ counter_section Start -------------------------->
-
-<section class="counter_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" id="counter">
+    <section class="about_page">
+        <section class="sm-at banner1 about_banner">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-6">
-                        <div class="about_counter_container">
-                            <div class="about_right_counter aos-init aos-animate d-flex">
-                                <div class="about_counter_icon">
-                                    <div class="about_counter_img">
-                                        <img src="/assets/frontend/images/trusted_icon.png" alt="counter 1"
-                                            class="mb-4" />
-                                    </div>
+                    <div class="col-12">
+                        <div class="breadcrums_section paddtb80">
+                            <h1 class="sm-aboutus">About Us</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="{{ url(route('index')) }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a>»</a></li>
+                                    <li class="breadcrumb-item"><a><b>About Us</b></a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about_attari_classes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="aboutpg_hed"> Attari <span class="dark">Classes</span> </h4>
+                        <p> Attari Classes is an IT training institute for VMware, AWS, AZURE, MCSE & CCNA courses </p>
+                        <p> We provide Instructor led Live Online training to candidates across the globe & Classroom
+                            Training in Mumbai, we also have self paced training options (Video Learning) </p>
+                        <p> The world class training at Attari Classes is offered through several innovative learning
+                            methods and delivery models to cater the unique requirements of a global customer base which
+                            emphasize on maximum practical learning </p>
+                    </div>
+                    <div class="col-md-6 image"> <img src="/assets/frontend/images/Photo-Gallery-6.jpg" alt="" /> </div>
+                </div>
+            </div>
+        </section>
+        <!-- --------Our Mission------------ -->
+        <section class="about_mission">
+            <div class="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="aboutpg_hed white_color"> Our <span class="light">Mission</span> </h4>
+                            <p class="fs-18"> Our mission is to provide quality education with hands-on practical and make
+                                understand practical scenarios, all this at very affordable fees. Unlike many others we are
+                                specialized in providing training only on few courses so quality is never compromised </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ------------------- Our Achivement---------------------- -->
+        <section class="our_achivement">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text_content">
+                        <h4 class="aboutpg_hed pt-4"> Our <span class="light display_black">Achievements</span> </h4>
+                        <p> Today the name Attari Classes is brand for IT Trainings in Mumbai, we have trained more than
+                            6000 candidates working in IT companies like Wipro, TCS, Infosys, Accenture, Capgemeini, etc
+                        </p>
+                        <p> We have trained candidates across India and other countries like UAE, Oman, Australia,
+                            Singapore, USA, Canada, UK, etc. </p>
+                        <p> With high end IT infra for practical’s, Attari Classes have fulfilled the demand of candidates
+                            for hands-on practical training </p>
+                        <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
+                            data-bs-target="#enquiry_modal"> Book a FREE Demo </button>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_our_slider">
+                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"> <img src="/assets/frontend/images/our_achivement_1.jpeg"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_2.jpeg"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_3.webp"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_4.webp"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_5.jpg" class="d-block w-100"
+                                            alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img1.webp"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img2.webp"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img3.webp"
+                                            class="d-block w-100" alt="..." /> </div>
+                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img4.webp"
+                                            class="d-block w-100" alt="..." /> </div>
                                 </div>
-                                <div class="about_counter">
-                                    <p class="about_counter_number">
-                                        <span class="counter-value" data-count="23">0</span>k
-                                    </p>
-                                    <p class="about_counter_para">Trusted Clients</p>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="next"> <span
+                                        class="carousel-control-next-icon" aria-hidden="true"></span> <span
+                                        class="visually-hidden">Next</span> </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
+            <div class="container">
+                <form class="" method="action">
+                    <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Enter Email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="your_country" placeholder="Your Country"
+                            required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="mobile_code"
+                            placeholder="Mobile no with country code" required />
+                    </div>
+
+                    <div class="form-group">
+                        <select aria-labelledby="-Select Course-" class="form-select form-control" required>
+                            <option selected>-Select Course-</option>
+                            <option value="1">VMware</option>
+                            <option value="2">AWS Cloud</option>
+                            <option value="3">Azure Cloud</option>
+                            <option value="4">MCSE</option>
+                            <option value="5">CCNA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <input class="btn btn-primary submit_button" type="submit" value="send" />
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- ------------------------ our infras------------------->
+        <section class="our_infras gray_bgg1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-5 d-flex pt-md-5 ps-md-5 justify-content-center flex-column order-md-2">
+                        <h4 class="aboutpg_hed pt-4"> Our <span class="light display_black">Infrastructure</span> </h4>
+                        <p class="para"> We Provide High end Labs for Hands-on practical training </p>
+                        <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
+                            data-bs-target="#enquiry_modal"> Enquire Now </button>
+                    </div>
+
+
+
+                    <div class="col-md-7 img_content order-md-1">
+                        <div class="row">
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/our_infraimg5.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/our_infraimg5.jpg" data-src="/assets/frontend/images/our_infraimg5.jpg" /> </a>
+                                </div>
+                            </div>
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/our_infraimg6.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/our_infraimg6.jpg" data-src="/assets/frontend/images/our_infraimg6.jpg" /> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/our_infraimg7.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/our_infraimg7.jpg" data-src="/assets/frontend/images/our_infraimg7.jpg" /> </a>
+                                </div>
+                            </div>
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/our_infraimg8.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/our_infraimg8.jpg" data-src="/assets/frontend/images/our_infraimg8.jpg" /> </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6 second_counter">
-                        <div class="about_counter_container">
-                            <div class="about_right_counter aos-init aos-animate" data-aos="fade-up"
-                                data-aos-once="true">
-                                <div class="about_counter_icon">
-                                    <div class="about_counter_img">
-                                        <img src="/assets/frontend/images/recovered_icons.png" alt="counter 1"
-                                            class="mb-4" />
-                                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!---------------------------------location---------------------->
+        <section class="about_location">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 location_box_1 d-flex pt-md-5 pe-5 justify-content-center flex-column">
+                        <h4 class="aboutpg_hed pt-md-4"> Our <span class="light display_black">Location</span> </h4>
+                        <p> We are at located at one of the finest location in Mumbai at Kanakia Zillion </p>
+                        <div class="mt-4"> <a>
+                                View On Google
+                                <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                            </a> </div>
+                        <a href="contact.php" class="btn bookfreedemo_button mt-4 none"> Contact Us </a>
+                    </div>
+                    <div class="col-md-7 img_content">
+                        <div class="row">
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/Photo-Gallery-4.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/Photo-Gallery-4.jpg" data-src="/assets/frontend/images/Photo-Gallery-4.jpg" /> </a>
                                 </div>
-                                <div class="about_counter">
-                                    <p class="about_counter_number">
-                                        <span class="counter-value" data-count="162">0</span>k
-                                    </p>
-                                    <p class="about_counter_para">Recovered Clients</p>
+                            </div>
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/Photo-Gallery-11.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/Photo-Gallery-11.jpg" data-src="/assets/frontend/images/Photo-Gallery-11.jpg" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-6 third_counter">
-                        <div class="about_counter_container">
-                            <div class="about_right_counter aos-init aos-animate" data-aos="fade-up"
-                                data-aos-once="true">
-                                <div class="about_counter_icon">
-                                    <div class="about_counter_img">
-                                        <img src="/assets/frontend/images/certified_icons.png" alt="counter 1"
-                                            class="mb-4" />
-                                    </div>
-                                </div>
-                                <div class="about_counter">
-                                    <p class="about_counter_number">
-                                        <span class="counter-value" data-count="90">0</span>%
-                                    </p>
-                                    <p class="about_counter_para">Special Cases</p>
+                        <div class="row">
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/Photo-Gallery-6.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/Photo-Gallery-6.jpg" data-src="/assets/frontend/images/Photo-Gallery-6.jpg" /> </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="about_counter_container">
-                            <div class="about_right_counter aos-init aos-animate" data-aos="fade-up"
-                                data-aos-once="true">
-                                <div class="about_counter_icon">
-                                    <div class="about_counter_img">
-                                        <img src="/assets/frontend/images/law_icons.png" alt="counter 1" class="mb-4" />
-                                    </div>
-                                </div>
-                                <div class="about_counter">
-                                    <p class="about_counter_number">
-                                        <span class="counter-value" data-count="115">0</span>k
-                                    </p>
-                                    <p class="about_counter_para">Personal Injury Cases</p>
+                            <div class="col-6 padd4">
+                                <div class="gallery_boxex">
+                                    <a href="images/Photo-Gallery-2.jpg" data-fancybox="gallery"> <img
+                                            src="/assets/frontend/images/Photo-Gallery-2.jpg" data-src="/assets/frontend/images/Photo-Gallery-2.jpg" /> </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </section>
+
+
+    <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
+        <div class="container">
+            <form class="" method="action">
+                <h5 class="text-center color_white">Contact Us</h5>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" name="your_country" placeholder="Your Country"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" name="mobile_code"
+                        placeholder="Mobile no with country code" required />
+                </div>
+
+                <div class="form-group">
+                    <select aria-labelledby="-Select Course-" class="form-select form-control" required>
+                        <option selected>-Select Course-</option>
+                        <option value="1">VMware</option>
+                        <option value="2">AWS Cloud</option>
+                        <option value="3">Azure Cloud</option>
+                        <option value="4">MCSE</option>
+                        <option value="5">CCNA</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
+                </div>
+
+                <div class="form-group text-center">
+                    <input class="btn btn-primary submit_button" type="submit" value="send" />
+                </div>
+
+            </form>
         </div>
-    </div>
-</section>
-
-<!---------- counter_section End -------------------------->
-<!-- -------------------- About Content start ---------------- -->
-
-<section class="about_page_content_2 pb-0 pt-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 padd00mb">
-                <h4 class="heading3 mb-2" data-aos-once="true" data-aos="fade-up">
-                    Team Of Experts
-                </h4>
-                <p class="desc mb-4 mb-lg-5" data-aos-once="true" data-aos="fade-up">
-                    All our partners are recognized leaders in their respective
-                    fields. They have specialized knowledge of both the legal
-                    framework as well as the specific business requirements of various
-                    industry sectors. They have a well-established track record in
-                    guiding companies and individuals based on their specific needs
-                    for doing business in India. The partners are confident in their
-                    ability to provide advise across borders, identifying themselves
-                    with the clients’ requirements and work along with the clients to
-                    help them achieve their objectives. With a keen focus on quality,
-                    reliability and cost-effectiveness, A&A has adopted standards
-                    employed by the top international law firms which put clients at
-                    ease and have made A&A a dependable source of seamless knowledge
-                    and implementation
-                </p>
-                <h4 class="heading3 mb-2 mt-3" data-aos-once="true" data-aos="fade-up">
-                    Our Uniqueness
-                </h4>
-                <p class="desc mb-4 mb-lg-5" data-aos-once="true" data-aos="fade-up">
-                    A&A adopted an approach that demands the highest levels of
-                    understanding in each of their practice areas, technical skill and
-                    service delivery allowing us to provide accurate, reliable, timely
-                    and cost-effective advice across a range of industry groups and
-                    sectors. This is reflected through our team of associates, who
-                    abide by the system and ensure that the client’s needs always come
-                    first. With our expertise and diversity of experience within the
-                    teams, we are able to keep in touch with the changing environment
-                    that our clients operate in and provide them with personalized
-                    solutions to their business requirements or legal reservations.
-                    Our continuous relationship with our clients and comprehension of
-                    their business have ensured that our services extend to our
-                    keeping abreast with the latest legal findings and amendments on
-                    issues that could influence the viability our clients business and
-                    provide them dynamic solutions with respect to applicable legal
-                    and regulatory compliances to enable smooth functionality of their
-                    business’.
-                </p>
-                <h4 class="heading3 mb-2" data-aos-once="true" data-aos="fade-up">
-                    Our Values
-                </h4>
-                <p class="desc mb-4 mb-lg-5" data-aos-once="true" data-aos="fade-up">
-                    Our most valuable asset for progress is consistent cooperation and
-                    coordinated effort within and between our teams, across each
-                    practice area. Each partner-led team, having specific practice
-                    area knowledge and expertise, understand the clients requirements
-                    and revert expeditiously to the committed satisfaction of the
-                    client. With emphasis on our core values of focusing on quality,
-                    reliability and efficacy along with a basic understanding, that we
-                    work best through teamwork and collaboration, we are able to work
-                    seamlessly across all practice areas for our clients.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- -------------------- About Content end   ---------------- -->
-<!-- ---------- service get in touch  start ---------------------- -->
-
-@include('frontend.component.get_in_touch')
-
-<!-- -------------- service get in touch  end ---------------------- -->
-
-<!------------------ awards_section Start -------------------------->
-@include('frontend.component.awards')
-<!------------------ awards_section End -------------------------->
+    </section>
 
 @endsection

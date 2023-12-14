@@ -50,7 +50,7 @@ Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
 Route::get('/career', [IndexController::class, 'career'])->name('career');
 Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');
 
-Route::get('/terms', [IndexController::class, 'terms_page'])->name('terms');
+Route::get('/terms-of-service', [IndexController::class, 'terms_page'])->name('terms');
 Route::get('/refund-policy', [IndexController::class, 'refund_policy'])->name('refund-policy');
 
 Route::get('/404', [IndexController::class, 'not_found'])->name('error_page');
@@ -61,6 +61,16 @@ Route::post('/comment-save', [IndexController::class, 'comment_save'])->name('co
 
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 // Home END
+
+// new url
+Route::get('/success-stories', [IndexController::class, 'success_stories'])->name('success-stories');
+
+Route::get('/reviews', [IndexController::class, 'reviews'])->name('reviews');
+Route::get('/batch', [IndexController::class, 'batch'])->name('batch');
+Route::get('/training-option-attari-classes', [IndexController::class, 'training_option'])->name('training-option');
+Route::get('/courses', [IndexController::class, 'courses'])->name('courses');
+Route::get('/photo-gallery', [IndexController::class, 'photo_gallery'])->name('photo-gallery');
+
 
 
 Route::get('/clear-cache', function () {

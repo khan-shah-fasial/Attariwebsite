@@ -11,7 +11,7 @@
 
 </head>
 
-<body id="index">
+<body>
 
 
 

@@ -3,8 +3,6 @@
 
 <!-------------- Top Header ----------------->
 <!--------------Header start----------------->
-
-<body>
     <header class="header">
         <div class="container">
             <div class="row">
@@ -34,37 +32,37 @@
                                         <div class="sub_menu single_column_menu">
                                             <ul>
                                                 <li>
-                                                    <a href="vmware-training-certification-online.php">
+                                                    <a href="{{ url(route('courses')) }}">
                                                         <span class="icon_text">
                                                             <i class="fa fa-laptop"></i> VMware
                                                         </span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href=""><span class="icon_text"><i class="fa fa-amazon"
+                                                    <a href="{{ url(route('courses')) }}"><span class="icon_text"><i class="fa fa-amazon"
                                                                 aria-hidden="true"></i>
                                                             AWS Cloud</span></a>
                                                 </li>
                                                 <li>
-                                                    <a href=""><span class="icon_text">
+                                                    <a href="{{ url(route('courses')) }}"><span class="icon_text">
                                                             <i class="fab fa-microsoft"></i> Azure Cloud
                                                         </span></a>
                                                 </li>
                                                 <li>
-                                                    <a href=""><span class="icon_text">
+                                                    <a href="{{ url(route('courses')) }}"><span class="icon_text">
                                                             <i class="fa fa-windows"></i> MCSE
                                                         </span></a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="training-option-attari-classes.php">Training Options</a></li>
-                                    <li><a href="batch.php">Batch Schedule</a></li>
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="reviews.php">Reviews</a></li>
-                                    <li><a href="success.php">Success Stories</a></li>
-                                    <li><a href="blog.php">Blog</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
+                                    <li><a href="{{ url(route('training-option')) }}">Training Options</a></li>
+                                    <li><a href="{{ url(route('batch')) }}">Batch Schedule</a></li>
+                                    <li><a href="{{ url(route('about')) }}">About Us</a></li>
+                                    <li><a href="{{ url(route('reviews')) }}">Reviews</a></li>
+                                    <li><a href="{{ url(route('success-stories')) }}">Success Stories</a></li>
+                                    <li><a href="{{ url(route('blog')) }}">Blog</a></li>
+                                    <li><a href="{{ url(route('contact')) }}">Contact Us</a></li>
 
                                 </ul>
                             </nav>
