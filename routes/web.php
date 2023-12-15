@@ -65,11 +65,27 @@ Route::get('/search', [IndexController::class, 'search'])->name('search');
 // new url
 Route::get('/success-stories', [IndexController::class, 'success_stories'])->name('success-stories');
 
+Route::get('/learning', [IndexController::class, 'learning'])->name('learning');
+
 Route::get('/reviews', [IndexController::class, 'reviews'])->name('reviews');
 Route::get('/batch', [IndexController::class, 'batch'])->name('batch');
 Route::get('/training-option-attari-classes', [IndexController::class, 'training_option'])->name('training-option');
 Route::get('/courses', [IndexController::class, 'courses'])->name('courses');
 Route::get('/photo-gallery', [IndexController::class, 'photo_gallery'])->name('photo-gallery');
+
+Route::get('/vmware-practice-test', [IndexController::class, 'vmware_practice_test'])->name('vmware-practice-test');
+Route::get('/vmware-books-guides', [IndexController::class, 'vmware_books_guides'])->name('vmware-books-guides');
+
+Route::get('/aws-practice-test', [IndexController::class, 'aws_practice_test'])->name('aws-practice-test');
+Route::get('/aws-books-guides', [IndexController::class, 'aws_books_guides'])->name('aws-books-guides');
+
+Route::get('/azure-practice-test', [IndexController::class, 'azure_practice_test'])->name('azure-practice-test');
+Route::get('/azure-books-guides', [IndexController::class, 'azure_books_guides'])->name('azure-books-guides');
+
+
+Route::get('/mcse-practice-test', [IndexController::class, 'mcse_practice_test'])->name('mcse-practice-test');
+Route::get('/mcse-books-guides', [IndexController::class, 'mcse_books_guides'])->name('mcse-books-guides');
+
 
 
 

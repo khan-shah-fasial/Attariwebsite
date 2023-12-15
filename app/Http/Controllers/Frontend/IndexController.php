@@ -416,4 +416,40 @@ class IndexController extends Controller
         return view('frontend.pages.photo_gallery.index');
     }
 
+    public function learning(){
+        return view('frontend.pages.learning.index');
+    }
+
+    public function vmware_practice_test(){
+        return view('frontend.pages.vmware_practice_test.index');
+    }
+
+    public function vmware_books_guides(){
+        return view('frontend.pages.vmware_books_guides.index');
+    }
+
+    public function aws_practice_test(){
+        return view('frontend.pages.aws_practice_test.index');
+    }
+
+    public function aws_books_guides(){
+        return view('frontend.pages.aws_books_guides.index');
+    }
+
+    public function azure_practice_test(){
+        return view('frontend.pages.azure_practice_test.index');
+    }
+
+    public function azure_books_guides(){
+        return view('frontend.pages.azure_books_guides.index');
+    }
+
+    public function mcse_practice_test(){
+        return view('frontend.pages.mcse_practice_test.index');
+    }
+
+    public function mcse_books_guides(){
+        return view('frontend.pages.mcse_books_guides.index');
+    }
+
 }
