@@ -111,7 +111,7 @@
             </div>
             <div class="col-md-6 d-flex justify-content-between footer_privacy">
                 <ul>
-                    <li><a href="refunds-cancellations.php" class="text-secondary">Refunds & Cancellations</a></li>
+                    <li><a href="{{ url(route('refund-policy')) }}" class="text-secondary">Refunds & Cancellations</a></li>
                     <li><a href="{{ url(route('terms')) }}" class="text-secondary">Terms of Service</a></li>
                     <li><a href="{{ url(route('privacy-policy')) }}" class="text-secondary">Privacy Policy</a></li>
                 </ul>

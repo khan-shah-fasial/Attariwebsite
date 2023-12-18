@@ -1992,21 +1992,21 @@
 
                         <div class="item">
                             <div class="other_crs_box">
-                                <a href=""><img data-src="images/azure.jpg" class="lazyload"
+                                <a href=""><img data-src="/assets/frontend/images/azure.jpg" class="lazyload"
                                         alt="" /></a>
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="other_crs_box">
-                                <a href=""> <img data-src="images/microsft.jpg" class="lazyload"
+                                <a href=""> <img data-src="/assets/frontend/images/microsft.jpg" class="lazyload"
                                         alt="" /></a>
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="other_crs_box">
-                                <a href=""><img data-src="images/ccna.jpg" class="lazyload"
+                                <a href=""><img data-src="/assets/frontend/images/ccna.jpg" class="lazyload"
                                         alt="" /></a>
                             </div>
                         </div>

@@ -51,7 +51,7 @@ Route::get('/career', [IndexController::class, 'career'])->name('career');
 Route::get('/privacy-policy', [IndexController::class, 'privacy_policy'])->name('privacy-policy');
 
 Route::get('/terms-of-service', [IndexController::class, 'terms_page'])->name('terms');
-Route::get('/refund-policy', [IndexController::class, 'refund_policy'])->name('refund-policy');
+Route::get('/refunds-cancellations', [IndexController::class, 'refund_policy'])->name('refund-policy');
 
 Route::get('/404', [IndexController::class, 'not_found'])->name('error_page');
 Route::get('/thank-you', [IndexController::class, 'thank_you'])->name('thank_you');
@@ -64,6 +64,8 @@ Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 // new url
 Route::get('/success-stories', [IndexController::class, 'success_stories'])->name('success-stories');
+
+
 
 Route::get('/learning', [IndexController::class, 'learning'])->name('learning');
 
@@ -85,6 +87,10 @@ Route::get('/azure-books-guides', [IndexController::class, 'azure_books_guides']
 
 Route::get('/mcse-practice-test', [IndexController::class, 'mcse_practice_test'])->name('mcse-practice-test');
 Route::get('/mcse-books-guides', [IndexController::class, 'mcse_books_guides'])->name('mcse-books-guides');
+
+Route::get('/ccna-practice-test', [IndexController::class, 'ccna_practice_test'])->name('ccna-practice-test');
+Route::get('/ccna-books-guides', [IndexController::class, 'ccna_books_guides'])->name('ccna-books-guides');
+
 
 
 

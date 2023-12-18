@@ -107,8 +107,8 @@
                             <a href=""> Cisco Networking CCNA </a>
                         </h5>
                         <div class="course_button">
-                            <a href="ccna-practice-test.php">Practice Test</a>
-                            <a href="ccna-books-guides.php">Books &amp; Guides</a>
+                            <a href="{{ url(route('ccna-practice-test')) }}">Practice Test</a>
+                            <a href="{{ url(route('ccna-books-guides')) }}">Books &amp; Guides</a>
                         </div>
                     </div>
                 </div>

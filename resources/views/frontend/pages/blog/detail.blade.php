@@ -1,12 +1,12 @@
 @extends('frontend.layouts.app')
 
 @php
-$url = request()->segment('1');
-$page = DB::table('blog_categories')
-->where('slug', $url)
-->first();
-//$count = count($author);
-$i = 1;
+    $url = request()->segment('1');
+    $page = DB::table('blog_categories')
+        ->where('slug', $url)
+        ->first();
+    //$count = count($author);
+    $i = 1;
 @endphp
 
 @section('page.title', "$detail->meta_title")
@@ -18,9 +18,9 @@ $i = 1;
 @section('page.publish_time', "$detail->updated_at")
 
 @section('page.schema')
-<!--------------------------- Page Schema --------------------------------->
+    <!--------------------------- Page Schema --------------------------------->
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
     "@context": "https://schema.org/",
     "@type": "BreadcrumbList",
@@ -43,8 +43,8 @@ $i = 1;
 }
 </script>
 
-@if ($page->name != 'Deal Update')
-<script type="application/ld+json">
+    @if ($page->name != 'Deal Update')
+        <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "{{ $page->name }}Posting",
@@ -69,245 +69,852 @@ $i = 1;
         "name": "{{ url('') }}/",
         "logo": {
             "@type": "ImageObject",
-            "url": "{{ asset('/assets/frontend/images/logo.png') }}"
+            "url": "{{ asset('/assets/frontend/images/cropped-header-logo-1') }}"
         }
     },
     "datePublished": "{{ $detail->updated_at }}"
 }
 </script>
-@endif
+    @endif
 
-<!--------------------------- Page Schema end--------------------------------->
+    <!--------------------------- Page Schema end--------------------------------->
 @endsection
 
 @section('page.content')
 
-<!-------================ blog detail start ============ ------------>
+    <!-------================ blog detail start ============ ------------>
 
 
-<!--Blog Details Banner start-->
-<section class="blog_d_banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="breadcrumb_heading text-center">
-                    {{ $detail->title }}
-                </h1>
-
-                <nav aria-label="breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item active"><a href="{{ url(route('index')) }}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <a href="{{ url(route('blog')) }}">Blogs</a>
-                        </li>
-                        <li class="breadcrumb-item home" aria-current="page">
-                            {{ $detail->title }}
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Blog Details Banner End-->
-<!--Blog Details content start-->
-<section class="blog_d_content">
-    <div class="container">
-        <div class="row">
-            <div class="img_btn">
-                <img src="{{ asset('storage/' . $detail->main_image) }}" alt="{{ $detail->alt_main_image }}"
-                    class="big_img mb-4" />
-                <button class="content_btn">
-                    {{ $detail->updated_at->format('F j, Y') }}
-                </button>
-            </div>
-            <div class="d-flex align-item-center gap-5 pb-md-3 pb-2" >
-                <div>
-                    <img src="assets/frontend/images/icon-author.png" alt="" class="me-2" />
-                    <span class="">
-                        
-                        @php
-                        $author_name = DB::table('users')
-                        ->where('id', $author)
-                        ->first();
-                        @endphp
-                        {{ $author_name->name }} 
-
-                    </span>
+    <section class="blog_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrums_section pt-5 pb-4">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item"><a>»</a></li>
+                                <li class="breadcrumb-item"><a href="blog.php"><b>Blog</b></a></li>
+                                <li class="breadcrumb-item"><a>»</a></li>
+                                <li class="breadcrumb-item"><a><b>How to Install And Configure Windows Server Distributed
+                                            File System (DFS)</b></a></li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
-                <!-- <div>
-                    <img src="assets/frontend/images/dot.png" alt="" class="me-2" />
-                    <span>{{ $author_name->designation }}</span>
-                </div> -->
-            </div>
-            <hr />
-            <div>
-
-                @php echo html_entity_decode($detail->content) @endphp
-
-            </div>
-
-        </div>
-    </div>
-</section>
 
 
-<section class="category"  >
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <hr>
-                <ul >
-                @php
-                $category = json_decode($detail->blog_category_ids);
-                        @endphp
+                <div class="col-md-9">
+                    <div class="blog_dt_top">
+                        <h3 class="pb-3">
+                            VMware vSphere Training Certification Guide: Career Benefits & Salary
+                        </h3>
 
-                        @foreach ($category as $row)
-                        @php
-                        $category_name = DB::table('blog_categories')
-                        ->where('id', $row)
-                        ->first()->name;
-                        @endphp
-                        <li>
-                        {{ $category_name }}
-                         </li>
-                        
-                        @endforeach
-                   
-                </ul>
-                <hr>
+                        <b><span>Last Update: November 8, 2021 </span> <span class="ms-3"><i
+                                    class="fa-regular fa-eye"></i> Post Views: 413</span></b>
+                        <p class="pt-2"> Virtualization leader VMware is known for its vSphere and is a leading provider
+                            of virtualization software and services. VMware vSphere is a smart investment for IT
+                            professionals of all levels, from systems administrators to mobility administrators, owing to
+                            its long-standing reputation. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="cirtified_button">
+                        <a href="#">Become a Certified Professional</a>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-----------------------------Recent Posts------------------------ -->
+    <section class="recent_post py-4 bggray1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="mb-4">
+                        <div class="post_box pb-1">
+                            <img class="img-fluid" src="/assets/frontend/images/VMware-Training.jpg" alt="" />
+
+                            <div class="text_box_post pt-4 pb-4 ps-4 pe-4">
+                                <h6 class="mb-0">
+                                    Azure Locks Protects Azure Resources From Accidental Deletion
+                                </h6>
+                                <p><strong>Last Update:</strong> September 28, 2022</p>
+                                <p>
+                                    The key to IT transformation in Virtualization world is VMware vSphere. VSphere uses
+                                    virtualization to turn traditional data
+                                    centers into simplified cloud computing infrastructures to provide IT organizations with
+                                    reliable and flexible service delivery.
+                                    By using VMware vSphere, it is possible to virtualize the underlying physical hardware
+                                    resources across multiple systems and
+                                    provide pools of virtual resources to the data center. With VMware vSphere, you can
+                                    manage extensive collections of
+                                    infrastructure (like CPUs, storage, and networking) seamlessly and dynamically and
+                                    manage a data center’s complexities.
+                                </p>
+                            </div>
+
+                            <div class="text_box_post pb-4 ps-4 pe-4">
+                                <h6 class="mb-0">
+                                    Benefits of VMware vSphere Training Certification
+                                </h6>
+                                <p>
+                                    There is a high demand for VMware virtualization skills. It is a win-win situation to
+                                    learn skills that are in need. Taking advantage of your existing experience with
+                                    networking and servers is essential when building and managing virtualized environments.
+                                </p>
+                            </div>
+
+                            <div class="text_box_post pb-4 ps-4 pe-4">
+                                <h6 class="mb-0">
+                                    How It Will Benefit Your Career
+                                </h6>
+                                <p>
+                                    There is a high demand for VMware virtualization skills. It is a win-win situation to
+                                    learn skills that are in need. Taking advantage of your existing experience with
+                                    networking and servers is essential when building and managing virtualized environments.
+                                </p>
+                            </div>
+
+                            <section id="vmware_batch" class="prje_cove_section pt-5 border-top">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4 class="section_heading pb-0 text-center"> <b>VMware Training Schedule</b>
+                                            </h4>
+                                        </div>
+
+                                        <div class="batch_shedule_box">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <ul>
+                                                        <li>
+                                                            <i aria-hidden="true" class="far fa-check-circle"></i> <b>Free
+                                                                DEMO lecture</b>
+                                                        </li>
+                                                        <li>
+                                                            <i aria-hidden="true" class="far fa-check-circle"></i>
+                                                            40+ Hours of live Insturctor led training
+                                                        </li>
+                                                        <li>
+                                                            <i aria-hidden="true" class="far fa-check-circle"></i> Perform
+                                                            live practicals with the the Trainer
+                                                        </li>
+                                                        <li>
+                                                            <i aria-hidden="true" class="far fa-check-circle"></i> Get
+                                                            Trainer Support on WhatsApp
+                                                        </li>
+                                                    </ul>
+                                                    <table class="batch_table table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="20">DATE</td>
+                                                                <td width="40">SCHEDULE </td>
+                                                                <td width="40">TIME </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <b>30th JULY</b>
+                                                                </td>
+                                                                <td>
+                                                                    <b>SAT &amp; SUN (6 WEEKS) </b>
+                                                                    <span class="text_red">Upcoming Weekend Batch</span>
+                                                                </td>
+                                                                <td>
+                                                                    <b>8:00 AM to 12:00 PM (IST)</b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>24th JUNE</td>
+                                                                <td>SAT &amp; SUN (6 WEEKS) <span class="text_blue">Batch
+                                                                        Started</span>
+                                                                </td>
+                                                                <td>1:00 PM to 5:00 PM (IST)</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><b>24*7</b></td>
+                                                                <td>Self Paced Learning <span class="text_red">Live Recorded
+                                                                        Lectures</span>
+                                                                </td>
+                                                                <td><b class="text_blue"><a
+                                                                            href="https://lms.attariclasses.in/">Always
+                                                                            Available</a></b></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="button_main getin_touch_bx paddingtop41">
+                                                        <h5>Get In Touch to Avail <span>21% OFF</span>
+                                                        </h5>
+                                                        <a href="https://lms.attariclasses.in/" target="_blank">Book a
+                                                            Demo</a>
+
+                                                        <a class="view_coursebtn"
+                                                            href="https://attariclasses.in/vmware-training-certification-online/"
+                                                            target="_blank">View Course Details <i aria-hidden="true"
+                                                                class="far fa-arrow-alt-circle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
 
 
 
 
-<section class="my-box-1 ">
-    <div class="container bg-grey py-md-2">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                   <div class="col-md-6">
-                   @if ($previous_slug != null)
-                    <a
-                        href="{{ url(route('blog.detail', ['category' => $url, 'slug' => strtolower(str_replace(' ', '-', $previous_slug))])) }}">
-                        <div class="arrow-icons">
-                            <img src="assets/frontend/images/arrow-left.png" alt="">
+                            <section id="testimonials" class="testiminilas_sec pt-4 pb-4">
+                                <div class="container">
+                                    <h3 class="heading_title text-center pddtop_0 pb-3 textcolor_blck ">VMware Training
+                                        Testimonials</h3>
+                                    <div class="large-12 columns">
+                                        <div class="owl-carousel owl-theme blog_video_testiminials">
+                                            <div class="item">
+                                                <div class="testimonial_video">
+                                                    <a href="https://www.youtube.com/embed/T9PrVAio31k"
+                                                        data-fancybox="gallery">
+                                                        <div class="pulse-button"></div>
+                                                        <img src="/assets/frontend/images/amar_pandey_review.jpg"
+                                                            class="img-fluid d-block w-100 lazyload" alt>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_video">
+                                                    <a href="https://www.youtube.com/embed/Gx9iRvGxYsg"
+                                                        data-fancybox="gallery">
+                                                        <div class="pulse-button"></div>
+                                                        <img src="/assets/frontend/images/amar_pandey_review_2.jpg"
+                                                            class="img-fluid d-block w-100 lazyload" alt>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_video">
+                                                    <a href="https://www.youtube.com/embed/9y-Oiet2HBE"
+                                                        data-fancybox="gallery">
+                                                        <div class="pulse-button"></div>
+                                                        <img src="/assets/frontend/images/Sohail-MCSE.jpg"
+                                                            class="img-fluid d-block w-100 lazyload" alt>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_video">
+                                                    <a href="https://www.youtube.com/embed/EqTLrlzQwkI"
+                                                        data-fancybox="gallery">
+                                                        <div class="pulse-button"></div>
+                                                        <img src="/assets/frontend/images/Vinayak-CCNA.jpg"
+                                                            class="img-fluid d-block w-100 lazyload" alt>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <section id="testimonials" class="testiminilas_sec pt-4 pb-4">
+                                <div class="container">
+                                    <h3 class="heading_title text-center pddtop_0 pb-3 textcolor_blck ">VMware Training
+                                        Testimonials</h3>
+
+                                    <div class="large-12 columns">
+                                        <div class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="testimonial_box">
+                                                    <div class="testimonial__header">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-10">
+                                                                <div class="testimonial__image">
+                                                                    <img data-src="/assets/frontend/images/badal_img.jpg"
+                                                                        class="img-fluid d-block w-100 lazyload" alt>
+                                                                    <span class="testimonial__name">Badal
+                                                                        Vishwakarma</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-2">
+                                                                <div class="testimonial__icon">
+                                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__content">
+                                                        <div class="testimonial__text">I attended the VMware online
+                                                            training of Attari classes. It was a really awesome experience.
+                                                            Especially trainer Mr. Maqsood Sheikha gives training with
+                                                            superb example. His examples and way of teaching make your
+                                                            concepts very clear. Also, online LMS Tool is the best tool to
+                                                            revise concepts at any time. I am thankful to Maqsood Sir and
+                                                            Attari classes for their efforts.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_box">
+                                                    <div class="testimonial__header">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-10">
+                                                                <div class="testimonial__image">
+                                                                    <img data-src="/assets/frontend/images/nityanand_img.jpg"
+                                                                        class="img-fluid d-block w-100 lazyload" alt>
+                                                                    <span class="testimonial__name">Nityanand Pandey</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-2">
+                                                                <div class="testimonial__icon">
+                                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__content">
+                                                        <div class="testimonial__text">I joined VMware at attari class.
+                                                            Attari Classes online training is 1 of the best way to improve
+                                                            knowledge and upgrade skill. The trainer Mr. Maqsood sir
+                                                            excellent in their fields and the way they explain the topics is
+                                                            amazing, specially example. The hard topics explained in so
+                                                            simple way by giving daily life examples. I will recommend all
+                                                            the new aspirants to join these classes if really want to have
+                                                            in-depth knowledge and confidence in the subject.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_box">
+                                                    <div class="testimonial__header">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-10">
+                                                                <div class="testimonial__image">
+                                                                    <img src="/assets/frontend/images/vinay_yadau_img.jpg"
+                                                                        class="img-fluid d-block w-100 lazyload" alt>
+                                                                    <span class="testimonial__name">Vinay Yadav</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-2">
+                                                                <div class="testimonial__icon">
+                                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__content">
+                                                        <div class="testimonial__text">One can blindly choose Attari
+                                                            Classes for VMware training. I have attended Online VMware
+                                                            vSphere training. It doesn’t matter you are attending offline
+                                                            lecture or online lecture when you have excellent trainer like
+                                                            Mr. Maqsood Sheikhas. He is very knowledgeable and a good
+                                                            trainer. The way he teaches is a fun and you will never get
+                                                            bored during lectures. <br> The most interesting and patent
+                                                            feature of Attari classes is LMS, which is beneficial for us
+                                                            when our online lectures got missed for any reasons then we can
+                                                            do theory and practical multiple times by watching recorded
+                                                            videos (LMS). </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_box">
+                                                    <div class="testimonial__header">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-10">
+                                                                <div class="testimonial__image">
+                                                                    <img src="/assets/frontend/images/asif_img.jpg"
+                                                                        class="img-fluid d-block w-100 lazyload" alt>
+                                                                    <span class="testimonial__name">Asif</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-2">
+                                                                <div class="testimonial__icon">
+                                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__content">
+                                                        <div class="testimonial__text">Have completed the online VMware
+                                                            class in Attari class.It was great experience I specially want
+                                                            to say thanks to Maqsood sir .His way of teaching is very
+                                                            understandable. The new one thing they have provide the LMS
+                                                            (Learning Management System ) in which they have uploaded all
+                                                            lectures recording is very helpful to do practice and and for
+                                                            the revision of any topic at any time .Thank you sir and Attari
+                                                            class .</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_box">
+                                                    <div class="testimonial__header">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-10">
+                                                                <div class="testimonial__image">
+                                                                    <img src="/assets/frontend/images/udaysinh_img.png"
+                                                                        class="img-fluid d-block w-100 lazyload" alt>
+                                                                    <span class="testimonial__name">Udaysinh patil</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-2">
+                                                                <div class="testimonial__icon">
+                                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__content">
+                                                        <div class="testimonial__text">VMware training at Attari Classes
+                                                            online. Maqsood Sir knowledge and course delivery is
+                                                            commendable. He ensures each student understand every concept,
+                                                            gives excellent examples, all hands on training. Attari Classes
+                                                            LMS is a great portal they have where you can watch videos and
+                                                            do lab trainings from recorded lectures. I thoroughly enjoyed
+                                                            the training and would highly recommend Attari Classes to
+                                                            everyone. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial_box">
+                                                    <div class="testimonial__header">
+                                                        <div class="row">
+                                                            <div class="col-lg-9 col-10">
+                                                                <div class="testimonial__image">
+                                                                    <img src="/assets/frontend/images/anand_img.png"
+                                                                        class="img-fluid d-block w-100 lazyload" alt>
+                                                                    <span class="testimonial__name">Anand Jade</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-3 col-2">
+                                                                <div class="testimonial__icon">
+                                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__content">
+                                                        <div class="testimonial__text">I have completed the VMware online
+                                                            training of Attari Classes. It was a great learning experience
+                                                            by Masqood Sir who is having outstanding teaching skills with
+                                                            practical examples which are always relates with life and the
+                                                            best thing here is Live Practical with trainer. Attari classes
+                                                            provides LMS portal which is great for practice as well as for
+                                                            understanding remaining portion.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <div class="dark_bluebg bookdemofreeform_course mt-4 ms-3 me-3 mb-4">
+                                <h4 class="text-left textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="coursename" class="form-control"
+                                                    placeholder="VMware Training" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="coursename" class="form-control"
+                                                    placeholder="Enter Name" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input type="text" name="coursename" class="form-control"
+                                                    placeholder="Enter Email" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input type="text" name="coursename" class="form-control"
+                                                    placeholder="Your Country" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input type="text" name="coursename" class="form-control"
+                                                    placeholder="Mobile Number with Country code" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="btn btn-primary">Send</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
-                    </a>
-                    @endif
-                   </div>
-                   <div class="col-md-6 d-flex justify-content-end">
-                   @if ($next_slug != null)
-                    <a
-                        href="{{ url(route('blog.detail', ['category' => $url, 'slug' => strtolower(str_replace(' ', '-', $next_slug))])) }}">
-                        <div class="arrow-icons">
-                            <img src="assets/frontend/images/arrow-right.png" alt="">
+                    </div>
+
+
+                </div>
+                <div class="col-md-4">
+                    <div class="post_box main_blog_box">
+                        <input type="text" name="search" class="form-control" placeholder="search" />
+                    </div>
+
+                    <div class="blog_courses_box post_box main_blog_box post_category">
+                        <h4>Post Category</h4>
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/vmware-training-certification-online/" class="no-lightbox">
+                                <div class="blog_content_box">
+                                    <p>VMware</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    @endif
-                   </div>
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/aws-certification-training-online/" class="no-lightbox">
+
+                                <div class="blog_content_box">
+                                    <p>AWS</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/microsoft-azure-certification-training-online/"
+                                class="no-lightbox">
+                                <div class="blog_content_box">
+                                    <p>Microsoft Azure</p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/mcsa-mcse-windows-server-training-online/"
+                                class="no-lightbox">
+
+                                <div class="blog_content_box">
+                                    <p>MCSE</p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/ccna-training-certification-online/" class="no-lightbox">
+
+                                <div class="blog_content_box">
+                                    <p>CCNA</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="blog_courses_box post_box main_blog_box">
+                        <h4>Courses We Offer</h4>
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/vmware-training-certification-online/" class="no-lightbox">
+                                <br>
+                                <img decoding="async" src="/assets/frontend/images/vmware-vsphere-e1627535142798.jpg">
+                                <div class="blog_content_box">
+                                    <p>VMware</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/aws-certification-training-online/" class="no-lightbox">
+                                <br>
+                                <img decoding="async" src="/assets/frontend/images/aws.jpg">
+                                <p></p>
+                                <div class="blog_content_box">
+                                    <p>AWS</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/microsoft-azure-certification-training-online/"
+                                class="no-lightbox">
+                                <br>
+                                <img decoding="async" src="/assets/frontend/images/azure.jpg">
+                                <p></p>
+                                <div class="blog_content_box">
+                                    <p>Microsoft Azure</p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/mcsa-mcse-windows-server-training-online/"
+                                class="no-lightbox">
+                                <br>
+                                <img decoding="async" src="/assets/frontend/images/microsft.jpg">
+                                <p></p>
+                                <div class="blog_content_box">
+                                    <p>MCSE</p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="main_blog_courses">
+                            <a href="https://attariclasses.in/ccna-training-certification-online/" class="no-lightbox">
+                                <br>
+                                <img decoding="async" src="/assets/frontend/images/ccna.jpg">
+                                <p></p>
+                                <div class="blog_content_box">
+                                    <p>CCNA</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="blog_courses_box post_box main_blog_box recent_posts">
+                        <h4>Recent Posts</h4>
+                        <div class="main_blog_courses">
+                            <div class="post_image_box widths40">
+                                <a href="https://attariclasses.in/vmware-training-certification-online/"
+                                    class="no-lightbox">
+                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
+                                </a>
+                            </div>
+                            <div class="blog_content_box widths60">
+                                <a href="https://attariclasses.in/vmware-training-certification-online/"
+                                    class="no-lightbox">
+                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
+                                </a>
+                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
+                            </div>
+                        </div>
+
+                        <div class="main_blog_courses">
+                            <div class="post_image_box widths40">
+                                <a href="https://attariclasses.in/vmware-training-certification-online/"
+                                    class="no-lightbox">
+                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
+                                </a>
+                            </div>
+                            <div class="blog_content_box widths60">
+                                <a href="https://attariclasses.in/vmware-training-certification-online/"
+                                    class="no-lightbox">
+                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
+                                </a>
+                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
+                            </div>
+                        </div>
+
+                        <div class="main_blog_courses">
+                            <div class="post_image_box widths40">
+                                <a href="https://attariclasses.in/vmware-training-certification-online/"
+                                    class="no-lightbox">
+                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
+                                </a>
+                            </div>
+                            <div class="blog_content_box widths60">
+                                <a href="https://attariclasses.in/vmware-training-certification-online/"
+                                    class="no-lightbox">
+                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
+                                </a>
+                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="blog_form">
+                        <h5>Enquire Now</h5>
+                        <form>
+
+                            <div class="form-group">
+                                <input type="text" name="coursename" class="form-control" placeholder="Enter Name"
+                                    required="">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="coursename" class="form-control" placeholder="Enter Email"
+                                    required="">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="coursename" class="form-control" placeholder="Your Country"
+                                    required="">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="coursename" class="form-control"
+                                    placeholder="Mobile Number with Country code" required="">
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-select form-control" aria-label="Default select example">
+                                    <option selected="">-Select Course-</option>
+                                    <option value="vmware">VMware</option>
+                                    <option value="aws">AWS Cloud</option>
+                                    <option value="azure">Azure Cloud</option>
+                                    <option value="mcse">MCSE</option>
+                                    <option value="ccna">CCNA</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="3" placeholder="Message"></textarea>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form>
+                    </div>
 
                 </div>
             </div>
-            <div class="col-6">
-                @if ($previous_slug != null)
-                <p class="font-size-20"> <b> Your Guide to Free <br class="br" > Open Lawyer Software</b> </p>
-                @endif
+        </div>
+    </section>
+
+
+    <section class="related_courses1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="section_heading pb-3 text-left"> Related Articles</h4>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="related_boxex1">
+                        <div class="related_img">
+                            <img src="/assets/frontend/images/Azure-1.jpg">
+                        </div>
+                        <div class="related_content">
+                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
+                        </div>
+
+                        <div class="related_updated">
+                            <p>Last Updated: October 21, 2022 </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="related_boxex1">
+                        <div class="related_img">
+                            <img src="/assets/frontend/images/Azure-1.jpg">
+                        </div>
+                        <div class="related_content">
+                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
+                        </div>
+
+                        <div class="related_updated">
+                            <p>Last Updated: October 21, 2022 </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="related_boxex1">
+                        <div class="related_img">
+                            <img src="/assets/frontend/images/Azure-1.jpg">
+                        </div>
+                        <div class="related_content">
+                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
+                        </div>
+
+                        <div class="related_updated">
+                            <p>Last Updated: October 21, 2022 </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="related_boxex1">
+                        <div class="related_img">
+                            <img src="/assets/frontend/images/Azure-1.jpg">
+                        </div>
+                        <div class="related_content">
+                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
+                        </div>
+
+                        <div class="related_updated">
+                            <p>Last Updated: October 21, 2022 </p>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-            <div class="col-6">
-                @if ($next_slug != null)
-                <div class="d-flex justify-content-end text-end">
-                    <p class="font-size-20"><b> Your Guide to Free <br class="br" > Open Lawyer Software</b></p>
-                </div>
-                @endif
-            </div>
-
-
         </div>
-
-    </div>
-</section>
-<!--------------------------------=================== comment =========----------->
-
-<section class="comments">
-    <div class="container">
-
-        <div class="heading-3">
-            <span class="font-size-24">
-                <b>Comments</b>
-            </span>
         </div>
-        @php
-        $comment = DB::table('blog_comments')
-        ->where('status', 1)
-        ->where('blog_id', $detail->id)
-        ->orderBy('id', 'desc')
-        ->get(); @endphp
+    </section>
 
-        <hr class="m-0">
-        @foreach ($comment as $row)
-        <div class="py-5">
 
-            <div class="row align-items-center">
+    <section class="bggray1 other_courses pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="section_heading pb-3 text-left"> Courses we offer </h4>
+                    <div class="owl-carousel owl-theme trending_course">
+                        <div class="item">
+                            <div class="other_crs_box">
+                                <a href=""><img src="/assets/frontend/images/vmware-vsphere-e1627535142798.jpg" /></a>
+                            </div>
+                        </div>
 
-                <div class="col-lg-1 col-md-2">
-                    <div class="col-space-1">
-                        <img src="/assets/frontend/images/Ellipse26.jpg" alt="">
+                        <div class="item">
+                            <div class="other_crs_box">
+                                <a href=""><img src="/assets/frontend/images/aws.jpg" /></a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="other_crs_box">
+                                <a href=""><img src="/assets/frontend/images/azure.jpg" /></a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="other_crs_box">
+                                <a href=""><img src="/assets/frontend/images/microsft.jpg" /></a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="other_crs_box">
+                                <a href=""><img src="/assets/frontend/images/ccna.jpg" /></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-9 col-md-8 px-md-5">
-                    <div class="heading-4">
-                        <span class="font-size-20">
-                            <b>{{ $row->name }}</b>
-                        </span>
-                    </div>
-                    <div class="heading-5">
-                        <span class="light-color">
-                            {{ date('F d, Y \a\t h:i a', strtotime($row->created_at)) }}
-                        </span>
-                    </div>
-                    <div class="heading-5 pt-md-2">
-                        <span class="">
-                            {{ $row->comment }}
-                        </span>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-1 col-md-2">
-                    {{-- <button class="content_btn">Reply</button> - --}}
                 </div>
             </div>
-
         </div>
-        @endforeach
+    </section>
 
-
-        <div class="heading-6">
-            <span class="font-size-24">
-                <b>Post A Comment</b>
-            </span>
-        </div>
-        <div class="heading-6">
-            <span class="font-size-20">
-                Your email address will not be published *
-            </span>
-        </div>
-        <div class="form-comments">
-
-            @include('frontend.component.comment_form')
-
-
-        </div>
-
-    </div>
-
-</section>
-@include('frontend.component.get_in_touch')
-
-<!----------========= blog detail end ========== ------------------->
+    <!----------========= blog detail end ========== ------------------->
 
 @endsection

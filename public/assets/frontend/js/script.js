@@ -82,18 +82,7 @@ query.addEventListener("click", () => {
 
 // -----------------------navbar sticky vmware -------------------------------
  
-window.onscroll = function() {myFunction()};
 
-var navbar = document.getElementById("vm_nav");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
 
 
 
@@ -123,6 +112,8 @@ function myFunction() {
 
 
 // --------========================== old website script ===================---------------------
+/*
+
 //AOS.init();
 AOS.init({
     duration: 1200,
@@ -293,6 +284,8 @@ $(document).ready(function () {
     });
 });
 
+*/
+
 /*-- cookies code open--*/
 
 // ---- ---- Const ---- ---- //
@@ -323,6 +316,8 @@ $(document).ready(function () {
 /*-- cookies code close--*/
 
 // toggle sidebar dropdown menu
+
+/*
 $(document).ready(function () {
     //jquery for toggle sub menus
     $(".sub-btn").click(function () {
@@ -341,5 +336,5 @@ $(document).ready(function () {
         $(".menu-btn").css("visibility", "visible");
     });
 });
-
+*/
 

@@ -452,4 +452,12 @@ class IndexController extends Controller
         return view('frontend.pages.mcse_books_guides.index');
     }
 
+    public function ccna_practice_test(){
+        return view('frontend.pages.ccna_practice_test.index');
+    }
+
+    public function ccna_books_guides(){
+        return view('frontend.pages.ccna_books_guides.index');
+    }
+
 }
