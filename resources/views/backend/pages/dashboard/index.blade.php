@@ -7,6 +7,7 @@
    <div class="card widget-inline">
       <div class="card-body p-0">
          <div class="row g-0">
+            {{--
             <div class="col-sm-6 col-lg-4">
                <div class="card rounded-0 shadow-none m-0">
                   <div class="card-body text-center">
@@ -16,7 +17,8 @@
                   </div>
                </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
+            --}}
+            <div class="col-sm-6 col-lg-6">
                <div class="card rounded-0 shadow-none m-0 border-start border-light">
                   <div class="card-body text-center">
                      <i class="ri-article-line text-muted font-24"></i>
@@ -34,7 +36,7 @@
                   </div>
                </div>
             </div>--}}
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-6">
                <div class="card rounded-0 shadow-none m-0 border-start border-light">
                   <div class="card-body text-center">
                      <i class="ri-bar-chart-2-line text-muted font-24"></i>

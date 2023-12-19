@@ -60,13 +60,14 @@
                                 <span> Leads </span>
                             </a>
                         </li>
-
+                        {{--
                         <li class="side-nav-item">
                             <a href="{{ route('practicearea.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-suitcase-line"></i> 
                                 <span> Practice Area </span>
                             </a>
                         </li>
+                        --}}
 
                         {{--
                         <li class="side-nav-item">
@@ -91,13 +92,14 @@
                                 <span> FAQs </span>
                             </a>
                         </li> --}}
-
+                        {{--
                         <li class="side-nav-item">
                             <a href="{{ route('testimonial.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-discuss-line"></i>                                
                                 <span> Testimonials </span>
                             </a>
                         </li>
+                        --}}
                         {{--
                         <li class="side-nav-item">
                             <a href="{{ route('team.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -137,7 +139,7 @@
                                 </ul>
                             </div>
                         </li>
-
+                        {{--
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail') }}" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
                                 <i class="ri-article-line"></i>
@@ -161,13 +163,15 @@
                                 </ul>
                             </div>
                         </li>
-
+                        --}}
+                        {{--
                         <li class="side-nav-item">
                             <a href="{{ route('setting.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-settings-2-line"></i>                                
                                 <span> Setting </span>
                             </a>
                         </li>
+                        --}}
                     </ul>
                     <!--- End Sidemenu -->
 

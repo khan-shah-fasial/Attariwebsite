@@ -9,10 +9,10 @@
                             <!-- Logo light -->
                             <a href="#" class="logo-light">
                                 <span class="logo-lg">
-                                    <img src="{{ asset('/assets/frontend/images/logo.png') }}" alt="logo" style="width:200px; height:50px;" >
+                                    <img src="{{ asset('/assets/frontend/images/cropped-header-logo-1.webp') }}" alt="logo" style="width:200px; height:50px;" >
                                 </span>
                                 <span class="logo-sm">
-                                    <img src="{{ asset('/assets/frontend/images/logo.png') }}" alt="small logo" style="width:200px; height:50px;" >
+                                    <img src="{{ asset('/assets/frontend/images/cropped-header-logo-1.webp') }}" alt="small logo" style="width:200px; height:50px;" >
                                 </span>
                             </a>
 
