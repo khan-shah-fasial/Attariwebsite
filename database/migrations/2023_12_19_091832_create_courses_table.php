@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->longText('url')->nullable();
             $table->string('thumbnail');
             $table->string('course_overview');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

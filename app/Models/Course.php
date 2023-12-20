@@ -13,8 +13,10 @@ class Course extends Model
 
     protected $fillable = [
         'name', 
-        'description', 
+        'description',
+        'url', 
         'thumbnail', 
         'course_overview',
+        'status'
     ];
 }

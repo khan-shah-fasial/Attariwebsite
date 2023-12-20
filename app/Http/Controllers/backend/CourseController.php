@@ -26,16 +26,9 @@ class CourseController extends Controller
         // Validate form data
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:191',
-            'slug' => 'required|unique:practice_areas',
-            'short_description' => 'required',
-            'content' => 'required',
-            //'thumnail_image' => 'image',
-            //'section_image' => 'image',
-            'meta_title' => 'required|max:255',
-            'meta_description' => 'required',
-            'breadcrumb_title' => 'required|max:191',
-            'breadcrumb_subtitle' => 'required|max:191',
-            //'breadcrumb_image' => 'required|image', 
+            'description' => 'required',
+            'thumbnail' => 'image',
+            'course_overview' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -47,73 +40,24 @@ class CourseController extends Controller
     
         // Upload image
         
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('assets/image/course', 'public');
+        if ($request->hasFile('thumbnail')) {
+            $imagePath = $request->file('thumbnail')->store('assets/image/course', 'public');
         } else {
             $imagePath = null;
         }
-
-        if ($request->hasFile('breadcrumb_image')) {
-            $imagePath1 = $request->file('breadcrumb_image')->store('assets/image/course', 'public');
-        } else {
-            $imagePath1 = null;
-        }
-
-        if ($request->hasFile('section_image')) {
-            $imagePath2 = $request->file('section_image')->store('assets/image/course', 'public');
-        } else {
-            $imagePath2 = null;
-        }
-
-        // Extract and handle FAQ data
-        $faq = $request->input('faq');
-        $faq_description = $request->input('faq_description');
-    
-        if (!empty($faq[0])) {
-            $faqs = [];
-            for ($j = 0; $j < count($faq); $j++) {
-                $faqs[] = [
-                    $faq[$j] => $faq_description[$j],
-                ];
-            }
-            $data['faq'] = json_encode($faqs);
-        } else {
-            $data['faq'] = '[]';
-        }
-    
-        // Remove the 'faq_description' key as it's not needed anymore
-        unset($data['faq_description']);
-
-        $slug = customSlug($request->input('slug'));
-
-        $focusArea = $request->input('focus_area', []);
         
         // Create the Course record with 'Course_category_ids' included
         Course::create([
-            'parent_id' => $request->input('parent_id'),
-            'title' => $request->input('title'),
-            'slug' => $slug,
-            'short_description' => $request->input('short_description'),
-            'content' => $request->input('content'),
-            'focus_area' => json_encode($focusArea),
-            'why_choose_us' => $request->input('why_choose_us'),
-            'faq' => $data['faq'],
-            'thumnail_image' => $imagePath,
-            'alt_thumnail_image' => $request->input('alt_thumnail_image'),
-            'section_image' => $imagePath2,
-            'alt_section_image' => $request->input('alt_section_image'),
-            'meta_title' => $request->input('meta_title'),
-            'meta_description' => $request->input('meta_description'),
-            'breadcrumb_title' => $request->input('breadcrumb_title'),
-            'breadcrumb_subtitle' => $request->input('breadcrumb_subtitle'),
-            'breadcrumb_image' => $imagePath1,
-            'special_service' => $request->input('special_service'),
-            'section_link' => $request->input('section_link'),
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'url' => $request->input('url'),
+            'thumbnail' => $imagePath,
+            'course_overview' => $request->input('course_overview'),
         ]);
     
         $response = [
             'status' => true,
-            'notification' => 'Practice area added successfully!',
+            'notification' => 'Course added successfully!',
         ];
     
         return response()->json($response);
@@ -121,15 +65,11 @@ class CourseController extends Controller
 
     public function edit($id) {
         $course = Course::find($id);
-        $allcourse = Course::where('status', 1)->get();
-        return view('backend.pages.course.edit', compact('course', 'allcourse'));
+        //$allcourse = Course::where('status', 1)->get();
+        //return view('backend.pages.course.edit', compact('course', 'allcourse'));
+        return view('backend.pages.course.edit', compact('course'));
     }
-    
-    public function view($id) {
-        $course = Course::find($id);
-        return view('backend.pages.course.view', compact('course'));
-    }  
-    
+        
     public function delete($id) {
         
         $course = Course::find($id);
@@ -137,7 +77,7 @@ class CourseController extends Controller
 
         $response = [
             'status' => true,
-            'notification' => 'Practice area deleted successfully!',
+            'notification' => 'Course deleted successfully!',
         ];
 
         return response()->json($response);
@@ -154,17 +94,10 @@ class CourseController extends Controller
     public function update(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'title' => 'required|max:191',
-            'slug' => 'required|unique:practice_areas,slug,'. $request->input('id'),
-            'short_description' => 'required',
-            'content' => 'required',
-            //'thumnail_image' => 'image',
-            //'section_image' => 'image',
-            'meta_title' => 'required|max:255',
-            'meta_description' => 'required',
-            'breadcrumb_title' => 'required|max:191',
-            'breadcrumb_subtitle' => 'required|max:191',
-            //'breadcrumb_image' => 'image', 
+            'name' => 'required|max:191',
+            'description' => 'required',
+            'thumbnail' => 'image',
+            'course_overview' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -177,90 +110,27 @@ class CourseController extends Controller
         $id = $request->input('id');
         $course = Course::find($id);
     
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('thumbnail')) {
             // Update the image if a new one is uploaded
-            $imagePath = $request->file('image')->store('assets/image/course', 'public');
+            $imagePath = $request->file('thumbnail')->store('assets/image/course', 'public');
             $course->thumnail_image = $imagePath;
         }else{
-            if($request->has('image_check') && $course->thumnail_image){
-                Storage::disk('public')->delete($course->thumnail_image);
-                $course->thumnail_image = null;
+            if($request->has('thumbnail_check') && $course->thumbnail){
+                Storage::disk('public')->delete($course->thumbnail);
+                $course->thumbnail = null;
             }
         }
 
-        if ($request->hasFile('breadcrumb_image')) {
-            // Update the image if a new one is uploaded
-            $imagePath1 = $request->file('breadcrumb_image')->store('assets/image/course', 'public');
-            $course->breadcrumb_image = $imagePath1;
-        }else{
-            if($request->has('breadcrumb_image_check') && $course->breadcrumb_image){
-                Storage::disk('public')->delete($course->breadcrumb_image);
-                $course->breadcrumb_image = null;
-            }
-        }
+        $course->name = $request->input('name');
+        $course->description = $request->input('description');
+        $course->url = $request->input('url');
+        $course->course_overview = $request->input('course_overview');
 
-        if ($request->hasFile('section_image')) {
-            // Update the image if a new one is uploaded
-            $imagePath2 = $request->file('section_image')->store('assets/image/course', 'public');
-            $course->section_image = $imagePath2;
-        }else{
-            if($request->has('section_image_check') && $course->section_image){
-                Storage::disk('public')->delete($course->section_image);
-                $course->section_image = null;
-            }
-        }
-
-        // Extract and handle FAQ data
-        $faq = $request->input('faq');
-        $faq_description = $request->input('faq_description');
-    
-        if (!empty($faq[0])) {
-            $faqs = [];
-            for ($j = 0; $j < count($faq); $j++) {
-                $faqs[] = [
-                    $faq[$j] => $faq_description[$j],    
-                ];
-            }
-            $data['faq'] = json_encode($faqs);
-        } else {
-            $data['faq'] = '[]';
-        }
-    
-        // Remove the 'faq_description' key as it's not needed anymore
-        unset($data['faq_description']);
-
-        $slug = customSlug($request->input('slug'));
-
-        $focusArea = $request->input('focus_area', []);
-    
-        $course->parent_id = $request->input('parent_id');
-        $course->title = $request->input('title');
-        $course->slug = $slug;
-        $course->alt_thumnail_image = $request->input('alt_thumnail_image');
-        $course->alt_section_image = $request->input('alt_section_image');
-        $course->short_description = $request->input('short_description');
-        $course->content = $request->input('content');
-        
-        if (empty($focusArea) || $focusArea === '[]') {
-            $course->focus_area = '[]';
-        } else {
-            $course->focus_area = json_encode($focusArea);
-        }
-
-        $course->why_choose_us = $request->input('why_choose_us');
-        $course->faq = $data['faq'];
-        $course->meta_title = $request->input('meta_title');
-        $course->meta_description = $request->input('meta_description');
-        $course->breadcrumb_title = $request->input('breadcrumb_title');
-        $course->breadcrumb_subtitle = $request->input('breadcrumb_subtitle');
-        $course->special_service = $request->input('special_service');
-        $course->section_link = $request->input('section_link');
-    
         $course->save();
 
         $response = [
             'status' => true,
-            'notification' => 'Practice area updated successfully!',
+            'notification' => 'Course updated successfully!',
         ];
 
         return response()->json($response);

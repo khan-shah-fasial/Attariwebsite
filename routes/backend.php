@@ -22,6 +22,8 @@ use App\Http\Controllers\backend\ContactSettingController;
 use App\Http\Controllers\backend\AuthorController;
 use App\Http\Controllers\backend\UserController;
 
+use App\Http\Controllers\backend\CourseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +45,7 @@ Route::get('/logout', [AuthenticateController::class, 'logout'])->name('backend.
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
 
 //faq
+/*
 Route::group(['prefix' => 'faq'], function () {
     Route::get('/index', [FaqController::class, 'index'])->name('faq.index');
     Route::get('/add', [FaqController::class, 'add'])->name('faq.add');
@@ -52,9 +55,11 @@ Route::group(['prefix' => 'faq'], function () {
     Route::post('/delete/{id}', [FaqController::class, 'delete'])->name('faq.delete');
     Route::get('/status/{id}/{status}', [FaqController::class, 'status'])->name('faq.status');
 });
+*/
 
 
 //Testimonials
+/*
 Route::group(['prefix' => 'testimonial'], function () {
     Route::get('/index', [TestimonialController::class, 'index'])->name('testimonial.index');
     Route::get('/add', [TestimonialController::class, 'add'])->name('testimonial.add');
@@ -64,8 +69,10 @@ Route::group(['prefix' => 'testimonial'], function () {
     Route::post('/delete/{id}', [TestimonialController::class, 'delete'])->name('testimonial.delete');
     Route::get('/status/{id}/{status}', [TestimonialController::class, 'status'])->name('testimonial.status');
 });
+*/
 
 //team
+/*
 Route::group(['prefix' => 'team'], function () {
     Route::get('/index', [TeamController::class, 'index'])->name('team.index');
     Route::get('/add', [TeamController::class, 'add'])->name('team.add');
@@ -76,8 +83,10 @@ Route::group(['prefix' => 'team'], function () {
     Route::post('/delete/{id}', [TeamController::class, 'delete'])->name('team.delete');
     Route::get('/status/{id}/{status}', [TeamController::class, 'status'])->name('team.status');
 });
+*/
 
 //Award
+/*
 Route::group(['prefix' => 'award'], function () {
     Route::get('/index', [AwardController::class, 'index'])->name('award.index');
     Route::get('/add', [AwardController::class, 'add'])->name('award.add');
@@ -87,6 +96,7 @@ Route::group(['prefix' => 'award'], function () {
     Route::post('/delete/{id}', [AwardController::class, 'delete'])->name('award.delete');
     Route::get('/status/{id}/{status}', [AwardController::class, 'status'])->name('award.status');
 });
+*/
 
 //blogcategory
 Route::group(['prefix' => 'blogs/category'], function () {
@@ -120,6 +130,7 @@ Route::group(['prefix' => 'blogs'], function () {
 
 
 //Newscategory
+/*
 Route::group(['prefix' => 'news/category'], function () {
     Route::get('/index', [NewsCategoryController::class, 'index'])->name('newscategory.index');
     Route::get('/add', [NewsCategoryController::class, 'add'])->name('newscategory.add');
@@ -129,8 +140,10 @@ Route::group(['prefix' => 'news/category'], function () {
     Route::post('/delete/{id}', [NewsCategoryController::class, 'delete'])->name('newscategory.delete');
     Route::get('/status/{id}/{status}', [NewsCategoryController::class, 'status'])->name('newscategory.status');
 });
+*/
 
 //News
+/*
 Route::group(['prefix' => 'news'], function () {
     Route::get('/index', [NewsController::class, 'index'])->name('news.index');
     Route::get('/add', [NewsController::class, 'add'])->name('news.add');
@@ -141,8 +154,10 @@ Route::group(['prefix' => 'news'], function () {
     Route::post('/delete/{id}', [NewsController::class, 'delete'])->name('news.delete');
     Route::get('/status/{id}/{status}', [NewsController::class, 'status'])->name('news.status');
 });
+*/
 
 //PracticeArea
+/*
 Route::group(['prefix' => 'practicearea'], function () {
     Route::get('/index', [PracticeAreaController::class, 'index'])->name('practicearea.index');
     Route::get('/add', [PracticeAreaController::class, 'add'])->name('practicearea.add');
@@ -153,6 +168,7 @@ Route::group(['prefix' => 'practicearea'], function () {
     Route::post('/delete/{id}', [PracticeAreaController::class, 'delete'])->name('practicearea.delete');
     Route::get('/status/{id}/{status}', [PracticeAreaController::class, 'status'])->name('practicearea.status');
 });
+*/
 
 //News
 Route::group(['prefix' => 'trumbowyg'], function () {
@@ -160,6 +176,7 @@ Route::group(['prefix' => 'trumbowyg'], function () {
 });
 
 //mediacoverage
+/*
 Route::group(['prefix' => 'mediacoverage'], function () {
     Route::get('/index', [MediaCoverageController::class, 'index'])->name('mediacoverage.index');
     Route::get('/add', [MediaCoverageController::class, 'add'])->name('mediacoverage.add');
@@ -169,8 +186,10 @@ Route::group(['prefix' => 'mediacoverage'], function () {
     Route::post('/delete/{id}', [MediaCoverageController::class, 'delete'])->name('mediacoverage.delete');
     Route::get('/status/{id}/{status}', [MediaCoverageController::class, 'status'])->name('mediacoverage.status');
 });
+*/
 
 //Publication
+/*
 Route::group(['prefix' => 'publication'], function () {
     Route::get('/index', [PublicationController::class, 'index'])->name('publication.index');
     Route::get('/add', [PublicationController::class, 'add'])->name('publication.add');
@@ -180,6 +199,8 @@ Route::group(['prefix' => 'publication'], function () {
     Route::post('/delete/{id}', [PublicationController::class, 'delete'])->name('publication.delete');
     Route::get('/status/{id}/{status}', [PublicationController::class, 'status'])->name('publication.status');
 });
+
+*/
 
 //Contact
 Route::group(['prefix' => 'contact'], function () {
@@ -233,4 +254,18 @@ Route::group(['prefix' => 'profile'], function () {
     Route::get('/reset/{id}', [UserController::class, 'password'])->name('user.password');
     Route::post('/update', [UserController::class, 'update'])->name('user.update');
     Route::post('/reset', [UserController::class, 'reset'])->name('user.reset');    
+});
+
+
+//course
+Route::group(['prefix' => 'course'], function () {
+    Route::get('/index', [CourseController::class, 'index'])->name('course.index');
+    Route::get('/add', [CourseController::class, 'add'])->name('course.add');
+
+    Route::get('/edit/{id}', [CourseController::class, 'edit'])->name('course.edit');
+    Route::get('/view/{id}', [CourseController::class, 'view'])->name('course.view');
+    Route::post('/create', [CourseController::class, 'create'])->name('course.create');
+    Route::post('/update', [CourseController::class, 'update'])->name('course.update');
+    Route::post('/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
+    Route::get('/status/{id}/{status}', [CourseController::class, 'status'])->name('course.status');
 });

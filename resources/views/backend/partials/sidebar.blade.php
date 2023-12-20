@@ -60,6 +60,13 @@
                                 <span> Leads </span>
                             </a>
                         </li>
+
+                        <li class="side-nav-item">
+                            <a href="{{ route('course.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-suitcase-line"></i> 
+                                <span> Course </span>
+                            </a>
+                        </li>
                         {{--
                         <li class="side-nav-item">
                             <a href="{{ route('practicearea.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
