@@ -23,6 +23,7 @@ use App\Http\Controllers\backend\AuthorController;
 use App\Http\Controllers\backend\UserController;
 
 use App\Http\Controllers\backend\CourseController;
+use App\Http\Controllers\backend\BatchesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -268,4 +269,9 @@ Route::group(['prefix' => 'course'], function () {
     Route::post('/update', [CourseController::class, 'update'])->name('course.update');
     Route::post('/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
     Route::get('/status/{id}/{status}', [CourseController::class, 'status'])->name('course.status');
+});
+
+//Batch
+Route::group(['prefix' => 'batch'], function () {
+    Route::post('/update', [BatchesController::class, 'update'])->name('batch.update');
 });

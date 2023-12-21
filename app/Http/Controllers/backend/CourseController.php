@@ -113,7 +113,7 @@ class CourseController extends Controller
         if ($request->hasFile('thumbnail')) {
             // Update the image if a new one is uploaded
             $imagePath = $request->file('thumbnail')->store('assets/image/course', 'public');
-            $course->thumnail_image = $imagePath;
+            $course->thumbnail = $imagePath;
         }else{
             if($request->has('thumbnail_check') && $course->thumbnail){
                 Storage::disk('public')->delete($course->thumbnail);
