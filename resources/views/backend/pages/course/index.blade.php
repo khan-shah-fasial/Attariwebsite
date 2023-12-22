@@ -66,7 +66,7 @@
                         @endif
                     </a>
 
-                    <a href="{{ url(route('course.edit',['id' => $row->id])) }}?section=course" class="action-icon"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>
+                    <a href="{{ url(route('course.edit',['id' => $row->id, 'section' => 'course'])) }}" class="action-icon"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>
 
                     <a href="javascript:void(0);" class="action-icon" onclick="confirmModal('{{ url(route('course.delete', $row->id)) }}', responseHandler)"><i class="mdi mdi-delete" title="Delete"></i></a>
                 </td>

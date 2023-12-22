@@ -263,7 +263,7 @@ Route::group(['prefix' => 'course'], function () {
     Route::get('/index', [CourseController::class, 'index'])->name('course.index');
     Route::get('/add', [CourseController::class, 'add'])->name('course.add');
 
-    Route::get('/edit/{id}', [CourseController::class, 'edit'])->name('course.edit');
+    Route::get('/edit/{id}/{section}', [CourseController::class, 'edit'])->name('course.edit');
     Route::get('/view/{id}', [CourseController::class, 'view'])->name('course.view');
     Route::post('/create', [CourseController::class, 'create'])->name('course.create');
     Route::post('/update', [CourseController::class, 'update'])->name('course.update');
@@ -273,5 +273,6 @@ Route::group(['prefix' => 'course'], function () {
 
 //Batch
 Route::group(['prefix' => 'batch'], function () {
+    Route::post('/create', [BatchesController::class, 'create'])->name('batch.create');
     Route::post('/update', [BatchesController::class, 'update'])->name('batch.update');
 });

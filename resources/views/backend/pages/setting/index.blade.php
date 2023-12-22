@@ -203,7 +203,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group mb-3">
                                         <label>Vision</label>
-                                        <textarea class="form-control" name="h_vision" rows="3">{{ get_settings('h_vision') }}</textarea>
+                                        <textarea class="form-control trumbowyg" name="h_vision" rows="3">{{ get_settings('h_vision') }}</textarea>
                                     </div>
                                 </div> 
                                 <div class="col-sm-12">
@@ -301,6 +301,7 @@
 <script>
     $(document).ready(function() {
         initValidate('#add_setting_form');
+        initTrumbowyg('.trumbowyg');
     });
     
     $("#add_setting_form").submit(function(e) {

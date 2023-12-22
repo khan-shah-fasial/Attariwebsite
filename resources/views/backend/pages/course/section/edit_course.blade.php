@@ -89,3 +89,11 @@
 </div>
 
 <!-----==================== Edit Course ==========----------------------->
+
+@section('component.scripts')
+    <script>
+		$(document).ready(function() {
+			initTrumbowyg('.trumbowyg');
+		});
+    </script>
+@endsection    

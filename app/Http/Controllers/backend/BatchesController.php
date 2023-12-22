@@ -66,8 +66,8 @@ class BatchesController extends Controller
         unset($data['batch_detail_time']);
         
         
-        // Create the Course record with 'Course_category_ids' included
-        Course::create([
+        // Create the Batch record 
+        Batch::create([
             'course_id' => $request->input('course_id'),
             'paced_title' => $request->input('paced_title'),
             'paced_pointer_list' => json_encode($request->input('paced_pointer_list')),
@@ -88,6 +88,8 @@ class BatchesController extends Controller
     
         return response()->json($response);
     }
+
+
     
     public function update(Request $request) {
 
@@ -135,10 +137,9 @@ class BatchesController extends Controller
         unset($data['batch_detail_remark']);
         unset($data['batch_detail_time']);
 
-        var_dump($data['batch_detail']);
-        exit();
 
-        /*$id = $request->input('id');
+
+        $id = $request->input('id');
         $Batch = Batch::find($id);
     
 
@@ -150,7 +151,7 @@ class BatchesController extends Controller
         $Batch->oc_title = $request->input('oc_title');
         $Batch->oc_pointer_list = json_encode($request->input('oc_pointer_list'));
 
-        $Batch->batch_detail = '';
+        $Batch->batch_detail = $data['batch_detail'];
 
         $Batch->corp_title = $request->input('corp_title');
         $Batch->corp_pointer_list = json_encode($request->input('corp_pointer_list'));
@@ -158,7 +159,7 @@ class BatchesController extends Controller
         $Batch->corp_title = $request->input('corp_title');
         $Batch->corp_pointer_list = json_encode($request->input('corp_pointer_list'));
 
-        if($request->has('batch_check'){
+        if ($request->has('batch_check')) {
             $Batch->status = $request->input('batch_check');
         }
 
@@ -170,6 +171,6 @@ class BatchesController extends Controller
             'notification' => 'Batch updated successfully!',
         ];
 
-        return response()->json($response); */
+        return response()->json($response);
     }   
 }
