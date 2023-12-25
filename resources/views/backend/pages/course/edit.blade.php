@@ -57,9 +57,11 @@
 
 
 	@if($section && $section == 'course')
-		@include('backend.pages.course.section.edit_course')
+		@include('backend.pages.course.section.course.edit')
 	@elseif($section && $section == 'batch')
-		@include('backend.pages.course.section.batch_schedule')
+		@include('backend.pages.course.section.batch.batch_schedule_index')
+	@elseif($section && $section == 'text')
+		@include('backend.pages.course.section.textreview.index')
 	@else
 		no page
 	@endif

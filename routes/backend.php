@@ -24,6 +24,7 @@ use App\Http\Controllers\backend\UserController;
 
 use App\Http\Controllers\backend\CourseController;
 use App\Http\Controllers\backend\BatchesController;
+use App\Http\Controllers\backend\TextReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -275,4 +276,13 @@ Route::group(['prefix' => 'course'], function () {
 Route::group(['prefix' => 'batch'], function () {
     Route::post('/create', [BatchesController::class, 'create'])->name('batch.create');
     Route::post('/update', [BatchesController::class, 'update'])->name('batch.update');
+});
+
+//Text Reviews
+Route::group(['prefix' => 'textreviews'], function () {
+    Route::get('/edit/{id}', [TextReviewController::class, 'edit'])->name('text.edit');
+    Route::post('/create', [TextReviewController::class, 'create'])->name('text.create');
+    Route::post('/update', [TextReviewController::class, 'update'])->name('text.update');
+    Route::post('/delete/{id}', [TextReviewController::class, 'delete'])->name('text.delete');
+    Route::get('/status/{id}/{status}', [TextReviewController::class, 'status'])->name('text.status');
 });

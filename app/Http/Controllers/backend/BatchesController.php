@@ -160,8 +160,12 @@ class BatchesController extends Controller
         $Batch->corp_pointer_list = json_encode($request->input('corp_pointer_list'));
 
         if ($request->has('batch_check')) {
-            $Batch->status = $request->input('batch_check');
+            $status = $request->input('batch_check');
+        } else {
+            $status = 1;
         }
+
+        $Batch->status = $status;
 
 
         $Batch->save();
