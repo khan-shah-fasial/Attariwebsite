@@ -2,7 +2,7 @@
 <div class="card">
     <div class="card-body">
         <div class="col-md-12">
-            <h4 class="header-title"><b>Text Review</b></h4>
+            <h4 class="header-title"><b>Video Review</b></h4>
             <hr>
         </div>
 
