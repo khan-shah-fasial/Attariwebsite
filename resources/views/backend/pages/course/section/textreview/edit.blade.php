@@ -60,7 +60,7 @@
     
             <div class="col-sm-12 d-flex justify-content-end">
                 <div class="form-group d-grid mb-3 text-end">
-                    <button type="submit" class="btn btn-block btn-primary">Create</button>
+                    <button type="submit" class="btn btn-block btn-primary">Update</button>
                 </div>
             </div>
   

@@ -4,21 +4,18 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\TextReview;
+use App\Models\ImagesReview;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
-class TextReviewController extends Controller
+class ImageReviewController extends Controller
 {
     
     public function create(Request $request) {
 
         $validator = Validator::make($request->all(), [
             'course_id' => 'required',
-            'name' => 'required',
-            'description' => 'required',
-            'thumbnail' => 'image',
-            'type' => 'required',
+            'image' => 'image',
         ]);
 
         if ($validator->fails()) {
@@ -30,58 +27,56 @@ class TextReviewController extends Controller
     
         // Upload image
         
-        if ($request->hasFile('thumbnail')) {
-            $imagePath = $request->file('thumbnail')->store('assets/image/text_review', 'public');
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('assets/image/images_review', 'public');
         } else {
             $imagePath = null;
         }
         
         // Create the Course record with 'Course_category_ids' included
-        TextReview::create([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'type' => $request->input('type'),
-            'thumbnail' => $imagePath,
+        ImagesReview::create([
+            'image' => $imagePath,
             'course_id' => $request->input('course_id'),
         ]);
     
         $response = [
             'status' => true,
-            'notification' => 'Text Review added successfully!',
+            'notification' => 'Image added successfully!',
         ];
     
         return response()->json($response);
     }     
 
     public function edit($id) {
-        $textreview = TextReview::find($id);
-        return view('backend.pages.course.section.textreview.edit', compact('textreview'));
+        $imagereview = ImagesReview::find($id);
+        return view('backend.pages.course.section.imagereview.edit', compact('imagereview'));
     }  
     
     public function delete($id) {
         
-        $textreview = TextReview::find($id);
-        if (!$textreview) {
+        $imagereview = ImagesReview::find($id);
+        if (!$imagereview) {
             $response = [
                 'status' => false,
                 'notification' => 'Record not found.!',
             ];
             return response()->json($response);
         }
-        $textreview->delete();
+        $imagereview->delete();
 
         $response = [
             'status' => true,
-            'notification' => 'TextReview Deleted successfully!',
+            'notification' => 'Image Deleted successfully!',
         ];
 
         return response()->json($response);
     }  
     
     public function status($id, $status) { 
-        $textreview = TextReview::find($id);
-        $textreview->status = $status;
-        $textreview->save();
+        $imagereview = ImagesReview::find($id);
+        $imagereview->status = $status;
+        
+        $imagereview->save();
         
     
         return redirect()->back()->with('success', 'Status Change successfully!');
@@ -91,10 +86,7 @@ class TextReviewController extends Controller
 
         $validator = Validator::make($request->all(), [
             'course_id' => 'required',
-            'name' => 'required',
-            'description' => 'required',
-            'thumbnail' => 'image',
-            'type' => 'required',
+            'image' => 'image',
         ]);
 
         if ($validator->fails()) {
@@ -105,29 +97,26 @@ class TextReviewController extends Controller
         }
 
         $id = $request->input('id');
-        $textreview = TextReview::find($id);
+        $imagereview = ImagesReview::find($id);
     
-        if ($request->hasFile('thumbnail')) {
+        if ($request->hasFile('image')) {
             // Update the image if a new one is uploaded
-            $imagePath = $request->file('thumbnail')->store('assets/image/textreview', 'public');
-            $textreview->thumbnail = $imagePath;
+            $imagePath = $request->file('image')->store('assets/image/imagereview', 'public');
+            $imagereview->image = $imagePath;
         }else{
-            if($request->has('thumbnail_check') && $textreview->thumbnail){
-                Storage::disk('public')->delete($textreview->thumbnail);
-                $textreview->thumbnail = null;
+            if($request->has('image_check') && $imagereview->image){
+                Storage::disk('public')->delete($imagereview->image);
+                $imagereview->image = null;
             }
         }
 
-        $textreview->name = $request->input('name');
-        $textreview->description = $request->input('description');
-        $textreview->type = $request->input('type');
-        $textreview->course_id = $request->input('course_id');
+        $imagereview->course_id = $request->input('course_id');
      
-        $textreview->save();
+        $imagereview->save();
 
         $response = [
             'status' => true,
-            'notification' => 'Course updated successfully!',
+            'notification' => 'Image updated successfully!',
         ];
 
         return response()->json($response);

@@ -25,6 +25,8 @@ use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\CourseController;
 use App\Http\Controllers\backend\BatchesController;
 use App\Http\Controllers\backend\TextReviewController;
+use App\Http\Controllers\backend\ImageReviewController;
+use App\Http\Controllers\backend\VideoReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -285,4 +287,22 @@ Route::group(['prefix' => 'textreviews'], function () {
     Route::post('/update', [TextReviewController::class, 'update'])->name('text.update');
     Route::post('/delete/{id}', [TextReviewController::class, 'delete'])->name('text.delete');
     Route::get('/status/{id}/{status}', [TextReviewController::class, 'status'])->name('text.status');
+});
+
+//Text Reviews
+Route::group(['prefix' => 'imagesreviews'], function () {
+    Route::get('/edit/{id}', [ImageReviewController::class, 'edit'])->name('images.edit');
+    Route::post('/create', [ImageReviewController::class, 'create'])->name('images.create');
+    Route::post('/update', [ImageReviewController::class, 'update'])->name('images.update');
+    Route::post('/delete/{id}', [ImageReviewController::class, 'delete'])->name('images.delete');
+    Route::get('/status/{id}/{status}', [ImageReviewController::class, 'status'])->name('images.status');
+});
+
+//Text Reviews
+Route::group(['prefix' => 'videoreviews'], function () {
+    Route::get('/edit/{id}', [VideoReviewController::class, 'edit'])->name('videos.edit');
+    Route::post('/create', [VideoReviewController::class, 'create'])->name('videos.create');
+    Route::post('/update', [VideoReviewController::class, 'update'])->name('videos.update');
+    Route::post('/delete/{id}', [VideoReviewController::class, 'delete'])->name('videos.delete');
+    Route::get('/status/{id}/{status}', [VideoReviewController::class, 'status'])->name('videos.status');
 });

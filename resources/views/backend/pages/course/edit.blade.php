@@ -62,6 +62,10 @@
 		@include('backend.pages.course.section.batch.batch_schedule_index')
 	@elseif($section && $section == 'text')
 		@include('backend.pages.course.section.textreview.index')
+	@elseif($section && $section == 'images')
+		@include('backend.pages.course.section.imagereview.index')
+	@elseif($section && $section == 'video')
+		@include('backend.pages.course.section.videoreview.index')
 	@else
 		no page
 	@endif
