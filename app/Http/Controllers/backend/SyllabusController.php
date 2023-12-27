@@ -5,16 +5,16 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Faq;
+use App\Models\Syllabus;
 
-class FaqController extends Controller
+class SyllabusController extends Controller
 {
 
     public function create(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'question' => 'required',
-            'answer' => 'required',
+            'title' => 'required',
+            'description' => 'required',
             'course_id' => 'required',
         ]);
 
@@ -25,49 +25,49 @@ class FaqController extends Controller
             ], 200);
         }     
 
-        $faq = Faq::create([
-            'question' => $request->input('question'),
-            'answer' => $request->input('answer'),
+        $syllabus = Syllabus::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
             'course_id' => $request->input('course_id'),
         ]);
 
         $response = [
             'status' => true,
-            'notification' => 'Faq added successfully!',
+            'notification' => 'Syllabus added successfully!',
         ];
         
         return response()->json($response);
     }     
 
     public function edit($id) {
-        $faq = Faq::find($id);
-        return view('backend.pages.course.section.faq.edit', compact('faq'));
+        $syllabus = Syllabus::find($id);
+        return view('backend.pages.course.section.syllabus.edit', compact('syllabus'));
     }  
     
     public function delete($id) {
         
-        $faq = Faq::find($id);
-        if (!$faq) {
+        $syllabus = Syllabus::find($id);
+        if (!$syllabus) {
             $response = [
                 'status' => false,
                 'notification' => 'Record not found.!',
             ];
             return response()->json($response);
         }
-        $faq->delete();
+        $syllabus->delete();
 
         $response = [
             'status' => true,
-            'notification' => 'Faq deleted successfully!',
+            'notification' => 'Syllabus deleted successfully!',
         ];
 
         return response()->json($response);
     }  
     
     public function status($id, $status) { 
-        $faq = Faq::find($id);
-        $faq->status = $status;
-        $faq->save();
+        $syllabus = Syllabus::find($id);
+        $syllabus->status = $status;
+        $syllabus->save();
     
         return redirect()->back()->with('success', 'Status Change successfully!');
     }  
@@ -75,8 +75,8 @@ class FaqController extends Controller
     public function update(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'question' => 'required',
-            'answer' => 'required',
+            'title' => 'required',
+            'description' => 'required',
             'course_id' => 'required',
         ]);
 
@@ -88,12 +88,12 @@ class FaqController extends Controller
         }
 
         $id = $request->input('id');
-        $faq = Faq::find($id);
-        $faq->update($request->all());
+        $syllabus = Syllabus::find($id);
+        $syllabus->update($request->all());
 
         $response = [
             'status' => true,
-            'notification' => 'Faq updated successfully!',
+            'notification' => 'Syllabus updated successfully!',
         ];
 
         return response()->json($response);

@@ -66,6 +66,10 @@
 		@include('backend.pages.course.section.imagereview.index')
 	@elseif($section && $section == 'video')
 		@include('backend.pages.course.section.videoreview.index')
+	@elseif($section && $section == 'faq')
+		@include('backend.pages.course.section.faq.index')
+	@elseif($section && $section == 'syllabus')
+		@include('backend.pages.course.section.syllabus.index')
 	@else
 		no page
 	@endif

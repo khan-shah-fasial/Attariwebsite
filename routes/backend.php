@@ -27,6 +27,7 @@ use App\Http\Controllers\backend\BatchesController;
 use App\Http\Controllers\backend\TextReviewController;
 use App\Http\Controllers\backend\ImageReviewController;
 use App\Http\Controllers\backend\VideoReviewController;
+use App\Http\Controllers\backend\SyllabusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,20 +48,6 @@ Route::get('/logout', [AuthenticateController::class, 'logout'])->name('backend.
 
 //dashborad
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
-
-//faq
-/*
-Route::group(['prefix' => 'faq'], function () {
-    Route::get('/index', [FaqController::class, 'index'])->name('faq.index');
-    Route::get('/add', [FaqController::class, 'add'])->name('faq.add');
-    Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('faq.edit');
-    Route::post('/create', [FaqController::class, 'create'])->name('faq.create');
-    Route::post('/update', [FaqController::class, 'update'])->name('faq.update');
-    Route::post('/delete/{id}', [FaqController::class, 'delete'])->name('faq.delete');
-    Route::get('/status/{id}/{status}', [FaqController::class, 'status'])->name('faq.status');
-});
-*/
-
 
 //Testimonials
 /*
@@ -306,3 +293,22 @@ Route::group(['prefix' => 'videoreviews'], function () {
     Route::post('/delete/{id}', [VideoReviewController::class, 'delete'])->name('videos.delete');
     Route::get('/status/{id}/{status}', [VideoReviewController::class, 'status'])->name('videos.status');
 });
+
+//faq
+Route::group(['prefix' => 'faq'], function () {
+    Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('faq.edit');
+    Route::post('/create', [FaqController::class, 'create'])->name('faq.create');
+    Route::post('/update', [FaqController::class, 'update'])->name('faq.update');
+    Route::post('/delete/{id}', [FaqController::class, 'delete'])->name('faq.delete');
+    Route::get('/status/{id}/{status}', [FaqController::class, 'status'])->name('faq.status');
+});
+
+//syllabus 
+Route::group(['prefix' => 'syllabus'], function () {
+    Route::get('/edit/{id}', [SyllabusController::class, 'edit'])->name('syllabus.edit');
+    Route::post('/create', [SyllabusController::class, 'create'])->name('syllabus.create');
+    Route::post('/update', [SyllabusController::class, 'update'])->name('syllabus.update');
+    Route::post('/delete/{id}', [SyllabusController::class, 'delete'])->name('syllabus.delete');
+    Route::get('/status/{id}/{status}', [SyllabusController::class, 'status'])->name('syllabus.status');
+});
+

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('video_reviews', function (Blueprint $table) {
+        Schema::create('syllabus', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('course_id');
-            $table->string('url');
+            $table->string('title');
+            $table->longText('description');
             $table->string('status');
             $table->timestamps();
         });
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('video_reviews');
+        Schema::dropIfExists('syllabus');
     }
 };
