@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\AuthenticateController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\FaqController;
+/*
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\backend\TeamController;
 use App\Http\Controllers\backend\AwardController;
@@ -13,12 +14,15 @@ use App\Http\Controllers\backend\BlogController;
 use App\Http\Controllers\backend\NewsCategoryController;
 use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\PracticeAreaController;
+*/
 use App\Http\Controllers\backend\TrumbowygController;
+/*
 use App\Http\Controllers\backend\MediaCoverageController;
 use App\Http\Controllers\backend\PublicationController;
 use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\BusinessSettingController;
 use App\Http\Controllers\backend\ContactSettingController;
+*/
 use App\Http\Controllers\backend\AuthorController;
 use App\Http\Controllers\backend\UserController;
 
@@ -28,6 +32,8 @@ use App\Http\Controllers\backend\TextReviewController;
 use App\Http\Controllers\backend\ImageReviewController;
 use App\Http\Controllers\backend\VideoReviewController;
 use App\Http\Controllers\backend\SyllabusController;
+use App\Http\Controllers\backend\ProjectCoveredController;
+use App\Http\Controllers\backend\CertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +95,7 @@ Route::group(['prefix' => 'award'], function () {
 });
 */
 
+/*
 //blogcategory
 Route::group(['prefix' => 'blogs/category'], function () {
     Route::get('/index', [BlogCategoryController::class, 'index'])->name('blogcategory.index');
@@ -118,7 +125,7 @@ Route::group(['prefix' => 'blogs'], function () {
     Route::post('/delete/{id}', [BlogController::class, 'delete'])->name('blogs.delete');
     Route::get('/status/{id}/{status}', [BlogController::class, 'status'])->name('blogs.status');
 });
-
+*/
 
 //Newscategory
 /*
@@ -192,7 +199,7 @@ Route::group(['prefix' => 'publication'], function () {
 });
 
 */
-
+/*
 //Contact
 Route::group(['prefix' => 'contact'], function () {
     Route::get('/index', [ContactController::class, 'index'])->name('contact.index');
@@ -216,6 +223,7 @@ Route::group(['prefix' => 'contact/page'], function () {
     Route::get('/index', [ContactSettingController::class, 'index'])->name('contactpage.index');
     Route::post('/update', [ContactSettingController::class, 'update'])->name('contactpage.update');
 });
+*/
 
 //clear cache
 Route::get('/clear-cache', function () {
@@ -312,3 +320,21 @@ Route::group(['prefix' => 'syllabus'], function () {
     Route::get('/status/{id}/{status}', [SyllabusController::class, 'status'])->name('syllabus.status');
 });
 
+//project_covered
+Route::group(['prefix' => 'projectcovered'], function () {
+    Route::get('/edit/{id}', [ProjectCoveredController::class, 'edit'])->name('project_covered.edit');
+    Route::post('/create', [ProjectCoveredController::class, 'create'])->name('project_covered.create');
+    Route::post('/update', [ProjectCoveredController::class, 'update'])->name('project_covered.update');
+    Route::post('/delete/{id}', [ProjectCoveredController::class, 'delete'])->name('project_covered.delete');
+    Route::get('/status/{id}/{status}', [ProjectCoveredController::class, 'status'])->name('project_covered.status');
+});
+
+
+//certificate
+Route::group(['prefix' => 'certificate'], function () {
+    Route::get('/edit/{id}', [CertificateController::class, 'edit'])->name('certificate.edit');
+    Route::post('/create', [CertificateController::class, 'create'])->name('certificate.create');
+    Route::post('/update', [CertificateController::class, 'update'])->name('certificate.update');
+    Route::post('/delete/{id}', [CertificateController::class, 'delete'])->name('certificate.delete');
+    Route::get('/status/{id}/{status}', [CertificateController::class, 'status'])->name('certificate.status');
+});
