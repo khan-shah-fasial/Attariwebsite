@@ -17,6 +17,7 @@ class Course extends Model
         'url', 
         'thumbnail', 
         'course_overview',
+        'faq',
         'status'
     ];
 }

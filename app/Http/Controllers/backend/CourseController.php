@@ -45,6 +45,25 @@ class CourseController extends Controller
         } else {
             $imagePath = null;
         }
+
+        // Extract and handle FAQ data
+        $faq = $request->input('faq');
+        $faq_description = $request->input('faq_description');
+    
+        if (!empty($faq[0])) {
+            $faqs = [];
+            for ($j = 0; $j < count($faq); $j++) {
+                $faqs[] = [
+                    $faq[$j] => $faq_description[$j],
+                ];
+            }
+            $data['faq'] = json_encode($faqs);
+        } else {
+            $data['faq'] = '[]';
+        }
+    
+        // Remove the 'faq_description' key as it's not needed anymore
+        unset($data['faq_description']);
         
         // Create the Course record with 'Course_category_ids' included
         Course::create([
@@ -53,6 +72,7 @@ class CourseController extends Controller
             'url' => $request->input('url'),
             'thumbnail' => $imagePath,
             'course_overview' => $request->input('course_overview'),
+            'faq' => $data['faq'],
         ]);
     
         $response = [
@@ -121,10 +141,30 @@ class CourseController extends Controller
             }
         }
 
+        // Extract and handle FAQ data
+        $faq = $request->input('faq');
+        $faq_description = $request->input('faq_description');
+    
+        if (!empty($faq[0])) {
+            $faqs = [];
+            for ($j = 0; $j < count($faq); $j++) {
+                $faqs[] = [
+                    $faq[$j] => $faq_description[$j],    
+                ];
+            }
+            $data['faq'] = json_encode($faqs);
+        } else {
+            $data['faq'] = '[]';
+        }
+    
+        // Remove the 'faq_description' key as it's not needed anymore
+        unset($data['faq_description']);
+
         $course->name = $request->input('name');
         $course->description = $request->input('description');
         $course->url = $request->input('url');
         $course->course_overview = $request->input('course_overview');
+        $course->faq = $data['faq'];
 
         $course->save();
 
