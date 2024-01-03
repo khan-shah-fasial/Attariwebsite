@@ -35,6 +35,8 @@ use App\Http\Controllers\backend\SyllabusController;
 use App\Http\Controllers\backend\ProjectCoveredController;
 use App\Http\Controllers\backend\CertificateController;
 
+use App\Http\Controllers\backend\CmsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -337,4 +339,16 @@ Route::group(['prefix' => 'certificate'], function () {
     Route::post('/update', [CertificateController::class, 'update'])->name('certificate.update');
     Route::post('/delete/{id}', [CertificateController::class, 'delete'])->name('certificate.delete');
     Route::get('/status/{id}/{status}', [CertificateController::class, 'status'])->name('certificate.status');
+});
+
+//cms
+Route::group(['prefix' => 'cms'], function () {
+    Route::get('/index', [CmsController::class, 'index'])->name('cms.index');
+    Route::get('/add', [CmsController::class, 'add'])->name('cms.add');
+    Route::get('/edit/{id}', [CmsController::class, 'edit'])->name('cms.edit');
+
+    Route::post('/create', [CmsController::class, 'create'])->name('cms.create');
+    Route::post('/update', [CmsController::class, 'update'])->name('cms.update');
+    Route::post('/delete/{id}', [CmsController::class, 'delete'])->name('cms.delete');
+    Route::get('/status/{id}/{status}', [CmsController::class, 'status'])->name('cms.status');
 });
