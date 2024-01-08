@@ -26,9 +26,12 @@ class CmsController extends Controller
         // Validate form data
         $validator = Validator::make($request->all(), [
             'title' => 'required',
+            'menu_title' => 'required',
             'slug' => 'required|unique:cms',
             'description' => 'required',
             'replace_keyword' => 'required',
+            'rating' => 'required',
+            'total_review' => 'required',
             'course_id' => 'required',
         ]);
 
@@ -45,9 +48,12 @@ class CmsController extends Controller
         Cms::create([
             'course_id' => $request->input('course_id'),
             'title' => $request->input('title'),
+            'menu_title' => $request->input('menu_title'),
             'slug' => $slug,
             'description' => $request->input('description'),
             'replace_keyword' => $request->input('replace_keyword'),
+            'rating' => $request->input('rating'),
+            'total_review' => $request->input('total_review'),
         ]);
     
         $response = [
@@ -92,7 +98,9 @@ class CmsController extends Controller
             'slug' => 'required|unique:practice_areas,slug,'. $request->input('id'),
             'title' => 'required',
             'description' => 'required',
-            'replace_keyword' => 'required',
+            'menu_title' => 'required',
+            'rating' => 'required',
+            'total_review' => 'required',
             'course_id' => 'required',
         ]);
 
@@ -113,9 +121,12 @@ class CmsController extends Controller
 
         $cms->course_id = $request->input('course_id');
         $cms->title = $request->input('title');
+        $cms->menu_title = $request->input('menu_title');
         $cms->slug = $slug;
         $cms->description = $request->input('description');
         $cms->replace_keyword = $request->input('replace_keyword');
+        $cms->rating = $request->input('rating');
+        $cms->total_review = $request->input('total_review');
 
         $cms->save();
 

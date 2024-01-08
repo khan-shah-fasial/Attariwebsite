@@ -1,6 +1,10 @@
 
 <!-------------- Top Header ----------------->
 
+@php
+$course = DB::table('cms')->where('status', 1)->get(['menu_title','slug','status']);
+@endphp
+
 <!-------------- Top Header ----------------->
 <!--------------Header start----------------->
     <header class="header">
@@ -10,7 +14,7 @@
                     <div class="nav_row v_center">
                         <div class="header_item item_left">
                             <div class="logo">
-                                <a href="index.php" aria-label="Logo Link">
+                                <a href="{{ url(route('index')) }}" aria-label="Logo Link">
                                     <img class="sm-logo-size" src="/assets/frontend/images/cropped-header-logo-1.webp" width="180"
                                         height="50" alt="Logo" />
                                 </a>
@@ -31,28 +35,15 @@
                                         </a>
                                         <div class="sub_menu single_column_menu">
                                             <ul>
-                                                <li>
-                                                    <a href="{{ url(route('courses')) }}">
-                                                        <span class="icon_text">
-                                                            <i class="fa fa-laptop"></i> VMware
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url(route('courses')) }}"><span class="icon_text"><i class="fa fa-amazon"
-                                                                aria-hidden="true"></i>
-                                                            AWS Cloud</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url(route('courses')) }}"><span class="icon_text">
-                                                            <i class="fab fa-microsoft"></i> Azure Cloud
-                                                        </span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url(route('courses')) }}"><span class="icon_text">
-                                                            <i class="fa fa-windows"></i> MCSE
-                                                        </span></a>
-                                                </li>
+                                                @foreach ($course as $row)
+                                                    <li>
+                                                        <a href="{{ url(route('course.detail', ['slug' => $row->slug] )) }}">
+                                                            <span class="icon_text">
+                                                                <i class="fa fa-laptop"></i> {{ $row->menu_title }}
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </li>

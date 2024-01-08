@@ -11,7 +11,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Course</label>
-                                <select class="form-select select2" name="course_id">
+                                <select class="form-select select2" name="course_id" required>
                                     <option value="">--Select--</option>
                                     @foreach ($course as $row)
                                         <option value="{{ $row->id }}"
@@ -34,6 +34,14 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
+                                <label>Menu Title <span class="red">*</span></label>
+                                <input type="text" class="form-control" name="menu_title" value="{{ $cms->menu_title }}"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
                                 <label>Slug</label>
                                 <input type="text" class="form-control" name="slug" value="{{ $cms->slug }}"
                                     required>
@@ -44,10 +52,25 @@
                             <div class="form-group mb-3">
                                 <label>Replace Keyword</label>
                                 <input type="text" class="form-control" name="replace_keyword"
-                                    value="{{ $cms->replace_keyword }}" required>
+                                    value="{{ $cms->replace_keyword }}" >
                             </div>
                         </div>
 
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Rating</label>
+                                <input type="text" class="form-control" name="rating"
+                                    value="{{ $cms->rating }}" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Total Review</label>
+                                <input type="text" class="form-control" name="total_review"
+                                    value="{{ $cms->total_review }}" required>
+                            </div>
+                        </div>
 
 
                         <div class="col-sm-12">

@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\Mail;
 
 // Home START
 Route::get('/', [IndexController::class, 'index'])->name('index');
+/*
 Route::get('/area-of-practices', [IndexController::class, 'practice_area'])->name('practicearea');
 Route::get('/area-of-practice/{slug}', [IndexController::class, 'practice_area_detail'])->name('practicearea-detail');
+*/
 
 Route::get('/blog', [IndexController::class, 'blog'])->name('blog');
 Route::get('/blogs-data', [IndexController::class, 'blog_data'])->name('blog-data');
@@ -28,7 +30,8 @@ $postCategories = DB::table('blog_categories')->pluck('slug')->toArray();
 Route::get('/{category}/{slug}', [IndexController::class, 'blog_detail'])
     ->where('category', implode('|', $postCategories))
     ->name('blog.detail');
-
+    
+/*
 Route::get('/news', [IndexController::class, 'news'])->name('news');
 Route::get('/news-data', [IndexController::class, 'news_data'])->name('news-data');
 
@@ -44,6 +47,8 @@ Route::get('/publication-data', [IndexController::class, 'publication_data'])->n
 
 Route::any('/team-members', [IndexController::class, 'team_members'])->name('team');
 Route::get('/team-members/{slug}', [IndexController::class, 'team_detail'])->name('team.detail');
+*/
+
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact');
 Route::any('/about-us', [IndexController::class, 'about_us'])->name('about');
 Route::get('/faq', [IndexController::class, 'faq'])->name('faq');
@@ -62,7 +67,9 @@ Route::post('/comment-save', [IndexController::class, 'comment_save'])->name('co
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 // Home END
 
-// new url
+// ------------------------- new url ---------------------------------------------------------------
+
+
 Route::get('/success-stories', [IndexController::class, 'success_stories'])->name('success-stories');
 
 
@@ -72,7 +79,14 @@ Route::get('/learning', [IndexController::class, 'learning'])->name('learning');
 Route::get('/reviews', [IndexController::class, 'reviews'])->name('reviews');
 Route::get('/batch', [IndexController::class, 'batch'])->name('batch');
 Route::get('/training-option-attari-classes', [IndexController::class, 'training_option'])->name('training-option');
-Route::get('/courses', [IndexController::class, 'courses'])->name('courses');
+
+//course
+$course = DB::table('cms')->pluck('slug')->toArray();
+Route::get('/{slug}', [IndexController::class, 'course_detail'])
+    ->where('slug', implode('|', $course))
+    ->name('course.detail');
+
+
 Route::get('/photo-gallery', [IndexController::class, 'photo_gallery'])->name('photo-gallery');
 
 Route::get('/vmware-practice-test', [IndexController::class, 'vmware_practice_test'])->name('vmware-practice-test');
@@ -90,9 +104,6 @@ Route::get('/mcse-books-guides', [IndexController::class, 'mcse_books_guides'])-
 
 Route::get('/ccna-practice-test', [IndexController::class, 'ccna_practice_test'])->name('ccna-practice-test');
 Route::get('/ccna-books-guides', [IndexController::class, 'ccna_books_guides'])->name('ccna-books-guides');
-
-
-
 
 
 Route::get('/clear-cache', function () {

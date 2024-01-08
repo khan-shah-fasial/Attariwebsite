@@ -31,6 +31,13 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
+                                <label>Menu Title <span class="red">*</span></label>
+                                <input type="text" class="form-control" name="menu_title" value="" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
                                 <label>Slug</label>
                                 <input type="text" class="form-control" name="slug" value="" required>
                             </div>
@@ -40,6 +47,20 @@
                             <div class="form-group mb-3">
                                 <label>Replace Keyword</label>
                                 <input type="text" class="form-control" name="replace_keyword" value="" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Rating</label>
+                                <input type="text" class="form-control" name="rating" value="" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Total Review</label>
+                                <input type="text" class="form-control" name="total_review" value="" required>
                             </div>
                         </div>
 
@@ -54,7 +75,7 @@
 
 
                         <div class="col-sm-12">
-                            <div class="form-group d-grid mb-3 text-end">
+                            <div class="form-group d-flex mb-3 justify-content-end">
                                 <button type="submit" class="btn btn-block btn-primary">Create</button>
                             </div>
                         </div>            

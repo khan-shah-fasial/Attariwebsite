@@ -4,17 +4,33 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+/*
 use App\Models\PracticeArea;
+*/
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\User;
+/*
 use App\Models\Team;
+*/
 use App\Models\Faq;
 use App\Models\Contact;
 use App\Models\BlogComment;
+/*
 use App\Models\MediaCoverage;
 use App\Models\Publication;
+*/
 use Illuminate\Support\Facades\Mail;
+
+use App\Models\Cms;
+use App\Models\Course;
+use App\Models\Batch;
+use App\Models\TextReview;
+use App\Models\ImagesReview;
+use App\Models\VideoReview;
+use App\Models\Syllabus;
+use App\Models\ProjectCovered;
+use App\Models\Certificate;
 
 
 class IndexController extends Controller
@@ -22,6 +38,7 @@ class IndexController extends Controller
     public function index(){
         return view('frontend.pages.home.index');
     }
+/*
 //--------------=============================== practice area =====================---------------------------
     public function practice_area(){
         $practiceAreas = PracticeArea::where('status', 1)->orderBy('updated_at', 'desc')->get();
@@ -55,7 +72,7 @@ class IndexController extends Controller
         return view('frontend.pages.practicearea.detail', compact('detail', 'child_detail', 'blog'));
     }
 //--------------=============================== practice area end =====================------------------------------
-
+*/
 //--------------=============================== Blog  ================================------------------------------
 
     public function blog(){
@@ -106,7 +123,7 @@ class IndexController extends Controller
     }
 
 //--------------=============================== Blog end ================================------------------------------
-
+/*
 //--------------=============================== Team  ================================------------------------------
 
     public function team_members(){
@@ -124,7 +141,7 @@ class IndexController extends Controller
     }
 
 //--------------=============================== Team end ================================------------------------------
-
+*/
 //--------------=============================== other ================================------------------------------
 
     public function not_found(){
@@ -239,7 +256,7 @@ class IndexController extends Controller
         return response()->json($response);
     }
    //--------------=============================== contact form save ===========================--------------------------
-   
+   /*
    //--------------=============================== news ==========================================-------------------------
 
     public function news(){
@@ -343,7 +360,7 @@ class IndexController extends Controller
     }
 
 //--------------=============================== publication end ====================================---------------------
-
+*/
 //--------------=============================== other feature ====================================---------------------
 
     public function search(Request $request){
@@ -392,6 +409,25 @@ class IndexController extends Controller
 
 // =================--------------------- NEW ---------------------=========================
 
+    public function course_detail($slug){
+
+        $cms = Cms::where('slug', $slug)->where('status', 1)->first();
+
+        $detail = Course::where('id', $cms->course_id)->where('status', 1)->first();
+
+        $batch = Batch::where('course_id', $cms->course_id)->where('status', 1)->first();
+        $text_review = TextReview::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $image_review= ImagesReview::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $video_review = VideoReview::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $faq = Faq::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $syllabus = Syllabus::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $project_covered = ProjectCovered::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $certificate = Certificate::where('course_id', $cms->course_id)->where('status', 1)->get();
+
+        
+        return view('frontend.pages.courses.index', compact('cms','detail','batch','text_review','image_review','video_review','faq','syllabus','project_covered','certificate'));
+    }
+
     public function success_stories(){
         return view('frontend.pages.success_stories.index');
     }
@@ -408,9 +444,7 @@ class IndexController extends Controller
         return view('frontend.pages.training_option.index');
     }
 
-    public function courses(){
-        return view('frontend.pages.courses.index');
-    }
+
 
     public function photo_gallery(){
         return view('frontend.pages.photo_gallery.index');

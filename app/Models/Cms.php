@@ -17,6 +17,9 @@ class Cms extends Model
         'replace_keyword',
         'title',
         'description',
+        'rating',
+        'total_review',
+        'menu_title',
         'status',
     ];
 }

@@ -1,9 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', $cms->title)
 
-@section('page.description',
-    ' ')
+@section('page.description', $cms->description)
 
 @section('page.type', 'website')
 
@@ -21,7 +20,7 @@
                                 <ol class="breadcrumb mb-0">
                                     <li class="breadcrumb-item"><a href="{{ url(route('index')) }}">Home</a></li>
                                     <li class="breadcrumb-item"><a>»</a></li>
-                                    <li class="breadcrumb-item"><a><b>VMwere Training</b></a></li>
+                                    <li class="breadcrumb-item"><a><b>{{ $cms->menu_title }} Training</b></a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -29,24 +28,16 @@
 
 
                     <div class="top_content_section">
-                        <h1>VMware Training Certification Course</h1>
-                        <p class="rating"> 4.9 <i class="fa-solid fa-star"></i>
+                        <h1>{{ $cms->title }}</h1>
+                        <p class="rating"> {{ $cms->rating }} <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i> (1012) Rating
+                            <i class="fa-solid fa-star"></i> ({{ $cms->total_review }}) Rating
                         </p>
-                        <p class="desc pe-5"> VMware Online Training Classes will help you prepare for the VCP 7
-                            certification exam,
-                            with Attari Classes instructor-led sessions, you will be able to effectively architect and
-                            deploy server on
-                            vSphere 7. You will learn ESXi, vCenter, vMotion, SVMotion HA, DRS, FT and much more. You will
-                            work with
-                            various components of VMware and create highly available and fault-tolerant design. Learn from
-                            top-rated
-                            mentors to become a VMware administrator. Enroll for this VMware VCP Virtualization course today
-                            and get a
-                            head start in your career. </p>
+                        <div class="desc pe-5"> 
+                            @php echo html_entity_decode($cms->description) @endphp
+                        </div>
                     </div>
 
                     <button type="button" class="btn coursepg_enquiryform" data-bs-toggle="modal"
@@ -185,24 +176,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 width70">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck"> VMware Certification Course Overview
+                        <h4 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->name }} Overview
                         </h4>
-                        <ul class="li_font">
-                            <li> Take your VMware Skills to the next level with VMware learning from the Industry Experts.
-                            </li>
-                            <li> This VMware Virtualization certification training will help you to be VMware certified
-                                professional
-                                (VCP) </li>
-                            <li> You will learn skills such as how to Install ESXi, Manage Data Center using vCenter,
-                                Perform Live
-                                migration of Servers and Storage, configure High availabiliy and Auto Load balancing of
-                                server, Configure
-                                Virtual Networking and Storage and much more by performing hands-on practical’s with the
-                                trainer, </li>
-                            <li> You will also learn the best practices to be followed while working on VMware projects in
-                                the industry.
-                            </li>
-                        </ul>
+                        <div>
+                            @php echo html_entity_decode($detail->course_overview) @endphp
+                        </div>
 
 
                         <div class="accordion main_accrdion_cls" id="accordionExample">
