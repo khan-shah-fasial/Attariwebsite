@@ -100,7 +100,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">VMware Virtualization Training Key
+                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">{{ $cms->menu_title }} Training Key
                             Features
                         </h4>
                     </div>
@@ -182,64 +182,38 @@
                             @php echo html_entity_decode($detail->course_overview) @endphp
                         </div>
 
-
+                        @if(!empty($detail->faq))
                         <div class="accordion main_accrdion_cls" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Advantages of VMware Learning
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p>VMware Virtualization is one of the fastest-growing areas of IT and<strong>
-                                                vSphere 7</strong> is a
-                                            proven and reliable Data Center Virtualization(VCP-DCV) platform, which is used
-                                            by hundreds of
-                                            thousands of customers. Learning skills that are in demand is a win/win
-                                            scenario. VMware learning
-                                            skills will leverage your existing experience with networking and/or servers,
-                                            and build on that as
-                                            you implement and manage virtualized environments.</p>
+
+                            @php
+                                $course_faq = json_decode($detail->faq);
+                                $i = 1;
+                            @endphp
+
+                            @foreach($course_faq as $faq1)
+                                @foreach ($faq1 as $title => $description)
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="heading{{ $i }}">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapse{{ $i }}" aria-expanded="@if($i == 1) true @else false @endif" aria-controls="collapse{{ $i }}">
+                                                {{ $title }}
+                                            </button>
+                                        </h2>
+                                        <div id="collapse{{ $i }}" class="accordion-collapse collapse @if($i == 1) show @endif"
+                                            aria-labelledby="heading{{ $i }}" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                @php
+                                                    echo html_entity_decode($description)
+                                                @endphp
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Who Should go for VMware Virtualization Training
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p>System Administrators having understanding/exposure of Microsoft Windows Server
-                                            or Linux Server
-                                            operating systems</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        How will VMware vSphere Course help you in career
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <p>VCP-DCV 7 is a reliable and robust virtualization platform, having skill on
-                                            vSphere can help you in
-                                            getting good opportunities in today’s market</p>
-                                    </div>
-                                </div>
-                            </div>
+                                @endforeach
+                                @php $i++ @endphp
+                            @endforeach
+
                         </div>
+                        @endif
 
 
                     </div>
@@ -274,354 +248,38 @@
                         </div>
 
                         <div style="clear:both"></div>
-
+                        @if(!empty($syllabus))
                         <div class="accordion main_accrdion_cls" id="Syllabus">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                        Module 1:- Basic of vSphere & Virtulization
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingFour" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>
-                                                Introduction to VMware vSphere 7 Data Center (VCP-DCV) Server
-                                                Virtualization
-                                            </li>
-                                            <li>Storage Virtualization</li>
-                                            <li>Network Virtualization</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">
-                                        Module 2:- Installing ESXi & Deploying vCenter Server
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                    data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>What is vSphere, ESXi & vCenter.</li>
-                                            <li>vSphere Hypervisor(Free Version).</li>
-                                            <li>Support & Upgrade of ESXi Free Version.</li>
-                                            <li>Downloading, Installing & Configuring ESXi7.</li>
-                                            <li>
-                                                How to Download ESXi & vCenter 60 days Trial from VMware Website
-                                                ESXi free version Support & Upgrade.
-                                            </li>
-                                            <li>Installing ESXi & DNS | Deploying VCSA-Stage1.</li>
-                                            <li>Configuring VCSA-Stage2.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        Module 3:- Configuring vCenter
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                    data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>How to configure vCenter.</li>
-                                            <li>Create Cluster & Folders.</li>
-                                            <li>ESXi Maintenance Mode.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSeven">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="false"
-                                        aria-controls="collapseSeven">
-                                        Module 4:- Licensing/Pricing of vSphere & vCenter
-                                    </button>
-                                </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse"
-                                    aria-labelledby="headingSeven" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>vSphere & vCenter Licensing</li>
-                                            <li>Assigning License to ESXi & vCenter</li>
-                                            <li>vSphere & vCenter Pricing</li>
-                                            <li>vSphere kits Licensing & Pricing</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEight">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEight" aria-expanded="false"
-                                        aria-controls="collapseEight">
-                                        Module 5:- VM Creation & Modification
-                                    </button>
-                                </h2>
-                                <div id="collapseEight" class="accordion-collapse collapse"
-                                    aria-labelledby="headingEight" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Create VM with Hot Add enabled</li>
-                                            <li>Methods of mounting ISO image to boot the VM</li>
-                                            <li>VM tools Installation</li>
-                                            <li>Hot Add of RAM, CPU & HDD</li>
-                                            <li>Hot Extend of HDD</li>
-                                            <li>Register/Unregister VM</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingNine">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseNine" aria-expanded="false"
-                                        aria-controls="collapseNine">
-                                        Module 6:- Basics of Cloud Computing
-                                    </button>
-                                </h2>
-                                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
-                                    data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Cloud Computing- IaaS, SaaS, PaaS</li>
-                                            <li>How Server is Created in AWS Cloud</li>
-                                            <li>Cloud is backbone of Virtualization</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                        Module 7:- Templates, Cloning, Snapshot & Content Library
-                                    </button>
-                                </h2>
-                                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
-                                    data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Exporting & Deploying OVF Template</li>
-                                            <li>Converting VM to Template</li>
-                                            <li>Creating Content Library</li>
-                                            <li>Adding ISO images and Templates in Content Library</li>
-                                            <li>VM files extension</li>
-                                            <li>Cloning Options</li>
-                                            <li>Guest OS Customization</li>
-                                            <li>Suspended State of VM</li>
-                                            <li>Difference between Backup & Snapshot</li>
-                                            <li>Creating, Managing & Deleting Snapshot</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEleven">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEleven" aria-expanded="false"
-                                        aria-controls="collapseEleven">
-                                        Module 8:- vSphere Security & Host Profile
-                                    </button>
-                                </h2>
-                                <div id="collapseEleven" class="accordion-collapse collapse"
-                                    aria-labelledby="headingEleven" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Basics of vSphere Security</li>
-                                            <li>Adding AD Domain to SSO</li>
-                                            <li>Assigning permission to SSO user and AD user</li>
-                                            <li>Creating Roles</li>
-                                            <li>Creating and Applying Host Profiles</li>
-                                            <li>Reset ESXi root password using Host profile</li>
-                                            <li>Exporting & Importing Host Profile</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwelve">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwelve" aria-expanded="false"
-                                        aria-controls="collapseTwelve">
-                                        Module 9:- vSphere Networking
-                                    </button>
-                                </h2>
-                                <div id="collapseTwelve" class="accordion-collapse collapse"
-                                    aria-labelledby="headingTwelve" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>vSphere Virtual Networking Terminologies</li>
-                                            <li>Discussion on Standard Switch</li>
-                                            <li>Virtual Machine Port Group &amp; VMkernel Network Adapter</li>
-                                            <li>
-                                                Creating Virtual Machine Port Group, VMkernel Network Adapter
-                                                &amp; Standard Switch
-                                            </li>
-                                            <li>Adding/Removing vmnic on vSwitch</li>
-                                            <li>NIC Teaming &amp; Active/Passive Failover testing</li>
-                                            <li>vSphere Advance Networking Scenarios</li>
-                                            <li>VLAN Tagging</li>
-                                            <li>Trunk Ports</li>
-                                            <li>Seperating vMotion and FT Traffic</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThirteen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThirteen" aria-expanded="false"
-                                        aria-controls="collapseThirteen">
-                                        Module 10:- vSphere Storage
-                                    </button>
-                                </h2>
-                                <div id="collapseThirteen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThirteen" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Datastore Concepts</li>
-                                            <li>Shared Storage</li>
-                                            <li>SAN vs NAS</li>
-                                            <li>VMFS and NFS</li>
-                                            <li>FC &amp; iSCSI SAN</li>
-                                            <li>Thin Disk, Thick Lazy Disk &amp; Thick Eager Disk</li>
-                                            <li>Basics of HCI-Hyper Converged Infrastructure</li>
-                                            <li>Formatting Local Storage as VMFS</li>
-                                            <li>Adding iSCSI SAN to ESXi host and Formatting as VMFS</li>
-                                            <li>Mounting NFS storage on ESXi host</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFourteen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFourteen" aria-expanded="false"
-                                        aria-controls="collapseFourteen">
-                                        Module 11:- vMotion & SVMotion
-                                    </button>
-                                </h2>
-                                <div id="collapseFourteen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingFourteen" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Live Storage Migration using SVMotion</li>
-                                            <li>Live Server Migration using vMotion</li>
-                                            <li>
-                                                Live Server &amp; Storage Migration without Shared Storage
-                                                (vMotion+SVMotion)
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFifteen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFifteen" aria-expanded="false"
-                                        aria-controls="collapseFifteen">
-                                        Module 12:- DRS & SDRS
-                                    </button>
-                                </h2>
-                                <div id="collapseFifteen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingFifteen" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Load Balancing across ESXi hosts using DRS</li>
-                                            <li>Enhanced vMotion Compatibility (EVC)</li>
-                                            <li>Automation Levels in DRS</li>
-                                            <li>DRS Rules to keep VM Separate &amp; Together</li>
-                                            <li>DRS rule VM to Host</li>
-                                            <li>Power Saving using DPM</li>
-                                            <li>Load Balancing across Datastore using SVMotion</li>
-                                            <li>Automation levels in SDRS</li>
-                                            <li>SDRS VM Affinity &amp; vmdk Anti-Affinity rules</li>
-                                            <li>
-                                                Overriding SDRS cluster Setting for vmdk anti-affinity rule
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSixteen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSixteen" aria-expanded="false"
-                                        aria-controls="collapseSixteen">
-                                        Module 13:- High Availability & Fault Tolerance
-                                    </button>
-                                </h2>
-                                <div id="collapseSixteen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingSixteen" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Requirements &amp; Licensing for High Availability(HA)</li>
-                                            <li>Election of Master &amp; Slave Host</li>
-                                            <li>Configuring &amp; Testing HA</li>
-                                            <li>Primary &amp; Secondary VM in FT</li>
-                                            <li>Configuring &amp; Testing Fault Tolerance</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSeventeen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeventeen" aria-expanded="false"
-                                        aria-controls="collapseSeventeen">
-                                        Module 14:- vSphere Distributed Switch
-                                    </button>
-                                </h2>
-                                <div id="collapseSeventeen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingSeventeen" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Creating Distributed Switch</li>
-                                            <li>Adding ESXi Host to dvSwitch</li>
-                                            <li>Migrating all VMs &amp; VMkernel to dvSwitch</li>
-                                            <li>Migration from Standard to Distributed switch</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEighteen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEighteen" aria-expanded="false"
-                                        aria-controls="collapseEighteen">
-                                        Module 15:- P2V Conversion, Backup of vCenter & Update Manager
-                                    </button>
-                                </h2>
-                                <div id="collapseEighteen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingEighteen" data-bs-parent="#Syllabus">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>P2V/ V2V using VMware vCenter Converter Standalone</li>
-                                            <li>Taking Backup of vCenter and Restoring Stage 1</li>
-                                            <li>Taking Backup of vCenter and Restoring Stage 2</li>
-                                            <li>
-                                                Using VMware Lifecycle Manger to Upgrade and Patch ESXi host
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            @php $i = 1; @endphp
 
+                            @foreach ($syllabus as $row)
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading{{ $i }}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse{{ $i }}" aria-expanded="@if($i == 1) true @else false @endif" aria-controls="collapse{{ $i }}">
+                                            Module {{ $i }}:- {{ $row->title }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse{{ $i }}" class="accordion-collapse collapse @if($i == 1) show @endif"
+                                        aria-labelledby="heading{{ $i }}" data-bs-parent="#Syllabus">
+                                        <div class="accordion-body">
+                                            @php
+                                                echo html_entity_decode($row->description)
+                                            @endphp
+                                        </div>
+                                    </div>
+                                </div>
+                                @php $i++ @endphp
+                            @endforeach
+
+
+
+                        </div>
+                        @endif
 
                     </div>
+
+
                     <div class="col-md-3 width30 position_sticky">
                         <div class="bookdemofreeform_course gray_bgg1 margin-top55">
                             <h4 class="text-center">Book a <b>FREE</b> Demo</h4>
@@ -657,6 +315,8 @@
                             </form>
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
         </section>
@@ -664,917 +324,260 @@
 
 
         <!--Projects Covered section -->
-
+        @if(!empty($project_covered))
         <section id="project_cover" class="page-section prje_cove_section light_gray_bg pt-5 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <h4 class="section_heading pb-3 text-center"> VMware VCP-DCV 7 Projects Covered</h4>
                         <div class="owl-carousel owl-theme projects-covered">
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Testing Free Licensing on
-                                                        ESXi</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Login to ESXi using VMware Host Client</li>
-                                                    <li>Apply Free License to ESXi from VMware website</li>
-                                                    <li>Check the pros/cons of ESXi Free license</li>
-                                                    <li>Remove Free License key and convert back to evaluation mode</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Configuring vCenter</span>
+                            @foreach ($project_covered as $row)
+                                
+                                <div class="item">
+                                    <div class="projects_covered_box">
+                                        <div class="projects_covered__header">
+                                            <div class="row">
+                                                <div class="col-lg-9 col-10">
+                                                    <div class="projects_covered__image">
+                                                        <span class="projects_covered__name">{{ $row->title }}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-link"></i>
+                                                <div class="col-lg-3 col-2">
+                                                    <div class="projects_covered__icon">
+                                                        <img src="{{ asset('storage/' . $row->icon) }}" style="width: 27px;" />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create Datacenter</li>
-                                                    <li>Add ESXi Host in Datacenter</li>
-                                                    <li>Create Cluster and move ESXi Host inside Cluster</li>
-                                                    <li>Put Host in Maintenance mode</li>
-                                                    <li>Remove ESXi Host from Cluster</li>
-                                                    <li>Create Folder and Move Virtulal objects IN/Out of folder</li>
-                                                </ul>
+                                        <div class="projects_covered__content">
+                                            <div class="projects_covered__text">
+                                                <div class="proj-cov">
+                                                    @php
+                                                        echo html_entity_decode($row->description)
+                                                    @endphp
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Creating VM, Clones and
-                                                        Template</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-server"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create VM and Install OS</li>
-                                                    <li>Test Hot add of RAM &amp; CPU</li>
-                                                    <li>Test Hot Add of Hard disk &amp; Hot extend of Hard disk</li>
-                                                    <li>Create Clone of VM</li>
-                                                    <li>Create Template from VM</li>
-                                                    <li>Create VM from Template</li>
-                                                    <li>Register / Unregister VM</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Content Library</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-tv"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create Content Library</li>
-                                                    <li>Push Templates in Content Library</li>
-                                                    <li>Create VMs from Templates in Content Library</li>
-                                                    <li>Upload other files in Content Library</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Snapshot</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-scale-balanced"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Take Snapshot of VM</li>
-                                                    <li>Test different States of VM using Snapshot</li>
-                                                    <li>Scheduling Snapshots</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">vSphere Security</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Creating user in SSO</li>
-                                                    <li>Creating user in Microsoft Active Directory</li>
-                                                    <li>Integrating Microsoft AD with vCenter</li>
-                                                    <li>Testing Microsoft AD &amp; SSO user permission on vCenter</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Host Profile</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-sharp fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Configure ESXi Host</li>
-                                                    <li>Create Host Profile from ESXi host</li>
-                                                    <li>Attach Host profile &amp; Check Complaince</li>
-                                                    <li>Apply Host profile to non-compliance Host</li>
-                                                    <li>Reset Password of ESXi Host using Host Profile</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">vSphere Networking</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create VM Port Group</li>
-                                                    <li>Create VM Kernal Network Adapter</li>
-                                                    <li>Create new vSwitch</li>
-                                                    <li>Move VM from one switch to another</li>
-                                                    <li>NIC Teaming &amp; testing Failover</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Storage-SAN/NAS</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Check Configured LUNs &amp; Shares in Storage</li>
-                                                    <li>Format LUNs as VMFS and use on ESXi host</li>
-                                                    <li>Mount NAS as NFS on multiple ESXi Host</li>
-                                                    <li>Check Storage Connectivity on all ESXi Host</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">vMotion &amp; SVMotion</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Configure vMotion</li>
-                                                    <li>Perform Live Migration using vMotion</li>
-                                                    <li>Configiure SVMotion</li>
-                                                    <li>Perform Live Migration using SVMotion</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">HA &amp; DRS</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create Cluster and Configure HA</li>
-                                                    <li>Test HA by making ESXi host down</li>
-                                                    <li>Check VM Started on another ESXi host are available</li>
-                                                    <li>Enable DRS on Cluster</li>
-                                                    <li>Check Load Balancing of VM using DRS</li>
-                                                    <li>Configure DRS rules and test</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">SDRS</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create Datastore cluster</li>
-                                                    <li>Enable SDRS on Datastore Cluster</li>
-                                                    <li>Check Load Balancing of VM acreoss datastore</li>
-                                                    <li>Configure and test DRS VM Affinity rule</li>
-                                                    <li>Configure and test DRS vmdk Anti-Affinty rule</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Fault Tolerance</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create a HA enabled cluster</li>
-                                                    <li>Enable Fault Tolerance on VM</li>
-                                                    <li>After Secondary is created test Failover</li>
-                                                    <li>Make Primary VM down and check Actulal Failover</li>
-                                                    <li>Disable FT to delete secondary VM</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="projects_covered_box">
-                                    <div class="projects_covered__header">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-10">
-                                                <div class="projects_covered__image">
-                                                    <span class="projects_covered__name">Distributed Switch</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-2">
-                                                <div class="projects_covered__icon">
-                                                    <i class="fa-solid fa-gears"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projects_covered__content">
-                                        <div class="projects_covered__text">
-                                            <div class="proj-cov">
-                                                <ul>
-                                                    <li>Create a Distributed Switch</li>
-                                                    <li>Create DV Port Group</li>
-                                                    <li>Migarte VM kernal Network adapter to vDS</li>
-                                                    <li>Migrate VM to VDS</li>
-                                                    <li>Traffic diversion to dedicated NIC cards </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
 
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        @endif
 
-        <section id="certificate_section" class="page-section certificate_section pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center"> Our VMware Certified Professional Students</h4>
-                        <div class="owl-carousel owl-theme professional_students">
-                            <div class="item">
-                                <div class="cirtificate_img">
-                                    <img data-src="/assets/frontend/images/vmware_course_img1-1024x806.webp" class="lazyload"
-                                        alt="">
-                                </div>
+        @if(!empty($certificate))
+            <section id="certificate_section" class="page-section certificate_section pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="section_heading pb-3 text-center"> Our VMware Certified Professional Students</h4>
+                            <div class="owl-carousel owl-theme professional_students">
+
+                                @foreach ($certificate as $row)
+                                    
+                                    <div class="item">
+                                        <div class="cirtificate_img">
+                                            <img data-src="{{ asset('storage/' . $row->image) }}" class="lazyload"
+                                                alt="{{ $row->alt_image }}">
+                                        </div>
+                                    </div>
+
+                                @endforeach 
+
                             </div>
 
-                            <div class="item">
-                                <div class="cirtificate_img">
-                                    <img data-src="/assets/frontend/images/vmware_course_img2-1024x806.webp" class="lazyload"
-                                        alt="">
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="cirtificate_img">
-                                    <img data-src="/assets/frontend/images/vmware_course_img4-1024x806 (1).webp" class="lazyload"
-                                        alt="">
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="cirtificate_img">
-                                    <img data-src="/assets/frontend/images/vmware_course_img3-1024x806.webp" class="lazyload"
-                                        alt="">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
 
-
+       
         <section id="testimonials" class="page-section testiminilas_sec gradiant_bg pt-5 pb-5 dot_clr_white">
             <div class="container">
                 <h3 class="heading_title text-center pddtop_0 pb-3 textcolor_wht">
                     VMware VCP Training Testimonials
                 </h3>
-                <div class="large-12 columns">
-                    <div class="owl-carousel owl-theme video_testiminials">
-                        <div class="item">
-                            <div class="testimonial_video">
-                                <a href="https://www.youtube.com/embed/T9PrVAio31k" data-fancybox="gallery">
-                                    <div class="pulse-button"></div>
-                                    <img data-src="/assets/frontend/images/amar_pandey_review.jpg"
-                                        class="img-fluid d-block w-100 lazyload" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_video">
-                                <a href="https://www.youtube.com/embed/Gx9iRvGxYsg" data-fancybox="gallery">
-                                    <div class="pulse-button"></div>
-                                    <img data-src="/assets/frontend/images/amar_pandey_review_2.jpg"
-                                        class="img-fluid d-block w-100 lazyload" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_video">
-                                <a href="https://www.youtube.com/embed/9y-Oiet2HBE" data-fancybox="gallery">
-                                    <div class="pulse-button"></div>
-                                    <img data-src="/assets/frontend/images/Sohail-MCSE.jpg" class="img-fluid d-block w-100 lazyload"
-                                        alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_video">
-                                <a href="https://www.youtube.com/embed/EqTLrlzQwkI" data-fancybox="gallery">
-                                    <div class="pulse-button"></div>
 
-                                    <img data-src="/assets/frontend/images/Vinayak-CCNA.jpg" class="img-fluid d-block w-100 lazyload"
-                                        alt="">
-                                </a>
-                            </div>
+                @if(!empty($video_review))
+                    <div class="large-12 columns">
+                        <div class="owl-carousel owl-theme video_testiminials">
+
+                            @foreach ($video_review as $row)
+                                <div class="item">
+                                    <div class="testimonial_video">
+
+                                        @php
+                                            // Use parse_url to get the path from the URL
+                                            $path = parse_url($row->url, PHP_URL_PATH);
+
+                                            // Use explode to split the path and get the last part
+                                            $parts = explode('/', trim($path, '/'));
+                                            $videoId = end($parts);
+
+                                        @endphp 
+
+                                        <a href="{{ $row->url }}" data-fancybox="gallery">
+                                            <div class="pulse-button"></div>
+                                            <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                                class="img-fluid d-block w-100 lazyload" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+
                         </div>
                     </div>
-                </div>
-                <div class="large-12 columns mt-4 slider_content_dots">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/Suryakant.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Suryakant Mishra</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        I've taken VMware online training here, I was bit afraid
-                                        about it at the beginning but the trainer Mr. Maqsood has
-                                        made it really smooth and easy. The training is all about
-                                        hands on practice, 100% practical approach. Thanks to Attari
-                                        classes and Maqsood sir.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/unnamed-2.jpg"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Pravinkumar Devanpalli</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        I have joine Attari classes for the second time. First time
-                                        it was classroom based training for VMware and now online
-                                        course for AWS. I would say the quality of this classes is
-                                        one of the best in terms of sharing the practical approach
-                                        and explaining the theory. This concept is very less. If a
-                                        person wants to learn VMware and AWS along with Practicals,
-                                        then I would recommend him or her to join Attari Classes and
-                                        bring a turning point in his career. Each and every concept
-                                        will be thought at Attari Classes. Thank You Maqsood Sir.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/powar.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Gajanan Powar</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        Attari Class is Best institute to learn VMware. "The
-                                        training was excellent and deep knowledge was received in a
-                                        friendly environment. Maqsood sir have excellent teaching
-                                        skills .Got to know so many hidden concept from VMware
-                                        perspective. Practical lab & Training center Over all very
-                                        satisfied with the training & highly appreciated with the
-                                        trainer knowledge. I will definitely join the another new
-                                        course cloud
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/shallesh.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Shailesh kadam</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        It was a good experience for learning VMware online at
-                                        Attari Classes. Maqsood Sir are knowledgeable and are
-                                        capable of clearing all doubts. They will teach you from
-                                        very basic to advanced levels. Highly recommended.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/bhasker_koli.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Bhaskar Koli</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        It was a good experience for learning VMware online at
-                                        Attari Classes. Maqsood Sir are knowledgeable and are
-                                        capable of clearing all doubts. They will teach you from
-                                        very basic to advanced levels.
+                @endif
+                
+                @if(!empty($text_review))
+                    <div class="large-12 columns mt-4 slider_content_dots">
+                        <div class="owl-carousel owl-theme">
 
-                                        <br />
-                                        <br />
+                            @foreach ($text_review as $row)
+    
+                                <div class="item">
+                                    <div class="testimonial_box">
+                                        <div class="testimonial__header">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-10">
+                                                    <div class="testimonial__image">
+                                                        <img data-src="{{ asset('storage/' . $row->thumbnail) }}"
+                                                            class="img-fluid d-block w-100 lazyload" alt="">
+                                                        <span class="testimonial__name">{{ $row->name }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-2">
+                                                    <div class="testimonial__icon">
+                                                        <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="testimonial__content">
+                                            <div class="testimonial__text">
+                                                @php
+                                                    echo html_entity_decode($row->description)
+                                                @endphp
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        online training for AWS is worth it and i can follow the
-                                        lecture and practicals without any lag.Also i would
-                                        appreciate the efforts to implement the new learning portal
-                                        (LMS) to review the classes for my reference.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/mahesh_pandey.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Mahesh Pandey</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        Today I am very happy becoz I have completed my VMware
-                                        course in attari classes,I would say thanks to Maqsood sir
-                                        becoz his teaching style will help you to clear your doubts
-                                        as well as it was my first experience on online platform,
-                                        but Maqsood sir taking care very well with theorical and
-                                        practical lectures.i will recommend to my friends and
-                                        colleagues to joint attari classes.
-                                        <br />
-                                        <br />
+                            @endforeach
 
-                                        Thanks Attari classes
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="/assets/frontend/images/gaurav_imagfes.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Gaurav Neware</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        The experience with the Attari classes is very Awesome as
-                                        well as Trainer for VMware VCP7 (Maqsood Sheikha Sir) is
-                                        very knowledgeable, he has clear all doubt and with Online
-                                        Practical's, to learn Vmware I recommend to join Attari
-                                        Classes India's Best Institute for Vmware.
-                                        <br />
-                                        <br />
-
-                                        Thanks Attari Classes.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-10">
-                                            <div class="testimonial__image">
-
-                                                <img data-src="/assets/frontend/images/mahesh.png"
-                                                    class="img-fluid d-block w-100 lazyload" alt="">
-                                                <span class="testimonial__name">Yogesh Meherwade</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        I have taking online training on Vmware 7, With HOL it's
-                                        very easy to sync with trainer and do practical on your own.
-                                        Maqsood sir is pro he share best knowledge which is very
-                                        useful in production environment as well.
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
+
             </div>
         </section>
 
+        @if(!empty($batch))
+            <section id="batch_shedule" class="page-section prje_cove_section light_gray_bg pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="section_heading pb-3 text-center"> VMware Training Batch Schedule</h4>
+                        </div>
 
-        <section id="batch_shedule" class="page-section prje_cove_section light_gray_bg pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center"> VMware Training Batch Schedule</h4>
-                    </div>
-                    <div class="batch_shedule_box">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <h5 class="batch_subhed">Self Paced Training</h5>
-                                <ul>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> 40+ Hours e-learning</li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> <b>Live Recorded
-                                            Lectures</b></li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> Get free Updates</li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> Upgrade to Online/Classroom
-                                        Training</li>
-                                </ul>
-                            </div>
+                        <div class="batch_shedule_box">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h5 class="batch_subhed">{{ $batch->paced_title }}</h5>
+                                    @php $paced_pointer = json_decode($batch->paced_pointer_list) @endphp
+                                    <ul>
+                                        @foreach ($paced_pointer as $row)
+                                            <li><i aria-hidden="true" class="far fa-check-circle"></i> @php echo html_entity_decode($row) @endphp</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
 
-                            <div class="col-md-3">
-                                <div class="button_main">
-                                    <a href="https://lms.attariclasses.in/" target="_blank">Visit Video Portal</a>
+                                <div class="col-md-3">
+                                    <div class="button_main">
+                                        <a href="https://lms.attariclasses.in/" target="_blank">Visit Video Portal</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="batch_shedule_box">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <h5 class="batch_subhed">Online / Classroom <spam>Preferred</spam>
-                                </h5>
-                                <ul>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> Everything in self-paced,
-                                        plus</li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> <b>Free DEMO lecture</b>
-                                    </li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> 40+ Hours of live
-                                        Insturctor led training
-                                    </li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> Perform live practicals
-                                        with the the Trainer
-                                    </li>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> Get Trainer Support on
-                                        WhatsApp</li>
-                                </ul>
+                        <div class="batch_shedule_box">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h5 class="batch_subhed">{{ $batch->oc_title }}  <spam>Preferred</spam>
+                                    </h5>
+                                    @php $oc_pointer = json_decode($batch->paced_pointer_list) @endphp
+                                    <ul>
+                                        @foreach ($oc_pointer as $row)
+                                            <li><i aria-hidden="true" class="far fa-check-circle"></i> @php echo html_entity_decode($row) @endphp</li>
+                                        @endforeach
+                                    </ul>
+                                    @php 
+                                        $batch_detail = json_decode($batch->batch_detail, true);
+                                    @endphp
 
-                                <table class="batch_table table">
-                                    <tbody>
-                                        <tr>
-                                            <td width="20">DATE</td>
-                                            <td width="40">SCHEDULE </td>
-                                            <td width="40">TIME </td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>30th JULY</b></td>
-                                            <td><b>SAT &amp; SUN (6 WEEKS) </b><span class="text_red">Upcoming Weekend
-                                                    Batch</span></td>
-                                            <td><b>8:00 AM to 12:00 PM (IST)</b></td>
-                                        </tr>
-                                        <tr>
-                                            <td>24th JUNE</td>
-                                            <td>SAT &amp; SUN (6 WEEKS) <span class="text_blue">Batch Started</span></td>
-                                            <td>1:00 PM to 5:00 PM (IST)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    @if(!empty($batch_detail))
+                                        <table class="batch_table table">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="20">DATE</td>
+                                                    <td width="40">SCHEDULE </td>
+                                                    <td width="40">TIME </td>
+                                                </tr>
+                                                @foreach ($batch_detail as $row)
+                                                    <tr>
+                                                        <td>@php echo html_entity_decode($row['date']) @endphp</td>
+                                                        <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">{{ $row['remark'] }}</span></td>
+                                                        <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    @endif
+                                </div>
 
-                            <div class="col-md-3">
-                                <div class="button_main getin_touch_bx">
-                                    <h5>Get In Touch to Avail <span>20% OFF</span></h5>
-                                    <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg">Book a Demo</a>
+                                <div class="col-md-3">
+                                    <div class="button_main getin_touch_bx">
+                                        <h5>Get In Touch to Avail <span>20% OFF</span></h5>
+                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg">Book a Demo</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="batch_shedule_box">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <h5 class="batch_subhed">VMware Corporate Training</h5>
-                                <ul>
-                                    <li><i aria-hidden="true" class="far fa-check-circle"></i> Self paced & Online/
-                                        Classroom training
-                                        option are available</li>
-                                </ul>
-                            </div>
+                        <div class="batch_shedule_box">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h5 class="batch_subhed">{{ $batch->corp_title }}</h5>
+                                    @php $corp_pointer = json_decode($batch->corp_pointer_list) @endphp
+                                    <ul>
+                                        @foreach ($corp_pointer as $row)
+                                            <li>
+                                                <i aria-hidden="true" class="far fa-check-circle"></i> @php echo html_entity_decode($row) @endphp
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
 
-                            <div class="col-md-3">
-                                <div class="button_main">
-                                    <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg">Enquire Now</a>
+                                <div class="col-md-3">
+                                    <div class="button_main">
+                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg">Enquire Now</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-    </div>
-    </section>
+            </section>
+        @endif
 
 
     <!--Faq section-->
@@ -1587,304 +590,26 @@
                     <h4 class="section_heading pb-3 text-center textcolor_blck"> FAQs on VMware VCP Training &
                         Certification </h4>
 
+                    @if(!empty($faq))
                     <div class="accordion--container accordion_style">
-                        <li class="accordion">
-                            <span>Is it possible to switch from Self-paced training to live
-                                instructor-led training?<i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Yes you can switch from self-paced training to live instructor-led
-                                        training by simply paying the difference in fees
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>Who should go for Self paced training ?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        A system administrators, system operators, system engineers, and
-                                        who are interested in Data center virtualization(VCP-DCV) can take
-                                        this course. If our batch timing are not suitable or you want to
-                                        learn fast at your own pace, you can learn using Learning
-                                        Managment Sytem (LMS), in LMS you will get get access to live
-                                        Recorded lecture and Trainers notes.
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>What if I have queries after VMware course is completed ?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        If you go for Instructor led training , trainer provide support on
-                                        Whatsapp, You will have direct access to Trainer Whatsapp number ,
-                                        For any queries you can ping trainer on Whatsapp
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
+                        
+                        @foreach ($faq as $row)
+                            <li class="accordion">
+                                <span>{{ $row->question }}<i class="fa fa-angle-up"></i>
+                                </span>
+                                <ul>
+                                    <div class="txt">
+                                        @php
+                                            echo html_entity_decode($row->answer)
+                                        @endphp
+                                    </div>
+                                </ul>
+                            </li>
+                        @endforeach
 
-                        <li class="accordion">
-                            <span>How to book a Demo Session?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>How to book a Demo Session?</p>
-                                </div>
-                            </ul>
-                        </li>
 
-                        <li class="accordion">
-                            <span>Will I get a VMware vSphere 7 course completion certificate?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Yes, upon completion of the course, you will get a course
-                                        certificate from Attari Classes
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-
-                        <li class="accordion">
-                            <span>How will I perform practical in this VMware Learning?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        It will be an Interactive session, you would be performing live
-                                        practiclals along with the Trainer We will guide you how to create
-                                        FREE tier account in VMware
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-
-                        <li class="accordion">
-                            <span>What if i missed a Instructor led live Lecture?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        No worries, along with the course you get free Access to Learning
-                                        Managment Sytem (LMS), where you get topic wise live recorded
-                                        lecture and trainers notes
-                                        <br />
-                                        You can learn using LMS and be ready before the next lecture, for
-                                        any queries you can ping trainer on WhatsApp
-                                        <br />
-                                        Also you can attend the missed session of Vmware course, in any
-                                        other live batch
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>Is the access to LMS even after the course is over?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>Yes</p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>I need Career Guidance ?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Call our Support desk on +91 9987088551 & our Techical Counsellor
-                                        will guide you on your career path
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>Do I get support for VMware VCP Online Exam ?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Yes we would provide you guidance and support for registering and
-                                        passing the Data Center Virtualization (VCP-DCV) Exam
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>What will be the duration of VMware Training Course ?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>The Duration of this course is approx 40 hrs</p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>How difficult is to pass Data Center Virtualization (VCP-DCV) exam ?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        VMware training at Attari Classes prepares you to pass VMware
-                                        vSphere 7 practical exam, we provide you with practice test so
-                                        that you get idea on exam question pattern and easily pass the
-                                        VMware Exam
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>Do you have any review from previous students?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>You can just search Attari Classes in Google to check reviews</p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>Do you provide placement assistance?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Attari Classes is one of the best learning platforms, we make you
-                                        Job ready. Since there is a big demand for IT professionals, as
-                                        opening arises lots of recruitment firms and our ex-students
-                                        contact us, we help our students who are looking for job to
-                                        connect to prospective employers. We also help our students
-                                        prepare their resumes and provide assistance for interview
-                                        preparation, if you go through the course diligently you will be
-                                        in a very good position to crack the interviews yourself and find
-                                        a well-paid job, matching your profile
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>How much does VMware certification cost and what are payment options?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        For VMware certification cost you can contact us or fill our
-                                        enquiry form. You can make payment using Debit Card / Credit Card
-                                        /Netbanking/ UPI.
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>What kind of Projects are included in this Course?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        You will be working on exciting projects that will test your
-                                        skills, learning capabilities, and practical knowledge, making you
-                                        completely industry-ready as you know there is a huge demand for
-                                        Certified VMware Professionals in IT market.
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>Can a beginners can go for VMware vSphere certification?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        At Attari classes we provide training to those who are interested
-                                        in learning virtualization course so no doubt we offer VMware
-                                        certification to beginners.
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>When are the VMware training batches scheduled?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        <span>You can check
-                                            <a
-                                                href="https://attariclasses.in/vmware-training-certification-online/#fees">here</a>
-                                            for VMware batch timings.</span>
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>What is the best place to find more resources for learning VMware on
-                                Attari Classes?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Here are some free resources where you can learn more about VMware
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <span>What is the nearest VMware vSphere training offered by Attari
-                                Classes?
-                                <i class="fa fa-angle-up"></i>
-                            </span>
-                            <ul>
-                                <div class="txt">
-                                    <p>
-                                        Attari Classes offers VMware training in a number of countries and
-                                        cities around the world like
-                                        <strong><a
-                                                href="https://attariclasses.in/vmware-training-certification-mumbai/">Mumbai</a>,
-                                            <a
-                                                href="https://attariclasses.in/vmware-training-certification-nagpur/">Nagpur</a>,
-                                            <a
-                                                href="https://attariclasses.in/vmware-training-certification-jaipur/">Jaipur</a>,
-                                            <a
-                                                href="https://attariclasses.in/vmware-training-certification-kolkata/">Kolkata</a>,
-                                            <a href="https://attariclasses.in/vmware-training-certification-saudi-arabia/">Saudi
-                                                Arabia</a>,
-                                            <a
-                                                href="https://attariclasses.in/vmware-training-certification-oman/">Oman</a>,
-                                            <a
-                                                href="https://attariclasses.in/vmware-training-certification-england/">England</a></strong>
-                                        and other top countries.
-                                    </p>
-                                </div>
-                            </ul>
-                        </li>
                     </div>
+                    @endif
 
 
                     <div class="gradiant_bg bookdemofreeform_course mt-4">
@@ -1962,6 +687,7 @@
                 <div class="col-12">
                     <h4 class="section_heading pb-3 text-center"> Other Courses We Offer</h4>
                     <div class="owl-carousel owl-theme other_courses_slider">
+
                         <div class="item">
                             <div class="other_crs_box">
                                 <a href=""> <img data-src="/assets/frontend/images/aws.jpg" class="lazyload" alt=""></a>
@@ -1988,6 +714,8 @@
                                         alt="" /></a>
                             </div>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>

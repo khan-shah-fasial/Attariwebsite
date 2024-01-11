@@ -424,7 +424,6 @@ class IndexController extends Controller
         $project_covered = ProjectCovered::where('course_id', $cms->course_id)->where('status', 1)->get();
         $certificate = Certificate::where('course_id', $cms->course_id)->where('status', 1)->get();
 
-        
         return view('frontend.pages.courses.index', compact('cms','detail','batch','text_review','image_review','video_review','faq','syllabus','project_covered','certificate'));
     }
 
