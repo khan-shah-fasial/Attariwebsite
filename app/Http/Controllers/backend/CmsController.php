@@ -27,6 +27,7 @@ class CmsController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'menu_title' => 'required',
+            'breadcrumb_title' => 'required',
             'slug' => 'required|unique:cms',
             'description' => 'required',
             'replace_keyword' => 'required',
@@ -49,6 +50,7 @@ class CmsController extends Controller
             'course_id' => $request->input('course_id'),
             'title' => $request->input('title'),
             'menu_title' => $request->input('menu_title'),
+            'breadcrumb_title' => $request->input('breadcrumb_title'),
             'slug' => $slug,
             'description' => $request->input('description'),
             'replace_keyword' => $request->input('replace_keyword'),
@@ -97,6 +99,7 @@ class CmsController extends Controller
         $validator = Validator::make($request->all(), [
             'slug' => 'required|unique:practice_areas,slug,'. $request->input('id'),
             'title' => 'required',
+            'breadcrumb_title' => 'required',
             'description' => 'required',
             'menu_title' => 'required',
             'rating' => 'required',
@@ -122,6 +125,7 @@ class CmsController extends Controller
         $cms->course_id = $request->input('course_id');
         $cms->title = $request->input('title');
         $cms->menu_title = $request->input('menu_title');
+        $cms->breadcrumb_title = $request->input('breadcrumb_title');
         $cms->slug = $slug;
         $cms->description = $request->input('description');
         $cms->replace_keyword = $request->input('replace_keyword');

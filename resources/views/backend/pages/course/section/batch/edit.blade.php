@@ -285,11 +285,17 @@
 
         $(document).ready(function() {
             initValidate('#edit_batch_form');
+            initValidate('updating_heading_form');
             initSelect2('.select2');
             initTrumbowyg('.trumbowyg');
         });
 
         $("#edit_batch_form").submit(function(e) {
+            var form = $(this);
+            ajaxSubmit(e, form, responseHandler);
+        });
+
+        $("#updating_heading_form").submit(function(e) {
             var form = $(this);
             ajaxSubmit(e, form, responseHandler);
         });

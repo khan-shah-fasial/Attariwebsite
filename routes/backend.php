@@ -267,6 +267,7 @@ Route::group(['prefix' => 'course'], function () {
     Route::get('/view/{id}', [CourseController::class, 'view'])->name('course.view');
     Route::post('/create', [CourseController::class, 'create'])->name('course.create');
     Route::post('/update', [CourseController::class, 'update'])->name('course.update');
+    Route::post('/update/heading', [CourseController::class, 'update_heading'])->name('course.update_heading');
     Route::post('/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
     Route::get('/status/{id}/{status}', [CourseController::class, 'status'])->name('course.status');
 });

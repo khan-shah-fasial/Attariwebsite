@@ -18,6 +18,8 @@ return new class extends Migration
             $table->longText('url')->nullable();
             $table->string('thumbnail');
             $table->string('course_overview');
+            $table->longText('faq')->nullable();
+            $table->string('overview_section_heading')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

@@ -20,7 +20,7 @@
                                 <ol class="breadcrumb mb-0">
                                     <li class="breadcrumb-item"><a href="{{ url(route('index')) }}">Home</a></li>
                                     <li class="breadcrumb-item"><a>»</a></li>
-                                    <li class="breadcrumb-item"><a><b>{{ $cms->menu_title }} Training</b></a></li>
+                                    <li class="breadcrumb-item"><a><b>{{ $cms->breadcrumb_title }}</b></a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -100,7 +100,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">{{ $cms->menu_title }} Training Key
+                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">{{ $cms->breadcrumb_title }} Key
                             Features
                         </h4>
                     </div>
@@ -176,7 +176,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 width70">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->name }} Overview
+                        <h4 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->overview_section_heading }}
                         </h4>
                         <div>
                             @php echo html_entity_decode($detail->course_overview) @endphp
@@ -242,8 +242,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 width70">
-                        <h4 class="section_heading pb-3 textcolor_wht float_left"> VMware VCP 7 Classes Syllabus </h4>
-                        <div class="download_carricullam float_right"><a class="" href=""><img
+                        <h4 class="section_heading pb-3 textcolor_wht float_left"> {{ $detail->syllabus_section_heading }} </h4>
+                        <div class="download_carricullam float_right"><a class="" href="{{ asset('storage/' . $detail->curriculum_pdf) }}" download="Curriculum"><img
                                     data-src="/assets/frontend/images/pdf.webp" class="lazyload" alt=""> Download Curriculum</a>
                         </div>
 
@@ -329,7 +329,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center"> VMware VCP-DCV 7 Projects Covered</h4>
+                        <h4 class="section_heading pb-3 text-center">{{ $detail->project_section_heading }}</h4>
                         <div class="owl-carousel owl-theme projects-covered">
 
                             @foreach ($project_covered as $row)
@@ -376,7 +376,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h4 class="section_heading pb-3 text-center"> Our VMware Certified Professional Students</h4>
+                            <h4 class="section_heading pb-3 text-center">{{ $detail->certificate_section_heading }}</h4>
                             <div class="owl-carousel owl-theme professional_students">
 
                                 @foreach ($certificate as $row)
@@ -402,7 +402,7 @@
         <section id="testimonials" class="page-section testiminilas_sec gradiant_bg pt-5 pb-5 dot_clr_white">
             <div class="container">
                 <h3 class="heading_title text-center pddtop_0 pb-3 textcolor_wht">
-                    VMware VCP Training Testimonials
+                    {{ $detail->testimonials_section_heading }}
                 </h3>
 
                 @if(!empty($video_review))
@@ -417,7 +417,6 @@
                                             // Use parse_url to get the path from the URL
                                             $path = parse_url($row->url, PHP_URL_PATH);
 
-                                            // Use explode to split the path and get the last part
                                             $parts = explode('/', trim($path, '/'));
                                             $videoId = end($parts);
 
@@ -484,7 +483,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h4 class="section_heading pb-3 text-center"> VMware Training Batch Schedule</h4>
+                            <h4 class="section_heading pb-3 text-center">  {{ $detail->batch_section_heading }}</h4>
                         </div>
 
                         <div class="batch_shedule_box">
@@ -587,8 +586,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 width70">
-                    <h4 class="section_heading pb-3 text-center textcolor_blck"> FAQs on VMware VCP Training &
-                        Certification </h4>
+                    <h4 class="section_heading pb-3 text-center textcolor_blck">  {{ $detail->faq_section_heading }} </h4>
 
                     @if(!empty($faq))
                     <div class="accordion--container accordion_style">

@@ -187,6 +187,7 @@
     <script>
         $(document).ready(function() {
             initValidate('#add_batch_form');
+            initValidate('updating_heading_form');
             initSelect2('.select2');
             initTrumbowyg('.trumbowyg');
         });
@@ -195,6 +196,12 @@
             var form = $(this);
             ajaxSubmit(e, form, responseHandler);
         });
+
+        $("#updating_heading_form").submit(function(e) {
+            var form = $(this);
+            ajaxSubmit(e, form, responseHandler);
+        });
+
 
         var responseHandler = function(response) {
             location.reload();

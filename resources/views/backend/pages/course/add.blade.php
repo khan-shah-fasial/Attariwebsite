@@ -31,6 +31,13 @@
                     <textarea class="form-control trumbowyg" name="description" rows="2" required></textarea>
                 </div>
             </div>
+
+            <div class="col-sm-12">
+                <div class="form-group mb-3">
+                    <label>Course Overview Section Heading</label>
+                    <input type="text" class="form-control" name="overview_section_heading" value="" >
+                </div>
+            </div>
     
             <div class="col-sm-12">
                 <div class="form-group mb-3">

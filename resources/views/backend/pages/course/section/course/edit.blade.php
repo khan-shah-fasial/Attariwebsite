@@ -66,6 +66,13 @@
 
                     <div class="col-sm-12">
                         <div class="form-group mb-3">
+                            <label>Course Overview Section Heading</label>
+                            <input type="text" class="form-control" name="overview_section_heading" value="{{ $course->overview_section_heading }}" >
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group mb-3">
                             <label>Course Overview</label>
                             <textarea class="form-control trumbowyg" name="course_overview" rows="2">{{ $course->course_overview }}</textarea>
                         </div>

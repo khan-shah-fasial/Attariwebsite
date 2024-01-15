@@ -34,6 +34,14 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" name="slug" value="{{ $cms->slug }}"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
                                 <label>Menu Title <span class="red">*</span></label>
                                 <input type="text" class="form-control" name="menu_title" value="{{ $cms->menu_title }}"
                                     required>
@@ -42,8 +50,8 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
-                                <label>Slug</label>
-                                <input type="text" class="form-control" name="slug" value="{{ $cms->slug }}"
+                                <label>Breadcrumb Title <span class="red">*</span></label>
+                                <input type="text" class="form-control" name="breadcrumb_title" value="{{ $cms->breadcrumb_title }}"
                                     required>
                             </div>
                         </div>

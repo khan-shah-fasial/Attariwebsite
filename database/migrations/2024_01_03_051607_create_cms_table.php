@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('replace_keyword');
             $table->string('title');
+            $table->string('breadcrumb_title');
             $table->text('description');
             $table->boolean('status')->default(true);
             $table->timestamps();

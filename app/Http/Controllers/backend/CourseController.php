@@ -29,6 +29,7 @@ class CourseController extends Controller
             'description' => 'required',
             'thumbnail' => 'image',
             'course_overview' => 'required',
+            'overview_section_heading' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -73,6 +74,7 @@ class CourseController extends Controller
             'thumbnail' => $imagePath,
             'course_overview' => $request->input('course_overview'),
             'faq' => $data['faq'],
+            'overview_section_heading' => $request->input('overview_section_heading'),
         ]);
     
         $response = [
@@ -118,6 +120,7 @@ class CourseController extends Controller
             'description' => 'required',
             'thumbnail' => 'image',
             'course_overview' => 'required',
+            'overview_section_heading' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -165,6 +168,7 @@ class CourseController extends Controller
         $course->url = $request->input('url');
         $course->course_overview = $request->input('course_overview');
         $course->faq = $data['faq'];
+        $course->overview_section_heading = $request->input('overview_section_heading');
 
         $course->save();
 
@@ -174,5 +178,52 @@ class CourseController extends Controller
         ];
 
         return response()->json($response);
-    }   
+    }
+    
+    
+    public function update_heading(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'heading' => 'required|max:191',
+            'curriculum_pdf' => 'nullable|mimetypes:application/pdf,application/msword',
+        ]);
+
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'notification' => 'Something Went Wrong',
+            ]);
+        }
+    
+        $id = $request->input('course_id');
+        $course = Course::find($id);
+    
+        if (!$course) {
+            return response()->json([
+                'status' => false,
+                'notification' => 'Course not found',
+            ]);
+        }
+
+        if ($request->hasFile('curriculum_pdf')) {
+            $course->curriculum_pdf = $request->file('curriculum_pdf')->store('assets/image/pdf', 'public');
+        } else {
+            if($request->has('pdf_check') && $course->curriculum_pdf){
+                Storage::disk('public')->delete($course->curriculum_pdf);
+                $course->curriculum_pdf = null;
+            }
+        }
+    
+        $section = $request->input('section');
+        $course->{$section . '_section_heading'} = $request->input('heading');
+    
+        $course->save();
+    
+        $response = [
+            'status' => true,
+            'notification' => ucfirst($section) . ' Heading updated successfully!',
+        ];
+    
+        return response()->json($response);
+    }
 }

@@ -20,6 +20,7 @@ class Cms extends Model
         'rating',
         'total_review',
         'menu_title',
+        'breadcrumb_title',
         'status',
     ];
 }

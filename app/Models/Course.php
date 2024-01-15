@@ -18,6 +18,16 @@ class Course extends Model
         'thumbnail', 
         'course_overview',
         'faq',
+        'overview_section_heading',
+        'syllabus_section_heading',
+        'project_section_heading',
+        'certificate_section_heading',
+        'testimonials_section_heading',
+        'batch_section_heading',
+        'faq_section_heading',
         'status'
     ];
 }
+
+
+
