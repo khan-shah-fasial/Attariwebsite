@@ -69,7 +69,6 @@
                                 <span> Course </span>
                             </a>
                         </li>
-
                         <li class="side-nav-item">
                             <a href="{{ route('cms.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-suitcase-line"></i> 
