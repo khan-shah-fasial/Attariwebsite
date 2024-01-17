@@ -283,36 +283,9 @@
                     <div class="col-md-3 width30 position_sticky">
                         <div class="bookdemofreeform_course gray_bgg1 margin-top55">
                             <h4 class="text-center">Book a <b>FREE</b> Demo</h4>
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" name="coursename" class="form-control"
-                                        placeholder="VMware Training" required>
-                                </div>
 
-                                <div class="form-group">
-                                    <input type="text" name="coursename" class="form-control"
-                                        placeholder="Enter Name" required>
-                                </div>
+                            @include('frontend.component.course_demo_form', ['courseName' => $cms->breadcrumb_title, 'form' => '1'])
 
-                                <div class="form-group">
-                                    <input type="text" name="coursename" class="form-control"
-                                        placeholder="Enter Email" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="coursename" class="form-control"
-                                        placeholder="Your Country" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="coursename" class="form-control"
-                                        placeholder="Mobile Number with Country code" required>
-                                </div>
-
-                                <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-primary">Send</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
 
@@ -612,52 +585,7 @@
 
                     <div class="gradiant_bg bookdemofreeform_course mt-4">
                         <h4 class="text-left textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="coursename" class="form-control"
-                                            placeholder="VMware Training" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="coursename" class="form-control"
-                                            placeholder="Enter Name" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="coursename" class="form-control"
-                                            placeholder="Enter Email" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="coursename" class="form-control"
-                                            placeholder="Your Country" required>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="text" name="coursename" class="form-control"
-                                            placeholder="Mobile Number with Country code" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-primary">Send</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
+                        @include('frontend.component.course_demo_form', ['courseName' => $cms->breadcrumb_title, 'form' => '2'])
                     </div>
 
 
@@ -1105,6 +1033,7 @@
         </div>
     </section>
 
+    @include('frontend.component.course_enquire_form', ['courseName' => $cms->breadcrumb_title])
 
     <!-------------=============== courses end =============== -------------------->
 

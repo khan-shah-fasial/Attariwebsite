@@ -191,7 +191,8 @@ class IndexController extends Controller
     {
         $rules = [
             'cv' => 'nullable|mimetypes:application/pdf,application/msword',
-            //'g-recaptcha-response' => 'required|captcha',
+            'phone' => 'required|regex:/^[0-9\s\+]{10,}$/',
+            'description' => 'nullable|regex:/^[a-zA-Z0-9\s,&-’.@]+$/',
         ];
     
         $validator = \Validator::make($request->all(), $rules); // Pass $request->all() as the first argument
@@ -213,29 +214,67 @@ class IndexController extends Controller
         $contactData = $request->all();
         $contactData['cv'] = $cvPath;
 
+        $name = isset($contactData["name"]) ? $contactData["name"] : ' - ';
+        $email = isset($contactData["email"]) ? $contactData["email"] : ' - ';
+        $phone = isset($contactData["phone"]) ? $contactData["phone"] : ' - ';
+        $services = isset($contactData["services"]) ? $contactData["services"] : ' - ';
+        $description = isset($contactData["description"]) ? $contactData["description"] : ' - ';
+        $ip = isset($contactData["ip"]) ? $contactData["ip"] : ' - ';
+        $section = isset($contactData["section"]) ? $contactData["section"] : ' - ';
+        $ref_url = isset($contactData["ref_url"]) ? $contactData["ref_url"] : ' - ';
+        $url = isset($contactData["url"]) ? $contactData["url"] : ' - ';
+        $qualification = isset($contactData["qualification"]) ? $contactData["qualification"] : ' - ';
+
         // Create the contact record
         Contact::create($contactData);
 
+        $user_data = json_decode(session('user_ip'), true);
+
         // Send email if $cvPath is not null
+       
+        $recipient = 'khanfaisal.makent@gmail.com'; // Replace with the actual recipient email
+        $subject  =  'Lead Enquiry';
+     
 
-        $recipient = 'admin@seedlingassociates.com'; // Replace with the actual recipient email
-        $subject = 'Lead Enquiry';
+        $body = '<table>';
+        $body .= "<tr><td style='width: 150px;'><strong>From :</strong></td><td>" . $name . ' ' . $email . "</td></tr></br>";
+        $body .= "<tr><td style='width: 150px;'><strong>Form Name :</strong></td><td>" . $section . "</td></tr></br>";
+        $body .= "<tr><td style='width: 150px;'><strong>Page URL :</strong></td><td>" . $url . "</td></tr></br><p></p>";
+        
+        $body .= "<tr><td style='width: 150px;'><strong>Full Name :</strong></td><td>" . $name . "</td></tr></br>";
+        $body .= "<tr><td style='width: 150px;'><strong>Email Address :</strong></td><td>" . $email . "</td></tr></br>";
+        $body .= "<tr><td style='width: 150px;'><strong>Phone Number :</strong></td><td>" . $phone . "</td></tr></br>";
 
-        // Format $contactData into an HTML table
-        $body = '<h2>A lead enquiry from the website seedling.webtesting.pw.</h2></br><table>';
-        foreach ($contactData as $key => $value) {
-                if($key != '_token' && $key != 'g-recaptcha-response' && $key != 'cv'){
-                    $body .= "<tr><td>$key</td><td>$value</td></tr>";
-                }
-            }
+        if (isset($contactData["description"]) || isset($contactData["services"])) {
+            $body .= "<tr><td style='width: 150px;'><strong>Course Requested :</strong></td><td>" . ($services ?? 'Not provided') . "</td></tr></br>";
+            $body .= "<tr><td style='width: 150px;'><strong>Message :</strong></td><td>" . ($description ?? 'Not provided') . "</td></tr></br><p></p>";
+        } else {
+            /*$body .= "<tr><td style='width: 150px;'><strong>Qualification :</strong></td><td>" . ($qualification ?? 'Not provided') . "</td></tr></br><p></p>";
+            */
+
+            $body .= "<tr><td style='width: 150px;'><strong>Course Requested :</strong></td><td>" . ($services ?? 'Not provided') . "</td></tr></br>";
+            $body .= "<tr><td style='width: 150px;'><strong>Message :</strong></td><td>" . ($description ?? 'Not provided') . "</td></tr></br><p></p>";
+        }
+        
+        /*
+        $body .= "<tr><td style='width: 150px;'><strong>Ip :</strong></td><td>" . $ip . "</td></tr></br>";
+        $body .= "<tr><td style='width: 150px;'><strong>User Location :</strong></td><td>" . 
+                    ($user_data['city'] ?? 'null') . ' ' . 
+                    ($user_data['region'] ?? 'null') . ' ' . 
+                    ($user_data['country'] ?? 'null') . 
+                "</td></tr></br>";
+        */
+        $body .= "<tr><td style='width: 150px;'><strong>Referrer URL :</strong></td><td>" . $ref_url . "</td></tr></br>";
+        $body .= "<tr><td style='width: 150px;'><strong>Submitted Data :</strong></td><td>" . date('Y-m-d') . "</td></tr></br>";
         $body .= '</table>';
+
 
         if ($cvPath !== null) {
              // Optional attachments
             $attachments = [
                 [
                     'path' => storage_path("app/public/$cvPath"), // Replace with the actual path
-                    'name' => 'CV.pdf', // Replace with the desired attachment name
+                    'name' => ''.$name.'.pdf', // Replace with the desired attachment name
                 ],
                 // Add more attachments if needed
             ];
@@ -243,9 +282,11 @@ class IndexController extends Controller
             // Send the email
             sendEmail($recipient, $subject, $body, $attachments);
 
+        } else {
+            sendEmail($recipient, $subject, $body);
         }
 
-        sendEmail($recipient, $subject, $body);
+        
 
     
         $response = [

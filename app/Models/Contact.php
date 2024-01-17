@@ -22,5 +22,6 @@ class Contact extends Model
         'url',
         'section',
         'cv',
+        'country',
     ];
 }

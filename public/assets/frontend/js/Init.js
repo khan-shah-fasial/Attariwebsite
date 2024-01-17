@@ -223,8 +223,8 @@ $(document).ready(function() {
 
 //have_Any_question_form
 $(document).ready(function() {
-    initValidate('#have_any_question_form');
-    $("#have_any_question_form").submit(function(e) {
+    initValidate('#add_course_form');
+    $("#add_course_form").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });
@@ -240,8 +240,8 @@ $(document).ready(function() {
 
 //Ask popup form
 $(document).ready(function() {
-    initValidate('#ask_popup_form');
-    $("#ask_popup_form").submit(function(e) {
+    initValidate('#add_popup_form');
+    $("#add_popup_form").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });
@@ -257,8 +257,24 @@ $(document).ready(function() {
 
 //Area practice form
 $(document).ready(function() {
-    initValidate('#area_practice_form');
-    $("#area_practice_form").submit(function(e) {
+    initValidate('#add_demo_form1');
+    $("#add_demo_form1").submit(function(e) {
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
+    });
+
+    var responseHandler = function(response) {
+        $('input, textarea').val('');
+        $("select option:first").prop('selected', true);
+        setTimeout(function() {
+            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
+        }, 2000);
+    }
+});
+
+$(document).ready(function() {
+    initValidate('#add_demo_form2');
+    $("#add_demo_form2").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });
