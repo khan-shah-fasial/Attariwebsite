@@ -19,7 +19,9 @@ use App\Http\Controllers\backend\TrumbowygController;
 /*
 use App\Http\Controllers\backend\MediaCoverageController;
 use App\Http\Controllers\backend\PublicationController;
+*/
 use App\Http\Controllers\backend\ContactController;
+/*
 use App\Http\Controllers\backend\BusinessSettingController;
 use App\Http\Controllers\backend\ContactSettingController;
 */
@@ -201,7 +203,7 @@ Route::group(['prefix' => 'publication'], function () {
 });
 
 */
-/*
+
 //Contact
 Route::group(['prefix' => 'contact'], function () {
     Route::get('/index', [ContactController::class, 'index'])->name('contact.index');
@@ -209,6 +211,8 @@ Route::group(['prefix' => 'contact'], function () {
     Route::post('/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
 });
 
+
+/*
 //setting
 Route::group(['prefix' => 'setting'], function () {
     Route::get('/index', [BusinessSettingController::class, 'index'])->name('setting.index');

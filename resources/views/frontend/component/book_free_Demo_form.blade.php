@@ -1,7 +1,13 @@
 <!---============================== Book Free Demo ================= ------------->
 
-<form class="" method="action">
+<form id="add_demo1_form" action="{{url(route('contact.create'))}}" method="post"
+enctype="multipart/form-data">
+@csrf
+
     <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
+
+    <input type="hidden" name="section" value="Book a FREE Demo Course Page" data-aos-once="true" data-aos="fade-up" />
+    <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
 
     <div class="form-group">
         <input type="text" class="form-control" name="name" placeholder="Enter Name" required />
@@ -12,28 +18,28 @@
     </div>
 
     <div class="form-group">
-        <input type="email" class="form-control" name="your_country" placeholder="Your Country"
+        <input type="text" class="form-control" name="country" placeholder="Your Country"
             required />
     </div>
 
     <div class="form-group">
-        <input type="email" class="form-control" name="mobile_code"
+        <input type="tel" class="form-control" name="phone"
             placeholder="Mobile no with country code" required />
     </div>
 
     <div class="form-group">
-        <select aria-labelledby="-Select Course-" class="form-select form-control" required>
+        <select aria-labelledby="-Select Course-" name="services" class="form-select form-control" required>
             <option selected>-Select Course-</option>
-            <option value="1">VMware</option>
-            <option value="2">AWS Cloud</option>
-            <option value="3">Azure Cloud</option>
-            <option value="4">MCSE</option>
-            <option value="5">CCNA</option>
+            <option value="VMware">VMware</option>
+            <option value="AWS Cloud">AWS Cloud</option>
+            <option value="Azure Cloud">Azure Cloud</option>
+            <option value="MCSE">MCSE</option>
+            <option value="CCNA">CCNA</option>
         </select>
     </div>
 
     <div class="form-group">
-        <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
+        <textarea aria-labelledby="Message" name="description" class="form-control" placeholder="Message"></textarea>
     </div>
 
     <div class="form-group text-center">

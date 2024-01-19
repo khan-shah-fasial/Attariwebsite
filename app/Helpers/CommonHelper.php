@@ -14,6 +14,7 @@ use App\Models\ContactSetting;
 //use App\Models\Publication;
 //use App\Models\Team;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 
     if (!function_exists('datetimeFormatter')) {
@@ -105,8 +106,8 @@ use Illuminate\Support\Facades\Mail;
                 $ip = $_SERVER['REMOTE_ADDR'] ?  $_SERVER['REMOTE_ADDR'] : '';
             }
             $ip = explode(',', $ip);
-            $ip = $ip[0];
-            //$ip = '103.175.61.38111';
+            //$ip = $ip[0];
+            $ip = '103.175.61.38';
             		
             //$info = file_get_contents("http://ipinfo.io/{$ip}/geo");
             

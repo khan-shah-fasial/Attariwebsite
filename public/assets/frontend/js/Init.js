@@ -287,3 +287,20 @@ $(document).ready(function() {
         }, 2000);
     }
 });
+
+
+$(document).ready(function() {
+    initValidate('#add_demo1_form');
+    $("#add_demo1_form").submit(function(e) {
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
+    });
+
+    var responseHandler = function(response) {
+        $('input, textarea').val('');
+        $("select option:first").prop('selected', true);
+        setTimeout(function() {
+            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
+        }, 2000);
+    }
+});
