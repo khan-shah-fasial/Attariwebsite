@@ -31,6 +31,7 @@ use App\Models\VideoReview;
 use App\Models\Syllabus;
 use App\Models\ProjectCovered;
 use App\Models\Certificate;
+use Illuminate\Support\Facades\Validator;
 
 
 class IndexController extends Controller
@@ -195,7 +196,7 @@ class IndexController extends Controller
             'description' => 'nullable|regex:/^[a-zA-Z0-9\s,&-’.@]+$/',
         ];
     
-        $validator = \Validator::make($request->all(), $rules); // Pass $request->all() as the first argument
+        $validator = Validator::make($request->all(), $rules); // Pass $request->all() as the first argument
     
         if ($validator->fails()) {
             return response()->json([
@@ -256,14 +257,14 @@ class IndexController extends Controller
             $body .= "<tr><td style='width: 150px;'><strong>Message :</strong></td><td>" . ($description ?? 'Not provided') . "</td></tr></br><p></p>";
         }
         
-        /*
+        
         $body .= "<tr><td style='width: 150px;'><strong>Ip :</strong></td><td>" . $ip . "</td></tr></br>";
         $body .= "<tr><td style='width: 150px;'><strong>User Location :</strong></td><td>" . 
                     ($user_data['city'] ?? 'null') . ' ' . 
                     ($user_data['region'] ?? 'null') . ' ' . 
                     ($user_data['country'] ?? 'null') . 
                 "</td></tr></br>";
-        */
+        
         $body .= "<tr><td style='width: 150px;'><strong>Referrer URL :</strong></td><td>" . $ref_url . "</td></tr></br>";
         $body .= "<tr><td style='width: 150px;'><strong>Submitted Data :</strong></td><td>" . date('Y-m-d') . "</td></tr></br>";
         $body .= '</table>';
@@ -403,7 +404,7 @@ class IndexController extends Controller
 //--------------=============================== publication end ====================================---------------------
 */
 //--------------=============================== other feature ====================================---------------------
-
+    /*
     public function search(Request $request){
 
         $query = $request->input('query');
@@ -422,6 +423,7 @@ class IndexController extends Controller
 
         return view('frontend.pages.search.index', compact('blogs','practiceAreas'));
     }
+    */
 
     public function comment_save(Request $request)
     {

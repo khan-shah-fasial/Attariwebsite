@@ -52,13 +52,6 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
-                                <label>Replace Keyword</label>
-                                <input type="text" class="form-control" name="replace_keyword" value="" required>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="form-group mb-3">
                                 <label>Rating</label>
                                 <input type="text" class="form-control" name="rating" value="" required>
                             </div>
@@ -69,6 +62,36 @@
                                 <label>Total Review</label>
                                 <input type="text" class="form-control" name="total_review" value="" required>
                             </div>
+                        </div>
+
+                        <div class="col-sm-8">
+
+                            <div class="form-group mb-3">
+                                <label>Replace Keyword</label>
+                                <div id="replace_key_add_more" style="">
+                                    <div class="form-group">
+                                        <div class="row">
+                                        <div class="col-md-11">
+                                            <div class="row">
+
+                                                <div class="col col-sm-6">
+                                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="replace_key[]" placeholder="Enter Keyword here...">
+                                                </div>
+
+                                                <div class="col col-sm-6">
+                                                <input class="form-control" name="replace_key_word[]" placeholder="Enter Replace Keyword here...">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_replace_key"></i></div>
+                                        </div>
+                                        </br>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
 
 
@@ -118,5 +141,37 @@ $("#add_cms_form").submit(function(e) {
 var responseHandler = function(response) {
     location.reload();
 }
+
+function remove_replace_key(_this) {
+    _this.closest(".replace_key").remove();
+}
+
+
+$("#add_replace_key").on("click", function() {
+
+var new_replace_key = `
+    <div class="replace_key form-group">
+        <div class="row">
+            <div class="col-md-11">
+                <div class="row">
+
+                    <div class="col col-sm-6">
+                    <input type="text" style="margin-bottom: 5px;" class="form-control" name="replace_key[]" placeholder="Enter Keyword here...">
+                    </div>
+
+                    <div class="col col-sm-6">
+                    <input class="form-control" name="replace_key_word[]" placeholder="Enter Replace Keyword here...">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-1"><i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_replace_key($(this));"></i></div>
+        </div>
+        </br>
+    </div>
+`;
+
+$("#replace_key_add_more").append(new_replace_key);
+});
 
 </script>

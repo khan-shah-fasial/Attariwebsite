@@ -21,11 +21,12 @@
         <thead>
             <tr>
                 <th>#</th>
+                <th>IP</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone No</th>
-                {{--<th>Services</th>
-                <th>Description</th>
+                <th>Course</th>
+                {{--<th>Description</th>
                 <th>Other Info</th>
                 <th>Qualification</th>
                 <th>CV</th>--}}
@@ -40,11 +41,12 @@
             @foreach($contact as $row)
             <tr>
                 <td>{{$i++}}</td>
+                <td>{{ $row->ip }}</td>
                 <td>{{$row->name}}</td>
                 <td>{{$row->email}}</td>
                 <td>{{$row->phone}}</td>
-                {{--<td>{{$row->services}}</td>
-                <td>{{$row->description}}</td>
+                <td>{{$row->services}}</td>
+                {{--<td>{{$row->description}}</td>
                 <td>{{$row->other_info}}</td>
                 <td>{{$row->qualification}}</td>
                 <td>

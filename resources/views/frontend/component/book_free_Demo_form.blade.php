@@ -1,3 +1,7 @@
+@php
+$session_data = json_decode(session('user_ip'), true);
+@endphp
+
 <!---============================== Book Free Demo ================= ------------->
 
 <form id="add_demo1_form" action="{{url(route('contact.create'))}}" method="post"
@@ -41,6 +45,8 @@ enctype="multipart/form-data">
     <div class="form-group">
         <textarea aria-labelledby="Message" name="description" class="form-control" placeholder="Message"></textarea>
     </div>
+
+    <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
 
     <div class="form-group text-center">
         <input class="btn btn-primary submit_button" type="submit" value="send" />

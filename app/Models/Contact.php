@@ -23,5 +23,6 @@ class Contact extends Model
         'section',
         'cv',
         'country',
+        'ip',
     ];
 }

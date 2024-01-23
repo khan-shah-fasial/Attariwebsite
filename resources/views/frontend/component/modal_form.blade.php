@@ -1,3 +1,6 @@
+@php
+$session_data = json_decode(session('user_ip'), true);
+@endphp
 <!-----------================= Modal form start =============--------------->
 
 <div class="modal fade enquiry_modal" id="enquiry_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -50,7 +53,7 @@
                         <textarea aria-labelledby="Message" name="description" class="form-control" placeholder="Message"></textarea>
                     </div>
 
-                    {{--<!--<input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" /> --> ---}}
+                    <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
 
                     <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true" data-aos="fade-up" />
 

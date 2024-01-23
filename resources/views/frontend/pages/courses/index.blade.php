@@ -36,7 +36,7 @@
                             <i class="fa-solid fa-star"></i> ({{ $cms->total_review }}) Rating
                         </p>
                         <div class="desc pe-5"> 
-                            @php echo html_entity_decode($cms->description) @endphp
+                            @php echo ReplaceKeyword($cms->description, $cms->replace_keyword) @endphp
                         </div>
                     </div>
 
@@ -179,7 +179,7 @@
                         <h4 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->overview_section_heading }}
                         </h4>
                         <div>
-                            @php echo html_entity_decode($detail->course_overview) @endphp
+                            @php echo ReplaceKeyword($detail->course_overview, $cms->replace_keyword) @endphp
                         </div>
 
                         @if(!empty($detail->faq))
@@ -202,9 +202,7 @@
                                         <div id="collapse{{ $i }}" class="accordion-collapse collapse @if($i == 1) show @endif"
                                             aria-labelledby="heading{{ $i }}" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                @php
-                                                    echo html_entity_decode($description)
-                                                @endphp
+                                                @php echo ReplaceKeyword($description, $cms->replace_keyword) @endphp
                                             </div>
                                         </div>
                                     </div>
@@ -263,9 +261,7 @@
                                     <div id="collapse{{ $i }}" class="accordion-collapse collapse @if($i == 1) show @endif"
                                         aria-labelledby="heading{{ $i }}" data-bs-parent="#Syllabus">
                                         <div class="accordion-body">
-                                            @php
-                                                echo html_entity_decode($row->description)
-                                            @endphp
+                                            @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
                                         </div>
                                     </div>
                                 </div>
@@ -326,9 +322,7 @@
                                         <div class="projects_covered__content">
                                             <div class="projects_covered__text">
                                                 <div class="proj-cov">
-                                                    @php
-                                                        echo html_entity_decode($row->description)
-                                                    @endphp
+                                                    @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
                                                 </div>
                                             </div>
                                         </div>
@@ -434,9 +428,7 @@
                                         </div>
                                         <div class="testimonial__content">
                                             <div class="testimonial__text">
-                                                @php
-                                                    echo html_entity_decode($row->description)
-                                                @endphp
+                                                @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
                                             </div>
                                         </div>
                                     </div>
@@ -570,9 +562,7 @@
                                 </span>
                                 <ul>
                                     <div class="txt">
-                                        @php
-                                            echo html_entity_decode($row->answer)
-                                        @endphp
+                                        @php echo ReplaceKeyword($row->answer, $cms->replace_keyword) @endphp
                                     </div>
                                 </ul>
                             </li>

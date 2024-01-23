@@ -1,3 +1,6 @@
+@php
+$session_data = json_decode(session('user_ip'), true);
+@endphp
 <!------------============================ Demo Form ===============-------------------->
 <form id="add_demo_form{{$form}}" action="{{url(route('contact.create'))}}" method="post"
 enctype="multipart/form-data">
@@ -31,7 +34,7 @@ enctype="multipart/form-data">
             placeholder="Mobile Number with Country code" required>
     </div>
 
-    {{--<!--<input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" /> --> ---}}
+    <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
 
     <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true" data-aos="fade-up" />
 

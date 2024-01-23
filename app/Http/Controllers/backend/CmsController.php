@@ -30,7 +30,6 @@ class CmsController extends Controller
             'breadcrumb_title' => 'required',
             'slug' => 'required|unique:cms',
             'description' => 'required',
-            'replace_keyword' => 'required',
             'rating' => 'required',
             'total_review' => 'required',
             'course_id' => 'required',
@@ -44,6 +43,25 @@ class CmsController extends Controller
         }        
     
         $slug = customSlug($request->input('slug'));
+
+
+        // Extract and handle replace_key data
+        $replace_key = $request->input('replace_key');
+        $replace_key_word = $request->input('replace_key_word');
+    
+        if (!empty($replace_key[0])) {
+            $replace_keys = [];
+            for ($j = 0; $j < count($replace_key); $j++) {
+                $replace_keys[] = [
+                    $replace_key[$j] => $replace_key_word[$j],
+                ];
+            }
+            $data['replace_key'] = json_encode($replace_keys);
+        } else {
+            $data['replace_key'] = '[]';
+        }
+
+        unset($data['replace_key_word']);
     
         // Create the Cms record with 'Cms_category_ids' included
         Cms::create([
@@ -53,7 +71,7 @@ class CmsController extends Controller
             'breadcrumb_title' => $request->input('breadcrumb_title'),
             'slug' => $slug,
             'description' => $request->input('description'),
-            'replace_keyword' => $request->input('replace_keyword'),
+            'replace_keyword' => $data['replace_key'],
             'rating' => $request->input('rating'),
             'total_review' => $request->input('total_review'),
         ]);
@@ -122,13 +140,32 @@ class CmsController extends Controller
         $slug = customSlug($request->input('slug'));
 
 
+        // Extract and handle replace_key data
+        $replace_key = $request->input('replace_key');
+        $replace_key_word = $request->input('replace_key_word');
+    
+        if (!empty($replace_key[0])) {
+            $replace_keys = [];
+            for ($j = 0; $j < count($replace_key); $j++) {
+                $replace_keys[] = [
+                    $replace_key[$j] => $replace_key_word[$j],
+                ];
+            }
+            $data['replace_key'] = json_encode($replace_keys);
+        } else {
+            $data['replace_key'] = '[]';
+        }
+
+        unset($data['replace_key_word']);
+
+
         $cms->course_id = $request->input('course_id');
         $cms->title = $request->input('title');
         $cms->menu_title = $request->input('menu_title');
         $cms->breadcrumb_title = $request->input('breadcrumb_title');
         $cms->slug = $slug;
         $cms->description = $request->input('description');
-        $cms->replace_keyword = $request->input('replace_keyword');
+        $cms->replace_keyword = $data['replace_key'];
         $cms->rating = $request->input('rating');
         $cms->total_review = $request->input('total_review');
 

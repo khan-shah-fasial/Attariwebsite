@@ -58,14 +58,6 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
-                                <label>Replace Keyword</label>
-                                <input type="text" class="form-control" name="replace_keyword"
-                                    value="{{ $cms->replace_keyword }}" >
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="form-group mb-3">
                                 <label>Rating</label>
                                 <input type="text" class="form-control" name="rating"
                                     value="{{ $cms->rating }}" required>
@@ -78,6 +70,59 @@
                                 <input type="text" class="form-control" name="total_review"
                                     value="{{ $cms->total_review }}" required>
                             </div>
+                        </div>
+
+                        <div class="col-sm-8">
+
+                            <div class="form-group mb-3">
+								<label>progress bar Content</label>
+								<div id="replace_key_add_more" style=""> @php $i = 1; $replace_key = json_decode($cms->replace_keyword); 
+								if(!empty($replace_key)) { foreach ($replace_key as $fkey => $fvalue) { $farr_value = (array)$fvalue; foreach ($farr_value as $fkey1 => $fvalue1) { @endphp
+									<div class="replace_key">
+										<div class="form-group">
+											<div class="row">
+												<div class="col-md-11">
+
+                                                    <div class="row">
+
+                                                        <div class="col col-sm-6">
+                                                        <input type="text" style="margin-bottom: 5px;" class="form-control" name="replace_key[]" placeholder="Enter Keyword here..." value="{{ $fkey1 }}">
+                                                        </div>
+
+                                                        <div class="col col-sm-6">
+                                                        <input class="form-control" name="replace_key_word[]" placeholder="Enter Replace Keyword here..." value="{{ $fvalue1 }}"> 
+                                                        </div>
+
+                                                    </div>
+
+												</div>
+												<div class="col-md-1"> @if($i == 1) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_replace_key"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_replace_key($(this));"></i> @endif </div>
+											</div>
+										</div>
+										</br>
+									</div> @php $i++; } @endphp @php } @endphp @php } else { @endphp
+										<div class="form-group">
+										<div class="row">
+										<div class="col-md-11">
+                                            <div class="row">
+
+                                                <div class="col col-sm-6">
+                                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="replace_key[]" placeholder="Enter Keyword here...">
+                                                </div>
+
+                                                <div class="col col-sm-6">
+                                                <input class="form-control" name="replace_key_word[]" placeholder="Enter Replace Keyword here...">
+                                                </div>
+
+                                            </div>
+										</div>
+										<div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_replace_key"></i></div>
+										</div>
+										</br>
+									</div> @php } @endphp </div>
+							</div>
+
+
                         </div>
 
 
@@ -121,4 +166,37 @@
     var responseHandler = function(response) {
         location.reload();
     }
+
+    function remove_replace_key(_this) {
+        _this.closest(".replace_key").remove();
+    }
+
+
+    $("#add_replace_key").on("click", function() {
+
+    var new_replace_key = `
+        <div class="replace_key form-group">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="row">
+
+                        <div class="col col-sm-6">
+                        <input type="text" style="margin-bottom: 5px;" class="form-control" name="replace_key[]" placeholder="Enter Keyword here...">
+                        </div>
+
+                        <div class="col col-sm-6">
+                        <input class="form-control" name="replace_key_word[]" placeholder="Enter Replace Keyword here...">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-1"><i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_replace_key($(this));"></i></div>
+            </div>
+            </br>
+        </div>
+    `;
+
+    $("#replace_key_add_more").append(new_replace_key);
+    });
+
 </script>

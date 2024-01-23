@@ -9,10 +9,10 @@
     <p><strong>Phone:</strong> {{$contact->phone}}</p>
     @endif
     @if($contact->services)
-    <p><strong>Services:</strong> {{$contact->services}}</p>
+    <p><strong>Course:</strong> {{$contact->services}}</p>
     @endif
     @if($contact->description)
-    <p><strong>Description:</strong> {{$contact->description}}</p>
+    <p><strong>Message:</strong> {{$contact->description}}</p>
     @endif
     @if($contact->other_info)
     <p><strong>Other Info:</strong> {{$contact->other_info}}</p>

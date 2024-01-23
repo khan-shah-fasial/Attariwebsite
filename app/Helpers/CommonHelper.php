@@ -106,8 +106,8 @@ use Illuminate\Support\Str;
                 $ip = $_SERVER['REMOTE_ADDR'] ?  $_SERVER['REMOTE_ADDR'] : '';
             }
             $ip = explode(',', $ip);
-            //$ip = $ip[0];
-            $ip = '103.175.61.38';
+            $ip = $ip[0];
+            //$ip = '103.175.61.38';
             		
             //$info = file_get_contents("http://ipinfo.io/{$ip}/geo");
             
@@ -138,6 +138,26 @@ use Illuminate\Support\Str;
         function customSlug($value)
         {
             return preg_replace('/[^a-z0-9\/]/i', '-', Str::lower($value));
+        }
+    }
+
+
+    if (!function_exists('ReplaceKeyword')) {
+        function ReplaceKeyword($sentence, $replaceKeywordJson)
+        {
+
+            $replaceKeywords = json_decode($replaceKeywordJson, true);
+    
+            foreach ($replaceKeywords as $replacementArray) {
+                foreach ($replacementArray as $original => $replacement) {
+                    $sentence = str_ireplace($original, $replacement, $sentence);
+                }
+            }
+
+            $paragraph = html_entity_decode($sentence);
+    
+            return $paragraph;
+    
         }
     }
 
