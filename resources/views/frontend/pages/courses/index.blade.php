@@ -476,7 +476,7 @@
                                 <div class="col-md-9">
                                     <h5 class="batch_subhed">{{ $batch->oc_title }}  <spam>Preferred</spam>
                                     </h5>
-                                    @php $oc_pointer = json_decode($batch->paced_pointer_list) @endphp
+                                    @php $oc_pointer = json_decode($batch->oc_pointer_list) @endphp
                                     <ul>
                                         @foreach ($oc_pointer as $row)
                                             <li><i aria-hidden="true" class="far fa-check-circle"></i> @php echo html_entity_decode($row) @endphp</li>
