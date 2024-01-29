@@ -1,11 +1,16 @@
 <!----================================= virtualization & Cloud Computing ===========================------------------------>
 
+{{-- $practice_Area = DB::table('cms')->where('course_id',[''])->get(); --}}
+
+
+
 <section class="services">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center mb-3 mt-5">
                 <h4 class="services_headign">Virtualization & Cloud Computing</h4>
             </div>
+
             <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/vmvare_coursimg.webp" width="380"
                     height="224" class="lazyload image_width1" alt="VMware vSphere 7 ">
                 <div class="text_box">
@@ -17,6 +22,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/aws_courseimg.webp"
                     width="380" height="224" class="lazyload image_width1" alt="AWS Cloud Solution Architect">
                 <div class="text_box">
@@ -28,6 +34,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/azure_courseimg.webp"
                     width="380" height="224" class="lazyload image_width1" alt="AZURE Cloud Administrator">
                 <div class="text_box">
@@ -39,6 +46,7 @@
                     </p>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

@@ -13,24 +13,32 @@
 
             <div class="col-sm-4">
                 <div class="form-group mb-3">
-                    <label>Thumbnail  <span class="font-size11">(Max file size 80kb - 1125*196)</span></label>
+                    <label>Home Thumbnail  <span class="font-size11">(Max file size 80kb - 1125*196)</span></label>
                     <input class="form-control" type="file" id="thumbnail" name="thumbnail" required>
                 </div>
             </div>
 
             <div class="col-sm-4">
                 <div class="form-group mb-3">
+                    <label>Other Course Thumbnail  <span class="font-size11">(Max file size 80kb - 1125*196)</span></label>
+                    <input class="form-control" type="file" id="thumbnail" name="other_thumbnail" required>
+                </div>
+            </div>
+
+            <div class="col-sm-12>
+                <div class="form-group mb-3">
                     <label>Youtube URL</label>
                     <input type="url" class="form-control" name="url" value="" >
                 </div>
             </div>
             
+            {{---
             <div class="col-sm-12">
                 <div class="form-group mb-3">
                     <label>Description</label>
                     <textarea class="form-control trumbowyg" name="description" rows="2" required></textarea>
                 </div>
-            </div>
+            </div> ---}}
 
             <div class="col-sm-12">
                 <div class="form-group mb-3">

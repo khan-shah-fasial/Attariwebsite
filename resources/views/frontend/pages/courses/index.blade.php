@@ -46,10 +46,22 @@
                     <a href="#syllabuse" class="check_curriculum"> Check Curriculum </a>
                 </div>
                 <div class="col-3 width30 imagebox d-flex align-items-center justify-content-center">
-                    <a href="https://youtu.be/iTGqlC2X-CQ" data-fancybox="gallery">
-                        <img data-src="/assets/frontend/images/1280-720-5.jpg" class="lazyload" alt="">
+
+                    @php
+                        // Use parse_url to get the path from the URL
+                        $path = parse_url($detail->url, PHP_URL_PATH);
+
+                        $parts1 = explode('/', trim($path, '/'));
+                        $videoId1 = end($parts1);
+
+                    @endphp 
+
+                     <a href="{{ $detail->url }}" data-fancybox="gallery">
+                        <img data-src="https://img.youtube.com/vi/{{ $videoId1 }}/hqdefault.jpg"
+                        class="img-fluid d-block w-100 lazyload" alt="">
                         <div class="pulse-button space_1"></div>
                     </a>
+
                 </div>
             </div>
         </div>
@@ -196,7 +208,7 @@
                                         <h2 class="accordion-header" id="heading{{ $i }}">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapse{{ $i }}" aria-expanded="@if($i == 1) true @else false @endif" aria-controls="collapse{{ $i }}">
-                                                {{ $title }}
+                                                @php echo ReplaceKeyword($title, $cms->replace_keyword) @endphp
                                             </button>
                                         </h2>
                                         <div id="collapse{{ $i }}" class="accordion-collapse collapse @if($i == 1) show @endif"
@@ -255,7 +267,7 @@
                                     <h2 class="accordion-header" id="heading{{ $i }}">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#collapse{{ $i }}" aria-expanded="@if($i == 1) true @else false @endif" aria-controls="collapse{{ $i }}">
-                                            Module {{ $i }}:- {{ $row->title }}
+                                            Module {{ $i }}:- @php echo ReplaceKeyword($row->title, $cms->replace_keyword) @endphp
                                         </button>
                                     </h2>
                                     <div id="collapse{{ $i }}" class="accordion-collapse collapse @if($i == 1) show @endif"
@@ -421,7 +433,9 @@
                                                 </div>
                                                 <div class="col-lg-6 col-2">
                                                     <div class="testimonial__icon">
-                                                        <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                        @if($row->type == 'google')
+                                                            <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -558,7 +572,7 @@
                         
                         @foreach ($faq as $row)
                             <li class="accordion">
-                                <span>{{ $row->question }}<i class="fa fa-angle-up"></i>
+                                <span> @php echo ReplaceKeyword($row->question, $cms->replace_keyword) @endphp <i class="fa fa-angle-up"></i>
                                 </span>
                                 <ul>
                                     <div class="txt">

@@ -50,19 +50,47 @@
                     </div>
 
                     <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group mb-3">
+                                    <label>Other Course Thumbnail <span class="font-size11">(Max file size 80kb -
+                                            1125*196)</span></label>
+                                    <input class="form-control" type="file" id="thumbnail" name="other_thumbnail">
+                                    @if ($course->other_thumbnail)
+                                        <div class="form-check form-switch">
+
+                                            <input id="thumbnail_check" class="form-check-input" type="checkbox"
+                                                name="other_thumbnail_check" value="1">
+
+                                            <label class="form-check-label" for="thumbnail_check">Remove Other Course thumnail
+                                                icon</label>
+
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                @if ($course->other_thumbnail)
+                                    <img src="{{ asset('storage/' . $course->other_thumbnail) }}" class="img-thumbnail">
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
                         <div class="form-group mb-3">
                             <label>Youtube URL</label>
                             <input type="url" class="form-control" name="url" value="{{ $course->url }}">
                         </div>
                     </div>
 
-
+                    {{--
                     <div class="col-sm-12">
                         <div class="form-group mb-3">
                             <label>Description</label>
                             <textarea class="form-control trumbowyg" name="description" rows="2">{{ $course->description }}</textarea>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-sm-12">
                         <div class="form-group mb-3">

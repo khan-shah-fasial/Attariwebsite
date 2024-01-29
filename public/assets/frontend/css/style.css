@@ -2705,10 +2705,12 @@ h5.batch_subhed {
     overflow: hidden;
 }
 
+/*
 .dot_clr_white i
 {
     color:#fff;
 }
+*/
 
 .dot_clr_white button.owl-dot.active span {
     background: #fff !important;

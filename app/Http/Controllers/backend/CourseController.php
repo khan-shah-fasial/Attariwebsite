@@ -26,7 +26,7 @@ class CourseController extends Controller
         // Validate form data
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:191',
-            'description' => 'required',
+            //'description' => 'required',
             'thumbnail' => 'image',
             'course_overview' => 'required',
             'overview_section_heading' => 'required',
@@ -45,6 +45,12 @@ class CourseController extends Controller
             $imagePath = $request->file('thumbnail')->store('assets/image/course', 'public');
         } else {
             $imagePath = null;
+        }
+
+        if ($request->hasFile('other_thumbnail')) {
+            $imagePath1 = $request->file('other_thumbnail')->store('assets/image/course', 'public');
+        } else {
+            $imagePath1 = null;
         }
 
         // Extract and handle FAQ data
@@ -69,9 +75,10 @@ class CourseController extends Controller
         // Create the Course record with 'Course_category_ids' included
         Course::create([
             'name' => $request->input('name'),
-            'description' => $request->input('description'),
+            //'description' => $request->input('description'),
             'url' => $request->input('url'),
             'thumbnail' => $imagePath,
+            'other_thumbnail' => $imagePath1,
             'course_overview' => $request->input('course_overview'),
             'faq' => $data['faq'],
             'overview_section_heading' => $request->input('overview_section_heading'),
@@ -87,8 +94,6 @@ class CourseController extends Controller
 
     public function edit($id) {
         $course = Course::find($id);
-        //$allcourse = Course::where('status', 1)->get();
-        //return view('backend.pages.course.edit', compact('course', 'allcourse'));
         return view('backend.pages.course.edit', compact('course'));
     }
         
@@ -117,7 +122,7 @@ class CourseController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:191',
-            'description' => 'required',
+            //'description' => 'required',
             'thumbnail' => 'image',
             'course_overview' => 'required',
             'overview_section_heading' => 'required',
@@ -144,6 +149,17 @@ class CourseController extends Controller
             }
         }
 
+        if ($request->hasFile('other_thumbnail')) {
+            // Update the image if a new one is uploaded
+            $imagePath1 = $request->file('other_thumbnail')->store('assets/image/course', 'public');
+            $course->other_thumbnail = $imagePath1;
+        }else{
+            if($request->has('other_thumbnail_check') && $course->other_thumbnail){
+                Storage::disk('public')->delete($course->other_thumbnail);
+                $course->other_thumbnail = null;
+            }
+        }
+
         // Extract and handle FAQ data
         $faq = $request->input('faq');
         $faq_description = $request->input('faq_description');
@@ -164,7 +180,7 @@ class CourseController extends Controller
         unset($data['faq_description']);
 
         $course->name = $request->input('name');
-        $course->description = $request->input('description');
+        //$course->description = $request->input('description');
         $course->url = $request->input('url');
         $course->course_overview = $request->input('course_overview');
         $course->faq = $data['faq'];
