@@ -72,6 +72,24 @@
                             </div>
                         </div>
 
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Course Alias</label>
+                                <input type="text" class="form-control" name="alias" value="{{ $cms->alias }}" >
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Zone</label>
+                                <select class="form-select select2" name="zone">
+                                    <option value="0" @if($cms->zone == "0") selected @endif>Main</option>
+                                    <option value="1" @if($cms->zone == "1") selected @endif>City</option>
+                                    <option value="2" @if($cms->zone == "2") selected @endif>Country</option>
+                                </select> 
+                            </div>
+                        </div>
+
                         <div class="col-sm-8">
 
                             <div class="form-group mb-3">

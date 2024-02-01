@@ -12,6 +12,22 @@
                     <input class="form-control" type="url" id="image" name="url" value="{{ $videoreview->url }}" required>
                 </div>
             </div>
+
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="form-group mb-3">
+                            <label>Youtube Thumbnail</label>
+                            <input class="form-control" type="file" id="image" name="image">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        @if ($videoreview->image)
+                            <img src="{{ asset('storage/' . $videoreview->image) }}" class="img-thumbnail">
+                        @endif
+                    </div>
+                </div>
+            </div>
    
             <div class="col-sm-12 d-flex justify-content-end">
                 <div class="form-group d-grid mb-3 text-end">

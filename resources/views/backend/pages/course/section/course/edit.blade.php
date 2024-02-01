@@ -53,8 +53,7 @@
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="form-group mb-3">
-                                    <label>Other Course Thumbnail <span class="font-size11">(Max file size 80kb -
-                                            1125*196)</span></label>
+                                    <label>Youtube Thumbnail</label>
                                     <input class="form-control" type="file" id="thumbnail" name="other_thumbnail">
                                     @if ($course->other_thumbnail)
                                         <div class="form-check form-switch">

@@ -74,6 +74,8 @@ class CmsController extends Controller
             'replace_keyword' => $data['replace_key'],
             'rating' => $request->input('rating'),
             'total_review' => $request->input('total_review'),
+            'alias' => $request->input('alias'),
+            'zone' => $request->input('zone'),
         ]);
     
         $response = [
@@ -168,6 +170,9 @@ class CmsController extends Controller
         $cms->replace_keyword = $data['replace_key'];
         $cms->rating = $request->input('rating');
         $cms->total_review = $request->input('total_review');
+
+        $cms->alias = $request->input('alias');
+        $cms->zone = $request->input('zone');
 
         $cms->save();
 

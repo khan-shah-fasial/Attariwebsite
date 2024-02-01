@@ -12,6 +12,14 @@
                 </div>
             </div>
 
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Youtube Thumbnail <span class="font-size11">*</span></label>
+                    <input class="form-control" type="file" id="image" name="image" required>
+                </div>
+            </div>
+
+
             <div class="col-sm-12 d-flex justify-content-end">
                 <div class="form-group d-grid mb-3 text-end">
                     <button type="submit" class="btn btn-block btn-primary">Create</button>

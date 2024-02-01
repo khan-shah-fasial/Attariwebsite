@@ -13,6 +13,7 @@ class VideoReview extends Model
 
     protected $fillable = [
         'course_id',
+        'image',
         'url',
         'status',
     ];

@@ -15,6 +15,7 @@ class VideoReviewController extends Controller
 
         $validator = Validator::make($request->all(), [
             'course_id' => 'required',
+            'image' => 'required',
             'url' => 'required',
         ]);
 
@@ -23,12 +24,18 @@ class VideoReviewController extends Controller
                 'status' => false,
                 'notification' => $validator->errors()->all()
             ], 200);
-        }        
+        }
+        
+        // Handle image upload if provided
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('assets/image/video_review', 'public');
+        }
            
         // Create the Course record with 'Course_category_ids' included
         VideoReview::create([
             'url' => $request->input('url'),
             'course_id' => $request->input('course_id'),
+            'image' => $imagePath,
         ]);
     
         $response = [
@@ -89,6 +96,18 @@ class VideoReviewController extends Controller
 
         $id = $request->input('id');
         $videoreview = VideoReview::find($id);
+
+
+        // Handle image upload if provided
+        if ($request->hasFile('image')) {
+            // Delete the old image (if it exists)
+            if ($videoreview->image) {
+                Storage::disk('public')->delete($videoreview->image);
+            }
+
+            $imagePath = $request->file('image')->store('assets/image/video_review', 'public');
+            $videoreview->image = $imagePath;
+        }
     
         $videoreview->url = $request->input('url');
         $videoreview->course_id = $request->input('course_id');

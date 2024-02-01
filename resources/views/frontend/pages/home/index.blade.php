@@ -184,6 +184,13 @@
     @include('frontend.component.advantage_of_lms_section')
 
     <!-- ----------------------Certificate -------------------- -->
+
+    @php
+        $certificates = DB::table('certificates')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','image','alt_image', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'image', 'alt_image')->get();
+
+        $a = 1;
+    @endphp
+
     <section class="Certificate">
         <div class="container">
             <div class="row">
@@ -203,29 +210,19 @@
 
                 <div class="col-md-6">
                     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000"> <img
-                                    data-src="/assets/frontend/images/Nikhil-rajiv-1.webp" width="576" height="450"
-                                    class="lazyload d-block w-100" alt=""></div>
-                            <div class="carousel-item" data-bs-interval="2000"> <img
-                                    data-src="/assets/frontend/images/Bhavesh-khedekar-2.webp" width="576"
-                                    height="450" class="lazyload d-block w-100" alt="Certification Image 1"> </div>
-                            <div class="carousel-item"> <img data-src="/assets/frontend/images/Mohammed-3.jpeg"
-                                    class="lazyload d-block w-100" width="576" height="450"
-                                    alt="Certification Image 1"></div>
-                            <div class="carousel-item"> <img data-src="/assets/frontend/images/Farook-4.jpeg"
-                                    class="lazyload d-block w-100" width="576" height="450"
-                                    alt="Certification Image 2"></div>
-                            <div class="carousel-item"> <img data-src="/assets/frontend/images/Ashraf-5.webp"
-                                    class="lazyload d-block w-100" width="576" height="450"
-                                    alt="Certification Image 3"></div>
-                            <div class="carousel-item"> <img data-src="/assets/frontend/images/Peateek-6.webp"
-                                    class="lazyload d-block w-100" width="576" height="450"
-                                    alt="Certification Image 4"></div>
-                            <div class="carousel-item"> <img data-src="/assets/frontend/images/Mayuresh-7.jpg"
-                                    class="lazyload d-block w-100" width="576" height="450"
-                                    alt="Certification Image 5"></div>
+
+                            @foreach($certificates as $row)
+                                <div class="carousel-item @if($a == '1') active @endif" data-bs-interval="10000"> 
+                                    <img data-src="{{ asset('storage/' . $row->image) }}" width="576" height="450"
+                                    class="lazyload d-block w-100" alt="{{ $row->alt_image }}">
+                                </div>
+                                @php $a++; @endphp
+                            @endforeach
+                            
                         </div>
+                        
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
                             data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span> </button>

@@ -56,7 +56,7 @@
                 </div>
 
                 @php
-                    $vmware_batch = DB::table('batches')->where('status', 1)->where('course_id','5')->get(['oc_pointer_list', 'batch_detail', 'status','course_id'])->first();
+                    $vmware_batch = DB::table('batches')->where('status', 1)->where('course_id','5')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_vm_pointer = json_decode($vmware_batch->oc_pointer_list);
                     $batch_vm_detail = json_decode($vmware_batch->batch_detail, true);
                 @endphp
@@ -83,7 +83,7 @@
                                             @foreach ($batch_vm_detail as $row)
                                                 <tr>
                                                     <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">{{ $row['remark'] }}</span></td>
+                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
                                                     <td>@php echo html_entity_decode($row['time']) @endphp</td>
                                                 </tr>
                                             @endforeach
@@ -105,13 +105,13 @@
 
                             <div class="col-md-3">
                                 <div class="button_main getin_touch_bx paddingtop41">
-                                    <h5>Get In Touch to Avail <span>21% OFF</span>
+                                    <h5>Get In Touch to Avail <span>{{ $vmware_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
                                         data-bs-target="#enquiry_modal"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
-                                        href="https://attariclasses.in/vmware-training-certification-online/"
+                                        href="{{ url('vmware-training-certification-online') }}"
                                         target="_blank">View Course Details <i aria-hidden="true"
                                             class="far fa-arrow-alt-circle-right"></i></a>
                                 </div>
@@ -146,17 +146,19 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    @php
+                                    {{--@php
                                         // Use parse_url to get the path from the URL
                                         $path = parse_url($row->url, PHP_URL_PATH);
 
                                         $parts = explode('/', trim($path, '/'));
                                         $videoId = end($parts);
-                                    @endphp 
+                                    @endphp --}}
 
                                     <a href="{{ $row->url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
-                                        <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                        {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="img-fluid d-block w-100 lazyload" alt=""> --}}
+                                        <img data-src="{{ asset('storage/' . $row->image) }}"
                                             class="img-fluid d-block w-100 lazyload" alt="">
                                     </a>
                                 </div>
@@ -237,7 +239,7 @@
                 </div>
 
                 @php
-                    $aws_batch = DB::table('batches')->where('status', 1)->where('course_id','7')->get(['oc_pointer_list', 'batch_detail', 'status','course_id'])->first();
+                    $aws_batch = DB::table('batches')->where('status', 1)->where('course_id','7')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_aws_pointer = json_decode($aws_batch->oc_pointer_list);
                     $batch_aws_detail = json_decode($aws_batch->batch_detail, true);
                 @endphp
@@ -264,7 +266,7 @@
                                             @foreach ($batch_aws_detail as $row)
                                                 <tr>
                                                     <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">{{ $row['remark'] }}</span></td>
+                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
                                                     <td>@php echo html_entity_decode($row['time']) @endphp</td>
                                                 </tr>
                                             @endforeach
@@ -286,13 +288,13 @@
 
                             <div class="col-md-3">
                                 <div class="button_main getin_touch_bx paddingtop41">
-                                    <h5>Get In Touch to Avail <span>21% OFF</span>
+                                    <h5>Get In Touch to Avail <span>{{ $aws_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
                                         data-bs-target="#enquiry_modal"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
-                                        href="https://attariclasses.in/aws-training-certification-online/"
+                                        href="{{ url('aws-certification-training-online') }}"
                                         target="_blank">View Course Details <i aria-hidden="true"
                                             class="far fa-arrow-alt-circle-right"></i></a>
                                 </div>
@@ -327,17 +329,19 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    @php
+                                    {{--@php
                                         // Use parse_url to get the path from the URL
                                         $path = parse_url($row->url, PHP_URL_PATH);
 
                                         $parts = explode('/', trim($path, '/'));
                                         $videoId = end($parts);
-                                    @endphp 
+                                    @endphp --}}
 
                                     <a href="{{ $row->url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
-                                        <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                        {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="img-fluid d-block w-100 lazyload" alt=""> --}}
+                                        <img data-src="{{ asset('storage/' . $row->image) }}"
                                             class="img-fluid d-block w-100 lazyload" alt="">
                                     </a>
                                 </div>
@@ -416,7 +420,7 @@
                 </div>
 
                 @php
-                    $azure_batch = DB::table('batches')->where('status', 1)->where('course_id','8')->get(['oc_pointer_list', 'batch_detail', 'status','course_id'])->first();
+                    $azure_batch = DB::table('batches')->where('status', 1)->where('course_id','8')->get(['oc_pointer_list', 'batch_detail','off_percentage','status','course_id'])->first();
                     $oc_azure_pointer = json_decode($azure_batch->oc_pointer_list);
                     $batch_azure_detail = json_decode($azure_batch->batch_detail, true);
                 @endphp
@@ -443,7 +447,7 @@
                                             @foreach ($batch_azure_detail as $row)
                                                 <tr>
                                                     <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">{{ $row['remark'] }}</span></td>
+                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
                                                     <td>@php echo html_entity_decode($row['time']) @endphp</td>
                                                 </tr>
                                             @endforeach
@@ -465,13 +469,13 @@
 
                             <div class="col-md-3">
                                 <div class="button_main getin_touch_bx paddingtop41">
-                                    <h5>Get In Touch to Avail <span>21% OFF</span>
+                                    <h5>Get In Touch to Avail <span>{{ $azure_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
                                         data-bs-target="#enquiry_modal"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
-                                        href="https://attariclasses.in/azure-training-certification-online/"
+                                        href="{{ url('microsoft-azure-certification-training-online') }}"
                                         target="_blank">View Course Details <i aria-hidden="true"
                                             class="far fa-arrow-alt-circle-right"></i></a>
                                 </div>
@@ -506,17 +510,19 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    @php
+                                    {{--@php
                                         // Use parse_url to get the path from the URL
                                         $path = parse_url($row->url, PHP_URL_PATH);
 
                                         $parts = explode('/', trim($path, '/'));
                                         $videoId = end($parts);
-                                    @endphp 
+                                    @endphp --}}
 
                                     <a href="{{ $row->url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
-                                        <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                        {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="img-fluid d-block w-100 lazyload" alt=""> --}}
+                                        <img data-src="{{ asset('storage/' . $row->image) }}"
                                             class="img-fluid d-block w-100 lazyload" alt="">
                                     </a>
                                 </div>
@@ -596,7 +602,7 @@
                 </div>
 
                 @php
-                    $mcse_batch = DB::table('batches')->where('status', 1)->where('course_id','9')->get(['oc_pointer_list', 'batch_detail', 'status','course_id'])->first();
+                    $mcse_batch = DB::table('batches')->where('status', 1)->where('course_id','9')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_mcse_pointer = json_decode($mcse_batch->oc_pointer_list);
                     $batch_mcse_detail = json_decode($mcse_batch->batch_detail, true);
                 @endphp
@@ -623,7 +629,7 @@
                                             @foreach ($batch_mcse_detail as $row)
                                                 <tr>
                                                     <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">{{ $row['remark'] }}</span></td>
+                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
                                                     <td>@php echo html_entity_decode($row['time']) @endphp</td>
                                                 </tr>
                                             @endforeach
@@ -645,13 +651,13 @@
 
                             <div class="col-md-3">
                                 <div class="button_main getin_touch_bx paddingtop41">
-                                    <h5>Get In Touch to Avail <span>21% OFF</span>
+                                    <h5>Get In Touch to Avail <span>{{ $mcse_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
                                         data-bs-target="#enquiry_modal"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
-                                        href="https://attariclasses.in/mcse-training-certification-online/"
+                                        href="{{ url('mcsa-mcse-windows-server-training-online') }}"
                                         target="_blank">View Course Details <i aria-hidden="true"
                                             class="far fa-arrow-alt-circle-right"></i></a>
                                 </div>
@@ -686,17 +692,19 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    @php
+                                    {{--@php
                                         // Use parse_url to get the path from the URL
                                         $path = parse_url($row->url, PHP_URL_PATH);
 
                                         $parts = explode('/', trim($path, '/'));
                                         $videoId = end($parts);
-                                    @endphp 
+                                    @endphp --}}
 
                                     <a href="{{ $row->url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
-                                        <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                        {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="img-fluid d-block w-100 lazyload" alt=""> --}}
+                                        <img data-src="{{ asset('storage/' . $row->image) }}"
                                             class="img-fluid d-block w-100 lazyload" alt="">
                                     </a>
                                 </div>
@@ -775,7 +783,7 @@
                 </div>
 
                 @php
-                    $ccna_batch = DB::table('batches')->where('status', 1)->where('course_id','10')->get(['oc_pointer_list', 'batch_detail', 'status','course_id'])->first();
+                    $ccna_batch = DB::table('batches')->where('status', 1)->where('course_id','10')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_ccna_pointer = json_decode($ccna_batch->oc_pointer_list);
                     $batch_ccna_detail = json_decode($ccna_batch->batch_detail, true);
                 @endphp
@@ -802,7 +810,7 @@
                                             @foreach ($batch_ccna_detail as $row)
                                                 <tr>
                                                     <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">{{ $row['remark'] }}</span></td>
+                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
                                                     <td>@php echo html_entity_decode($row['time']) @endphp</td>
                                                 </tr>
                                             @endforeach
@@ -824,13 +832,13 @@
 
                             <div class="col-md-3">
                                 <div class="button_main getin_touch_bx paddingtop41">
-                                    <h5>Get In Touch to Avail <span>21% OFF</span>
+                                    <h5>Get In Touch to Avail <span>{{ $ccna_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
                                         data-bs-target="#enquiry_modal"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
-                                        href="https://attariclasses.in/ccna-training-certification-online/"
+                                        href="{{ url('ccna-training-certification-online') }}"
                                         target="_blank">View Course Details <i aria-hidden="true"
                                             class="far fa-arrow-alt-circle-right"></i></a>
                                 </div>
@@ -865,17 +873,19 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    @php
+                                    {{--@php
                                         // Use parse_url to get the path from the URL
                                         $path = parse_url($row->url, PHP_URL_PATH);
 
                                         $parts = explode('/', trim($path, '/'));
                                         $videoId = end($parts);
-                                    @endphp 
+                                    @endphp --}}
 
                                     <a href="{{ $row->url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
-                                        <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                        {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="img-fluid d-block w-100 lazyload" alt=""> --}}
+                                        <img data-src="{{ asset('storage/' . $row->image) }}"
                                             class="img-fluid d-block w-100 lazyload" alt="">
                                     </a>
                                 </div>

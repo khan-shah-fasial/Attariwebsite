@@ -24,6 +24,7 @@ class BatchesController extends Controller
             'batch_detail_date' => 'required',
             'batch_detail_sch' => 'required',
             'batch_detail_time' => 'required',
+            'off_percentage' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -78,6 +79,7 @@ class BatchesController extends Controller
             'corp_pointer_list' => json_encode($request->input('corp_pointer_list')),
             'corp_title' => $request->input('corp_title'),
             'corp_pointer_list' => json_encode($request->input('corp_pointer_list')),
+            'off_percentage'=> $request->input('off_percentage'),
             'status' => $status,
         ]);
     
@@ -103,6 +105,7 @@ class BatchesController extends Controller
             'batch_detail_date' => 'required',
             'batch_detail_sch' => 'required',
             'batch_detail_time' => 'required',
+            'off_percentage' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -164,6 +167,8 @@ class BatchesController extends Controller
         } else {
             $status = 1;
         }
+
+        $Batch->off_percentage = $request->input('off_percentage');
 
         $Batch->status = $status;
 

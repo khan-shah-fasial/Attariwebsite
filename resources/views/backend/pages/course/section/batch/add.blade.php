@@ -114,7 +114,12 @@
                                 </div>
                             </div>
 
-
+                            <div class="col-sm-4">
+                                <div class="form-group mb-3">
+                                    <label>OFF Percentage <span class="red">*</span></label>
+                                    <input type="text" class="form-control" name="off_percentage" value="" required>
+                                </div>
+                            </div>
 
                         </div>
 <!-------==========================================================-------------------->

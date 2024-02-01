@@ -21,6 +21,8 @@ class Cms extends Model
         'total_review',
         'menu_title',
         'breadcrumb_title',
+        'alias',
+        'zone',
         'status',
     ];
 }

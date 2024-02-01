@@ -2,7 +2,7 @@
 <!-------------- Top Header ----------------->
 
 @php
-$course = DB::table('cms')->where('status', 1)->get(['menu_title','slug','status']);
+$course = DB::table('cms')->where('status', 1)->where('zone', 0)->get(['menu_title','slug','status']);
 @endphp
 
 <!-------------- Top Header ----------------->

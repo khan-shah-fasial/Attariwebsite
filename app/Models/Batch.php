@@ -20,6 +20,7 @@ class Batch extends Model
         'batch_detail',
         'corp_title',
         'corp_pointer_list',
+        'off_percentage',
         'status',
     ];
 }

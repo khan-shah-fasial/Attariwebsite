@@ -64,6 +64,24 @@
                             </div>
                         </div>
 
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Course Alias</label>
+                                <input type="text" class="form-control" name="alias" value="" >
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Zone</label>
+                                <select class="form-select select2" name="zone">
+                                    <option value="0">Main</option>
+                                    <option value="1">City</option>
+                                    <option value="2">Country</option>
+                                </select> 
+                            </div>
+                        </div>
+
                         <div class="col-sm-8">
 
                             <div class="form-group mb-3">
