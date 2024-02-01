@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-md-7 training_text_box">
                     <h2 class="training_heading">
-                        Instructor-Led Online Training with live Hands-on Practical1
+                        Instructor-Led Online Training with live Hands-on Practical
                     </h2>
                     <p class="training_para"> Labs and Software are available on Cloud for practicals,you can Interact with
                         trainer live during the training and resolve queires, also get access to topic wise Live Recorded
