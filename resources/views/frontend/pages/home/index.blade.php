@@ -48,7 +48,7 @@
                     <h2 class="training_heading">
                         Instructor-Led Online Training with live Hands-on Practical
                     </h2>
-                    <p class="training_para"> Labs and Software are available on Cloud for practicals,you can Interact with
+                    <p class="training_para pb-4"> Labs and Software are available on Cloud for practicals,you can Interact with
                         trainer live during the training and resolve queires, also get access to topic wise Live Recorded
                         Lectures on our Learning Management System(LMS) </p>
                     <div class="row">
@@ -96,7 +96,7 @@
                     <h2 class="training_heading">
                         Classroom Training with live Hands-on Practical
                     </h2>
-                    <p class="training_para"> We have High tech Infrastructure in our Classrooms, using High end labs
+                    <p class="training_para pb-4"> We have High tech Infrastructure in our Classrooms, using High end labs
                         candidates can perform live practical’s along with the trainer, also get access to topic wise Live
                         Recorded Lectures on our Learning Management System(LMS)</p>
                     <div class="row">
@@ -166,7 +166,7 @@
                     <h2 class="lms_heading pt-md-4 pt-0">
                         Free Learning Management System(LMS) Included with Training
                     </h2>
-                    <p class="lms_para"> You get access to topic wise Live Recorded Lectures of our courses on Learning
+                    <p class="lms_para pb-4"> You get access to topic wise Live Recorded Lectures of our courses on Learning
                         Management System(LMS), lectures on LMS are updated regularly and even new topics are added whenever
                         required, you can access LMS even after course is completed, so revision and upgrading yourself in
                         future is easy </p>
@@ -189,6 +189,7 @@
         $certificates = DB::table('certificates')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','image','alt_image', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'image', 'alt_image')->get();
 
         $a = 1;
+
     @endphp
 
     <section class="Certificate">
