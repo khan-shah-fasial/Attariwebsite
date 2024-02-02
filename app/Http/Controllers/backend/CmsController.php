@@ -24,15 +24,33 @@ class CmsController extends Controller
     
     public function create(Request $request) {
         // Validate form data
-        $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'menu_title' => 'required',
-            'breadcrumb_title' => 'required',
-            'slug' => 'required|unique:cms',
-            'description' => 'required',
+
+        if ($request->hasFile('zone_check')) {
+
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                //'menu_title' => 'required',
+                'breadcrumb_title' => 'required',
+                'slug' => 'required|unique:cms',
+                'description' => 'required',
+                
+                'course_id' => 'required',
+            ]);
             
-            'course_id' => 'required',
-        ]);
+        } else {
+
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                'menu_title' => 'required',
+                'breadcrumb_title' => 'required',
+                'slug' => 'required|unique:cms',
+                'description' => 'required',
+                
+                'course_id' => 'required',
+            ]);
+            
+        }
+
 
         if ($validator->fails()) {
             return response()->json([
@@ -114,15 +132,31 @@ class CmsController extends Controller
     
     public function update(Request $request) {
 
-        $validator = Validator::make($request->all(), [
-            'slug' => 'required|unique:practice_areas,slug,'. $request->input('id'),
-            'title' => 'required',
-            'breadcrumb_title' => 'required',
-            'description' => 'required',
-            'menu_title' => 'required',
+        if ($request->hasFile('zone_check')) {
 
-            'course_id' => 'required',
-        ]);
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                //'menu_title' => 'required',
+                'breadcrumb_title' => 'required',
+                'slug' => 'required|unique:cms',
+                'description' => 'required',
+                
+                'course_id' => 'required',
+            ]);
+            
+        } else {
+
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                'menu_title' => 'required',
+                'breadcrumb_title' => 'required',
+                'slug' => 'required|unique:cms',
+                'description' => 'required',
+                
+                'course_id' => 'required',
+            ]);
+            
+        }
 
         if ($validator->fails()) {
             return response()->json([

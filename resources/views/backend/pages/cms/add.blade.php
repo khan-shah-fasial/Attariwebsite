@@ -1,12 +1,20 @@
+
 <section>
     <form id="add_cms_form" action="{{url(route('cms.create'))}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-  
-
             <div class="card">
                 <div class="card-body">
                     <div class="row">
+
+                        <div class="form-check form-switch d-flex justify-content-end mb-2">
+
+                            <input id="zone_check" class="form-check-input mx-2" type="checkbox"
+                                name="zone_check" value="1">
+            
+                            <label class="form-check-label" for="thumbnail_check">City wise / Country wise Course</label>
+            
+                        </div>
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
@@ -36,7 +44,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" id="menu-title">
                             <div class="form-group mb-3">
                                 <label>Menu Title <span class="red">*</span></label>
                                 <input type="text" class="form-control" name="menu_title" value="" required>
@@ -179,5 +187,28 @@ var new_replace_key = `
 
 $("#replace_key_add_more").append(new_replace_key);
 });
+
+
+var zoneCheck = document.getElementById('zone_check');
+var menuTitle = document.getElementById('menu-title');
+
+// Initial check
+toggleMenuTitle();
+
+// Add event listener to the checkbox
+zoneCheck.addEventListener('change', function () {
+    toggleMenuTitle();
+});
+
+// Function to toggle menu title visibility and required attribute
+function toggleMenuTitle() {
+    if (zoneCheck.checked) {
+        menuTitle.style.display = 'none';
+        document.getElementsByName('menu_title')[0].removeAttribute('required');
+    } else {
+        menuTitle.style.display = 'block';
+        document.getElementsByName('menu_title')[0].setAttribute('required', 'required');
+    }
+}
 
 </script>

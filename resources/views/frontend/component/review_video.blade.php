@@ -1,5 +1,5 @@
 @php
-    $video_rev = DB::table('video_reviews')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','image','url', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'image', 'url')->get();
+    $video_rev = DB::table('video_reviews')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','image','url', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'image', 'url')->orderBy('latest_created_at', 'desc')->limit(5)->get();
 @endphp
 
 <!----================================= Review Video ====================-------------->

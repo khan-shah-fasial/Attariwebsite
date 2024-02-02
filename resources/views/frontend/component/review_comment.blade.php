@@ -1,5 +1,5 @@
 @php
-    $text_rev = DB::table('text_reviews')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','thumbnail','name','description','type', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'thumbnail', 'name','description','type')->get();
+    $text_rev = DB::table('text_reviews')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','thumbnail','name','description','type', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'thumbnail', 'name','description','type')->orderBy('latest_created_at', 'desc')->limit(5)->get();
 @endphp
 
 <!-----======================= review comment ============-------------------->

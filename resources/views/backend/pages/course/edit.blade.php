@@ -24,9 +24,10 @@
 				<a class="nav-link @if( $section == 'text') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'text'])) }}">Text Reviews</a>
 			</li>
 
+			{{--
 			<li class="nav-item">
 				<a class="nav-link @if( $section == 'images') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'images'])) }}">Images Reviews</a>
-			</li>
+			</li> --}}
 
 			<li class="nav-item">
 				<a class="nav-link @if( $section == 'video') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'video'])) }}">Video Reviews</a>
