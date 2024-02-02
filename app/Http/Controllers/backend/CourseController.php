@@ -30,6 +30,9 @@ class CourseController extends Controller
             'thumbnail' => 'image',
             'course_overview' => 'required',
             'overview_section_heading' => 'required',
+
+            'rating' => 'required',
+            'total_review' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -79,6 +82,10 @@ class CourseController extends Controller
             'url' => $request->input('url'),
             'thumbnail' => $imagePath,
             'other_thumbnail' => $imagePath1,
+
+            'rating' => $request->input('rating'),
+            'total_review' => $request->input('total_review'),
+
             'course_overview' => $request->input('course_overview'),
             'faq' => $data['faq'],
             'overview_section_heading' => $request->input('overview_section_heading'),
@@ -126,6 +133,9 @@ class CourseController extends Controller
             'thumbnail' => 'image',
             'course_overview' => 'required',
             'overview_section_heading' => 'required',
+            
+            'rating' => 'required',
+            'total_review' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -185,6 +195,9 @@ class CourseController extends Controller
         $course->course_overview = $request->input('course_overview');
         $course->faq = $data['faq'];
         $course->overview_section_heading = $request->input('overview_section_heading');
+
+        $course->rating = $request->input('rating');
+        $course->total_review = $request->input('total_review');
 
         $course->save();
 

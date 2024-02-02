@@ -30,8 +30,7 @@ class CmsController extends Controller
             'breadcrumb_title' => 'required',
             'slug' => 'required|unique:cms',
             'description' => 'required',
-            'rating' => 'required',
-            'total_review' => 'required',
+            
             'course_id' => 'required',
         ]);
 
@@ -72,8 +71,7 @@ class CmsController extends Controller
             'slug' => $slug,
             'description' => $request->input('description'),
             'replace_keyword' => $data['replace_key'],
-            'rating' => $request->input('rating'),
-            'total_review' => $request->input('total_review'),
+
             'alias' => $request->input('alias'),
             'zone' => $request->input('zone'),
         ]);
@@ -122,8 +120,7 @@ class CmsController extends Controller
             'breadcrumb_title' => 'required',
             'description' => 'required',
             'menu_title' => 'required',
-            'rating' => 'required',
-            'total_review' => 'required',
+
             'course_id' => 'required',
         ]);
 
@@ -168,8 +165,7 @@ class CmsController extends Controller
         $cms->slug = $slug;
         $cms->description = $request->input('description');
         $cms->replace_keyword = $data['replace_key'];
-        $cms->rating = $request->input('rating');
-        $cms->total_review = $request->input('total_review');
+
 
         $cms->alias = $request->input('alias');
         $cms->zone = $request->input('zone');

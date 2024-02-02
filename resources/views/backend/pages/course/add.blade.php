@@ -25,10 +25,24 @@
                 </div>
             </div>
 
-            <div class="col-sm-12>
+            <div class="col-sm-4>
                 <div class="form-group mb-3">
                     <label>Youtube URL</label>
                     <input type="url" class="form-control" name="url" value="" >
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Rating</label>
+                    <input type="text" class="form-control" name="rating" value="" required>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Total Review</label>
+                    <input type="text" class="form-control" name="total_review" value="" required>
                 </div>
             </div>
             

@@ -58,17 +58,12 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
-                                <label>Rating</label>
-                                <input type="text" class="form-control" name="rating"
-                                    value="{{ $cms->rating }}" required>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="form-group mb-3">
-                                <label>Total Review</label>
-                                <input type="text" class="form-control" name="total_review"
-                                    value="{{ $cms->total_review }}" required>
+                                <label>Zone</label>
+                                <select class="form-select select2" name="zone">
+                                    <option value="0" @if($cms->zone == "0") selected @endif>--- Select ---</option>
+                                    <option value="1" @if($cms->zone == "1") selected @endif>City</option>
+                                    <option value="2" @if($cms->zone == "2") selected @endif>Country</option>
+                                </select> 
                             </div>
                         </div>
 
@@ -79,21 +74,11 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
-                            <div class="form-group mb-3">
-                                <label>Zone</label>
-                                <select class="form-select select2" name="zone">
-                                    <option value="0" @if($cms->zone == "0") selected @endif>Main</option>
-                                    <option value="1" @if($cms->zone == "1") selected @endif>City</option>
-                                    <option value="2" @if($cms->zone == "2") selected @endif>Country</option>
-                                </select> 
-                            </div>
-                        </div>
 
                         <div class="col-sm-8">
 
                             <div class="form-group mb-3">
-								<label>progress bar Content</label>
+								<label>Replace Keyword</label>
 								<div id="replace_key_add_more" style=""> @php $i = 1; $replace_key = json_decode($cms->replace_keyword); 
 								if(!empty($replace_key)) { foreach ($replace_key as $fkey => $fvalue) { $farr_value = (array)$fvalue; foreach ($farr_value as $fkey1 => $fvalue1) { @endphp
 									<div class="replace_key">

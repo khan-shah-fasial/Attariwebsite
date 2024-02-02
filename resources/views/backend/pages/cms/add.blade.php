@@ -52,15 +52,12 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
-                                <label>Rating</label>
-                                <input type="text" class="form-control" name="rating" value="" required>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="form-group mb-3">
-                                <label>Total Review</label>
-                                <input type="text" class="form-control" name="total_review" value="" required>
+                                <label>Zone</label>
+                                <select class="form-select select2" name="zone">
+                                    <option value="0">--- Select ---</option>
+                                    <option value="1">City</option>
+                                    <option value="2">Country</option>
+                                </select> 
                             </div>
                         </div>
 
@@ -71,16 +68,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
-                            <div class="form-group mb-3">
-                                <label>Zone</label>
-                                <select class="form-select select2" name="zone">
-                                    <option value="0">Main</option>
-                                    <option value="1">City</option>
-                                    <option value="2">Country</option>
-                                </select> 
-                            </div>
-                        </div>
+
 
                         <div class="col-sm-8">
 

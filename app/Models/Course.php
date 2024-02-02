@@ -19,6 +19,10 @@ class Course extends Model
         'other_thumbnail', 
         'course_overview',
         'faq',
+        
+        'rating',
+        'total_review',
+
         'overview_section_heading',
         'syllabus_section_heading',
         'project_section_heading',
