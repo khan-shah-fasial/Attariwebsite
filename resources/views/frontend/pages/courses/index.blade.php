@@ -29,11 +29,11 @@
 
                     <div class="top_content_section">
                         <h1>{{ $cms->title }}</h1>
-                        <p class="rating"> {{ $cms->rating }} <i class="fa-solid fa-star"></i>
+                        <p class="rating"> {{ $detail->rating }} <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i> ({{ $cms->total_review }}) Rating
+                            <i class="fa-solid fa-star"></i> ({{ $detail->total_review }}) Rating
                         </p>
                         <div class="desc pe-5">
                             @php echo ReplaceKeyword($cms->description, $cms->replace_keyword) @endphp
