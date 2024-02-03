@@ -31,7 +31,7 @@
         </section>
         <section class="about_attari_classes">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
                         <h4 class="aboutpg_hed"> Attari <span class="dark">Classes</span> </h4>
                         <p> Attari Classes is an IT training institute for VMware, AWS, AZURE, MCSE & CCNA courses </p>
@@ -164,7 +164,7 @@
                 <div class="row">
 
                     <div class="col-md-5 d-flex pt-md-5 ps-md-5 justify-content-center flex-column order-md-2">
-                        <h4 class="aboutpg_hed pt-4"> Our <span class="light display_black">Infrastructure</span> </h4>
+                        <h4 class="aboutpg_hed"> Our <span class="light display_black">Infrastructure</span> </h4>
                         <p class="para"> We Provide High end Labs for Hands-on practical training </p>
                         <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
                             data-bs-target="#enquiry_modal"> Enquire Now </button>
@@ -174,13 +174,13 @@
 
                     <div class="col-md-7 img_content order-md-1">
                         <div class="row">
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/our_infraimg5.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg5.jpg" data-src="/assets/frontend/images/our_infraimg5.jpg" /> </a>
                                 </div>
                             </div>
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/our_infraimg6.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg6.jpg" data-src="/assets/frontend/images/our_infraimg6.jpg" /> </a>
@@ -188,13 +188,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/our_infraimg7.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg7.jpg" data-src="/assets/frontend/images/our_infraimg7.jpg" /> </a>
                                 </div>
                             </div>
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/our_infraimg8.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg8.jpg" data-src="/assets/frontend/images/our_infraimg8.jpg" /> </a>
@@ -221,13 +221,13 @@
                     </div>
                     <div class="col-md-7 img_content">
                         <div class="row">
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/Photo-Gallery-4.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-4.jpg" data-src="/assets/frontend/images/Photo-Gallery-4.jpg" /> </a>
                                 </div>
                             </div>
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/Photo-Gallery-11.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-11.jpg" data-src="/assets/frontend/images/Photo-Gallery-11.jpg" />
@@ -236,13 +236,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/Photo-Gallery-6.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-6.jpg" data-src="/assets/frontend/images/Photo-Gallery-6.jpg" /> </a>
                                 </div>
                             </div>
-                            <div class="col-6 padd4">
+                            <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
                                     <a href="images/Photo-Gallery-2.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-2.jpg" data-src="/assets/frontend/images/Photo-Gallery-2.jpg" /> </a>

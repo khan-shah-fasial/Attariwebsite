@@ -109,7 +109,7 @@
             <div class="col-md-6">
                 <p class="copyright">© 2023 Attari Class. All Rights Reserved</p>
             </div>
-            <div class="col-md-6 d-flex justify-content-between footer_privacy">
+            <div class="col-md-6 text-end footer_privacy">
                 <ul>
                     <li><a href="{{ url(route('refund-policy')) }}" class="text-secondary">Refunds & Cancellations</a></li>
                     <li><a href="{{ url(route('terms')) }}" class="text-secondary">Terms of Service</a></li>

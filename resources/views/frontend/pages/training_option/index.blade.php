@@ -89,14 +89,14 @@
                 </div>
                 <div class="col-lg-6 img_content">
                     <div class="row">
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex img_transition">
                                 <a href="images/vmvare_gllaery1.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/vmvare_gllaery1.jpg" data-src="/assets/frontend/images/vmvare_gllaery1.jpg" />
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex img_transition">
                                 <a href="images/vmvare_gllaery2.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/vmvare_gllaery2.jpg" data-src="/assets/frontend/images/vmvare_gllaery2.jpg" />
@@ -105,14 +105,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex img_transition">
                                 <a href="images/vmvare_gllaery3.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/vmvare_gllaery3.jpg" data-src="/assets/frontend/images/vmvare_gllaery3.jpg" />
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex img_transition">
                                 <a href="images/mcse_gllaery3.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/mcse_gllaery3.jpg" data-src="/assets/frontend/images/mcse_gllaery3.jpg" />
@@ -244,14 +244,14 @@
                 </div>
                 <div class="col-lg-6 order-lg-1 img_content">
                     <div class="row">
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex">
                                 <a href="images/35.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/35.jpg" data-src="/assets/frontend/images/35.jpg" />
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex">
                                 <a href="images/36.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/36.jpg" data-src="/assets/frontend/images/36.jpg" />
@@ -260,14 +260,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex">
                                 <a href="images/16.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/16.jpg" data-src="/assets/frontend/images/16.jpg" />
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6 padd4">
+                        <div class="col-6 padd4 marginleftright0">
                             <div class="gallery_boxex">
                                 <a href="images/17.jpg" data-fancybox="gallery">
                                     <img src="/assets/frontend/images/17.jpg" data-src="/assets/frontend/images/17.jpg" />

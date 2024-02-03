@@ -1,8 +1,5 @@
 <script src="https://www.google.com/recaptcha/api.js" defer></script>
-
-<!------------------- seedling ---------------->
-<link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.png') }}">
-<!------------------- seedling ---------------->
+<link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.webp') }}">
 
 <link rel="stylesheet" href="/assets/frontend/css/style.css" /> 
 <link rel="stylesheet" href="/assets/frontend/css/responsive.css" />
