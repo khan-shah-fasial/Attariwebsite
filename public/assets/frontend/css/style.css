@@ -1945,11 +1945,11 @@ p .home_breadcrumb a:hover {
 }
 
 .width70 {
-  width: 70%;
+  width: 70% !important;
 }
 
 .width30 {
-  width: 30%;
+  width: 30% !important;
 }
 
 .margin-top55 {
