@@ -63,7 +63,7 @@
 
                 @if(!empty($vmware_batch))
                     <div class="batch_shedule_box">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-md-9">
 
                                 <ul>
@@ -104,7 +104,7 @@
 
 
                             <div class="col-md-3">
-                                <div class="button_main getin_touch_bx paddingtop41">
+                                <div class="button_main getin_touch_bx">
                                     <h5>Get In Touch to Avail <span>{{ $vmware_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
@@ -246,7 +246,7 @@
 
                 @if(!empty($aws_batch))
                     <div class="batch_shedule_box">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-md-9">
 
                                 <ul>
@@ -287,7 +287,7 @@
 
 
                             <div class="col-md-3">
-                                <div class="button_main getin_touch_bx paddingtop41">
+                                <div class="button_main getin_touch_bx">
                                     <h5>Get In Touch to Avail <span>{{ $aws_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
@@ -427,7 +427,7 @@
 
                 @if(!empty($azure_batch))
                     <div class="batch_shedule_box">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-md-9">
 
                                 <ul>
@@ -468,7 +468,7 @@
 
 
                             <div class="col-md-3">
-                                <div class="button_main getin_touch_bx paddingtop41">
+                                <div class="button_main getin_touch_bx">
                                     <h5>Get In Touch to Avail <span>{{ $azure_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
@@ -596,7 +596,7 @@
     <!------------------========================== schedule ===============================-------------------->
     <section id="mcse_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12">
                     <h4 class="section_heading pb-3 text-center"> <b>MCSE Training Schedule</b></h4>
                 </div>
@@ -650,7 +650,7 @@
 
 
                             <div class="col-md-3">
-                                <div class="button_main getin_touch_bx paddingtop41">
+                                <div class="button_main getin_touch_bx">
                                     <h5>Get In Touch to Avail <span>{{ $mcse_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
@@ -777,7 +777,7 @@
     <!------------------========================== schedule ===============================-------------------->
     <section id="ccna_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12">
                     <h4 class="section_heading pb-3 text-center"> <b>CCNA Training Schedule</b></h4>
                 </div>
@@ -831,7 +831,7 @@
 
 
                             <div class="col-md-3">
-                                <div class="button_main getin_touch_bx paddingtop41">
+                                <div class="button_main getin_touch_bx">
                                     <h5>Get In Touch to Avail <span>{{ $ccna_batch->off_percentage }} OFF</span>
                                     </h5>
                                     <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"

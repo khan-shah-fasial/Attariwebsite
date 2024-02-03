@@ -226,7 +226,7 @@
                     <div class="col-md-3 width30 position_sticky">
                         <div class="talktous_box">
                             <i class="fa-sharp fa-solid fa-phone"></i>
-                            <p>Talk To Us</p>
+                            <p class="mb-3">Talk To Us</p> 
                             <p>
                                 <a href="tel:+917738375431">+91 7738375431</a>
                             </p>
@@ -471,7 +471,7 @@
                         </div>
 
                         <div class="batch_shedule_box">
-                            <div class="row">
+                            <div class="row align-items-center">
                                 <div class="col-md-9">
                                     <h5 class="batch_subhed">{{ $batch->paced_title }}</h5>
                                     @php $paced_pointer = json_decode($batch->paced_pointer_list) @endphp
@@ -492,7 +492,7 @@
                         </div>
 
                         <div class="batch_shedule_box">
-                            <div class="row">
+                            <div class="row align-items-center">
                                 <div class="col-md-9">
                                     <h5 class="batch_subhed">{{ $batch->oc_title }} <spam>Preferred</spam>
                                     </h5>
@@ -538,7 +538,7 @@
                         </div>
 
                         <div class="batch_shedule_box">
-                            <div class="row">
+                            <div class="row align-items-center">
                                 <div class="col-md-9">
                                     <h5 class="batch_subhed">{{ $batch->corp_title }}</h5>
                                     @php $corp_pointer = json_decode($batch->corp_pointer_list) @endphp
@@ -595,8 +595,8 @@
                         @endif
 
 
-                        <div class="gradiant_bg bookdemofreeform_course mt-4">
-                            <h4 class="text-left textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
+                        <div class="gradiant_bg bookdemofreeform_course course_buttom_form mt-4">
+                            <h4 class="text-center textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
                             @include('frontend.component.course_demo_form', [
                                 'courseName' => $cms->breadcrumb_title,
                                 'form' => '2',
@@ -608,7 +608,7 @@
                     <div class="col-md-3 width30 position_sticky">
                         <div class="talktous_box margin-top55">
                             <i class="fa-sharp fa-solid fa-phone"></i>
-                            <p>Talk To Us</p>
+                            <p class="mb-3">Talk To Us</p>
                             <p>
                                 <a href="tel:+917738375431">+91 7738375431</a>
                             </p>
@@ -631,7 +631,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h4 class="section_heading pb-3 text-center"> Other Courses We Offer</h4>
+                    <h4 class="section_heading pb-3 text-center"> Other Courses <strong>We Offer</strong></h4>
                     <div class="owl-carousel owl-theme other_courses_slider">
 
                         @foreach ($cms_course as $row)
