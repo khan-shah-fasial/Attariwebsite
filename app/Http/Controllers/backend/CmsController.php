@@ -138,7 +138,7 @@ class CmsController extends Controller
                 'title' => 'required',
                 //'menu_title' => 'required',
                 'breadcrumb_title' => 'required',
-                'slug' => 'required|unique:cms',
+                'slug' => 'required',
                 'description' => 'required',
                 
                 'course_id' => 'required',
@@ -150,7 +150,7 @@ class CmsController extends Controller
                 'title' => 'required',
                 'menu_title' => 'required',
                 'breadcrumb_title' => 'required',
-                'slug' => 'required|unique:cms',
+                'slug' => 'required',
                 'description' => 'required',
                 
                 'course_id' => 'required',
