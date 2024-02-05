@@ -174,7 +174,7 @@
     <!-----------============= video testimonials ===============---------------------------------->
     @php
         $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->get();
-        $cms = DB::table('cms')->where('status', 1)->where('course_id','5')->get('replace_keyword')->first();
+        
     @endphp
     
         @if(!empty($text_vm_review))
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="testimonial__content">
                                     <div class="testimonial__text">
-                                        @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
+                                         @php echo html_entity_decode($row->description) @endphp
                                     </div>
                                 </div>
                             </div>
@@ -357,7 +357,7 @@
     <!-----------============= video testimonials ===============---------------------------------->
     @php
         $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->get();
-        $cms = DB::table('cms')->where('status', 1)->where('course_id','7')->get('replace_keyword')->first();
+        
     @endphp
     
         @if(!empty($text_aws_review))
@@ -388,7 +388,7 @@
                                 </div>
                                 <div class="testimonial__content">
                                     <div class="testimonial__text">
-                                        @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
+                                         @php echo html_entity_decode($row->description) @endphp
                                     </div>
                                 </div>
                             </div>
@@ -538,7 +538,7 @@
     <!-----------============= video testimonials ===============---------------------------------->
     @php
         $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->get();
-        $cms = DB::table('cms')->where('status', 1)->where('course_id','8')->get('replace_keyword')->first();
+        
     @endphp
     
         @if(!empty($text_azure_review))
@@ -569,7 +569,7 @@
                                 </div>
                                 <div class="testimonial__content">
                                     <div class="testimonial__text">
-                                        @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
+                                         @php echo html_entity_decode($row->description) @endphp
                                     </div>
                                 </div>
                             </div>
@@ -720,7 +720,7 @@
     <!-----------============= video testimonials ===============---------------------------------->
     @php
         $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->get();
-        $cms = DB::table('cms')->where('status', 1)->where('course_id','9')->get('replace_keyword')->first();
+        
     @endphp
     
         @if(!empty($text_mcse_review))
@@ -751,7 +751,7 @@
                                 </div>
                                 <div class="testimonial__content">
                                     <div class="testimonial__text">
-                                        @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
+                                         @php echo html_entity_decode($row->description) @endphp
                                     </div>
                                 </div>
                             </div>
@@ -901,7 +901,6 @@
     <!-----------============= video testimonials ===============---------------------------------->
     @php
         $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->get();
-        $cms = DB::table('cms')->where('status', 1)->where('course_id','10')->get('replace_keyword')->first();
     @endphp
     
         @if(!empty($text_ccna_review))
@@ -932,7 +931,7 @@
                                 </div>
                                 <div class="testimonial__content">
                                     <div class="testimonial__text">
-                                        @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
+                                         @php echo html_entity_decode($row->description) @endphp
                                     </div>
                                 </div>
                             </div>

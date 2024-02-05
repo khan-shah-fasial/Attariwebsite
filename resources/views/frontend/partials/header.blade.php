@@ -39,7 +39,33 @@ $course = DB::table('cms')->where('status', 1)->where('zone', 0)->get(['menu_tit
                                                     <li>
                                                         <a href="{{ url(route('course.detail', ['slug' => $row->slug] )) }}">
                                                             <span class="icon_text">
-                                                                <i class="fa fa-laptop"></i> {{ $row->menu_title }}
+                                                                <i class="fa
+                                                                @switch(strtolower($row->menu_title))
+                                                                    @case('vmware')
+                                                                        fa-laptop
+                                                                        @break
+                                                        
+                                                                    @case('aws cloud')
+                                                                        fa-brands fa-amazon
+                                                                        @break
+                                                        
+                                                                    @case('azure cloud')
+                                                                        fa-brands fa-microsoft
+                                                                        @break
+                                                        
+                                                                    @case('mcse')
+                                                                        fa-brands fa-windows
+                                                                        @break
+                                                        
+                                                                    @case('ccna')
+                                                                        fa-solid fa-certificate
+                                                                        @break
+                                                        
+                                                                    @default
+                                                                        fa-laptop
+                                                                @endswitch"
+                                                                aria-hidden="true"></i>          
+                                                                {{ $row->menu_title }}
                                                             </span>
                                                         </a>
                                                     </li>

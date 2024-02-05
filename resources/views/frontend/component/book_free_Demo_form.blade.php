@@ -33,7 +33,7 @@ enctype="multipart/form-data">
 
     <div class="form-group">
         <select name="services" class="form-select form-control" required />
-            <option selected>-Select Course-</option>
+            <option value="">--Select Course-</option>
             <option value="VMware">VMware</option>
             <option value="AWS Cloud">AWS Cloud</option>
             <option value="Azure Cloud">Azure Cloud</option>

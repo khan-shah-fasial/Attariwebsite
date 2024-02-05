@@ -225,10 +225,12 @@ $(document).ready(function(){
   
 })
 // tab functionality start
+
+/*
 const sectionsContainer = document.querySelector('.page-sections');
 const sections = document.querySelectorAll('.page-section');
 const nav = document.querySelector('.nav-sections');
-const menu34 = nav.querySelector('.menu34');
+//const menu34 = nav.querySelector('.menu34');
 const links = nav.querySelectorAll('.menu-item-link');
 const activeLine = nav.querySelector('.active-line');
 const sectionOffset = nav.offsetHeight + 24;
@@ -280,6 +282,8 @@ const handleActiveLinkUpdate = current => {
   moveActiveLine();
 };
 
+
+
 const init = () => {
   moveActiveLine(links[0]);
   document.documentElement.style.setProperty('--section-offset', sectionOffset);
@@ -305,3 +309,4 @@ window.addEventListener("scroll", () => {
 
 init();
 // tab functionality end
+*/

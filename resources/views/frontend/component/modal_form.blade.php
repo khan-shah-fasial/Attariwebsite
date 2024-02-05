@@ -40,7 +40,7 @@ $session_data = json_decode(session('user_ip'), true);
 
                     <div class="form-group">
                         <select name="services" class="form-select form-control" required>
-                            <option selected>-Select Course-</option>
+                            <option value="">--Select Course-</option>
                             <option value="1">VMware</option>
                             <option value="2">AWS Cloud</option>
                             <option value="3">Azure Cloud</option>

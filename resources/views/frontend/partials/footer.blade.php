@@ -137,12 +137,23 @@
                 </div>
 
                 <div class="query_form">
-                    <form>
-                        <input type="text" placeholder="Enter Name" />
-                        <input type="text" placeholder="Enter E-mail" />
-                        <input type="text" placeholder="Your Country" />
-                        <input type="text" placeholder="Mobile No with Country Code" />
-                        <select>
+
+                    @php
+                        $session_data = json_decode(session('user_ip'), true);
+                    @endphp
+
+                    <form id="add_footer_form" action="{{url(route('contact.create'))}}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+
+                        <input type="hidden" name="section" value="Drop a Query Form" data-aos-once="true" data-aos="fade-up" />
+                        <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
+
+                        <input type="text" name="name" placeholder="Enter Name" required/>
+                        <input type="text" name="email" placeholder="Enter E-mail" required/>
+                        <input type="text" name="country" placeholder="Your Country" />
+                        <input type="text" name="phone" placeholder="Mobile No with Country Code" required/>
+                        <select name="services" required>
                             <option selected>-Select Course-</option>
                             <option value="1">VMware</option>
                             <option value="2">AWS Cloud</option>
@@ -150,9 +161,14 @@
                             <option value="4">MCSE</option>
                             <option value="5">CCNA</option>
                         </select>
-                        <textarea rows="3"></textarea>
-                        <button>Send</button>
+                        <textarea name="description" rows="3"></textarea>
+
+                        <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
+                        <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true" data-aos="fade-up" />
+
+                        <button type="submit">Send</button>
                     </form>
+
                 </div>
             </div>
         </div>

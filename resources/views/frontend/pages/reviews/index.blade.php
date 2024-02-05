@@ -347,42 +347,8 @@
     <section id="testimonials" class="testiminilas_sec gray_bgg1 pt-5 pb-5">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">Video Reviews</h3>
-            <div class="large-12 columns">
-                <div class="owl-carousel owl-theme video_testiminials">
-                    <div class="item">
-                        <div class="testimonial_video">
-                            <a href="https://www.youtube.com/embed/T9PrVAio31k" data-fancybox="gallery">
-                                <div class="pulse-button"></div>
-                                <img src="/assets/frontend/images/amar_pandey_review.jpg" class="img-fluid d-block w-100 lazyload" alt>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial_video">
-                            <a href="https://www.youtube.com/embed/Gx9iRvGxYsg" data-fancybox="gallery">
-                                <div class="pulse-button"></div>
-                                <img src="/assets/frontend/images/amar_pandey_review_2.jpg" class="img-fluid d-block w-100 lazyload" alt>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial_video">
-                            <a href="https://www.youtube.com/embed/9y-Oiet2HBE" data-fancybox="gallery">
-                                <div class="pulse-button"></div>
-                                <img src="/assets/frontend/images/Sohail-MCSE.jpg" class="img-fluid d-block w-100 lazyload" alt>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial_video">
-                            <a href="https://www.youtube.com/embed/EqTLrlzQwkI" data-fancybox="gallery">
-                                <div class="pulse-button"></div>
-                                <img src="/assets/frontend/images/Vinayak-CCNA.jpg" class="img-fluid d-block w-100 lazyload" alt>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            @include('frontend.component.review_video');
 
 
             <div class="col-12 d-flex justify-content-center gap-2">
@@ -408,10 +374,10 @@
                 <div class="owl-carousel owl-theme">
 
                 @php
-                    $text_facebook_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','facebook')->get();
+                    $text_facebook_review = DB::table('text_reviews')->where('status', 1)->where('type','facebook')->get();
                 @endphp
 
-                @if(!empty($text_facebook_review))\
+                @if(!empty($text_facebook_review))
                     @foreach ($text_facebook_review as $row)
                         <div class="item">
                             <div class="testimonial_box">

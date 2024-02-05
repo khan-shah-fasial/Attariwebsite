@@ -11,7 +11,7 @@
                             $join->on('c1.course_id', '=', 'c2.course_id')
                                 ->on('c1.created_at', '=', 'c2.max_created_at');
                         })
-        ->orderBy('c1.created_at', 'desc')
+        ->orderBy('c1.created_at', 'ASC')
         ->get();
         
 @endphp

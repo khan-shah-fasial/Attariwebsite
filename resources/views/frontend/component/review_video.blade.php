@@ -1,7 +1,5 @@
 @php
-/*
-     = DB::table('video_reviews')->whereIn('course_id', [5, 7, 8, 9, 10])->where('status','1')->select('course_id','image','url', DB::raw('MAX(created_at) as latest_created_at'))->groupBy('course_id', 'image', 'url')->orderBy('latest_created_at', 'desc')->limit(5)->get();
-      */
+
 
     $video_rev = DB::table('video_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
@@ -14,7 +12,7 @@
                             $join->on('c1.course_id', '=', 'c2.course_id')
                                 ->on('c1.created_at', '=', 'c2.max_created_at');
                         })
-        ->orderBy('c1.created_at', 'desc')
+        ->orderBy('c1.created_at', 'ASC')
         ->get();
         
 

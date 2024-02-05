@@ -250,11 +250,15 @@
                     <div class="col-md-9 width70">
                         <h4 class="section_heading pb-3 textcolor_wht float_left"> {{ $detail->syllabus_section_heading }}
                         </h4>
-                        <div class="download_carricullam float_right"><a class=""
-                                href="{{ asset('storage/' . $detail->curriculum_pdf) }}" download="Curriculum"><img
-                                    data-src="/assets/frontend/images/pdf.webp" class="lazyload" alt=""> Download
-                                Curriculum</a>
-                        </div>
+                        
+                        @if(!empty($detail->curriculum_pdf))
+                            <div class="download_carricullam float_right"><a class=""
+                                    href="{{ asset('storage/' . $detail->curriculum_pdf) }}" download="Curriculum"><img
+                                        data-src="/assets/frontend/images/pdf.webp" class="lazyload" alt=""> Download
+                                    Curriculum</a>
+                            </div>
+                        @endif
+
 
                         <div style="clear:both"></div>
                         @if (!empty($syllabus))
@@ -265,13 +269,13 @@
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading{{ $i }}">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse{{ $i }}"
+                                                data-bs-target="#collapse1{{ $i }}"
                                                 aria-expanded="@if ($i == 1) true @else false @endif"
                                                 aria-controls="collapse{{ $i }}">
                                                 Module {{ $i }}:- @php echo ReplaceKeyword($row->title, $cms->replace_keyword) @endphp
                                             </button>
                                         </h2>
-                                        <div id="collapse{{ $i }}"
+                                        <div id="collapse1{{ $i }}"
                                             class="accordion-collapse collapse @if ($i == 1) show @endif"
                                             aria-labelledby="heading{{ $i }}" data-bs-parent="#Syllabus">
                                             <div class="accordion-body">

@@ -33,6 +33,9 @@ class CmsController extends Controller
                 'breadcrumb_title' => 'required',
                 'slug' => 'required|unique:cms',
                 'description' => 'required',
+
+                'zone' => 'required',
+                'alias' => 'required',
                 
                 'course_id' => 'required',
             ]);
@@ -140,6 +143,9 @@ class CmsController extends Controller
                 'breadcrumb_title' => 'required',
                 'slug' => 'required',
                 'description' => 'required',
+
+                'zone' => 'required',
+                'alias' => 'required',
                 
                 'course_id' => 'required',
             ]);

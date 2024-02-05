@@ -58,10 +58,10 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" id="zone-select">
                             <div class="form-group mb-3">
                                 <label>Zone</label>
-                                <select class="form-select select2" name="zone">
+                                <select class="form-select select2" name="zone" required>
                                     <option value="0">--- Select ---</option>
                                     <option value="1">City</option>
                                     <option value="2">Country</option>
@@ -69,10 +69,10 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" id="alisa-select">
                             <div class="form-group mb-3">
                                 <label>Course Alias</label>
-                                <input type="text" class="form-control" name="alias" value="" >
+                                <input type="text" class="form-control" name="alias" value="" required>
                             </div>
                         </div>
 
@@ -192,6 +192,9 @@ $("#replace_key_add_more").append(new_replace_key);
 var zoneCheck = document.getElementById('zone_check');
 var menuTitle = document.getElementById('menu-title');
 
+var zoneSelect = document.getElementById('zone-select');
+var aliasSelect = document.getElementById('alisa-select');
+
 // Initial check
 toggleMenuTitle();
 
@@ -204,10 +207,24 @@ zoneCheck.addEventListener('change', function () {
 function toggleMenuTitle() {
     if (zoneCheck.checked) {
         menuTitle.style.display = 'none';
+
+        zoneSelect.style.display = 'block';
+        aliasSelect.style.display = 'block';
+
         document.getElementsByName('menu_title')[0].removeAttribute('required');
+
+        document.getElementsByName('zone')[0].setAttribute('required', 'required');
+        document.getElementsByName('alias')[0].setAttribute('required', 'required');
     } else {
         menuTitle.style.display = 'block';
+
+        zoneSelect.style.display = 'none';
+        aliasSelect.style.display = 'none';
+
         document.getElementsByName('menu_title')[0].setAttribute('required', 'required');
+
+        document.getElementsByName('zone')[0].removeAttribute('required');
+        document.getElementsByName('alias')[0].removeAttribute('required');
     }
 }
 
