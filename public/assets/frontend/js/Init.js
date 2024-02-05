@@ -187,23 +187,6 @@ $(document).ready(function() {
     }
 });
 
-//popup script
-$(document).ready(function() {
-    initValidate('#add_popup_form');
-    $("#add_popup_form").submit(function(e) {
-        var form = $(this);
-        ajaxSubmit(e, form, responseHandler);
-    });
-
-    var responseHandler = function(response) {
-        $('input, textarea').val('');
-        $("select option:first").prop('selected', true);
-        setTimeout(function() {
-            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
-        }, 2000);
-    }
-});
-
 //comment script
 $(document).ready(function() {
     initValidate('#add_comment_form');
