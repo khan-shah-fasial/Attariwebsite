@@ -32,7 +32,7 @@ enctype="multipart/form-data">
     </div>
 
     <div class="form-group">
-        <select aria-labelledby="-Select Course-" name="services" class="form-select form-control" required>
+        <select name="services" class="form-select form-control" required />
             <option selected>-Select Course-</option>
             <option value="VMware">VMware</option>
             <option value="AWS Cloud">AWS Cloud</option>

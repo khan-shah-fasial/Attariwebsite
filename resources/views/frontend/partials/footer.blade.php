@@ -1,6 +1,4 @@
-@php
-    //$practice_Area = DB::table('practice_areas')->where('parent_id', null)->limit(4)->orderBy('id', 'asc')->get();
-@endphp
+
 <!--------------------footer start----------------------------->
 
 
@@ -164,23 +162,3 @@
 
 <!------------------ footer End -------------------------->
 
-
-<!--start cookies code-->
-{{-- --<div class="cookies_section">
-    <div class="title-box">
-        <i class="bx bx-cookie"></i>
-        <h3> <img src="/assets/frontend/images/cookie_image.png" alt="" /> Cookies Consent</h3>
-    </div>
-    <div class="info">
-        <p>
-            We use cookies to help you navigate efficiently and perform certain functions. You will find detailed
-            information about all cookies under each consent category below.
-            <a href="{{url(route('cookie-policy'))}}"> Read more...</a>
-        </p>
-    </div>
-    <div class="buttons">
-        <button class="cookies_button" id="cookieAccept">Accept</button>
-        <button class="cookies_button">Decline</button>
-    </div>
-</div> - --}}
-<!--end cookies code-->
