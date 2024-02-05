@@ -729,7 +729,7 @@ li.menu_item i {
   background: #fff;
   border: 1px solid #e1e8ed;
   border-radius: 4px;
-  height: 262px;
+  height: 220px;
   overflow-x: hidden;
   width: 100%;
 }
@@ -2946,6 +2946,11 @@ button.owl-dot.active span {
   right: 24px;
   width: 95px;
   margin-left: auto;
+  display: block !important;
+}
+
+.certificate_section .owl-nav {
+  display: block !important;
 }
 
 .certificate_section button.owl-prev {
@@ -3128,6 +3133,13 @@ div#popupPlayerWrapper_1 {
 
 .marginleftright0 {
   --bs-gutter-x: 0.5rem;
+}
+
+
+.testimonial__text p {
+  font-size: 14px !important;
+  line-height: 24px !important;
+  font-weight: 400;
 }
 
 /*tab functionality css end*/
