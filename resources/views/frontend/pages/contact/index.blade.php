@@ -167,7 +167,7 @@
                             <div class="icons">
                                 <div class="instagram">
                                     <i aria-hidden="true" class="fab fa-instagram"></i>
-                                    <h2>1.7K</h2>
+                                    <h2>2.2K</h2>
                                     <p>Followers</p>
                                     <a target="_blank" href="https://www.instagram.com/attari.classes/">Check Our
                                         Instagram</a>
@@ -179,7 +179,7 @@
                             <div class="icons">
                                 <div class="linkedIn">
                                     <i aria-hidden="true" class="fab fa-linkedin-in"></i>
-                                    <h2>4K</h2>
+                                    <h2>6.3K</h2>
                                     <p>Followers</p>
                                     <a target="_blank"
                                         href="https://www.linkedin.com/company/attari-classes-vmware-aws-azure-mcsa-ccna-training-in-mumbai/">Check
@@ -192,7 +192,7 @@
                             <div class="icons">
                                 <div class="youtupe">
                                     <i aria-hidden="true" class="fab fa-youtube"></i>
-                                    <h2>3K</h2>
+                                    <h2>10.3K</h2>
                                     <p>Subscribers</p>
                                     <a target="_blank" href="https://www.youtube.com/c/AttariClasses-IT-Trainings">Check
                                         Our YouTube Channel</a>
@@ -204,7 +204,7 @@
                             <div class="icons">
                                 <div class="telegram">
                                     <i aria-hidden="true" class="fab fa-telegram"></i>
-                                    <h2>143+</h2>
+                                    <h2>190+</h2>
                                     <p>Subscribers</p>
                                     <a target="_blank" href="https://t.me/attariclasses">Check Our Telegram</a>
                                 </div>
