@@ -4,24 +4,18 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-/*
-use App\Models\PracticeArea;
-*/
+
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\User;
-/*
-use App\Models\Team;
-*/
+
 use App\Models\Faq;
 use App\Models\Contact;
 use App\Models\BlogComment;
-/*
-use App\Models\MediaCoverage;
-use App\Models\Publication;
-*/
+
 use Illuminate\Support\Facades\Mail;
 
+use App\Models\Newsletter;
 use App\Models\Cms;
 use App\Models\Course;
 use App\Models\Batch;
@@ -39,41 +33,7 @@ class IndexController extends Controller
     public function index(){
         return view('frontend.pages.home.index');
     }
-/*
-//--------------=============================== practice area =====================---------------------------
-    public function practice_area(){
-        $practiceAreas = PracticeArea::where('status', 1)->orderBy('updated_at', 'desc')->get();
 
-        //return $practiceAreas;
-        return view('frontend.pages.practicearea.index', compact('practiceAreas'));
-    }
-
-    public function practice_area_detail($slug){
-        $detail = PracticeArea::where('slug', $slug)->where('status', 1)->first();
-
-        //$slug = str_replace('-', ' ', $slug);
-        $blog_Catg = BlogCategory::where('slug', $slug)->where('status', 1)->first();
-
-        if(!empty($blog_Catg)){
-            $blog = Blog::where('status', 1)->whereJsonContains('blog_category_ids', ''.$blog_Catg->id.'')->limit(3)->orderBy('id', 'desc')->get();
-        } else {
-            $blog = [];
-        }
-        
-
-        if(empty($detail->parent_id)){  
-            $focusAreaIds = json_decode($detail->focus_area, true);
-            $focusAreaIds = is_array($focusAreaIds) ? $focusAreaIds : [];
-
-            $child_detail = PracticeArea::where('status', 1)->whereIn('id', $focusAreaIds)->get();
-        } else  {
-            $child_detail = [];
-        }
-
-        return view('frontend.pages.practicearea.detail', compact('detail', 'child_detail', 'blog'));
-    }
-//--------------=============================== practice area end =====================------------------------------
-*/
 //--------------=============================== Blog  ================================------------------------------
 
     public function blog(){
@@ -124,25 +84,8 @@ class IndexController extends Controller
     }
 
 //--------------=============================== Blog end ================================------------------------------
-/*
-//--------------=============================== Team  ================================------------------------------
 
-    public function team_members(){
-        $team = Team::orderBy('series', 'asc')->get();
 
-        return view('frontend.pages.team.index', compact('team'));
-    }
-
-    public function team_detail($slug){
-        $slug = str_replace('-', ' ', $slug);
-
-        $detail = Team::where('name', $slug)->where('status', 1)->first();
-
-        return view('frontend.pages.team.detail', compact('detail'));
-    }
-
-//--------------=============================== Team end ================================------------------------------
-*/
 //--------------=============================== other ================================------------------------------
 
     public function not_found(){
@@ -298,111 +241,56 @@ class IndexController extends Controller
         return response()->json($response);
     }
    //--------------=============================== contact form save ===========================--------------------------
-   /*
-   //--------------=============================== news ==========================================-------------------------
+   
+   //--------------=============================== newsleatter ==========================================-------------------------
 
-    public function news(){
-        $news = Blog::where('status', 1)->whereJsonContains('blog_category_ids', '4')->orderBy('created_at', 'desc')->paginate(6);
-
-        return view('frontend.pages.news.index', compact('news'));
-    }
-
-    public function news_data(Request $request)
+    public function newsletter_save(Request $request)
     {
-        $page = $request->input('page', 1);
-        $perPage = 6;
+        $rules = [
+            'email' => 'required|email',
+        ];
     
-        $news = Blog::where('status', 1)->whereJsonContains('blog_category_ids', '4')->orderBy('created_at', 'desc')->paginate($perPage, ['*'], 'page', $page);
+        $validator = Validator::make($request->all(), $rules); // Pass $request->all() as the first argument
     
-        if ($request->ajax()) {
-            $view = view('frontend.component.news_card', compact('news'))->render();
-    
-            return response()->json(['html' => $view]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'notification' => $validator->errors(),
+            ]);
         }
     
-        return view('frontend.pages.news.index', compact('news'));
+
+        // Create the contact record, including 'cv' if provided
+        $newsletterData = $request->all();
+
+
+        $email = isset($newsletterData["email"]) ? $newsletterData["email"] : ' - ';
+
+
+        // Create the contact record
+        Newsletter::create($newsletterData);
+
+        // Send email if $cvPath is not null
+       
+        $recipient = ''.$email.''; 
+        $subject  =  'News Letter Subscribe';
+     
+
+        $body = 'Thnaks For Subscribe the Attari Classes Newsletter';
+        
+        sendEmail($recipient, $subject, $body);
+        
+        $response = [
+            'status' => true,
+            'notification' => 'NewsLetter Subscribe successfully!',
+        ];
+    
+        return response()->json($response);
     }
 
-    //--------------=============================== news end ==========================================---------------------
+//--------------=============================== newsleatter ==========================================-------------------------
 
-     //--------------=============================== Deal Update ====================================---------------------
 
-    public function deal_update(){
-        $deal_update = Blog::where('status', 1)->whereJsonContains('blog_category_ids', '5')->orderBy('created_at', 'desc')->paginate(6);
-
-        return view('frontend.pages.deal_update.index', compact('deal_update'));
-    }
-
-    public function deal_update_data(Request $request)
-    {
-        $page = $request->input('page', 1);
-        $perPage = 6;
-    
-        $deal_update = Blog::where('status', 1)->whereJsonContains('blog_category_ids', '5')->orderBy('created_at', 'desc')->paginate($perPage, ['*'], 'page', $page);
-    
-        if ($request->ajax()) {
-            $view = view('frontend.component.deal_update_card', compact('deal_update'))->render();
-    
-            return response()->json(['html' => $view]);
-        }
-    
-        return view('frontend.pages.deal_update.index', compact('deal_update'));
-    }
-
-//--------------=============================== Deal Update end =================================---------------------
-
-//--------------=============================== media coverage ====================================---------------------
-
-    public function media_coverage(){
-        $media_coverage = MediaCoverage::where('status', 1)->orderBy('created_at', 'desc')->paginate(6);
-
-        return view('frontend.pages.media_coverage.index', compact('media_coverage'));
-    }
-
-    public function media_coverage_data(Request $request)
-    {
-        $page = $request->input('page', 1);
-        $perPage = 6;
-    
-        $media_coverage = MediaCoverage::where('status', 1)->orderBy('created_at', 'desc')->paginate($perPage, ['*'], 'page', $page);
-    
-        if ($request->ajax()) {
-            $view = view('frontend.component.media_coverage_card', compact('media_coverage'))->render();
-    
-            return response()->json(['html' => $view]);
-        }
-    
-        return view('frontend.pages.media_coverage.index', compact('media_coverage'));
-    }
-
-  //--------------=============================== media coverage ====================================---------------------
-
-  //--------------=============================== publication ====================================---------------------
-
-    public function publication(){
-        $publication = Publication::where('status', 1)->orderBy('created_at', 'desc')->paginate(6);
-
-        return view('frontend.pages.publication.index', compact('publication'));
-    }
-
-    public function publication_data(Request $request)
-    {
-        $page = $request->input('page', 1);
-        $perPage = 6;
-    
-        $publication = Publication::where('status', 1)->orderBy('created_at', 'desc')->paginate($perPage, ['*'], 'page', $page);
-    
-        if ($request->ajax()) {
-            $view = view('frontend.component.publication_card', compact('publication'))->render();
-    
-            return response()->json(['html' => $view]);
-        }
-    
-        return view('frontend.pages.publication.index', compact('publication'));
-    }
-
-//--------------=============================== publication end ====================================---------------------
-*/
 //--------------=============================== other feature ====================================---------------------
     /*
     public function search(Request $request){

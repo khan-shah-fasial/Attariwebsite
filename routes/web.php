@@ -64,6 +64,8 @@ Route::get('/cookie-policy', [IndexController::class, 'cookie_policy'])->name('c
 Route::post('/contact-save', [IndexController::class, 'contact_save'])->name('contact.create');
 Route::post('/comment-save', [IndexController::class, 'comment_save'])->name('comment.create');
 
+Route::post('/newsletter-save', [IndexController::class, 'newsletter_save'])->name('newsletter.create');
+
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 // Home END
 

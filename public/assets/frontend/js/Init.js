@@ -187,10 +187,10 @@ $(document).ready(function() {
     }
 });
 
-//comment script
+//Contact script
 $(document).ready(function() {
-    initValidate('#add_comment_form');
-    $("#add_comment_form").submit(function(e) {
+    initValidate('#add_contact_form');
+    $("#add_contact_form").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });
@@ -199,7 +199,25 @@ $(document).ready(function() {
         $('input, textarea').val('');
         $("select option:first").prop('selected', true);
         setTimeout(function() {
-            location.reload();
+            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
+        }, 2000);
+    }
+});
+
+
+//newsletter script
+$(document).ready(function() {
+    initValidate('#add_newsletter_form');
+    $("#add_newsletter_form").submit(function(e) {
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
+    });
+
+    var responseHandler = function(response) {
+        $('input, textarea').val('');
+        $("select option:first").prop('selected', true);
+        setTimeout(function() {
+            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
         }, 2000);
     }
 });

@@ -35,6 +35,10 @@
         </div>
     </section>
 
+    @php
+        $session_data = json_decode(session('user_ip'), true);
+    @endphp
+
     <!-------------------Contact Form------------------------------>
     <section class="contact_form">
         <div class="container">
@@ -42,22 +46,36 @@
                 <div class="col-md-6 order-md-2 form_container">
                     <h6 class="mb-md-5 mb-4 contact_form_heading">Fill out this form for booking a career guidance session
                     </h6>
-                    <form action="">
-                        <input type="text" name="entername" placeholder="Enter Name" />
-                        <input type="email" name="email" placeholder="Enter E-mail" />
-                        <input type="text" name="country" placeholder="Your Country" />
-                        <input type="text" name="mobile_no" placeholder="Mobile no with Country code" />
-                        <select name="select_course">
-                            <option value="" selected>--Select Course--</option>
-                            <option value="">VMwere</option>
-                            <option value="">AWS Cloud</option>
-                            <option value="">Azure Cloud</option>
-                            <option value="">MSCE</option>
-                            <option value="">CCNA</option>
+
+                    <form id="add_contact_form" action="{{url(route('contact.create'))}}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+
+                        <input type="hidden" name="section" value="Contact Us Form" data-aos-once="true" data-aos="fade-up" />
+                        <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
+
+                        <input type="text" name="name" placeholder="Enter Name" required/>
+                        <input type="email" name="email" placeholder="Enter E-mail" required/>
+                        <input type="text" name="country" placeholder="Your Country" required/>
+                        <input type="text" name="phone" placeholder="Mobile no with Country code" required/>
+                        <select name="select_course" name="services">
+                            <option value="">--Select Course--</option>
+                            <option value="VMwere">VMwere</option>
+                            <option value="AWS Cloud">AWS Cloud</option>
+                            <option value="Azure Cloud">Azure Cloud</option>
+                            <option value="MSCE">MSCE</option>
+                            <option value="CCNA">CCNA</option> 
                         </select>
-                        <textarea placeholder="Message" name="message" rows="4"></textarea>
-                        <button>Send</button>
+                        <textarea placeholder="Message" name="description" rows="4"></textarea>
+
+                        <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
+
+                        <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true" data-aos="fade-up" />
+
+                        <button type="submit">Send</button>
+
                     </form>
+
                 </div>
                 <div class="col-md-6 order-md-1  info_contact">
                     <h3 class="mb-4">Contact Information</h3>

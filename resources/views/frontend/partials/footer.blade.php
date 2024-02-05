@@ -13,8 +13,14 @@
             </div>
             <div class="col-12 mt-5 d-flex justify-content-center">
                 <div class="footer_search">
-                    <input type="text" name="" placeholder="Enter you Email" />
-                    <button>SUBSCRIBE</button>
+
+                    <form id="add_newsletter_form" action="{{url(route('newsletter.create'))}}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+                        <input type="email" name="email" placeholder="Enter you Email" required/>
+                        <button type="submit">SUBSCRIBE</button>
+                    </form>
+
                 </div>
             </div>
         </div>
