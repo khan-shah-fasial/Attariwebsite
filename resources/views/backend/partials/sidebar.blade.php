@@ -155,7 +155,7 @@
                             </div>
                         </li>
                         --}}
-                        {{--
+
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail') }}" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
                                 <i class="ri-article-line"></i>
@@ -164,9 +164,11 @@
                             </a>
                             <div class="collapse" id="sidebarEmail">
                                 <ul class="side-nav-second-level">
+                                    {{--
                                     <li>
                                         <a href="{{ route('contactpage.index') }}">Contact Page</a>
-                                    </li>
+                                    </li> --}}
+
                                     <li>
                                         <a href="{{ route('setting.privacy') }}">Privacy Policy Page</a>
                                     </li>
@@ -176,10 +178,11 @@
                                     <li>
                                         <a href="{{ route('setting.refund_policy') }}">Refund Policy</a>
                                     </li>
+                                    
                                 </ul>
                             </div>
                         </li>
-                        --}}
+                    
                         {{--
                         <li class="side-nav-item">
                             <a href="{{ route('setting.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">

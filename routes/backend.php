@@ -21,8 +21,10 @@ use App\Http\Controllers\backend\MediaCoverageController;
 use App\Http\Controllers\backend\PublicationController;
 */
 use App\Http\Controllers\backend\ContactController;
-/*
+
 use App\Http\Controllers\backend\BusinessSettingController;
+
+/*
 use App\Http\Controllers\backend\ContactSettingController;
 */
 use App\Http\Controllers\backend\AuthorController;
@@ -212,7 +214,7 @@ Route::group(['prefix' => 'contact'], function () {
 });
 
 
-/*
+
 //setting
 Route::group(['prefix' => 'setting'], function () {
     Route::get('/index', [BusinessSettingController::class, 'index'])->name('setting.index');
@@ -224,6 +226,7 @@ Route::group(['prefix' => 'setting'], function () {
     Route::post('/update', [BusinessSettingController::class, 'update'])->name('setting.update');
 });
 
+/*
 //Contact Page setting
 Route::group(['prefix' => 'contact/page'], function () {
     Route::get('/index', [ContactSettingController::class, 'index'])->name('contactpage.index');
