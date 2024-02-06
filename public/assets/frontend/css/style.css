@@ -3080,10 +3080,6 @@ button.owl-dot.active span {
   height: auto !important;
 }
 
-div#popupPlayerWrapper_1 {
-  display: none !important;
-}
-
 .course_buttom_form .form-group:nth-child(4) {
   width: 49%;
   float: left;
