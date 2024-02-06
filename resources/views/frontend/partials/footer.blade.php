@@ -2,7 +2,7 @@
 <!--------------------footer start----------------------------->
 
 
-<section class="footer pt-5 pb-3">
+<section class="footer pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-12 footer_heading text-center">
@@ -17,7 +17,9 @@
                     <form id="add_newsletter_form" action="{{url(route('newsletter.create'))}}" method="post"
                     enctype="multipart/form-data">
                     @csrf
-                        <input type="email" name="email" placeholder="Enter you Email" required/>
+                    <div class="form-group">    
+                    <input type="email" class="form-control" name="email" placeholder="Enter you Email" required/>
+                      </div>
                         <button type="submit">SUBSCRIBE</button>
                     </form>
 
@@ -155,24 +157,42 @@
                         <input type="hidden" name="section" value="Drop a Query Form" data-aos-once="true" data-aos="fade-up" />
                         <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
 
-                        <input type="text" name="name" placeholder="Enter Name" required/>
-                        <input type="text" name="email" placeholder="Enter E-mail" required/>
-                        <input type="text" name="country" placeholder="Your Country" />
-                        <input type="text" name="phone" placeholder="Mobile No with Country Code" required/>
-                        <select name="services" required>
-                            <option selected>-Select Course-</option>
-                            <option value="1">VMware</option>
-                            <option value="2">AWS Cloud</option>
-                            <option value="3">Azure Cloud</option>
-                            <option value="4">MCSE</option>
-                            <option value="5">CCNA</option>
-                        </select>
-                        <textarea name="description" rows="3"></textarea>
+                        <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="Enter Name" required/>
+                        </div>
 
+                        <div class="form-group">
+                             <input type="text" class="form-control" name="email" placeholder="Enter E-mail" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="country" placeholder="Your Country" required/>
+                        </div>
+
+                        <div class="form-group">
+                             <input type="text" class="form-control" name="phone" placeholder="Mobile No with Country Code" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="services" class="form-select form-control" required>
+                                    <option selected>-Select Course-</option>
+                                    <option value="1">VMware</option>
+                                    <option value="2">AWS Cloud</option>
+                                    <option value="3">Azure Cloud</option>
+                                    <option value="4">MCSE</option>
+                                    <option value="5">CCNA</option>
+                                </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" name="description" rows="3" placeholder="Message" ></textarea>
+                        </div>
                         <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
                         <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true" data-aos="fade-up" />
-
-                        <button type="submit">Send</button>
+                        
+                        <div class="form-group text-center">
+                           <button type="submit">Send</button>
+                        </div>
                     </form>
 
                 </div>
@@ -182,5 +202,5 @@
 </section>
 
 
-<!------------------ footer End -------------------------->
+<!-- footer End -->
 
