@@ -29,6 +29,8 @@
                 </div>
             </div>
         </section>
+
+        
         <section class="about_attari_classes">
             <div class="container">
                 <div class="row align-items-center">
