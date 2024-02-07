@@ -103,7 +103,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">{{ $cms->breadcrumb_title }} Key
+                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">{{ $detail->key_title }} Key
                             Features
                         </h4>
                     </div>

@@ -22,6 +22,7 @@ class Course extends Model
         
         'rating',
         'total_review',
+        'key_title',
 
         'overview_section_heading',
         'syllabus_section_heading',

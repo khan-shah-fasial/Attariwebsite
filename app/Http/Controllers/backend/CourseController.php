@@ -30,6 +30,7 @@ class CourseController extends Controller
             'thumbnail' => 'image',
             'course_overview' => 'required',
             'overview_section_heading' => 'required',
+            'key_title' => 'required',
 
             'rating' => 'required',
             'total_review' => 'required',
@@ -85,6 +86,7 @@ class CourseController extends Controller
 
             'rating' => $request->input('rating'),
             'total_review' => $request->input('total_review'),
+            'key_title' => $request->input('key_title'),
 
             'course_overview' => $request->input('course_overview'),
             'faq' => $data['faq'],
@@ -133,6 +135,7 @@ class CourseController extends Controller
             'thumbnail' => 'image',
             'course_overview' => 'required',
             'overview_section_heading' => 'required',
+            'key_title' => 'required',
             
             'rating' => 'required',
             'total_review' => 'required',
@@ -198,6 +201,7 @@ class CourseController extends Controller
 
         $course->rating = $request->input('rating');
         $course->total_review = $request->input('total_review');
+        $course->key_title = $request->input('key_title');
 
         $course->save();
 

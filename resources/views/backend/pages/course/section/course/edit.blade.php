@@ -99,6 +99,13 @@
                         </div>
                     </div>
 
+                    <div class="col-sm-4">
+                        <div class="form-group mb-3">
+                            <label>Key Features Title </label>
+                            <input type="text" class="form-control" name="key_title" value="{{ $course->key_title }}" required>
+                        </div>
+                    </div>
+
                     {{--
                     <div class="col-sm-12">
                         <div class="form-group mb-3">
