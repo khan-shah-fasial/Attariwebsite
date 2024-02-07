@@ -3171,4 +3171,45 @@ button.owl-dot.active span {
   font-weight: 400;
 }
 
-/*tab functionality css end*/
+/*-- privacy policy--*/
+
+.our_website {
+  padding-top: 50px;
+}
+
+.privacy_heading {
+  color: #012749;
+  font-weight: 500;
+  line-height: 1.2em;
+
+}
+
+.our_website .items {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.our_website {
+  padding-top: 50px;
+}
+
+.privacy_heading {
+  color: #012749;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2em;
+
+}
+
+.our_website .items {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.our_website .items .item span i {
+  font-size: 20px;
+}
+
+.our_website .items .item .list_text {
+  font-size: 19px;
+}

@@ -27,21 +27,28 @@
         }
     </style>
     <section class="privecy_policy">
-        <section class="privecy_banner">
+       
+          <section class="sm-at banner1 privecy_banner">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="breadcrumb">
+                        <div class="breadcrums_section paddtb80">
                             <h1 class="sm-aboutus">Refunds & Cancellations</h1>
-                            <p>
-                                <span class="home_breadcrumb"><a href="{{ url(route('index')) }}">Home</a></span> »
-                                <span class="first_breadcrumb"><a href="">Refunds & Cancellations</a></span>
-                            </p>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="{{ url(route('index')) }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a>»</a></li>
+                                    <li class="breadcrumb-item"><a><b>Refunds & Cancellations</b></a></li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+
         <section class="our_website">
             <div class="container">
                 <div class="row">
