@@ -336,7 +336,7 @@
                                                     <div class="col-lg-3 col-2">
                                                         <div class="projects_covered__icon">
                                                             <img src="{{ asset('storage/' . $row->icon) }}"
-                                                                style="width: 27px;" />
+                                                                />
                                                         </div>
                                                     </div>
                                                 </div>
