@@ -8,46 +8,27 @@
 
 @section('page.content')
     <!-- -------------------- terms start ---------------- -->
-    <style>
-        .our_website {
-            padding-top: 50px;
-        }
-
-        .privacy_heading {
-            color: #012749;
-            font-size: 30px;
-            font-weight: 500;
-            line-height: 1.2em;
-
-        }
-
-        .our_website .items {
-            list-style: none;
-            padding-left: 0px;
-        }
-
-        .our_website .items .item span i {
-            font-size: 20px;
-        }
-
-        .our_website .items .item .list_text {
-            font-size: 19px;
-        }
-    </style>
-    <section class="privecy_policy">
-        <section class="privecy_banner">
+  <section class="privecy_policy">
+        <section class="sm-at banner1 privecy_banner">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="breadcrumb">
+                        <div class="breadcrums_section paddtb80">
                             <h1 class="sm-aboutus">Terms of Service</h1>
-                            <p> <span class="home_breadcrumb"><a href="{{ url(route('index')) }}">Home</a></span> » <span
-                                    class="first_breadcrumb"><a href="">Terms of Service</a></span> </p>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item"><a href="{{ url(route('index')) }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a>»</a></li>
+                                    <li class="breadcrumb-item"><a><b>Terms of Service</b></a></li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
         <section class="our_website">
 
             <div class="container">
