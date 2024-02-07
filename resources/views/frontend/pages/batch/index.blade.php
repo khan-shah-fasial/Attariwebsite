@@ -146,15 +146,17 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    {{--@php
-                                        // Use parse_url to get the path from the URL
-                                        $path = parse_url($row->url, PHP_URL_PATH);
+                                    @php
+                                        // Assuming $row->url contains the YouTube URL
+                                        if (strpos($row->url, 'embed/') === false) {
+                                            $videoID = basename($row->url);
+                                            $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                        } else {
+                                            $youtube_url = $row->url; // URL already in the correct format
+                                        }
+                                    @endphp
 
-                                        $parts = explode('/', trim($path, '/'));
-                                        $videoId = end($parts);
-                                    @endphp --}}
-
-                                    <a href="{{ $row->url }}" data-fancybox="gallery">
+                                    <a href="{{ $youtube_url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
                                         {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                             class="img-fluid d-block w-100 lazyload" alt=""> --}}
@@ -329,15 +331,17 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    {{--@php
-                                        // Use parse_url to get the path from the URL
-                                        $path = parse_url($row->url, PHP_URL_PATH);
+                                    @php
+                                        // Assuming $row->url contains the YouTube URL
+                                        if (strpos($row->url, 'embed/') === false) {
+                                            $videoID = basename($row->url);
+                                            $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                        } else {
+                                            $youtube_url = $row->url; // URL already in the correct format
+                                        }
+                                    @endphp
 
-                                        $parts = explode('/', trim($path, '/'));
-                                        $videoId = end($parts);
-                                    @endphp --}}
-
-                                    <a href="{{ $row->url }}" data-fancybox="gallery">
+                                    <a href="{{ $youtube_url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
                                         {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                             class="img-fluid d-block w-100 lazyload" alt=""> --}}
@@ -510,15 +514,17 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    {{--@php
-                                        // Use parse_url to get the path from the URL
-                                        $path = parse_url($row->url, PHP_URL_PATH);
+                                    @php
+                                        // Assuming $row->url contains the YouTube URL
+                                        if (strpos($row->url, 'embed/') === false) {
+                                            $videoID = basename($row->url);
+                                            $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                        } else {
+                                            $youtube_url = $row->url; // URL already in the correct format
+                                        }
+                                    @endphp
 
-                                        $parts = explode('/', trim($path, '/'));
-                                        $videoId = end($parts);
-                                    @endphp --}}
-
-                                    <a href="{{ $row->url }}" data-fancybox="gallery">
+                                    <a href="{{ $youtube_url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
                                         {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                             class="img-fluid d-block w-100 lazyload" alt=""> --}}
@@ -692,15 +698,17 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    {{--@php
-                                        // Use parse_url to get the path from the URL
-                                        $path = parse_url($row->url, PHP_URL_PATH);
+                                    @php
+                                        // Assuming $row->url contains the YouTube URL
+                                        if (strpos($row->url, 'embed/') === false) {
+                                            $videoID = basename($row->url);
+                                            $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                        } else {
+                                            $youtube_url = $row->url; // URL already in the correct format
+                                        }
+                                    @endphp
 
-                                        $parts = explode('/', trim($path, '/'));
-                                        $videoId = end($parts);
-                                    @endphp --}}
-
-                                    <a href="{{ $row->url }}" data-fancybox="gallery">
+                                    <a href="{{ $youtube_url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
                                         {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                             class="img-fluid d-block w-100 lazyload" alt=""> --}}
@@ -873,15 +881,17 @@
                             <div class="item">
                                 <div class="testimonial_video">
 
-                                    {{--@php
-                                        // Use parse_url to get the path from the URL
-                                        $path = parse_url($row->url, PHP_URL_PATH);
+                                    @php
+                                        // Assuming $row->url contains the YouTube URL
+                                        if (strpos($row->url, 'embed/') === false) {
+                                            $videoID = basename($row->url);
+                                            $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                        } else {
+                                            $youtube_url = $row->url; // URL already in the correct format
+                                        }
+                                    @endphp
 
-                                        $parts = explode('/', trim($path, '/'));
-                                        $videoId = end($parts);
-                                    @endphp --}}
-
-                                    <a href="{{ $row->url }}" data-fancybox="gallery">
+                                    <a href="{{ $youtube_url }}" data-fancybox="gallery">
                                         <div class="pulse-button"></div>
                                         {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                             class="img-fluid d-block w-100 lazyload" alt=""> --}}

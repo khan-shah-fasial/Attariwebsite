@@ -27,12 +27,24 @@
         @foreach ($video_rev as $row)
             <div class="item">
                 <div class="testimonial_video">
-                    <a href="{{ $row->url }}" aria-label="Testimonial Video Link"
+        
+                @php
+                    // Assuming $row->url contains the YouTube URL
+                    if (strpos($row->url, 'embed/') === false) {
+                        $videoID = basename($row->url);
+                        $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                    } else {
+                        $youtube_url = $row->url; // URL already in the correct format
+                    }
+                @endphp
+        
+                    <a href="{{ $youtube_url }}" aria-label="Testimonial Video Link"
                         data-fancybox="gallery">
                         <div class="pulse-button"></div>
                         <img data-src="{{ asset('storage/' . $row->image) }}" width="352" height="198"
                             class="lazyload d-block w-100" alt="">
                     </a>
+        
                 </div>
             </div>
         @endforeach
