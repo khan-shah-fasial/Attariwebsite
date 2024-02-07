@@ -2010,7 +2010,11 @@ p .home_breadcrumb a:hover {
 
 .projects_covered__header {
   border-bottom: 1px solid #e1e8ed;
-  padding: 13px 14px;
+  padding: 10px 14px;
+}
+
+.projects_covered__icon img {
+  width: 20px !important;
 }
 
 .projects_covered__icon {
@@ -2159,6 +2163,7 @@ section.testiminilas_sec .owl-nav.disabled {
 .location_box {
   padding-bottom: 20px !important;
   display: inline-block;
+  width: 100%;
 }
 
 .batch_shedule_box {
