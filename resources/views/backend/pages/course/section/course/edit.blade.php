@@ -3,7 +3,7 @@
 <div class="card">
     <div class="card-body">
         <div class="col-md-12">
-            <h4 class="header-title"><b>Edit Course</b></h4>
+            <h4 class="header-title"><b>Edit Key Feature & Course Overview</b></h4>
             <hr>
         </div>
 

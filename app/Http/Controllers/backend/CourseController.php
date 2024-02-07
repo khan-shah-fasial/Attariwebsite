@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class CourseController extends Controller
 {
     public function index() {
-        $course = Course::orderBy('id', 'desc')->get();
+        $course = Course::orderBy('id', 'ASC')->get();
         return view('backend.pages.course.index', compact('course'));
     }
 

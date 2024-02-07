@@ -2,7 +2,7 @@
 <div class="card">
     <div class="card-body">
         <div class="col-md-12">
-            <h4 class="header-title"><b>Syllabus</b></h4>
+            <h4 class="header-title"><b>Course Content</b></h4>
             <hr>
         </div>
 
