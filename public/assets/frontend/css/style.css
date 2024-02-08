@@ -3061,6 +3061,35 @@ button.owl-dot.active span {
   color: white;
 }
 
+.privecy_policy h3 {
+  font-size: 24px;
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.privecy_policy ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.privecy_policy ul li {
+  margin-left: 30px;
+  font-size: 15px !important;
+  line-height: 28px !important;
+  margin-bottom: 10px;
+}
+
+.privecy_policy p {
+  margin-bottom: 10px;
+}
+
+.privecy_policy a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .banner_slider1 img {
   width: 100%;
 }
