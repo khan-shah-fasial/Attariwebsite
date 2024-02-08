@@ -75,25 +75,25 @@
                                 @if(!empty($batch_vm_detail))
                                     <table class="batch_table table">
                                         <tbody>
-                                            <tr>
-                                                <td width="20">DATE</td>
-                                                <td width="40">SCHEDULE </td>
-                                                <td width="40">TIME </td>
+                                            <tr class="pdd_14">
+                                                <td width="20"><div>DATE</div></td>
+                                                <td width="40"><div>SCHEDULE </div></td>
+                                                <td width="40"><div>TIME </div></td>
                                             </tr>
                                             @foreach ($batch_vm_detail as $row)
-                                                <tr>
-                                                    <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
-                                                    <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                <tr class="pdd_19">
+                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
+                                                    <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
                                             @endforeach
 
-                                            <tr>
-                                                <td><b>24*7</b></td>
-                                                <td>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
-                                                </td>
-                                                <td><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
-                                                            Available</a></b></td>
+                                            <tr class="pdd_19">
+                                                <td><div><b>24*7</b></div></td>
+                                                <td><div>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
+                                                </div></td>
+                                                <td><div><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
+                                                            Available</a></b></div></td>
                                             </tr>
 
                                         </tbody>
@@ -260,25 +260,25 @@
                                 @if(!empty($batch_aws_detail))
                                     <table class="batch_table table">
                                         <tbody>
-                                            <tr>
-                                                <td width="20">DATE</td>
-                                                <td width="40">SCHEDULE </td>
-                                                <td width="40">TIME </td>
+                                            <tr class="pdd_14">
+                                                <td width="20"><div>DATE</div></td>
+                                                <td width="40"><div>SCHEDULE </div></td>
+                                                <td width="40"><div>TIME</div> </td>
                                             </tr>
                                             @foreach ($batch_aws_detail as $row)
-                                                <tr>
-                                                    <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
-                                                    <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                <tr class="pdd_19">
+                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
+                                                    <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
                                             @endforeach
 
-                                            <tr>
-                                                <td><b>24*7</b></td>
-                                                <td>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
+                                            <tr class="pdd_19">
+                                                <td><div><b>24*7</b></div></td>
+                                                <td><div>Self Paced Learning <span class="text_red">Live Recorded Lectures</span></div>
                                                 </td>
-                                                <td><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
-                                                            Available</a></b></td>
+                                                <td><div><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
+                                                            Available</a></b></div></td>
                                             </tr>
 
                                         </tbody>
@@ -418,7 +418,7 @@
     <!------------------========================== schedule ===============================-------------------->
     <section id="azure_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12">
                     <h4 class="section_heading pb-3 text-center"> <b>Azure Training Schedule</b></h4>
                 </div>
@@ -443,25 +443,25 @@
                                 @if(!empty($batch_azure_detail))
                                     <table class="batch_table table">
                                         <tbody>
-                                            <tr>
-                                                <td width="20">DATE</td>
-                                                <td width="40">SCHEDULE </td>
-                                                <td width="40">TIME </td>
+                                            <tr class="pdd_14">
+                                                <td width="20"><div>DATE</div></td>
+                                                <td width="40"><div>SCHEDULE </div></td>
+                                                <td width="40"><div>TIME </div></td>
                                             </tr>
                                             @foreach ($batch_azure_detail as $row)
-                                                <tr>
-                                                    <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
-                                                    <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                <tr class="pdd_19">
+                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
+                                                    <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
                                             @endforeach
 
-                                            <tr>
-                                                <td><b>24*7</b></td>
-                                                <td>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
-                                                </td>
-                                                <td><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
-                                                            Available</a></b></td>
+                                            <tr class="pdd_19">
+                                                <td><div><b>24*7</b></div></td>
+                                                <td><div>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
+                                                </div></td>
+                                                <td><div><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
+                                                            Available</a></b></div></td>
                                             </tr>
 
                                         </tbody>
@@ -615,7 +615,7 @@
 
                 @if(!empty($mcse_batch))
                     <div class="batch_shedule_box">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-md-9">
 
                                 <ul>
@@ -627,25 +627,25 @@
                                 @if(!empty($batch_mcse_detail))
                                     <table class="batch_table table">
                                         <tbody>
-                                            <tr>
-                                                <td width="20">DATE</td>
-                                                <td width="40">SCHEDULE </td>
-                                                <td width="40">TIME </td>
+                                            <tr class="pdd_14">
+                                                <td width="20"><div>DATE</div></td>
+                                                <td width="40"><div>SCHEDULE</div> </td>
+                                                <td width="40"><div>TIME</div> </td>
                                             </tr>
                                             @foreach ($batch_mcse_detail as $row)
-                                                <tr>
-                                                    <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
-                                                    <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                <tr class="pdd_19">
+                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
+                                                    <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
                                             @endforeach
 
-                                            <tr>
-                                                <td><b>24*7</b></td>
-                                                <td>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
-                                                </td>
-                                                <td><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
-                                                            Available</a></b></td>
+                                            <tr class="pdd_19">
+                                                <td><div><b>24*7</b></div></td>
+                                                <td><div>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
+                                                </div></td>
+                                                <td><div><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
+                                                            Available</a></b></div></td>
                                             </tr>
 
                                         </tbody>
@@ -798,7 +798,7 @@
 
                 @if(!empty($ccna_batch))
                     <div class="batch_shedule_box">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-md-9">
 
                                 <ul>
@@ -810,25 +810,25 @@
                                 @if(!empty($batch_ccna_detail))
                                     <table class="batch_table table">
                                         <tbody>
-                                            <tr>
-                                                <td width="20">DATE</td>
-                                                <td width="40">SCHEDULE </td>
-                                                <td width="40">TIME </td>
+                                            <tr class="pdd_14">
+                                                <td width="20"><div>DATE</div></td>
+                                                <td width="40"><div>SCHEDULE</div> </td>
+                                                <td width="40"><div>TIME </div></td>
                                             </tr>
                                             @foreach ($batch_ccna_detail as $row)
-                                                <tr>
-                                                    <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                    <td>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
-                                                    <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                <tr class="pdd_19">
+                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
+                                                    <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
                                             @endforeach
 
-                                            <tr>
-                                                <td><b>24*7</b></td>
-                                                <td>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
-                                                </td>
-                                                <td><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
-                                                            Available</a></b></td>
+                                            <tr class="pdd_19">
+                                                <td><div><b>24*7</b></div></td>
+                                                <td><div>Self Paced Learning <span class="text_red">Live Recorded Lectures</span>
+                                                </div></td>
+                                                <td><div><b class="text_blue"><a href="https://lms.attariclasses.in/">Always
+                                                            Available</a></b></div></td>
                                             </tr>
 
                                         </tbody>

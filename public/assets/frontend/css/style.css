@@ -2244,16 +2244,37 @@ h5.batch_subhed {
 .batch_table {
   border: 1px solid #ccc;
   margin-top: 13px;
-  width: 90%;
+  width: 90% !important;
+  display: inline-table;
+}
+
+table.batch_table.table tbody {
+  vertical-align: middle;
 }
 
 .batch_table td {
   border: 0;
-  font-size: 14px;
-  padding-left: 15px;
-  border-right: 1px solid #ccc;
-  color: #000;
-  height: 50px;
+  padding: 0 !important;
+}
+
+tr.pdd_19 td div {
+  padding-top: 10px;
+}
+
+table.batch_table.table tr:nth-child(2) td {
+  font-weight: 600;
+}
+
+table.batch_table.table tr:nth-child(3) td span {
+  color: #13aff0;
+}
+
+tr.pdd_19 td:nth-child(2) div {
+  padding-top: 1px;
+}
+
+tr.pdd_14 td div {
+  padding-top: 10px;
 }
 
 .batch_table tr td:last-child {
@@ -2264,6 +2285,21 @@ h5.batch_subhed {
   display: block;
   font-size: 11px;
   font-weight: 700;
+}
+
+.batch_table tr td:last-child div {
+  border-right: 0px !important;
+}
+
+.batch_table td div {
+  border: 0;
+  font-size: 14px;
+  padding-left: 3px !important;
+  border-right: 1px solid #ccc;
+  color: #000;
+  height: 39px;
+  vertical-align: middle;
+  margin: 10px 10px;
 }
 
 .text_red {
@@ -3023,6 +3059,35 @@ button.owl-dot.active span {
   height: auto;
   background-size: cover;
   color: white;
+}
+
+.privecy_policy h3 {
+  font-size: 24px;
+  font-weight: 500;
+  padding-top: 20px;
+}
+
+.privecy_policy ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.privecy_policy ul li {
+  margin-left: 30px;
+  font-size: 15px !important;
+  line-height: 28px !important;
+  margin-bottom: 10px;
+}
+
+.privecy_policy p {
+  margin-bottom: 10px;
+}
+
+.privecy_policy a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .banner_slider1 img {

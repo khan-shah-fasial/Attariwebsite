@@ -9,9 +9,11 @@
             </div>
         
        
-            <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/vmvare_coursimg.webp" width="380"
-                    height="224" class="lazyload image_width1" alt="VMware vSphere 7 ">
+            <div class="col-md-4 box_services"> 
                 <a href="{{ url('vmware-training-certification-online')}}">
+            <img data-src="/assets/frontend/images/vmvare_coursimg.webp" width="380"
+                    height="224" class="lazyload image_width1" alt="VMware vSphere 7 ">
+                
                     <div class="text_box">
                         <h5 class="text_services_heading">
                             VMware vSphere 7
@@ -25,9 +27,10 @@
         
 
         
-            <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/aws_courseimg.webp"
+            <div class="col-md-4 box_services">
+                 <a href="{{ url('aws-certification-training-online')}}">
+                     <img data-src="/assets/frontend/images/aws_courseimg.webp"
                     width="380" height="224" class="lazyload image_width1" alt="AWS Cloud Solution Architect">
-                <a href="{{ url('aws-certification-training-online')}}">
                     <div class="text_box">
                         <h5 class="text_services_heading">
                             AWS Cloud Solution Architect
@@ -41,9 +44,9 @@
         
 
         
-            <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/azure_courseimg.webp"
+            <div class="col-md-4 box_services"> <a href="{{ url('microsoft-azure-certification-training-online')}}">
+                <img data-src="/assets/frontend/images/azure_courseimg.webp"
                     width="380" height="224" class="lazyload image_width1" alt="AZURE Cloud Administrator">
-                <a href="{{ url('microsoft-azure-certification-training-online')}}">
                     <div class="text_box">
                         <h5 class="text_services_heading">
                             AZURE Cloud Administrator
