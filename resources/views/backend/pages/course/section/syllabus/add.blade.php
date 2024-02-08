@@ -49,7 +49,13 @@
         @csrf
         <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-2">
+                <div class="form-group mb-3">
+                    <label>Title No <span class="red">*</span></label>
+                    <input maxlength="255" type="text" class="form-control" name="title_no" value="" required>
+                </div>
+            </div>
+            <div class="col-sm-10">
                 <div class="form-group mb-3">
                     <label>Title <span class="red">*</span></label>
                     <input maxlength="255" type="text" class="form-control" name="title" value="" required>

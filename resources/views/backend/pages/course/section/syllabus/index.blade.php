@@ -16,7 +16,7 @@
 <!---==================================== syllabus table ==============------------------->
 @php
     $syllabus = DB::table('syllabus')
-        ->where('course_id', $course->id)
+        ->where('course_id', $course->id)->orderBy('title_no', 'ASC')
         ->get();
 @endphp
 <div class="card">
@@ -26,6 +26,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Title No</th>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Status</th>
@@ -38,6 +39,7 @@
                     @foreach ($syllabus as $row)
                         <tr>
                             <td>{{ $i++ }}</td>
+                            <td>{{ $row->title_no }}</td>
                             <td>{{ $row->title }}</td>
                             <td>@php echo html_entity_decode($row->description) @endphp</td>
                             <td>

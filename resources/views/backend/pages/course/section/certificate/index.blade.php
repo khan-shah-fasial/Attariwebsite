@@ -15,7 +15,7 @@
 </div>
 <!---==================================== certificates table ==============------------------->
 @php 
-    $certificate = DB::table('certificates')->where('course_id',$course->id)->get();
+    $certificate = DB::table('certificates')->where('course_id',$course->id)->orderBy('id', 'DESC')->get();
 @endphp
 <div class="card">
     <div class="card-body">

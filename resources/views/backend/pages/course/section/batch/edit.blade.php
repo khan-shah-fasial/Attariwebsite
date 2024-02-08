@@ -247,7 +247,7 @@
                                     <input id="batch_check" class="form-check-input" type="checkbox"
                                     name="batch_check" value="0" @if($batch->status == '0') checked @endif>
 
-                                    <label class="form-check-label" for="batch_check">Batch Schedule Status
+                                    <label class="form-check-label" for="batch_check">Hide Batch Schedule
                                     </label>
 
                                 </div>

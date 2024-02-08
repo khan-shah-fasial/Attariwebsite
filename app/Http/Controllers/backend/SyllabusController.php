@@ -13,6 +13,7 @@ class SyllabusController extends Controller
     public function create(Request $request) {
 
         $validator = Validator::make($request->all(), [
+            'title_no' => 'required',
             'title' => 'required',
             'description' => 'required',
             'course_id' => 'required',
@@ -26,6 +27,7 @@ class SyllabusController extends Controller
         }     
 
         $syllabus = Syllabus::create([
+            'title_no' => $request->input('title_no'),
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'course_id' => $request->input('course_id'),
@@ -75,6 +77,7 @@ class SyllabusController extends Controller
     public function update(Request $request) {
 
         $validator = Validator::make($request->all(), [
+            'title_no' => 'required',
             'title' => 'required',
             'description' => 'required',
             'course_id' => 'required',
@@ -89,7 +92,12 @@ class SyllabusController extends Controller
 
         $id = $request->input('id');
         $syllabus = Syllabus::find($id);
-        $syllabus->update($request->all());
+
+        $syllabus->title_no = $request->input('title_no');
+        $syllabus->title = $request->input('title');
+        $syllabus->description = $request->input('description');
+
+        $syllabus->save();
 
         $response = [
             'status' => true,

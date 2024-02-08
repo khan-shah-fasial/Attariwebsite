@@ -3,9 +3,16 @@
     <form id="edit_syllabus_form" action="{{ url(route('syllabus.update')) }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-6">
                 <input type="hidden" name="id" value="{{ $syllabus->id }}">
                 <input type="hidden" class="form-control" name="course_id" value="{{ $syllabus->course_id }}">
+                <div class="form-group mb-3">
+                    <label>Title No<span class="red">*</span></label>
+                    <input maxlength="255" type="text" class="form-control" name="title_no"
+                        value="{{ $syllabus->title_no }}" required>
+                </div>
+            </div>
+            <div class="col-sm-12">
                 <div class="form-group mb-3">
                     <label>Title <span class="red">*</span></label>
                     <input maxlength="255" type="text" class="form-control" name="title"

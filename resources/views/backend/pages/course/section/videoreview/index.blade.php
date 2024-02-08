@@ -15,7 +15,7 @@
 </div>
 <!---==================================== text review table ==============------------------->
 @php 
-    $textreviews = DB::table('video_reviews')->where('course_id',$course->id)->get();
+    $textreviews = DB::table('video_reviews')->where('course_id',$course->id)->orderBy('id', 'DESC')->get();
 @endphp
 <div class="card">
     <div class="card-body">
