@@ -514,17 +514,17 @@
                                     @if (!empty($batch_detail))
                                         <table class="batch_table table">
                                             <tbody>
-                                                <tr>
-                                                    <td width="20">DATE</td>
-                                                    <td width="40">SCHEDULE </td>
-                                                    <td width="40">TIME </td>
+                                                <tr class="pdd_14">
+                                                    <td width="20"><div class="">DATE</div></td>
+                                                    <td width="40"><div class="">SCHEDULE </div></td>
+                                                    <td width="40"><div class="">TIME </div></td>
                                                 </tr>
                                                 @foreach ($batch_detail as $row)
-                                                    <tr>
-                                                        <td>@php echo html_entity_decode($row['date']) @endphp</td>
-                                                        <td>@php echo html_entity_decode($row['schedule']) @endphp<span
-                                                                class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></td>
-                                                        <td>@php echo html_entity_decode($row['time']) @endphp</td>
+                                                    <tr class="pdd_19">
+                                                        <td><div class="">@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                        <td><div class="">@php echo html_entity_decode($row['schedule']) @endphp<span
+                                                                class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
+                                                        <td><div class="">@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

@@ -7,9 +7,9 @@
                 <h4 class="services_headign">Server & Networking</h4>
             </div>
 
-            <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/mcse_courseimg.webp" width="380"
+            <div class="col-md-4 box_services"> <a href="{{ url('mcsa-mcse-windows-server-training-online')}}">
+                <img data-src="/assets/frontend/images/mcse_courseimg.webp" width="380"
                     height="224" class="lazyload image_width1" alt="Microsoft Windows Server MCSE">
-                <a href="{{ url('mcsa-mcse-windows-server-training-online')}}">
                     <div class="text_box">
                         <h5 class="text_services_heading">
                             Microsoft Windows Server MCSE
@@ -21,9 +21,10 @@
                 </a>
             </div>
 
-            <div class="col-md-4 box_services"> <img data-src="/assets/frontend/images/ccna_courseimg.webp"
+            <div class="col-md-4 box_services"> 
+                 <a href="{{ url('ccna-training-certification-online')}}">
+            <img data-src="/assets/frontend/images/ccna_courseimg.webp"
                     width="380" height="224" class="lazyload image_width1" alt="Cisco Networking CCNA">
-                <a href="{{ url('ccna-training-certification-online')}}">
                     <div class="text_box">
                         <h5 class="text_services_heading">
                             Cisco Networking CCNA
