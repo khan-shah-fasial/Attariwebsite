@@ -2,7 +2,22 @@
 
 @section('page.title', $cms->title)
 
-@section('page.description', $cms->description)
+@php
+    $description = strip_tags(html_entity_decode($cms->description)); // Remove HTML tags
+    $description = html_entity_decode($description);
+    $wordLimit = 155; // Set your desired word limit
+
+    // Split the string into an array of words
+    $words = preg_split('/\s+/', $description, -1, PREG_SPLIT_NO_EMPTY);
+
+    // Limit the array to the desired number of words
+    $limitedWords = array_slice($words, 0, $wordLimit);
+
+    // Join the limited words back into a string
+    $tem_desc = implode(' ', $limitedWords);
+@endphp
+
+@section('page.description', $tem_desc)
 
 @section('page.type', 'website')
 
@@ -444,7 +459,7 @@
                                                 <div class="col-lg-6 col-2">
                                                     <div class="testimonial__icon">
                                                         @if ($row->type == 'google')
-                                                            <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                            <a href="{{ $row->url }}"><i aria-hidden="true" class="fab fa-google-plus"></i></a>
                                                         @endif
                                                     </div>
                                                 </div>

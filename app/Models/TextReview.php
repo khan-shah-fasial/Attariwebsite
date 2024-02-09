@@ -16,6 +16,8 @@ class TextReview extends Model
         'description',
         'thumbnail',
         'type',
+        'profile',
+        'url',
         'status',
     ];   
 }

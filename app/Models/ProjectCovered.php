@@ -12,6 +12,7 @@ class ProjectCovered extends Model
     protected $table = 'project_covered';
 
     protected $fillable = [
+        'title_no',
         'course_id',
         'title',
         'description',

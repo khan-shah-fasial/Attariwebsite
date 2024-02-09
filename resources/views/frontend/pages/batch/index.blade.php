@@ -195,11 +195,12 @@
                                                     class="img-fluid d-block w-100 lazyload" alt="">
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-6 col-2">
                                             <div class="testimonial__icon">
                                                 @if($row->type == 'google')
-                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                    <a href="{{ $row->url }}"><i aria-hidden="true" class="fab fa-google-plus"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -380,11 +381,12 @@
                                                     class="img-fluid d-block w-100 lazyload" alt="">
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-6 col-2">
                                             <div class="testimonial__icon">
                                                 @if($row->type == 'google')
-                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                    <a href="{{ $row->url }}"><i aria-hidden="true" class="fab fa-google-plus"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -563,11 +565,12 @@
                                                     class="img-fluid d-block w-100 lazyload" alt="">
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-6 col-2">
                                             <div class="testimonial__icon">
                                                 @if($row->type == 'google')
-                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                    <a href="{{ $row->url }}"><i aria-hidden="true" class="fab fa-google-plus"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -747,11 +750,12 @@
                                                     class="img-fluid d-block w-100 lazyload" alt="">
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-6 col-2">
                                             <div class="testimonial__icon">
                                                 @if($row->type == 'google')
-                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                    <a href="{{ $row->url }}"><i aria-hidden="true" class="fab fa-google-plus"></i></a>
                                                 @endif
                                             </div>
                                         </div>
@@ -929,11 +933,12 @@
                                                     class="img-fluid d-block w-100 lazyload" alt="">
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-6 col-2">
                                             <div class="testimonial__icon">
                                                 @if($row->type == 'google')
-                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                    <a href="{{ $row->url }}"><i aria-hidden="true" class="fab fa-google-plus"></i></a>
                                                 @endif
                                             </div>
                                         </div>

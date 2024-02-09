@@ -32,14 +32,22 @@
         <div class="row">
             
             <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
-            <div class="col-sm-6">
+
+            <div class="col-sm-2">
+                <div class="form-group mb-3">
+                    <label>Title No</label>
+                    <input type="text" class="form-control" name="title_no" value="" required>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
                 <div class="form-group mb-3">
                     <label>Title</label>
                     <input type="text" class="form-control" name="title" value="" required>
                 </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <div class="form-group mb-3">
                     <label>Icon  <span class="font-size11">(Max file size 80kb - 1125*196)</span></label>
                     <input class="form-control" type="file" id="icon" name="icon" required>

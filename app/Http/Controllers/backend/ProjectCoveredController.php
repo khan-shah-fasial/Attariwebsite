@@ -14,6 +14,7 @@ class ProjectCoveredController extends Controller
     public function create(Request $request) {
 
         $validator = Validator::make($request->all(), [
+            'title_no' => 'required',
             'course_id' => 'required',
             'title' => 'required',
             'description' => 'required',
@@ -37,6 +38,7 @@ class ProjectCoveredController extends Controller
         
         // Create the Course record with 'Course_category_ids' included
         ProjectCovered::create([
+            'title_no' => $request->input('title_no'),
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'icon' => $imagePath,
@@ -90,6 +92,7 @@ class ProjectCoveredController extends Controller
     public function update(Request $request) {
 
         $validator = Validator::make($request->all(), [
+            'title_no' => 'required',
             'course_id' => 'required',
             'title' => 'required',
             'description' => 'required',
@@ -117,6 +120,7 @@ class ProjectCoveredController extends Controller
             }
         }
 
+        $project_covered->title_no = $request->input('title_no');
         $project_covered->title = $request->input('title');
         $project_covered->description = $request->input('description');
         $project_covered->course_id = $request->input('course_id');

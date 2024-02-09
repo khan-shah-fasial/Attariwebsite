@@ -15,7 +15,7 @@
 </div>
 <!---==================================== project_covered table ==============------------------->
 @php 
-    $project_covered = DB::table('project_covered')->where('course_id',$course->id)->get();
+    $project_covered = DB::table('project_covered')->where('course_id',$course->id)->orderBy('title_no', 'ASC')->get();
 @endphp
 <div class="card">
     <div class="card-body">
@@ -24,6 +24,7 @@
          <thead>
              <tr>
                  <th>#</th>
+                 <th>Title No</th>
                  <th>Name</th>
                  <th>Description</th>
                  <th>Icon</th>
@@ -36,6 +37,7 @@
              @foreach($project_covered as $row)
              <tr>
                  <td>{{$i++}}</td>
+                 <td>{{ $row->title_no }}</td>
                  <td>{{$row->title}}</td>
                  <td>
                      @php echo html_entity_decode($row->description) @endphp

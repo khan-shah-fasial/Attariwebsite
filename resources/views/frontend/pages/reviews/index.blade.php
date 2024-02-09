@@ -58,6 +58,7 @@
                                                     alt>
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-3 col-2">
                                             <div class="testimonial__icon">
@@ -118,6 +119,7 @@
                                                     alt>
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-3 col-2">
                                             <div class="testimonial__icon">
@@ -183,6 +185,7 @@
                                                     alt>
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-3 col-2">
                                             <div class="testimonial__icon">
@@ -244,6 +247,7 @@
                                                     alt>
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-3 col-2">
                                             <div class="testimonial__icon">
@@ -303,6 +307,7 @@
                                                     alt>
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-3 col-2">
                                             <div class="testimonial__icon">
@@ -389,6 +394,7 @@
                                                     alt>
                                                 <span class="testimonial__name">{{ $row->name }}</span>
                                             </div>
+                                            <span>{{ $row->profile }}</span>
                                         </div>
                                         <div class="col-lg-3 col-2">
                                             <div class="testimonial__icon">

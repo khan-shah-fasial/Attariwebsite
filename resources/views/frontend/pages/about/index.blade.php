@@ -78,37 +78,59 @@
                         <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
                             data-bs-target="#enquiry_modal"> Book a FREE Demo </button>
                     </div>
+        <!-----=================================   Certificates ===============----------------->
+                    @php
+
+                        $certificates = DB::table('certificates as c1')
+                            ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
+                            ->where('c1.status', '1')
+                            ->select('c1.course_id', 'c1.image', 'c1.alt_image', 'c1.created_at as latest_created_at')
+                            ->join(DB::raw('(SELECT course_id, MAX(created_at) as max_created_at
+                                            FROM certificates
+                                            WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\'
+                                            GROUP BY course_id) as c2'), function ($join) {
+                                                $join->on('c1.course_id', '=', 'c2.course_id')
+                                                    ->on('c1.created_at', '=', 'c2.max_created_at');
+                                            })
+                            ->orderBy('c1.created_at', 'ASC')
+                            ->get();
+                            
+                            $a = 1;
+                
+                    @endphp
+
+
                     <div class="col-md-6">
                         <div class="about_our_slider">
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active"> <img src="/assets/frontend/images/our_achivement_1.jpeg"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_2.jpeg"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_3.webp"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_4.webp"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/our_achivement_5.jpg" class="d-block w-100"
-                                            alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img1.webp"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img2.webp"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img3.webp"
-                                            class="d-block w-100" alt="..." /> </div>
-                                    <div class="carousel-item"> <img src="/assets/frontend/images/vmware_course_img4.webp"
-                                            class="d-block w-100" alt="..." /> </div>
+
+                                    @foreach($certificates as $row)
+                                        <div class="carousel-item @if($a == '1') active @endif" data-bs-interval="10000"> 
+                                            <img data-src="{{ asset('storage/' . $row->image) }}" width="576" height="450"
+                                            class="lazyload d-block w-100" alt="{{ $row->alt_image }}">
+                                        </div>
+                                        @php $a++; @endphp
+                                    @endforeach
+
+
                                 </div>
+                                
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                                    data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span> 
+                                </button>
                                 <button class="carousel-control-next" type="button"
                                     data-bs-target="#carouselExampleControls" data-bs-slide="next"> <span
-                                        class="carousel-control-next-icon" aria-hidden="true"></span> <span
-                                        class="visually-hidden">Next</span> </button>
+                                    class="carousel-control-next-icon" aria-hidden="true"></span> <span
+                                    class="visually-hidden">Next</span> 
+                                </button>
+
                             </div>
                         </div>
 
                     </div>
+                    
                 </div>
             </div>
         </section>

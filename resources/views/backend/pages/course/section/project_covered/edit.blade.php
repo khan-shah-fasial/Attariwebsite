@@ -5,7 +5,15 @@
         <div class="row">
             <input type="hidden" class="form-control" name="id" value="{{ $project_covered->id }}">
             <input type="hidden" class="form-control" name="course_id" value="{{ $project_covered->course_id }}">
-            <div class="col-sm-6">
+
+            <div class="col-sm-2">
+                <div class="form-group mb-3">
+                    <label>Title No</label>
+                    <input type="text" class="form-control" name="title_no" value="{{ $project_covered->title_no }}" required>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
                 <div class="form-group mb-3">
                     <label>Title</label>
                     <input type="text" class="form-control" name="title" value="{{ $project_covered->title }}" required>

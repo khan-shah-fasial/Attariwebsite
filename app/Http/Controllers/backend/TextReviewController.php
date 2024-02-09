@@ -43,6 +43,8 @@ class TextReviewController extends Controller
             'type' => $request->input('type'),
             'thumbnail' => $imagePath,
             'course_id' => $request->input('course_id'),
+            'profile'   => $request->input('profile'),
+            'url' => $request->input('url'),
         ]);
     
         $response = [
@@ -122,6 +124,8 @@ class TextReviewController extends Controller
         $textreview->description = $request->input('description');
         $textreview->type = $request->input('type');
         $textreview->course_id = $request->input('course_id');
+        $textreview->profile = $request->input('profile');
+        $textreview->url = $request->input('url');
      
         $textreview->save();
 
