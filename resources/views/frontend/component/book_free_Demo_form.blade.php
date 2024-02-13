@@ -10,7 +10,7 @@ enctype="multipart/form-data">
 
     <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
 
-    <input type="hidden" name="section" value="Book a FREE Demo Course Page" data-aos-once="true" data-aos="fade-up" />
+    <input type="hidden" name="section" value="{{$section}}" data-aos-once="true" data-aos="fade-up" />
     <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
 
     <div class="form-group">

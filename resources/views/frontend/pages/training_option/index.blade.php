@@ -83,8 +83,15 @@
                         </div>
                     </div>
                     <div class="training_btn none">
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Online Training - Training Options Page',
+                            'form' => '1',
+                            'title' => 'Book a FREE Demo'
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a FREE Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a FREE Demo</button>
                     </div>
                 </div>
                 <div class="col-lg-6 img_content">
@@ -143,7 +150,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form')
+            @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
         </div>
     </section>
     <!-- ----------------------Training online classs------------------------------->
@@ -198,8 +207,15 @@
                         </div>
                     </div>
                     <div class="training_btn none">
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Classroom Training - Training Options Page',
+                            'form' => '2',
+                            'title' => 'Book a FREE Demo'
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a FREE Demo</button>
+                            data-bs-target="#enquiry_modal2"> Book a FREE Demo</button>
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1 img_content">
@@ -374,7 +390,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form')
+            @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
         </div>
     </section>
 

@@ -3,7 +3,7 @@ $session_data = json_decode(session('user_ip'), true);
 @endphp
 <!-----------================= Modal form start =============--------------->
 
-<div class="modal fade enquiry_modal" id="enquiry_modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div class="modal fade enquiry_modal" id="enquiry_modal{{$form}}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -14,9 +14,9 @@ $session_data = json_decode(session('user_ip'), true);
                  enctype="multipart/form-data">
                  @csrf
 
-                    <h5 class="text-center">Enquire Now</h5>
+                    <h5 class="text-center">{{ $title }}</h5>
 
-                    <input type="hidden" name="section" value="Popup Form" data-aos-once="true" data-aos="fade-up" />
+                    <input type="hidden" name="section" value="{{$section}}" data-aos-once="true" data-aos="fade-up" />
                     <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
 
                     <div class="form-group">

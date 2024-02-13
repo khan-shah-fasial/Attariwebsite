@@ -75,8 +75,15 @@
                             Singapore, USA, Canada, UK, etc. </p>
                         <p> With high end IT infra for practical’s, Attari Classes have fulfilled the demand of candidates
                             for hands-on practical training </p>
+
+                            @include('frontend.component.modal_form', [
+                                'section' => 'Our Achievements - About-us Page',
+                                'form' => '1',
+                                'title' => 'Book a FREE Demo'
+                            ])
+                        
                         <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a FREE Demo </button>
+                            data-bs-target="#enquiry_modal1"> Book a FREE Demo </button>
                     </div>
         <!-----=================================   Certificates ===============----------------->
                     @php
@@ -138,7 +145,9 @@
 
         <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
             <div class="container">
-                @include('frontend.component.book_free_Demo_form')
+                @include('frontend.component.book_free_Demo_form',[
+                    'section' => 'Book a Free Demo - Mobile View',
+                ])
             </div>
         </section>
 
@@ -150,8 +159,16 @@
                     <div class="col-md-5 d-flex pt-md-5 ps-md-5 justify-content-center flex-column order-md-2">
                         <h4 class="aboutpg_hed"> Our <span class="light display_black">Infrastructure</span> </h4>
                         <p class="para"> We Provide High end Labs for Hands-on practical training </p>
+
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Our Infrastructure - About-us Page',
+                            'form' => '2',
+                            'title' => 'Enquire Now'
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Enquire Now </button>
+                            data-bs-target="#enquiry_modal2"> Enquire Now </button>
                     </div>
 
 
@@ -201,7 +218,7 @@
                                 View On Google
                                 <i aria-hidden="true" class="fas fa-arrow-right"></i>
                             </a> </div>
-                        <a href="contact.php" class="btn bookfreedemo_button mt-4 none"> Contact Us </a>
+                        <a href="{{ url(route('contact')) }}" class="btn bookfreedemo_button mt-4 none"> Contact Us </a>
                     </div>
                     <div class="col-md-7 img_content">
                         <div class="row">
@@ -242,7 +259,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form')
+            @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
         </div>
     </section>
 

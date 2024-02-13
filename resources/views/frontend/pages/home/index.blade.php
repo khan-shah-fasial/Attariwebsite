@@ -22,8 +22,15 @@
         <div class="container">
             <div class="text-center">
                 <div class="banner_content">
+
+                    @include('frontend.component.modal_form', [
+                        'section' => 'Enquire Form Top - Home Page',
+                        'form' => '1',
+                        'title' => 'Enquire Now',
+                    ])
+
                     <button type="button" class="btn enquire_now_btn" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Enquire Now </button>
+                        data-bs-target="#enquiry_modal1"> Enquire Now </button>
                 </div>
             </div>
         </div>
@@ -73,8 +80,15 @@
                         </div>
                     </div>
                     <div class="training_btn d-none d-lg-block">
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Instructor-Led Online Training - Home Page',
+                            'form' => '2',
+                            'title' => 'Book a Demo',
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo </button>
+                            data-bs-target="#enquiry_modal2"> Book a Demo </button>
                     </div>
                 </div>
                 <div class="col-md-5 img_box"> <img data-src="/assets/frontend/images/dsvdfb.jpg" width="399"
@@ -121,8 +135,15 @@
                         </div>
                     </div>
                     <div class="training_btn d-none d-lg-block">
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Classroom Training - Home Page',
+                            'form' => '3',
+                            'title' => 'Book a Demo',
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo </button>
+                            data-bs-target="#enquiry_modal3"> Book a Demo </button>
                     </div>
                 </div>
                 <div class="col-md-6 order-md-1">
@@ -217,8 +238,15 @@
                         provide Practice exams and learning material for free which prepares you to answer the question
                         asked in actual exam, most of the candidates have passed exam in one attempt </p>
                     <div class="training_btn none">
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Certificate section - Home Page',
+                            'form' => '4',
+                            'title' => 'Get Certified',
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Get Certified</button>
+                            data-bs-target="#enquiry_modal4"> Get Certified</button>
                     </div>
                 </div>
 
@@ -272,7 +300,7 @@
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
             @include('frontend.component.book_free_Demo_form',[
-                'form' => '1',
+                'section' => 'Book a Free Demo - Mobile View',
             ])
         </div>
     </section>

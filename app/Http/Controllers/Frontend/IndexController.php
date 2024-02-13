@@ -267,6 +267,9 @@ class IndexController extends Controller
         $email = isset($newsletterData["email"]) ? $newsletterData["email"] : ' - ';
 
 
+        SendinBlueContact($email);
+
+
         // Create the contact record
         Newsletter::create($newsletterData);
 

@@ -161,3 +161,51 @@ use Illuminate\Support\Str;
         }
     }
 
+    if (!function_exists('SendinBlueContact')) {
+        function SendinBlueContact($email)
+        {
+            // Set your API key
+            $api_key = env('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'); // Assuming you have defined your API key in your .env file
+    
+            // Set the API endpoint
+            $endpoint = 'https://api.sendinblue.com/v3/contacts';
+    
+            // Set the data to be sent
+            $data = [
+                'email' => $email,
+                'listIds' => [1]
+            ];
+    
+            // Initialize cURL session
+            $ch = curl_init();
+    
+            // Set the cURL options
+            curl_setopt($ch, CURLOPT_URL, $endpoint);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'api-key: ' . $api_key
+            ]);
+    
+            // Execute the cURL request
+            $response = curl_exec($ch);
+    
+            // Check for errors
+            if ($response === false) {
+                $error = curl_error($ch);
+                $result = 'cURL error: ' . $error;
+            } else {
+                // Print the response
+                $result = $response;
+            }
+    
+            // Close cURL session
+            curl_close($ch);
+    
+            return $result;
+        }
+    }
+    
+

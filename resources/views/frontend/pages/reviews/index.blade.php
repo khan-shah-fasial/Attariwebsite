@@ -87,8 +87,15 @@
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
                 </div>
                 <div class="training_btn none">
+
+                    @include('frontend.component.modal_form', [
+                        'section' => 'VMwere Google Reviews - Reviews Page',
+                        'form' => '1',
+                        'title' => 'Book a FREE Demo'
+                    ])
+
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal1"> Book a Demo</button>
                 </div>
             </div>
         </div>
@@ -149,8 +156,15 @@
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
                 </div>
                 <div class="training_btn none">
+
+                    @include('frontend.component.modal_form', [
+                        'section' => 'AWS Google Reviews - Reviews Page',
+                        'form' => '2',
+                        'title' => 'Book a FREE Demo'
+                    ])
+
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal2"> Book a Demo</button>
                 </div>
             </div>
 
@@ -159,7 +173,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form')
+            @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
         </div>
     </section>
 
@@ -215,8 +231,15 @@
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
                 </div>
                 <div class="training_btn none">
+
+                    @include('frontend.component.modal_form', [
+                        'section' => 'Azure Google Reviews - Reviews Page',
+                        'form' => '3',
+                        'title' => 'Book a FREE Demo'
+                    ])
+
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal3"> Book a Demo</button>
                 </div>
             </div>
 
@@ -276,8 +299,15 @@
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
                 </div>
                 <div class="training_btn none">
+
+                    @include('frontend.component.modal_form', [
+                        'section' => 'MCSE Google Reviews - Reviews Page',
+                        'form' => '4',
+                        'title' => 'Book a FREE Demo'
+                    ])
+
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal4"> Book a Demo</button>
                 </div>
             </div>
         </div>
@@ -336,8 +366,15 @@
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
                 </div>
                 <div class="training_btn none">
+
+                    @include('frontend.component.modal_form', [
+                        'section' => 'CCNA Google Reviews - Reviews Page',
+                        'form' => '5',
+                        'title' => 'Book a FREE Demo'
+                    ])
+
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal5"> Book a Demo</button>
                 </div>
             </div>
         </div>
@@ -345,7 +382,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form')
+            @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
         </div>
     </section>
 
@@ -361,9 +400,16 @@
                     <a target="_blank" href="https://www.youtube.com/channel/UCvY5iTFZdZ0I5FpzZL8g8Yw"> View more on
                         YouTube <i aria-hidden="true" class="fab fa-youtube"></i></a>
                 </div>
+
+                @include('frontend.component.modal_form', [
+                    'section' => 'Video Reviews - Reviews Page',
+                    'form' => '6',
+                    'title' => 'Book a FREE Demo'
+                ])
+
                 <div class="training_btn none">
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal6"> Book a Demo</button>
                 </div>
             </div>
 
@@ -422,9 +468,16 @@
                     <a target="_blank" href="https://www.facebook.com/AttariClass/reviews"> View more on Facebook <i
                             aria-hidden="true" class="fab fa-facebook-square"></i></a>
                 </div>
+
+                @include('frontend.component.modal_form', [
+                    'section' => 'Facebook Reviews - Reviews Page',
+                    'form' => '7',
+                    'title' => 'Book a FREE Demo'
+                ])
+
                 <div class="training_btn none">
                     <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a Demo</button>
+                        data-bs-target="#enquiry_modal7"> Book a Demo</button>
                 </div>
             </div>
 
@@ -433,7 +486,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form')
+            @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
         </div>
     </section>
 

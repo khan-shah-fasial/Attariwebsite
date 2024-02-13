@@ -36,8 +36,15 @@
             <div class="row justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
+
+                        @include('frontend.component.modal_form', [
+                            'section' => 'Book a Demo - Success-Stories Page',
+                            'form' => '1',
+                            'title' => 'Book a Demo'
+                        ])
+
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
                 <div class="col-md-3 images">
@@ -113,8 +120,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
+                        
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
 
@@ -195,7 +203,7 @@
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
 
@@ -275,7 +283,7 @@
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
                  <div class="col-md-3 images">
@@ -353,7 +361,7 @@
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
                 <div class="col-md-3 images">
@@ -431,7 +439,7 @@
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
                  <div class="col-md-3 images">
@@ -509,7 +517,7 @@
                 <div class="col-12 d-flex justify-content-center">
                     <div class="training_btn d-none d-lg-block">
                         <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
+                            data-bs-target="#enquiry_modal1"> Book a Demo</button>
                     </div>
                 </div>
                  <div class="col-md-3 images">
