@@ -165,7 +165,7 @@ use Illuminate\Support\Str;
         function SendinBlueContact($email)
         {
             // Set your API key
-            $api_key = env('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'); // Assuming you have defined your API key in your .env file
+            $api_key = env('SENDINBLUE_API_KEY');
     
             // Set the API endpoint
             $endpoint = 'https://api.sendinblue.com/v3/contacts';
