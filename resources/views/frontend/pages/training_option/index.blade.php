@@ -136,7 +136,304 @@
 
             </h3>
 
-            @include('frontend.component.review_random')
+            <div class="large-12 columns mt-4">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjXOW58CDLBcENB3vkq6SAOMEU0ODXAXh05D1qzpWo4zb-o=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Rahul Kolambekar</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>
+I have just completed VMware vSphere 7 online training sessions from Attari classes. Its really a good experience, especially trainer Mr. Maqsood Sir  gives training with very understanding examples of real time issues that make my concepts clear and its totally practical based training session. Also, online LMS is the best tool to revise concepts at any time. It’s really one of the best place to learn VMware vSphere concepts.
+
+
+              </p></div>
+            </div>
+          </div>
+        </div>
+        
+
+        
+<div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjWdmhyhjNWg4g9oCaNdjT6zioyYpYsjx7pbqpE3DAiU37Q=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Yogesh Sonawane</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>I have completed VMWare Training from Attari classes. I will recommend Attari Classes to everyone who is looking for online training.
+
+Maqsood sir has a very good experience in his area. He has cleared all our doubts with real-life examples and answered all our questions.</p></div>
+            </div>
+          </div>
+        </div>
+
+
+
+       
+
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUgZ_HoT_Iq_lvQ747dCIAgeE1aT1fLmr9oEbAddfsYnok=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Iyiola Peter</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>This is hands down the best online training I have ever attended. I took the AWS solutions Architect Associate classes and it was a great experience.
+The trainer,Mr Maqsood, is very knowledgeable and makes every concept relatable and easy to understand.
+The LMS portal through which all recorded sessions are made available to students makes it easy to go over each lecture for as long and often as is needed.
+The classes are hands-on and easy to follow as the instructor makes sure each concept are understood. I highly recommend for anyone seeking expertise in virtualisation and cloud technologies.</p></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUVQEMg4PlygsWjEb2D8IuPUZ9MeiSvb0lBPXSOvQdwAoQn=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Vijay Dhasal</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>I have completed the AWS Cloud online training of Attari Classes. It was a great learning experience by Masqood Sir who is having outstanding teaching skills with practical examples which are always relates with life and the best thing here is Live Practical with trainer.
+Attari classes provides LMS portal which is great for practice as well as for understanding remaining portion.
+Thank you</p></div>
+            </div>
+          </div>
+        </div>
+
+
+
+         <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjWgTETwtNks_NV0cxcWaRsIwAnGgQKn6BRnfhhGMF47ew=w60-h60-p-rp-mo-ba2-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Mithun Munde</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>I have completed Azure Cloud Administrator Training from Attari classes. I will recommend Attari Classes to everyone who is looking for online training.
+
+Zameer sir has a very good experience in his area. He has cleared all our doubts with real-life examples and answered all our questions. Thank you Zameer Sir :).</p></div>
+            </div>
+          </div>
+        </div>
+
+
+<div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a/ACg8ocKluTwHp0klDgE7D4CXDkO5iZtgEAUpmyxNmu7hNLNp=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Kajal Vyas</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>I have completed Azure Administration ONLINE training from Attari classes and the Training was excellent with good interaction. knowledge sharing is good. Each and all concepts are explained in simple language and deeply.
+
+Zameer sir's teaching style is BEST and believes me, friends, he is very knowledgeable and explains in deeply until you understood the concepts.
+
+They have a very nice facility for revision of your completed training and that’s “LMS”. You can refer to LMS anytime anywhere whenever you want to revise your training.
+
+Thank you very much build our learning and confidence.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJgWbeSZN9MWoKIVkubexv0h0YT6Ho_rkxHcYzvfFoM=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Abdul Haseeb Kazi</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>Have gone through online training for CCNA . The training was very smooth and effective. Really thankful to Zameer Sir and Attari classes.
+</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjUFkEeyptS_sfsd0kgDZhw31oe55Jt0U-0NtPkOYx2B_OM=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Imran Lateef</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>Have completed my MCSE online training course from Attari classes & learnt a lot from Zameer sir, as he is an excellent trainer, the way of explaining topic is amazing, i've never seen anything like it before in my life.
+</p></div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjWdmhyhjNWg4g9oCaNdjT6zioyYpYsjx7pbqpE3DAiU37Q=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Yogesh Sonawane</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>I have completed VMWare Training from Attari classes. I will recommend Attari Classes to everyone who is looking for online training.
+
+Maqsood sir has a very good experience in his area. He has cleared all our doubts with real-life examples and answered all our questions.</p></div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjWdmhyhjNWg4g9oCaNdjT6zioyYpYsjx7pbqpE3DAiU37Q=w60-h60-p-rp-mo-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Yogesh Sonawane</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text"><p>I have completed VMWare Training from Attari classes. I will recommend Attari Classes to everyone who is looking for online training.
+
+Maqsood sir has a very good experience in his area. He has cleared all our doubts with real-life examples and answered all our questions.</p></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="testimonial_box">
+            <div class="testimonial__header">
+              <div class="row">
+                <div class="col-lg-9 col-10">
+                  <div class="testimonial__image">
+                    <img src="https://lh3.googleusercontent.com/a-/ALV-UjWgTETwtNks_NV0cxcWaRsIwAnGgQKn6BRnfhhGMF47ew=w60-h60-p-rp-mo-ba2-br100" class="img-fluid d-block w-100 lazyload" alt>
+                    <span class="testimonial__name">Mithun Munde</span>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-2">
+                  <div class="testimonial__icon">
+                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial__content">
+              <div class="testimonial__text">
+<p>I have completed Azure Cloud Administrator Training from Attari classes. I will recommend Attari Classes to everyone who is looking for online training.
+
+Zameer sir has a very good experience in his area. He has cleared all our doubts with real-life examples and answered all our questions. Thank you Zameer Sir :).</p> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
         </div>
     </section>
