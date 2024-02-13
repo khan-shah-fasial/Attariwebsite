@@ -172,6 +172,7 @@ use Illuminate\Support\Str;
     
             // Set the data to be sent
             $data = [
+                'updateEnabled'=> true,
                 'email' => $email,
                 'listIds' => [1]
             ];
