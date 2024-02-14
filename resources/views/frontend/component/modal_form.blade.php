@@ -10,7 +10,7 @@ $session_data = json_decode(session('user_ip'), true);
             <button type="button" class="btn-close close_button" data-bs-dismiss="modal" aria-label="Close"></button>
             <div class="modal-body">
 
-                <form id="add_popup_form" action="{{url(route('contact.create'))}}" method="post"
+                <form id="add_popup_form{{$form}}" action="{{url(route('contact.create'))}}" method="post"
                  enctype="multipart/form-data">
                  @csrf
 
@@ -41,11 +41,11 @@ $session_data = json_decode(session('user_ip'), true);
                     <div class="form-group">
                         <select name="services" class="form-select form-control" required>
                             <option value="">--Select Course-</option>
-                            <option value="1">VMware</option>
-                            <option value="2">AWS Cloud</option>
-                            <option value="3">Azure Cloud</option>
-                            <option value="4">MCSE</option>
-                            <option value="5">CCNA</option>
+                            <option value="VMware">VMware</option>
+                            <option value="AWS Cloud">AWS Cloud</option>
+                            <option value="Azure Cloud">Azure Cloud</option>
+                            <option value="MCSE">MCSE</option>
+                            <option value="CCNA">CCNA</option>
                         </select>
                     </div>
 

@@ -241,15 +241,16 @@ $(document).ready(function() {
 
 //Ask popup form
 $(document).ready(function() {
-    initValidate('#add_popup_form');
-    $("#add_popup_form").submit(function(e) {
+    initValidate('#add_popup_form1', '#add_popup_form2', '#add_popup_form3', '#add_popup_form4', '#add_popup_form5', '#add_popup_form6', '#add_popup_form7');
+
+    $("#add_popup_form1, #add_popup_form2, #add_popup_form3, #add_popup_form4, #add_popup_form5, #add_popup_form6, #add_popup_form7").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });
 
     var responseHandler = function(response) {
         $('input, textarea').val('');
-        $("select option:first").prop('selected', true);
+        $("select").prop('selectedIndex', 0); // Resetting select elements
         setTimeout(function() {
             window.location.href = $('#baseUrl').attr('href') + '/thank-you';
         }, 2000);
