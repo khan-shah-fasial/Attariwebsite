@@ -51,7 +51,7 @@
                         aria-label="Linkedin Link"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="col-md-2 col-6">
+            <div class="col-md-2 col-6"> 
                 <h6 class="footer_links_heading">Courses</h6>
                 <ul class="footer_links">
                     <li><a href="https://attariclasses.in/vmware-training-certification-online/">VMware</a></li>
