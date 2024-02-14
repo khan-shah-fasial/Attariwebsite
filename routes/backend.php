@@ -40,6 +40,7 @@ use App\Http\Controllers\backend\ProjectCoveredController;
 use App\Http\Controllers\backend\CertificateController;
 
 use App\Http\Controllers\backend\CmsController;
+use App\Http\Controllers\backend\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -213,6 +214,12 @@ Route::group(['prefix' => 'contact'], function () {
     Route::post('/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
 });
 
+
+//newsletter
+Route::group(['prefix' => 'newsletter'], function () {
+    Route::get('/index', [NewsletterController::class, 'index'])->name('newsletter.index');
+    Route::post('/delete/{id}', [NewsletterController::class, 'delete'])->name('newsletter.delete');
+});
 
 
 //setting

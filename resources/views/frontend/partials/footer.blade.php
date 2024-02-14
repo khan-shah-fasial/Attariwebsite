@@ -1,4 +1,3 @@
-
 <!--------------------footer start----------------------------->
 
 
@@ -14,12 +13,23 @@
             <div class="col-12 mt-5 d-flex justify-content-center">
                 <div class="footer_search">
 
-                    <form id="add_newsletter_form" action="{{url(route('newsletter.create'))}}" method="post"
-                    enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">    
-                    <input type="email" class="form-control" name="email" placeholder="Enter you Email" required/>
-                      </div>
+                    <form id="add_newsletter_form" action="{{ url(route('newsletter.create')) }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+
+                            <select name="services" class="form-select form-control" required>
+                                <option value="">--Select Course-</option>
+                                <option value="VMware">VMware</option>
+                                <option value="AWS Cloud">AWS Cloud</option>
+                                <option value="Azure Cloud">Azure Cloud</option>
+                                <option value="MCSE">MCSE</option>
+                                <option value="CCNA">CCNA</option>
+                            </select>
+
+                            <input type="email" class="form-control" name="email" placeholder="Enter you Email"
+                                required />
+                        </div>
                         <button type="submit">SUBSCRIBE</button>
                     </form>
 
@@ -30,7 +40,8 @@
             <div class="col-md-4">
                 <div class="logo">
                     <a href="index.php" aria-label="Logo Link">
-                        <img src="/assets/frontend/images/cropped-header-logo-1.webp" width="180" height="50" alt="Footer Logo" />
+                        <img src="/assets/frontend/images/cropped-header-logo-1.webp" width="180" height="50"
+                            alt="Footer Logo" />
                     </a>
                 </div>
                 <p class="footer_para">Attari Classes is an IT training institute for VMware, AWS, AZURE,
@@ -51,7 +62,7 @@
                         aria-label="Linkedin Link"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="col-md-2 col-6"> 
+            <div class="col-md-2 col-6">
                 <h6 class="footer_links_heading">Courses</h6>
                 <ul class="footer_links">
                     <li><a href="https://attariclasses.in/vmware-training-certification-online/">VMware</a></li>
@@ -116,7 +127,8 @@
             </div>
             <div class="col-md-6 text-end footer_privacy">
                 <ul>
-                    <li><a href="{{ url(route('refund-policy')) }}" class="text-secondary">Refunds & Cancellations</a></li>
+                    <li><a href="{{ url(route('refund-policy')) }}" class="text-secondary">Refunds & Cancellations</a>
+                    </li>
                     <li><a href="{{ url(route('terms')) }}" class="text-secondary">Terms of Service</a></li>
                     <li><a href="{{ url(route('privacy-policy')) }}" class="text-secondary">Privacy Policy</a></li>
                 </ul>
@@ -132,7 +144,8 @@
         <div class="row">
             <div class="col-9 text-center py-2">
                 <h4>
-                    For Career Assistance : <img src="/assets/frontend/images/inr.png" width="15" height="10" alt="INR" />
+                    For Career Assistance : <img src="/assets/frontend/images/inr.png" width="15" height="10"
+                        alt="INR" />
                     +91
                     7738375431
                 </h4>
@@ -149,48 +162,56 @@
                         $session_data = json_decode(session('user_ip'), true);
                     @endphp
 
-                    <form id="add_footer_form" action="{{url(route('contact.create'))}}" method="post"
-                    enctype="multipart/form-data">
-                    @csrf
+                    <form id="add_footer_form" action="{{ url(route('contact.create')) }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
 
-                        <input type="hidden" name="section" value="Drop a Query Form" data-aos-once="true" data-aos="fade-up" />
-                        <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
+                        <input type="hidden" name="section" value="Drop a Query Form" data-aos-once="true"
+                            data-aos="fade-up" />
+                        <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true"
+                            data-aos="fade-up" />
 
                         <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="Enter Name" required/>
+                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
+                                required />
                         </div>
 
                         <div class="form-group">
-                             <input type="text" class="form-control" name="email" placeholder="Enter E-mail" required/>
+                            <input type="text" class="form-control" name="email" placeholder="Enter E-mail"
+                                required />
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" name="country" placeholder="Your Country" required/>
+                            <input type="text" class="form-control" name="country" placeholder="Your Country"
+                                required />
                         </div>
 
                         <div class="form-group">
-                             <input type="text" class="form-control" name="phone" placeholder="Mobile No with Country Code" required/>
+                            <input type="text" class="form-control" name="phone"
+                                placeholder="Mobile No with Country Code" required />
                         </div>
 
                         <div class="form-group">
                             <select name="services" class="form-select form-control" required>
-                                    <option selected>-Select Course-</option>
-                                    <option value="1">VMware</option>
-                                    <option value="2">AWS Cloud</option>
-                                    <option value="3">Azure Cloud</option>
-                                    <option value="4">MCSE</option>
-                                    <option value="5">CCNA</option>
-                                </select>
+                                <option selected>-Select Course-</option>
+                                <option value="1">VMware</option>
+                                <option value="2">AWS Cloud</option>
+                                <option value="3">Azure Cloud</option>
+                                <option value="4">MCSE</option>
+                                <option value="5">CCNA</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" name="description" rows="3" placeholder="Message" ></textarea>
+                            <textarea class="form-control" name="description" rows="3" placeholder="Message"></textarea>
                         </div>
-                        <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
-                        <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true" data-aos="fade-up" />
-                        
+                        <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true"
+                            data-aos="fade-up" />
+                        <input type="hidden" name="ref_url" value="{{ url()->previous() }}" data-aos-once="true"
+                            data-aos="fade-up" />
+
                         <div class="form-group text-center">
-                           <button type="submit">Send</button>
+                            <button type="submit">Send</button>
                         </div>
                     </form>
 
@@ -202,4 +223,3 @@
 
 
 <!-- footer End -->
-

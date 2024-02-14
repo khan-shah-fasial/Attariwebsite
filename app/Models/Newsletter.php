@@ -12,5 +12,6 @@ class Newsletter extends Model
     protected $table = 'newsletters';
     protected $fillable = [
         'email',
+        'services',
     ];
 }

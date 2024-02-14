@@ -60,6 +60,13 @@
                                 <span> Leads </span>
                             </a>
                         </li>
+
+                        <li class="side-nav-item">
+                            <a href="{{ route('newsletter.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-bar-chart-2-line"></i> 
+                                <span> Newsletter </span>
+                            </a>
+                        </li>
                         
                         <li class="side-nav-item">
                             <a href="{{ route('course.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
