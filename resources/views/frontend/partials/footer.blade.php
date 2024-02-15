@@ -16,21 +16,34 @@
                     <form id="add_newsletter_form" action="{{ url(route('newsletter.create')) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
+                        
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <select name="services" class="form-select form-control" required>
+                                        <option value="">--Select Course-</option>
+                                        <option value="VMware">VMware</option>
+                                        <option value="AWS Cloud">AWS Cloud</option>
+                                        <option value="Azure Cloud">Azure Cloud</option>
+                                        <option value="MCSE">MCSE</option>
+                                        <option value="CCNA">CCNA</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                            <select name="services" class="form-select form-control" required>
-                                <option value="">--Select Course-</option>
-                                <option value="VMware">VMware</option>
-                                <option value="AWS Cloud">AWS Cloud</option>
-                                <option value="Azure Cloud">Azure Cloud</option>
-                                <option value="MCSE">MCSE</option>
-                                <option value="CCNA">CCNA</option>
-                            </select>
-
-                            <input type="email" class="form-control" name="email" placeholder="Enter you Email"
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                     <input type="email" class="form-control" name="email" placeholder="Enter you Email"
                                 required />
+                                </div>
+                            </div>
+
+                             <div class="col-md-2">
+                                <div class="form-group">
+                                     <button type="submit">SUBSCRIBE</button>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit">SUBSCRIBE</button>
                     </form>
 
                 </div>

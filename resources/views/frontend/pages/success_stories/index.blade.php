@@ -198,7 +198,7 @@
 
          <section class="succes_page_form d-block sticky-top">
                  @include('frontend.component.book_free_Demo_form',[
-                    'section' => 'Book a Free Demo Success Story Page',
+                    'section' => 'Book a Free Demo - Success Story Page',
                 ])
             </div>
         </div>

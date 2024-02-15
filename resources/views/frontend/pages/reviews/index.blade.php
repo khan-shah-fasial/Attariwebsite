@@ -46,7 +46,7 @@
                     $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
                 @endphp
 
-                @if(!empty($text_vm_review))\
+                @if(!empty($text_vm_review))
                     @foreach ($text_vm_review as $row)
                         <div class="item">
                             <div class="testimonial_box">
@@ -114,7 +114,7 @@
                     $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type','google')->get();
                 @endphp
 
-                @if(!empty($text_aws_review))\
+                @if(!empty($text_aws_review))
                     @foreach ($text_aws_review as $row)
                         <div class="item">
                             <div class="testimonial_box">
@@ -189,7 +189,7 @@
                     $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
                 @endphp
 
-                @if(!empty($text_azure_review))\
+                @if(!empty($text_azure_review))
                     @foreach ($text_azure_review as $row)
                         <div class="item">
                             <div class="testimonial_box">
@@ -258,7 +258,7 @@
                     $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type','google')->get();
                 @endphp
 
-                @if(!empty($text_mcse_review))\
+                @if(!empty($text_mcse_review))
                     @foreach ($text_mcse_review as $row)
                         <div class="item">
                             <div class="testimonial_box">
@@ -325,7 +325,7 @@
                     $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
                 @endphp
 
-                @if(!empty($text_ccna_review))\
+                @if(!empty($text_ccna_review))
                     @foreach ($text_ccna_review as $row)
                         <div class="item">
                             <div class="testimonial_box">

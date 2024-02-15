@@ -174,7 +174,9 @@
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
 
-            
+             @include('frontend.component.book_free_Demo_form',[
+                'section' => 'Book a Free Demo - Mobile View',
+            ])
 
         </div>
     </section>
