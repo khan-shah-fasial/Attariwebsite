@@ -1,579 +1,633 @@
 /*mobile view start */
-@media(max-width:767px)
-{
+@media(max-width:767px) {
     .banner_content {
-    display: none;
-}
-html {
-    overflow-x: hidden;
-}
-
-.header {
-    padding: 6px 0;
-}
-.logo img {
-    width: 154px;
-    height:auto;
-}
-
-.services_headign {
-    font-size: 24px;
-}
-section.services .col-md-4.box_services:nth-child(3) {
-    margin-top: -50px;
-}
-
-section.services .col-md-4.box_services:nth-child(4) {
-    margin-top: -50px;
-}
-
-
-/* Home page css */
-
-.training {
-    padding: 25px 10px 0px !important;
-}
-
-.training_text_box {
-    padding: 0rem 0rem 0 0;
-}
-
-.training_heading {
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 1rem;
-}
-
-.training_para {
-    margin-bottom: 2rem;
-}
-
-.none {
-    display: none;
-}
-
-.img_box img{
-    width: 100%;
-    height: 100%;
-}
-
-.counter_inner_box p {
-    font-size: 14px !important;
-    line-height: 20px !important;
-}
-
-.counter_inner_box {
-     padding: 0px; 
-}
-
-.counter-value{
-    font-weight: 700;
-    margin-bottom:0px;
-}
-
-.classroom {
-    padding: 30px 0;
-}
-
-.carousel-inner .carousel-item img{
-    height:100%;
-}
-
-.lms_heading {
-    font-size: 24px;
-    line-height: 34px;
-    margin-bottom: 1rem;
-}
-
-.lms_img img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.adv_lms {
-    margin-top: 30px;
-}
-
-.bg_adv {
-    padding: 2rem 0;
-}
-.Certificate .Certificate_heading {
-    font-size: 24px;
-    line-height: 34px;
-}
+        display: none;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+
+    .header {
+        padding: 6px 0;
+    }
+
+    .logo img {
+        width: 154px;
+        height: auto;
+    }
+
+    .services_headign {
+        font-size: 24px;
+    }
+
+    section.services .col-md-4.box_services:nth-child(3) {
+        margin-top: -50px;
+    }
+
+    section.services .col-md-4.box_services:nth-child(4) {
+        margin-top: -50px;
+    }
+
+    .widths70 {
+        width: 100% !important;
+    }
+
+    .widths30 {
+        width: 100% !important;
+    }
+
+    .loadmore_button1 {
+        display: block;
+    }
+
+    .loadmore_button1 a {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        color: #fff !important;
+        padding: 10px 30px;
+        display: inline-block;
+        border-radius: 50px;
+        text-decoration: none;
+        margin-top: 8px;
+        margin-bottom: 30px;
+    }
+
+    .loadmore_button1 {
+        text-align: center;
+    }
+
+    .footer_search .form-group {
+        width: 100%;
+    }
+
+    /* Home page css */
+
+    .training {
+        padding: 25px 10px 0px !important;
+    }
+
+    .training_text_box {
+        padding: 0rem 0rem 0 0;
+    }
 
-.Certificate {
-    padding: 2rem 0;
-}
-
-.Certificate_para {
-     
-     margin-top: 0rem; 
-}
-
-.main_heads {
-    font-size: 24px;
-}
-
-section.testiminilas_sec .owl-nav.disabled {
-    display: none;
-}
-
-.testiminilas_sec .owl-theme .owl-dots .owl-dot span {
-    display: none;
-}
-
-.owl-theme .owl-nav {
-    display: none;
-}
-
-.view_allbutton {
-    margin-top: 30px;
-}
-
-.footer_heading h4 {
-    font-size: 22px;
-    line-height: 30px;
-}
-
-
-/* about page */
-
-.paddtb80 {
-    padding: 40px 0px;
-}
-.about_attari_classes {
-    padding: 2rem 0;
-}
-
-.aboutpg_hed {
-    font-size: 28px;
-}
-
-.about_attari_classes p {
-    margin-bottom: 1rem;
-    font-size: 13px;
-}
-
-.about_mission {
-    padding: 40px 0px 40px;
-}
-
-.about_mission p {
-    font-size: 14px;
-    line-height: 24px;
-}
-
-.our_achivement {
-    padding: 1rem 0;
-}
-
-.our_achivement .text_content p {
-    font-size: 14px;
-    margin: 1rem 0;
-}
-
-.carousel.slide{
-    margin-top:20px;
-}
-
-.our_infras {
-    padding: 1rem 0;
-}
-
-.location_box_1{
-    margin-bottom:20px;
-}
-
-.about_location .img_content img {
-    width: 100%;
-    height: 125px;
-}
-
-
-/* training page */
-
-.training .img_content img {
-    height: 159px;
-}
-
-.img_content{
-    margin-top: 20px;
-}
-
-.lms_para {
-    margin-bottom: 30px;
-}
-
-/*betch schedule*/
-
-.batch_table {
-    width: 100%;
-}
-
-.batch_table td {
-    font-size: 9px;
-    padding-left: 10px;
-    height: 30px;
-}
-
-.batch_table td span {
-    font-size: 9px;
-}
-
-/* success stories */
-
-.images_container .images {
-       width: auto;
-    height: auto;
-    padding: 4px 10px;
-    margin: 0px 0px;
-}
-
-.images_container img {
-    height: auto;
-}
-
-.images_container .images_4 {
-    width: auto;
-    height: auto;
-    padding: 20px 16px;
-    margin: 0px 0px;
-}
-
-.images_container .images_4 img {
-    height: auto;
-}
-
-
-/* contact */
-
-.contact_form .form_container {
-    padding: 1rem 1rem;
-}
-
-.contact_form_heading{
-    text-align: center;
-    font-weight: 600;
-}
-
-.contact_form .info_contact {
-    background: #f8f8f8;
-    padding: 2rem;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.google_map .text_location_content {
-    padding: 2rem 1rem;
-}
-
-.google_map .text_location_content i {
-    font-size: 44px;
-}
-
-.social_media {
-    flex-direction: column;
-}
-
-.socail_para {
-    font-size: 14px;
-    line-height: 23px;
-}
-
-.socail_head {
-    font-family: monospace;
-    font-size: 34px;
-}
-
-.social_media .text_content {
-    padding: 1rem;
-}
-
-.social_media .icon_content .icons {
-    flex-direction: column;
-}
-
-.social_media .icon_content .icons div {
-    width: 100%;
-}
-
- .banner_content {
-    display: none;
-}
-
-.image_width1
-{
-    width:100% !important;
-    height:auto !important;
-}
-.banner_slider1 img {
-    height: auto;
-}
-.enquiry_modal .modal-dialog {
-    width: auto;
-}
-.counter_heading {
-    font-size: 24px;
-}
-.counter-value {
-    margin-bottom: 0;
-}
-
-.enquiry_mobile_form {
-    background: #012749;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.color_white {
-    color: #fff;
-    padding-bottom: 8px;
-}
-
-.enquiry_mobile_form .form-group {
-    margin-bottom: 7px;
-}
-.enquiry_mobile_form .form-group input.form-control {
-    font-size: 14px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 4px;
-}
-.enquiry_mobile_form .form-group select.form-control {
-    font-size: 14px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 4px;
-}
-.lms_box p {
-    font-size: 14px;
-    margin-top: 7px;
-    font-weight: 500;
-    line-height: 20px;
-    margin-bottom: 3px;
-    padding-left: 7px;
-    padding-right: 7px;
-}
-.lms_box i {
-    font-size: 30px;
-}
-.owl-carousel .owl-item img {
-    height: auto;
-}
-.social_icon {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 1.5rem;
-    margin-bottom:20px;
-}
-.footer_links_container {
-    padding: 2rem 0 0px 0px;
-}
-.social_icon i {
-    font-size: 22px;
-}
-.footer_privacy ul li a {
-    color: #333 !important;
-    font-size: 12px;
-}
-.footer_privacy ul li {
-    float: left;
-    margin-left: 10px;
-}
-.copyright {
-    margin-bottom: 0;
-    font-size: 12px;
-    text-align: center;
-}
-.training_btn a {
-    padding: 11px 27px;
-    background: #13aff0!important;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3px;
-    font-size: 14px;
-    border-radius: 50px;
-}
-.slider_content_dots i {
-    font-size: 20px;
-    position: relative;
-    top: 3px;
-}
-.images_container .images_6 {
-    margin: 0px 0 0;
-}
-.images_container .images_4 img {
-    height: auto !important;
-}
-
-.iframe_map1 {
-    height: auto;
-}
-.pt70 {
-    padding-top: 35px!important;
-}
-.social_media .icons div a {
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-}
-.social_media .icons div {
-    padding: 2rem 0rem;
-}
-}
-
-@media(min-width:768px) and (max-width:991px){
-    
-    .none {
-    display: none;
-}
-    
-    
-    
     .training_heading {
-    font-size: 28px;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 1rem;
+    }
+
+    .training_para {
+        margin-bottom: 2rem;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .img_box img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .counter_inner_box p {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+
+    .counter_inner_box {
+        padding: 0px;
+    }
+
+    .counter-value {
+        font-weight: 700;
+        margin-bottom: 0px;
+    }
+
+    .classroom {
+        padding: 30px 0;
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 100%;
+    }
+
+    .lms_heading {
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 1rem;
+    }
+
+    .lms_img img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .adv_lms {
+        margin-top: 30px;
+    }
+
+    .bg_adv {
+        padding: 2rem 0;
+    }
+
+    .Certificate .Certificate_heading {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .Certificate {
+        padding: 2rem 0;
+    }
+
+    .Certificate_para {
+
+        margin-top: 0rem;
+    }
+
+    .main_heads {
+        font-size: 24px;
+    }
+
+    section.testiminilas_sec .owl-nav.disabled {
+        display: none;
+    }
+
+    .testiminilas_sec .owl-theme .owl-dots .owl-dot span {
+        display: none;
+    }
+
+    .owl-theme .owl-nav {
+        display: none;
+    }
+
+    .view_allbutton {
+        margin-top: 30px;
+    }
+
+    .footer_heading h4 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+
+    /* about page */
+
+    .paddtb80 {
+        padding: 40px 0px;
+    }
+
+    .about_attari_classes {
+        padding: 2rem 0;
+    }
+
+    .aboutpg_hed {
+        font-size: 28px;
+    }
+
+    .about_attari_classes p {
+        margin-bottom: 1rem;
+        font-size: 13px;
+    }
+
+    .about_mission {
+        padding: 40px 0px 40px;
+    }
+
+    .about_mission p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .our_achivement {
+        padding: 1rem 0;
+    }
+
+    .our_achivement .text_content p {
+        font-size: 14px;
+        margin: 1rem 0;
+    }
+
+    .carousel.slide {
+        margin-top: 20px;
+    }
+
+    .our_infras {
+        padding: 1rem 0;
+    }
+
+    .location_box_1 {
+        margin-bottom: 20px;
+    }
+
+    .about_location .img_content img {
+        width: 100%;
+        height: 125px;
+    }
+
+
+    /* training page */
+
+    .training .img_content img {
+        height: 159px;
+    }
+
+    .img_content {
+        margin-top: 20px;
+    }
+
+    .lms_para {
+        margin-bottom: 30px;
+    }
+
+    /*betch schedule*/
+
+    .batch_table {
+        width: 100%;
+    }
+
+    .batch_table td {
+        font-size: 9px;
+        padding-left: 10px;
+        height: 30px;
+    }
+
+    .batch_table td span {
+        font-size: 9px;
+    }
+
+    /* success stories */
+
+    .images_container .images {
+        width: auto;
+        height: auto;
+        padding: 4px 10px;
+        margin: 0px 0px;
+    }
+
+    .images_container img {
+        height: auto;
+    }
+
+    .images_container .images_4 {
+        width: auto;
+        height: auto;
+        padding: 20px 16px;
+        margin: 0px 0px;
+    }
+
+    .images_container .images_4 img {
+        height: auto;
+    }
+
+
+    /* contact */
+
+    .contact_form .form_container {
+        padding: 1rem 1rem;
+    }
+
+    .contact_form_heading {
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .contact_form .info_contact {
+        background: #f8f8f8;
+        padding: 2rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .google_map .text_location_content {
+        padding: 2rem 1rem;
+    }
+
+    .google_map .text_location_content i {
+        font-size: 44px;
+    }
+
+    .social_media {
+        flex-direction: column;
+    }
+
+    .socail_para {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .socail_head {
+        font-family: monospace;
+        font-size: 34px;
+    }
+
+    .social_media .text_content {
+        padding: 1rem;
+    }
+
+    .social_media .icon_content .icons {
+        flex-direction: column;
+    }
+
+    .social_media .icon_content .icons div {
+        width: 100%;
+    }
+
+    .banner_content {
+        display: none;
+    }
+
+    .image_width1 {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .banner_slider1 img {
+        height: auto;
+    }
+
+    .enquiry_modal .modal-dialog {
+        width: auto;
+    }
+
+    .counter_heading {
+        font-size: 24px;
+    }
+
+    .counter-value {
+        margin-bottom: 0;
+    }
+
+    .enquiry_mobile_form {
+        background: #012749;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .color_white {
+        color: #fff;
+        padding-bottom: 8px;
+    }
+
+    .enquiry_mobile_form .form-group {
+        margin-bottom: 7px;
+    }
+
+    .enquiry_mobile_form .form-group input.form-control {
+        font-size: 14px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 4px;
+    }
+
+    .enquiry_mobile_form .form-group select.form-control {
+        font-size: 14px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 4px;
+    }
+
+    .lms_box p {
+        font-size: 14px;
+        margin-top: 7px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 3px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .lms_box i {
+        font-size: 30px;
+    }
+
+    .owl-carousel .owl-item img {
+        height: auto;
+    }
+
+    .social_icon {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        gap: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .footer_links_container {
+        padding: 2rem 0 0px 0px;
+    }
+
+    .social_icon i {
+        font-size: 22px;
+    }
+
+    .footer_privacy ul li a {
+        color: #333 !important;
+        font-size: 12px;
+    }
+
+    .footer_privacy ul li {
+        float: left;
+        margin-left: 10px;
+    }
+
+    .copyright {
+        margin-bottom: 0;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .training_btn a {
+        padding: 11px 27px;
+        background: #13aff0 !important;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 3px;
+        font-size: 14px;
+        border-radius: 50px;
+    }
+
+    .slider_content_dots i {
+        font-size: 20px;
+        position: relative;
+        top: 3px;
+    }
+
+    .images_container .images_6 {
+        margin: 0px 0 0;
+    }
+
+    .images_container .images_4 img {
+        height: auto !important;
+    }
+
+    .iframe_map1 {
+        height: auto;
+    }
+
+    .pt70 {
+        padding-top: 35px !important;
+    }
+
+    .social_media .icons div a {
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+    }
+
+    .social_media .icons div {
+        padding: 2rem 0rem;
+    }
 }
 
-.img_box{
-    display: flex;
-    align-items: center;
+@media(min-width:768px) and (max-width:991px) {
+
+    .none {
+        display: none;
+    }
+
+
+
+    .training_heading {
+        font-size: 28px;
+    }
+
+    .img_box {
+        display: flex;
+        align-items: center;
+    }
+
+    .img_box img {
+        width: 100%;
+        height: 65%;
+    }
+
+    .training_text_box {
+        padding: 43px 4rem 0 0;
+    }
+
+    .counter {
+        margin-top: 40px;
+    }
+
+    .counter_heading {
+        font-size: 28px;
+    }
+
+    .counter_inner_box h2 {
+        font-weight: 600;
+    }
+
+    .counter_inner_box {
+
+        padding: 0;
+    }
+
+    .lms_heading {
+        font-size: 25px;
+        line-height: 36px;
+    }
+
+    .text_services_heading {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    /* about page */
+
+    .about_attari_classes p {
+        margin-bottom: 1rem;
+    }
+
+    .our_achivement .text_content p {
+        font-size: 14px;
+    }
+
+    .about_our_slider {
+        margin-top: 80px;
+    }
+
+    .about_location .img_content img {
+        height: 170px;
+    }
+
+
+    /* taraining page */
+
+    .img_content {
+        padding: 20px 90px;
+    }
+
+
+    /* betch schedule */
+
+    .bookfreedemo_button {
+        width: 150px;
+    }
+
+    /* success stories */
+
+    .images_container .images {
+        padding: 0px 0px;
+        margin: 8px 5px;
+        width: 230px;
+    }
+
+    .images_container .images_4 {
+        width: 230px;
+        padding: 0px 7px;
+        margin: 5px 5px;
+    }
+
+    .images_container .images_6 {
+        margin: 4px 0px 0px 0px;
+        width: 476px;
+    }
+
+    .images_container .images_5 {
+        margin: 6px 0px 0px 0px;
+        width: 452px;
+    }
+
+    .images_container .images_3 {
+        margin: 14px 0px 0px 0px;
+    }
+
+
+    /* contact page */
+
+    .google_map .text_location_content {
+        padding: 2rem 2rem;
+    }
+
+    .social_media .text_content {
+        padding: 1rem;
+        flex: 0 0 37%;
+    }
+
+    .socail_head {
+        font-size: 34px;
+    }
+
+    .socail_para {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .social_media .icon_content .icons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .social_media .icon_content .icons div {
+        width: 215px;
+    }
+
 }
-
-.img_box img{
-    width: 100%;
-    height: 65%;
-}
-
-.training_text_box {
-    padding: 43px 4rem 0 0;
-}
-
-.counter {
-    margin-top: 40px;
-}
-
-.counter_heading {
-    font-size: 28px;
-}
-
-.counter_inner_box h2{
-    font-weight: 600;
-}
-
-.counter_inner_box {
-    
-    padding: 0;
-}
-
-.lms_heading {
-    font-size: 25px;
-    line-height: 36px;
-}
-.text_services_heading {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-/* about page */
-
-.about_attari_classes p {
-    margin-bottom: 1rem;
-}
-
-.our_achivement .text_content p {
-    font-size: 14px;
-}
-
-.about_our_slider{
-    margin-top: 80px;
-}
-
-.about_location .img_content img {
-    height: 170px;
-}
-
-
-/* taraining page */
-
-.img_content{
-    padding: 20px 90px;
-}
-
-
-/* betch schedule */
-
-.bookfreedemo_button {
-    width: 150px;
-}
-
-/* success stories */
-
-.images_container .images {
-    padding: 0px 0px;
-    margin: 8px 5px;
-    width: 230px;
-}
-
-.images_container .images_4 {
-    width: 230px;
-    padding: 0px 7px;
-    margin: 5px 5px;
-}
-
-.images_container .images_6 {
-    margin: 4px 0px 0px 0px;
-    width: 476px;
-}
-
-.images_container .images_5 {
-    margin: 6px 0px 0px 0px;
-    width: 452px;
-}
-
-.images_container .images_3 {
-    margin: 14px 0px 0px 0px;
-}
-
-
-/* contact page */
-
-.google_map .text_location_content {
-    padding: 2rem 2rem;
-}
-
-.social_media .text_content {
-    padding: 1rem;
-    flex: 0 0 37%;
-}
-
-.socail_head {
-    font-size: 34px;
-}
-
-.socail_para {
-    font-size: 14px;
-    line-height: 23px;
-}
-
-.social_media .icon_content .icons {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.social_media .icon_content .icons div {
-    width: 215px;
-}
-
-}
-
-
-

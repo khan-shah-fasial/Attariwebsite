@@ -2873,6 +2873,10 @@ span.customSelect {
   overflow: hidden;
 }
 
+.loadmore_button1 {
+  display: none;
+}
+
 /*
 .dot_clr_white i
 {
