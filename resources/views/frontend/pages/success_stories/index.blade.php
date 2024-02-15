@@ -63,410 +63,125 @@
                     </a>
                 </div>
 
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_19.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_19.jpg" data-src="/assets/frontend/images/succes_story_whtsp_19.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_20.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_20.jpg" data-src="/assets/frontend/images/succes_story_whtsp_20.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_21.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_21.jpg" data-src="/assets/frontend/images/succes_story_whtsp_21.jpg" />
                     </a>
                 </div>
                 
-            </div>
 
-            <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
-                <div class="container">
-                    <form class="" method="action">
-                        <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="your_country" placeholder="Your Country"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="mobile_code"
-                                placeholder="Mobile no with country code" required />
-                        </div>
-
-                        <div class="form-group">
-                            <select aria-labelledby="-Select Course-" class="form-select form-control" required>
-                                <option selected>-Select Course-</option>
-                                <option value="1">VMware</option>
-                                <option value="2">AWS Cloud</option>
-                                <option value="3">Azure Cloud</option>
-                                <option value="4">MCSE</option>
-                                <option value="5">CCNA</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
-                        </div>
-
-                        <div class="form-group text-center">
-                            <input class="btn btn-primary submit_button" type="submit" value="send" />
-                        </div>
-
-                    </form>
-                </div>
-            </section>
-
-
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="images/succes_story_whtsp_22.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_22.jpg" data-src="images/succes_story_whtsp_22.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_22 (1).jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_22 (1).jpg" data-src="/assets/frontend/images/succes_story_whtsp_22 (1).jpg" />
                     </a>
                 </div>
 
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_18.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_18.jpg" data-src="/assets/frontend/images/succes_story_whtsp_18.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_17.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_17.jpg" data-src="/assets/frontend/images/succes_story_whtsp_17.jpg" />
                     </a>
                 </div>
                
-            </div>
-
-            <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
-                <div class="container">
-                    <form class="" method="action">
-                        <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="your_country" placeholder="Your Country"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="mobile_code"
-                                placeholder="Mobile no with country code" required />
-                        </div>
-
-                        <div class="form-group">
-                            <select aria-labelledby="-Select Course-" class="form-select form-control" required>
-                                <option selected>-Select Course-</option>
-                                <option value="1">VMware</option>
-                                <option value="2">AWS Cloud</option>
-                                <option value="3">Azure Cloud</option>
-                                <option value="4">MCSE</option>
-                                <option value="5">CCNA</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
-                        </div>
-
-                        <div class="form-group text-center">
-                            <input class="btn btn-primary submit_button" type="submit" value="send" />
-                        </div>
-
-                    </form>
-                </div>
-            </section>
-
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
-                    </div>
-                </div>
-                 <div class="col-md-3 images">
+                 <div class="col-md-4 images content_loadmore">
                     <a href="images/succes_story_whtsp_16.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_16.jpg" data-src="images/succes_story_whtsp_16.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_15.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_15.jpg" data-src="/assets/frontend/images/succes_story_whtsp_15.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_1.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_1.jpg" data-src="/assets/frontend/images/succes_story_whtsp_1.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_2.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_2.jpg" data-src="/assets/frontend/images/succes_story_whtsp_2.jpg" />
                     </a>
                 </div>
-                
-            </div>
 
-            <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
-                <div class="container">
-                    <form class="" method="action">
-                        <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="your_country" placeholder="Your Country"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="mobile_code"
-                                placeholder="Mobile no with country code" required />
-                        </div>
-
-                        <div class="form-group">
-                            <select aria-labelledby="-Select Course-" class="form-select form-control" required>
-                                <option selected>-Select Course-</option>
-                                <option value="1">VMware</option>
-                                <option value="2">AWS Cloud</option>
-                                <option value="3">Azure Cloud</option>
-                                <option value="4">MCSE</option>
-                                <option value="5">CCNA</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
-                        </div>
-
-                        <div class="form-group text-center">
-                            <input class="btn btn-primary submit_button" type="submit" value="send" />
-                        </div>
-
-                    </form>
-                </div>
-            </section>
-
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
-                    </div>
-                </div>
-                <div class="col-md-3 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="images/succes_story_whtsp_3.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_3.jpg" data-src="images/succes_story_whtsp_3.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_4.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_4.jpg" data-src="/assets/frontend/images/succes_story_whtsp_4.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_5.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_5.jpg" data-src="/assets/frontend/images/succes_story_whtsp_5.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_6.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_6.jpg" data-src="/assets/frontend/images/succes_story_whtsp_6.jpg" />
                     </a>
                 </div>
-               
-            </div>
-
-            <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
-                <div class="container">
-                    <form class="" method="action">
-                        <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="your_country" placeholder="Your Country"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="mobile_code"
-                                placeholder="Mobile no with country code" required />
-                        </div>
-
-                        <div class="form-group">
-                            <select aria-labelledby="-Select Course-" class="form-select form-control" required>
-                                <option selected>-Select Course-</option>
-                                <option value="1">VMware</option>
-                                <option value="2">AWS Cloud</option>
-                                <option value="3">Azure Cloud</option>
-                                <option value="4">MCSE</option>
-                                <option value="5">CCNA</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
-                        </div>
-
-                        <div class="form-group text-center">
-                            <input class="btn btn-primary submit_button" type="submit" value="send" />
-                        </div>
-
-                    </form>
-                </div>
-            </section>
-
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
-                    </div>
-                </div>
-                 <div class="col-md-3 images">
+            
+        
+                 <div class="col-md-4 images content_loadmore">
                     <a href="images/succes_story_whtsp_7.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_7.jpg" data-src="images/succes_story_whtsp_7.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_8.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_8.jpg" data-src="/assets/frontend/images/succes_story_whtsp_8.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_9.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_9.jpg" data-src="/assets/frontend/images/succes_story_whtsp_9.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_10.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_10.jpg" data-src="/assets/frontend/images/succes_story_whtsp_10.jpg" />
                     </a>
                 </div>
-               
-            </div>
 
-            <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
-                <div class="container">
-                    <form class="" method="action">
-                        <h5 class="text-center color_white">Book a <b>FREE</b> Demo</h5>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Enter Email"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="your_country" placeholder="Your Country"
-                                required />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="mobile_code"
-                                placeholder="Mobile no with country code" required />
-                        </div>
-
-                        <div class="form-group">
-                            <select aria-labelledby="-Select Course-" class="form-select form-control" required>
-                                <option selected>-Select Course-</option>
-                                <option value="1">VMware</option>
-                                <option value="2">AWS Cloud</option>
-                                <option value="3">Azure Cloud</option>
-                                <option value="4">MCSE</option>
-                                <option value="5">CCNA</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea aria-labelledby="Message" class="form-control" placeholder="Message"></textarea>
-                        </div>
-
-                        <div class="form-group text-center">
-                            <input class="btn btn-primary submit_button" type="submit" value="send" />
-                        </div>
-
-                    </form>
-                </div>
-            </section>
-
-            <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button reviews_demo" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal"> Book a Demo</button>
-                    </div>
-                </div>
-                 <div class="col-md-3 images">
+                 <div class="col-md-4 images content_loadmore">
                     <a href="images/succes_story_whtsp_11.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_11.jpg" data-src="images/succes_story_whtsp_11.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_12.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_12.jpg" data-src="/assets/frontend/images/succes_story_whtsp_12.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_13.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_13.jpg" data-src="/assets/frontend/images/succes_story_whtsp_13.jpg" />
                     </a>
                 </div>
-                <div class="col-md-4 images">
+                <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_14.jpg" data-fancybox="gallery">
                         <img src="/assets/frontend/images/succes_story_whtsp_14.jpg" data-src="/assets/frontend/images/succes_story_whtsp_14.jpg" />
                     </a>
@@ -475,13 +190,16 @@
 
 
             </div>
+            <div class="loadmore_button1"><a href="#" id="loadMore">Load More</a></div>
+            
             </div>
-            <div class="col-md-4 widths30">
 
-                        <section class="succes_page_form d-block sticky-top">
-                
- @include('frontend.component.book_free_Demo_form')
-            </section>
+            <div class="col-md-4 col-12 widths30">
+
+         <section class="succes_page_form d-block sticky-top">
+                 @include('frontend.component.book_free_Demo_form',[
+                    'section' => 'Book a Free Demo Success Story Page',
+                ])
             </div>
         </div>
         </div>
