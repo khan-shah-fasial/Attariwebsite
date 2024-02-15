@@ -224,8 +224,8 @@ $(document).ready(function() {
 
 //have_Any_question_form
 $(document).ready(function() {
-    initValidate('#add_course_form');
-    $("#add_course_form").submit(function(e) {
+    initValidate('#add_course_form','#add_course_form1', '#add_course_form2', '#add_course_form3', '#add_course_form4');
+    $("#add_course_form,#add_course_form1, #add_course_form2, #add_course_form3, #add_course_form4").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });

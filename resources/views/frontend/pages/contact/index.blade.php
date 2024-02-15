@@ -56,9 +56,9 @@
 
                         <input type="text" name="name" placeholder="Enter Name" required/>
                         <input type="email" name="email" placeholder="Enter E-mail" required/>
-                        <input type="text" name="country" placeholder="Your Country" required/>
-                        <input type="text" name="phone" placeholder="Mobile no with Country code" required/>
-                        <select name="select_course" name="services">
+                        <input type="country" name="country" placeholder="Your Country" required/>
+                        <input type="phone" name="phone" placeholder="Mobile no with Country code" required/>
+                        <select name="services">
                             <option value="">--Select Course--</option>
                             <option value="VMwere">VMwere</option>
                             <option value="AWS Cloud">AWS Cloud</option>

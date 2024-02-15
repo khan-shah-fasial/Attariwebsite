@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Storage;
 class CmsController extends Controller
 {
     public function index() {
-        $cms = Cms::orderBy('id', 'desc')->get();
-        return view('backend.pages.cms.index', compact('cms'));
-        //return view('backend.pages.cms.index');
+        //$cms = Cms::orderBy('id', 'desc')->get();
+        //return view('backend.pages.cms.index', compact('cms'));
+        return view('backend.pages.cms.index');
     }
 
     public function getData(Request $request)
@@ -23,54 +23,98 @@ class CmsController extends Controller
         $draw = $request->get('draw');
         $start = $request->get('start');
         $rowperpage = $request->get('length');
-
-        $columnIndex_arr = $request->get('order');
-        $columnName_arr = $request->get('columns');
-        $order_arr = $request->get('order');
-        $search_arr = $request->get('search');
-
-        $columnIndex = $columnIndex_arr[0]['column'];
-        $columnName = $columnName_arr[$columnIndex]['data'];
-        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
-        $searchValue = $search_arr['value'];
-
-        //total records
-        $totalRecords = Cms::select('count(*) as allcount')->count();
-
-        //total records with search filter
-        $totalRecordswithFilter = Cms::select('count(*) as allcount')
-                                ->where('title','like','%'.$searchValue.'%')
-                                ->count();
-
-        //Fetch Records
-        $records = Cms::orderby($columnName,$columnSortOrder)->where('cms.title','like','%'.$searchValue.'%')
-                    ->select('cms.*')->skip($start)->take($rowperpage)->get();
-
-        $data_arr = array();
-
-        foreach($records as $row){
-            $data['id'] = $row->id;
-            $data['title'] = $row->title;
-            $data['slug'] = $row->slug;
-            $data['zone'] = ($row->zone == 1) ? 'City' : (($row->zone == 2) ? 'Country' : 'Main');
-            $data['status'] = $row->status ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-danger">Inactive</span>';
-            $data['created_at'] = $row->created_at->format('Y-m-d H:i:s');
-
-            //----
-            $data_arr[] = $data;
-
+        $order = $request->get('order')[0]['column'];
+        $dir = $request->get('order')[0]['dir'];
+    
+        // Columns
+        $columns = array(
+            0 => 'id',
+            1 => 'title',
+            2 => 'slug',
+            3 => 'zone',
+            4 => 'status',
+            5 => 'created_at'
+        );
+    
+        // Total records
+        $totalRecords = Cms::count();
+    
+        // Search value
+        $searchValue = $request->input('search.value');
+    
+        // Filtered records
+        $query = Cms::select('*');
+        if (!empty($searchValue)) {
+            $query->where(function($q) use ($searchValue) {
+                $q->where('title', 'like', "%$searchValue%")
+                    ->orWhere('slug', 'like', "%$searchValue%")
+                    ->orWhere('zone', 'like', "%$searchValue%")
+                    ->orWhere('status', 'like', "%$searchValue%");
+            });
+        }
+    
+        // Filter by additional form parameters
+        $title = $request->input('title');
+        if (!empty($title)) {
+            $query->where('title', 'like', "%$title%");
         }
 
-        $json_data = array(
-            "draw"            => intval($draw),
-            "recordsTotal"    => $totalRecords,
-            "recordsFiltered" => $totalRecordswithFilter,
-            "data"            => $data_arr,
+        $slug = $request->input('slug');
+        if (!empty($slug)) {
+            $query->where('slug', 'like', "%$slug%");
+        }
+    
+        $zone = $request->input('zone');
+        if (!empty($zone)) {
+            $query->where('zone', 'like', "%$zone%");
+        }
+    
+        $status = $request->input('status');
+        if (!empty($status)) {
+            $query->where('status', 'like', "%$status%");
+        }
+    
+        // Get filtered count
+        $totalFiltered = $query->count();
+    
+        // Order
+        $query->orderBy($columns[$order], $dir);
+    
+        // Get records with pagination
+        $records = $query->offset($start)
+                        ->limit($rowperpage)
+                        ->get();
+    
+        // Prepare data
+        $data = [];
+        foreach ($records as $row) {
+            $nestedData = [
+                'id' => $row->id,
+                'title' => $row->title,
+                'slug' => $row->slug,
+                'zone' => ($row->zone == 1) ? 'City' : (($row->zone == 2) ? 'Country' : 'Main'),
+                'status' => $row->status ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-danger">Inactive</span>',
+                'created_at' => $row->created_at->format('Y-m-d H:i:s'),
+                'action' => '<a href="'.route('cms.status', ['id' => $row->id, 'status' => $row->status ? 0 : 1]).'" class="action-icon">'.
+                                '<i class="'.($row->status ? 'ri-eye-off-fill' : 'ri-eye-fill').'" title="'.($row->status ? 'Inactive' : 'Active').'"></i>'.
+                            '</a>'.
+                            '<a href="javascript:void(0);" class="action-icon" onclick="largeModal(\''.route('cms.edit', ['id' => $row->id]).'\', \'Edit CMS\')"> <i class="mdi mdi-square-edit-outline" title="Edit"></i></a>'.
+                            '<a href="javascript:void(0);" class="action-icon" onclick="confirmModal(\''.route('cms.delete', $row->id).'\', responseHandler)"><i class="mdi mdi-delete" title="Delete"></i></a>'
+            ];
+    
+            $data[] = $nestedData;
+        }
+    
+        // JSON response
+        $response = array(
+            "draw" => intval($draw),
+            "recordsTotal" => intval($totalRecords),
+            "recordsFiltered" => intval($totalFiltered),
+            "data" => $data
         );
-
-        echo json_encode($json_data);
-        exit;
-
+    
+        return response()->json($response);
+    
         //return response()->json($json_data);
     }
 

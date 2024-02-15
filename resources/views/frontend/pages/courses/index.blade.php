@@ -55,8 +55,16 @@
                         </div>
                     </div>
 
+                    @include('frontend.component.course_enquire_form', [
+                        'section' => 'Enquire Form Top - course Page',
+                        'form' => '1',
+                        'title' => 'Enquire Now',
+                        'courseName' =>  $cms->breadcrumb_title,
+                    ])
+
+
                     <button type="button" class="btn coursepg_enquiryform" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal_coursepg"> Enquire Now</button>
+                        data-bs-target="#enquiry_modal_coursepg1"> Enquire Now</button>
 
                     <a href="#syllabuse" class="check_curriculum"> Check Curriculum </a>
                 </div>
@@ -550,7 +558,17 @@
                                 <div class="col-md-3">
                                     <div class="button_main getin_touch_bx">
                                         <h5>Get In Touch to Avail <span>{{ $batch->off_percentage }} OFF</span></h5>
-                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg">Book a Demo</a>
+
+
+                                        @include('frontend.component.course_enquire_form', [
+                                            'section' => 'Online / Classroom - course Page',
+                                            'form' => '2',
+                                            'title' => 'Book a Demo',
+                                            'courseName' =>  $cms->breadcrumb_title,
+                                        ])
+
+
+                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg2">Book a Demo</a>
                                     </div>
                                 </div>
                             </div>
@@ -572,7 +590,15 @@
 
                                 <div class="col-md-3">
                                     <div class="button_main">
-                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg">Enquire Now</a>
+
+                                        @include('frontend.component.course_enquire_form', [
+                                             'section' => $batch->corp_title . ' - course Page',
+                                            'form' => '3',
+                                            'title' => 'Enquire Now',
+                                            'courseName' =>  $cms->breadcrumb_title,
+                                        ])
+
+                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg3">Enquire Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -726,7 +752,7 @@
         </div>
     </section>
 
-    @include('frontend.component.course_enquire_form', ['courseName' => $cms->breadcrumb_title])
+    
 
     <!-------------=============== courses end =============== -------------------->
 
