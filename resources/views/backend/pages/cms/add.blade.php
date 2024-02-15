@@ -7,14 +7,14 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <div class="form-check form-switch d-flex justify-content-end mb-2">
+                        {{--<div class="form-check form-switch d-flex justify-content-end mb-2">
 
                             <input id="zone_check" class="form-check-input mx-2" type="checkbox"
                                 name="zone_check" value="1">
             
                             <label class="form-check-label" for="thumbnail_check">City wise / Country wise Course</label>
             
-                        </div>
+                        </div> ---}}
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
@@ -58,11 +58,11 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4" id="zone-select">
+                        <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Zone</label>
-                                <select class="form-select select2" name="zone" required>
-                                    <option value="0">--- Select ---</option>
+                                <select class="form-select" name="zone" id="typeSelect" onclick="toggleInput();" required>
+                                    <option value="0">Main</option>
                                     <option value="1">City</option>
                                     <option value="2">Country</option>
                                 </select> 
@@ -189,41 +189,36 @@ $("#replace_key_add_more").append(new_replace_key);
 });
 
 
-var zoneCheck = document.getElementById('zone_check');
-var menuTitle = document.getElementById('menu-title');
 
-var zoneSelect = document.getElementById('zone-select');
+
+var menuTitle = document.getElementById('menu-title');
 var aliasSelect = document.getElementById('alisa-select');
 
 // Initial check
 toggleMenuTitle();
 
-// Add event listener to the checkbox
-zoneCheck.addEventListener('change', function () {
-    toggleMenuTitle();
-});
-
 // Function to toggle menu title visibility and required attribute
-function toggleMenuTitle() {
-    if (zoneCheck.checked) {
-        menuTitle.style.display = 'none';
+function toggleInput() {
+    // Get the value of the selected option
+    const selectedOption = document.getElementById('typeSelect').value;
 
-        zoneSelect.style.display = 'block';
+    // Call the toggleMenuTitle function with the selected option value
+    toggleMenuTitle(selectedOption);
+}
+
+// Function to toggle menu title visibility and required attribute based on the selected option
+function toggleMenuTitle(selectedOption) {
+    if (selectedOption == 1 || selectedOption == 2) {
+        menuTitle.style.display = 'none';
         aliasSelect.style.display = 'block';
 
         document.getElementsByName('menu_title')[0].removeAttribute('required');
-
-        document.getElementsByName('zone')[0].setAttribute('required', 'required');
         document.getElementsByName('alias')[0].setAttribute('required', 'required');
     } else {
         menuTitle.style.display = 'block';
-
-        zoneSelect.style.display = 'none';
         aliasSelect.style.display = 'none';
 
         document.getElementsByName('menu_title')[0].setAttribute('required', 'required');
-
-        document.getElementsByName('zone')[0].removeAttribute('required');
         document.getElementsByName('alias')[0].removeAttribute('required');
     }
 }

@@ -362,6 +362,9 @@ Route::group(['prefix' => 'cms'], function () {
     Route::get('/add', [CmsController::class, 'add'])->name('cms.add');
     Route::get('/edit/{id}', [CmsController::class, 'edit'])->name('cms.edit');
 
+    Route::get('cms-data', [CmsController::class, 'getData'])->name('cms.data');
+
+
     Route::post('/create', [CmsController::class, 'create'])->name('cms.create');
     Route::post('/update', [CmsController::class, 'update'])->name('cms.update');
     Route::post('/delete/{id}', [CmsController::class, 'delete'])->name('cms.delete');

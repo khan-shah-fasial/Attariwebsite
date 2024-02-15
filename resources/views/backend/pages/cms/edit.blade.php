@@ -8,14 +8,14 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <div class="form-check form-switch d-flex justify-content-end mb-2">
+                    {{--    <div class="form-check form-switch d-flex justify-content-end mb-2">
 
                             <input id="zone_check" class="form-check-input mx-2" type="checkbox"
                                 name="zone_check" value="1" @if($cms->zone != "0") checked @endif>
             
                             <label class="form-check-label" for="thumbnail_check">City wise / Country wise Course</label>
             
-                        </div>
+                        </div> ---}}
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
@@ -65,13 +65,13 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4" id="zone-select">
+                        <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Zone</label>
-                                <select class="form-select select2" name="zone" required>
-                                    <option value="0" @if($cms->zone == "0") selected @endif>--- Select ---</option>
+                                <select class="form-select" name="zone" id="typeSelect" onclick="toggleInput1();" required>
+                                    <option value="0" @if($cms->zone == "0") selected @endif>Main</option>
                                     <option value="1" @if($cms->zone == "1") selected @endif>City</option>
-                                    <option value="2" @if($cms->zone == "2") selected @endif>Country</option>
+                                    <option value="2"  @if($cms->zone == "2") selected @endif>Country</option>
                                 </select> 
                             </div>
                         </div>
@@ -211,41 +211,36 @@
     $("#replace_key_add_more").append(new_replace_key);
     });
 
-    var zoneCheck = document.getElementById('zone_check');
-    var menuTitle = document.getElementById('menu-title');
 
-    var zoneSelect = document.getElementById('zone-select');
-    var aliasSelect = document.getElementById('alisa-select');
+
+    var menuTitle1 = document.getElementById('menu-title');
+    var aliasSelect1 = document.getElementById('alisa-select');
 
     // Initial check
-    toggleMenuTitle();
-
-    // Add event listener to the checkbox
-    zoneCheck.addEventListener('change', function () {
-        toggleMenuTitle();
-    });
+    toggleMenuTitle1();
 
     // Function to toggle menu title visibility and required attribute
-    function toggleMenuTitle() {
-        if (zoneCheck.checked) {
-            menuTitle.style.display = 'none';
+    function toggleInput1() {
+        // Get the value of the selected option
+        const selectedOption = document.getElementById('typeSelect').value;
 
-            zoneSelect.style.display = 'block';
-            aliasSelect.style.display = 'block';
+        // Call the toggleMenuTitle1 function with the selected option value
+        toggleMenuTitle1(selectedOption);
+    }
+
+    // Function to toggle menu title visibility and required attribute based on the selected option
+    function toggleMenuTitle1(selectedOption) {
+        if (selectedOption == 1 || selectedOption == 2) {
+            menuTitle1.style.display = 'none';
+            aliasSelect1.style.display = 'block';
 
             document.getElementsByName('menu_title')[0].removeAttribute('required');
-
-            document.getElementsByName('zone')[0].setAttribute('required', 'required');
             document.getElementsByName('alias')[0].setAttribute('required', 'required');
         } else {
-            menuTitle.style.display = 'block';
-
-            zoneSelect.style.display = 'none';
-            aliasSelect.style.display = 'none';
+            menuTitle1.style.display = 'block';
+            aliasSelect1.style.display = 'none';
 
             document.getElementsByName('menu_title')[0].setAttribute('required', 'required');
-
-            document.getElementsByName('zone')[0].removeAttribute('required');
             document.getElementsByName('alias')[0].removeAttribute('required');
         }
     }
