@@ -10,10 +10,10 @@
 
 	<div class="row">
 
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs admin_nav">
 
 			<li class="nav-item">
-			  <a class="nav-link @if( $section == 'course') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'course'])) }}">Key Feature & CO</a>
+			  <a class="nav-link @if( $section == 'course') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'course'])) }}">Key Feature & Overview</a>
 			</li>
 
 			<li class="nav-item">

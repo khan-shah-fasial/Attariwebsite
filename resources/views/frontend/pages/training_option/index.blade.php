@@ -36,7 +36,7 @@
     <section class="training pb-5 pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 paddmobile4">
                     <h2 class="training_heading">
                         Online Training with Live Hands-on Practical
                     </h2>
@@ -408,7 +408,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-6 right order-lg-2 ps-md-4">
+                <div class="col-lg-6 right order-lg-2 ps-md-4 paddmobile4">
                     <h2 class="training_heading">
                         Classroom Training with Hands-on Practical
                     </h2>
@@ -809,7 +809,7 @@ Mohammad Firoz Mansuri</span>
     <section class="lms training pt-5 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 paddmobile4">
                     <h2 class="lms_heading">
                         Self Paced Learning -
                         <strong>Live Recorded Video Lectures</strong>

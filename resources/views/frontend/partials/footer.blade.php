@@ -10,7 +10,7 @@
                     Latest Update
                 </h4>
             </div>
-            <div class="col-12 mt-5 d-flex justify-content-center">
+            <div class="col-12 mt-md-5 mt-2 d-flex justify-content-center">
                 <div class="footer_search">
 
                     <form id="add_newsletter_form" action="{{ url(route('newsletter.create')) }}" method="post"

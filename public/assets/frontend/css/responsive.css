@@ -485,6 +485,23 @@
     .social_media .icons div {
         padding: 2rem 0rem;
     }
+
+    .footer_search select.form-select.form-control {
+        margin-bottom: 15px;
+    }
+
+    .footer_search .form-group input {
+        margin-bottom: 15px;
+    }
+
+    .footer_search {
+        width: 100%;
+        padding: 8px 0px;
+    }
+
+    .paddmobile4 {
+        padding: 4px !important;
+    }
 }
 
 @media(min-width:768px) and (max-width:991px) {
