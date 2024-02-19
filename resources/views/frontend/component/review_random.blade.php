@@ -3,7 +3,7 @@
     $text_rev = DB::table('text_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
         ->where('c1.status', '1')
-        ->select('c1.course_id', 'c1.thumbnail', 'c1.name', 'c1.description', 'c1.type', 'c1.created_at as latest_created_at')
+        ->select('c1.course_id', 'c1.thumbnail', 'c1.name', 'c1.description','c1.url','c1.type', 'c1.created_at as latest_created_at')
         ->join(DB::raw('(SELECT course_id, MAX(created_at) as max_created_at
                         FROM text_reviews
                         WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\'
@@ -35,8 +35,10 @@
                             </div>
                             <div class="col-lg-3 col-2">
                                 <div class="testimonial__icon"> 
-                                    @if($row->type == 'google')
-                                        <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                    @if($row->type == 'google' || $row->type == 'google_mcse')
+                                        <a href="{{ $row->url }}">
+                                            <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                        </a>
                                     @endif
                                 </div>
                             </div>
