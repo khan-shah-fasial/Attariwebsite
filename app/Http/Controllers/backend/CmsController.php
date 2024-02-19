@@ -87,9 +87,10 @@ class CmsController extends Controller
     
         // Prepare data
         $data = [];
+        $i = 1;
         foreach ($records as $row) {
             $nestedData = [
-                'id' => $row->id,
+                'id' => $i++,
                 'title' => $row->title,
                 'slug' => $row->slug,
                 'zone' => ($row->zone == 1) ? 'City' : (($row->zone == 2) ? 'Country' : 'Main'),

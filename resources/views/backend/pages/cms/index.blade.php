@@ -4,14 +4,18 @@
 
 @section('page.content')
 <div class="card">
-   <div class="card-body">
-      <div class="row mb-2">
-         <div class="col-sm-5">
-            {{--<h3>List</h3>--}}
-         </div>
-
-         <!-- end col-->
-      </div>
+    <div class="card-body">
+        <div class="row mb-2">
+           <div class="col-sm-5">
+              {{--<h3>List</h3>--}}
+           </div>
+           <div class="col-sm-7">
+              <div class="text-sm-end">
+                  <a href="javascript:void(0);" class="btn btn-danger mb-2" onclick="largeModal('{{ url(route('cms.add')) }}', 'Add CMS')"><i class="mdi mdi-plus-circle me-2"></i> Add CMS</a>
+              </div>
+           </div>
+           <!-- end col-->
+        </div>
 
         <div class="table-responsive">
 

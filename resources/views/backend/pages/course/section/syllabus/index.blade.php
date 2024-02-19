@@ -25,7 +25,7 @@
             <table id="basic-datatable" class="table dt-responsive nowrap1 w-100">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        {{--<th>#</th>--}}
                         <th>Title No</th>
                         <th>Title</th>
                         <th>Description</th>
@@ -38,7 +38,7 @@
                     @php $i = 1; @endphp
                     @foreach ($syllabus as $row)
                         <tr>
-                            <td>{{ $i++ }}</td>
+                            {{--<td>{{ $i++ }}</td>---}}
                             <td>{{ $row->title_no }}</td>
                             <td>{{ $row->title }}</td>
                             <td>@php echo html_entity_decode($row->description) @endphp</td>

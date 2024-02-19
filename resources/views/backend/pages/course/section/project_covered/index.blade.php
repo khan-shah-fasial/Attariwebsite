@@ -23,7 +23,7 @@
        <table id="basic-datatable" class="table dt-responsive nowrap w-100">
          <thead>
              <tr>
-                 <th>#</th>
+                {{-- <th>#</th> --}}
                  <th>Title No</th>
                  <th>Name</th>
                  <th>Description</th>
@@ -36,7 +36,7 @@
              @php $i = 1; @endphp
              @foreach($project_covered as $row)
              <tr>
-                 <td>{{$i++}}</td>
+                {{-- <td>{{$i++}}</td> --}}
                  <td>{{ $row->title_no }}</td>
                  <td>{{$row->title}}</td>
                  <td>
