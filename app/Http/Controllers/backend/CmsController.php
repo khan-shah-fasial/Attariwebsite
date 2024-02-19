@@ -65,8 +65,8 @@ class CmsController extends Controller
         }
     
         $zone = $request->input('zone');
-        if (!empty($zone)) {
-            $query->where('zone', 'like', "%$zone%");
+        if ($zone != '') {
+            $query->where('zone', $zone);
         }
     
         $status = $request->input('status');

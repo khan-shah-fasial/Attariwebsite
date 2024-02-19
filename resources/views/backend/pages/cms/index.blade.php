@@ -39,6 +39,7 @@
                         <div class="form-group mb-3">
                             <label for="zone" class="form-label">Zone:</label>
                             <select class="form-select" id="zone" name="zone">
+                                <option value="">--- Select ---</option>
                                 <option value="0">Main</option>
                                 <option value="1">City</option>
                                 <option value="2">Country</option>
