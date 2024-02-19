@@ -52,9 +52,8 @@
                     <select class="form-select" name="type" id="typeSelect" onclick="check();">
                         <option value="">-- Select --</option>
                         <option value="google">Google - VMware / AWS</option>
-                        <option value="google_mcse">Google - MCSE</option>
+                        <option value="google_mcse">Google - AZURA / MCSC / CCNA</option>
                         <option value="facebook">Facebook</option>
-                        <option value="google">Google</option>
                     </select> 
                 </div>
             </div>  
@@ -140,6 +139,8 @@
             }
         
     };
+
+    check();
 
 </script>
 @endsection

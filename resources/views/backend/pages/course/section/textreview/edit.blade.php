@@ -45,10 +45,9 @@
                     <label>Type</label>
                     <select class="form-select" name="type" id="typeSelect1" onclick="check1();">
                         <option value="" @if($textreview->type == " ") selected @endif>--Select--</option>
-                        <option value="google" @if($textreview->type == "google") selected @endif>Google</option>
-                        <option value="facebook" @if($textreview->type == "facebook") selected @endif>Facebook</option>
                         <option value="google" @if($textreview->type == "google") selected @endif>Google - VMware / AWS</option>
-                        <option value="google_mcse" @if($textreview->type == "google_mcse") selected @endif>Google - MCSE</option>
+                        <option value="google_mcse" @if($textreview->type == "google_mcse") selected @endif>Google - AZURA / MCSC / CCNA</option>
+                        <option value="facebook" @if($textreview->type == "facebook") selected @endif>Facebook</option>
                     </select> 
                 </div>
             </div>
@@ -129,6 +128,8 @@
             }
         
     };
+
+    check1();
 
 </script>
 

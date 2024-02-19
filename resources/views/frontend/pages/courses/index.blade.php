@@ -70,7 +70,18 @@
                 </div>
                 <div class="col-3 width30 imagebox d-flex align-items-center justify-content-center">
 
-                    <a href="{{ $detail->url }}" data-fancybox="gallery">
+                    @php
+                        // Assuming $row->url contains the YouTube URL
+                        if (strpos($detail->url, 'embed/') === false) {
+                            $videoID = basename($detail->url);
+                            $youtube_url_detail = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                        } else {
+                            $youtube_url_detail = $detail->url; // URL already in the correct format
+                        }
+                    @endphp
+
+
+                    <a href="{{ $youtube_url_detail }}" data-fancybox="gallery">
                         <img data-src="{{ asset('storage/' . $detail->other_thumbnail) }}"
                             class="img-fluid d-block w-100 lazyload" alt="">
                         <div class="pulse-button space_1"></div>
@@ -422,16 +433,17 @@
                                 <div class="item">
                                     <div class="testimonial_video">
 
-                                        {{-- @php
-                                            // Use parse_url to get the path from the URL
-                                            $path = parse_url($row->url, PHP_URL_PATH);
+                                        @php
+                                            // Assuming $row->url contains the YouTube URL
+                                            if (strpos($row->url, 'embed/') === false) {
+                                                $videoID = basename($row->url);
+                                                $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                            } else {
+                                                $youtube_url = $row->url; // URL already in the correct format
+                                            }
+                                        @endphp
 
-                                            $parts = explode('/', trim($path, '/'));
-                                            $videoId = end($parts);
-
-                                        @endphp - --}}
-
-                                        <a href="{{ $row->url }}" data-fancybox="gallery">
+                                        <a href="{{ $youtube_url }}" data-fancybox="gallery">
                                             <div class="pulse-button"></div>
                                             {{-- <img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                                 class="img-fluid d-block w-100 lazyload" alt=""> --}}
