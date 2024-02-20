@@ -94,6 +94,23 @@ $("li.accordion span").click(function () {
     }
 });
 
+window.onscroll = function () {
+    myFunction();
+};
+
+// navbar sticky //
+
+var navbar = document.getElementById("vm_nav");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
+
 /* success story page load more js open*/
 
 $(document).ready(function () {
