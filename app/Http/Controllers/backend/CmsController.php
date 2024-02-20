@@ -209,6 +209,8 @@ class CmsController extends Controller
             'alias' => $request->input('alias'),
             'zone' => $request->input('zone'),
         ]);
+
+        store_log($sentence = 'Create a New CMS by');
     
         $response = [
             'status' => true,
@@ -333,6 +335,8 @@ class CmsController extends Controller
         $cms->zone = $request->input('zone');
 
         $cms->save();
+
+        store_log($sentence = 'Update a New CMS by');
 
         $response = [
             'status' => true,

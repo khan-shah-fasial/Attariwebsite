@@ -41,6 +41,7 @@ use App\Http\Controllers\backend\CertificateController;
 
 use App\Http\Controllers\backend\CmsController;
 use App\Http\Controllers\backend\NewsletterController;
+use App\Http\Controllers\backend\LogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -369,4 +370,9 @@ Route::group(['prefix' => 'cms'], function () {
     Route::post('/update', [CmsController::class, 'update'])->name('cms.update');
     Route::post('/delete/{id}', [CmsController::class, 'delete'])->name('cms.delete');
     Route::get('/status/{id}/{status}', [CmsController::class, 'status'])->name('cms.status');
+});
+
+//logs
+Route::group(['prefix' => 'logs'], function () {
+    Route::get('/index', [LogController::class, 'index'])->name('log.index');
 });

@@ -214,14 +214,19 @@ use Illuminate\Support\Str;
     if (!function_exists('store_log')) {
         function store_log($sentence)
         {
-
-            $user = auth()->user()->name;
-
+            // Check if the user is authenticated
+            if (auth()->check()) {
+                $user = auth()->user()->name;
+            } else {
+                // If user is not authenticated, set the username to 'Guest' or handle it as needed
+                $user = 'Guest';
+            }
+    
+            // Create the log entry
             Log::create([
-                'remark' => $sentence.''.$user,
+                'remark' => $sentence . ' ' . $user, // Add a space between sentence and username
             ]);
             
-            return 1;
-    
+            return 1; // Assuming success, you may want to handle errors and return appropriate values
         }
     }
