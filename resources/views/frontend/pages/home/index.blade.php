@@ -10,7 +10,7 @@
 
 @section('page.content')
 
-    <!-----======================= home content start============---->
+<!--banner start-->
 
     <div class="banner_slider1">
         <picture>
@@ -36,15 +36,15 @@
         </div>
     </div>
 
-    <!----------- Virtualization & Cloud Computing ------------->
+    <!-- Virtualization & Cloud Computing -->
 
     @include('frontend.component.virtualization_cloud_computing_home_card')
 
-    <!----------------Server & Networking------------------  -->
+    <!--Server & Networking-->
 
     @include('frontend.component.server_networking_home_card')
 
-    <!-- --------------- Online Training ------------------ -->
+    <!--Online Training -->
 
 
 
@@ -97,11 +97,12 @@
         </div>
     </section>
 
-    <!-- ------------------ Counter ------------------- -->
+    <!-- Counter-->
 
     @include('frontend.component.why_attari_counter')
 
-    <!-- --------------- Class Room ------------------------ -->
+    <!--Class Room-->
+
     <section class="classroom">
         <div class="container">
             <div class="row">
@@ -181,7 +182,8 @@
         </div>
     </section>
 
-    <!-- -------------Free learning --------------- -->
+    <!--Free learning-->
+
     <section class="lms pt-lg-5 pt-4">
         <div class="container">
             <div class="row">
@@ -202,11 +204,11 @@
         </div>
     </section>
 
-    <!-- -----------------adv lms ------------------------- -->
+    <!--adv lms-->
 
     @include('frontend.component.advantage_of_lms_section')
 
-    <!-- ----------------------Certificate -------------------- -->
+    <!--Certificate-->
 
     @php
 
@@ -279,7 +281,7 @@
             </div>
         </div>
     </section>
-    <!-- ------------ Testimonial --------- -->
+    <!--Testimonial-->
 
     <section id="testimonials" class="testiminilas_sec pt-md-5 pt-3 pb-md-5 pb-3 gray_bgg1">
         <div class="container">
@@ -289,7 +291,7 @@
 
             @include('frontend.component.review_video')
 
-            <!----------- comment -------------------------->
+            <!--comment -->
 
             @include('frontend.component.review_comment')
 
@@ -307,7 +309,7 @@
         </div>
     </section>
 
-    <!-- -------------- DropDown ----------------- -->
+    <!--DropDown-->
 
     <section class="faq pt-md-5 mt-4">
         <div class="container">
@@ -361,7 +363,6 @@
         </div>
     </section>
 
-    <!-- -------------- DropDown ----------------- -->
 
-    <!----------------------- home content end --------------->
+    <!--home content end-->
 @endsection

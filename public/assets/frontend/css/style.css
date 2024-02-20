@@ -3340,3 +3340,8 @@ button.owl-dot.active span {
   text-decoration: none;
   border-radius: 50px;
 }
+
+section#overviews ul li {
+  font-size: 15px !important;
+  line-height: 28px !important;
+}

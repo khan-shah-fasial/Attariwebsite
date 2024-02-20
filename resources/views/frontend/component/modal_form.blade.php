@@ -1,7 +1,6 @@
 @php
 $session_data = json_decode(session('user_ip'), true);
 @endphp
-<!-----------================= Modal form start =============--------------->
 
 <div class="modal fade enquiry_modal" id="enquiry_modal{{$form}}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -67,9 +66,3 @@ $session_data = json_decode(session('user_ip'), true);
         </div>
     </div>
 </div>
-
-<!-- enquiry form popup close-->
-
-
-
-<!-----------================= Modal form end =============--------------->

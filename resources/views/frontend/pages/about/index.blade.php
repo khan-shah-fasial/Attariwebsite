@@ -152,7 +152,7 @@
         </section>
 
         <!-- ------------------------ our infras------------------->
-        <section class="our_infras gray_bgg1">
+        <section class="our_infras gray_bgg1 pt-4 pb-4 pt-lg-0 pb-lg-0">
             <div class="container">
                 <div class="row">
 
@@ -167,7 +167,7 @@
                             'title' => 'Enquire Now'
                         ])
 
-                        <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
+                        <button type="button" class="btn bookfreedemo_button none d-none d-lg-block" data-bs-toggle="modal"
                             data-bs-target="#enquiry_modal2"> Enquire Now </button>
                     </div>
 
@@ -218,7 +218,7 @@
                                 View On Google
                                 <i aria-hidden="true" class="fas fa-arrow-right"></i>
                             </a> </div>
-                        <a href="{{ url(route('contact')) }}" class="btn bookfreedemo_button mt-4 none"> Contact Us </a>
+                        <a href="{{ url(route('contact')) }}" class="btn bookfreedemo_button mt-4 none d-none d-lg-block"> Contact Us </a>
                     </div>
                     <div class="col-md-7 img_content">
                         <div class="row">

@@ -2,7 +2,6 @@
 $session_data = json_decode(session('user_ip'), true);
 @endphp
 
-<!---============================== Book Free Demo ================= ------------->
 
 <form id="add_demo1_form" action="{{url(route('contact.create'))}}" method="post"
 enctype="multipart/form-data">
@@ -53,5 +52,3 @@ enctype="multipart/form-data">
     </div>
 
 </form>
-
-<!---============================== Book Free Demo ================= ------------->
