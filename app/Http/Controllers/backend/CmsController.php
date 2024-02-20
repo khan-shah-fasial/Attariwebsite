@@ -163,14 +163,17 @@ class CmsController extends Controller
             ], 200);
         }
         
-        $check = Cms::where('course_id', $request->input('course_id'))->where('zone', 0)->count();
+        if($request->input('zone') == 0){
+            $check = Cms::where('course_id', $request->input('course_id'))->where('zone', $request->input('zone'))->count();
 
-        if ($check > 0) {
-            return response()->json([
-                'status' => false,
-                'notification' => 'Zone Url Already exists'
-            ], 200);
+            if ($check > 0) {
+                return response()->json([
+                    'status' => false,
+                    'notification' => 'Zone Url Already exists'
+                ], 200);
+            }
         }
+        
     
         $slug = customSlug($request->input('slug'));
 

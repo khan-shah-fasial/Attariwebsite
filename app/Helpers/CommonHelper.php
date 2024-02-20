@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Cache;
 //use App\Models\BlogComment;
 use App\Models\BusinessSetting;
 use App\Models\ContactSetting;
+
+use App\Models\Log;
 //use App\Models\Contact;
 //use App\Models\Faq;
 //use App\Models\MediaCoverage;
@@ -209,4 +211,17 @@ use Illuminate\Support\Str;
         }
     }
     
+    if (!function_exists('store_log')) {
+        function store_log($sentence)
+        {
 
+            $user = auth()->user()->name;
+
+            Log::create([
+                'remark' => $sentence.''.$user,
+            ]);
+            
+            return 1;
+    
+        }
+    }
