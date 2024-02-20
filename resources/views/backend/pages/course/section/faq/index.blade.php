@@ -16,7 +16,7 @@
 <!---==================================== text review table ==============------------------->
 @php
     $faq = DB::table('faqs')
-        ->where('course_id', $course->id)
+        ->where('course_id', $course->id)->orderBy('title_no', 'ASC')
         ->get();
 @endphp
 <div class="card">
@@ -37,7 +37,7 @@
                     @php $i = 1; @endphp
                     @foreach ($faq as $row)
                         <tr>
-                            <td>{{ $i++ }}</td>
+                            <td>{{ $row->title_no }}</td>
                             <td>{{ $row->question }}</td>
                             <td>@php echo html_entity_decode($row->answer) @endphp</td>
                             <td>

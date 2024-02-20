@@ -16,6 +16,7 @@ class FaqController extends Controller
             'question' => 'required',
             'answer' => 'required',
             'course_id' => 'required',
+            'title_no'  => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -29,6 +30,7 @@ class FaqController extends Controller
             'question' => $request->input('question'),
             'answer' => $request->input('answer'),
             'course_id' => $request->input('course_id'),
+            'title_no' => $request->input('title_no'),
         ]);
 
         $response = [
@@ -78,6 +80,7 @@ class FaqController extends Controller
             'question' => 'required',
             'answer' => 'required',
             'course_id' => 'required',
+            'title_no' => 'required',
         ]);
 
         if ($validator->fails()) {

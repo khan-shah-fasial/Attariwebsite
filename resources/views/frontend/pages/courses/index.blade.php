@@ -721,11 +721,11 @@
 
                             if($cms->course_id == '5'){
                                 $course_name = 'VMware ';
-                            } elseif ($cms->course_id == '5') {
+                            } elseif ($cms->course_id == '7') {
                                 $course_name = 'AWS';
-                            } elseif ($cms->course_id == '5') {
+                            } elseif ($cms->course_id == '8') {
                                 $course_name = 'Azure';
-                            } elseif ($cms->course_id == '5') {
+                            } elseif ($cms->course_id == '9') {
                                 $course_name = 'MCSE';
                             } else {
                                 $course_name = 'CCNA';
