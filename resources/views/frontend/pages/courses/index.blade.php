@@ -761,13 +761,13 @@
                         @endphp
 
                         @if(!empty($cms_alias_country))
-                            <h5>
-                                Find {{ $course_name }} Certification Training Course in other Country:
-                            </h5>
+
 
                             @if($cms_alias_country->isNotEmpty())
                                 <div class="location_box">
-                                    <h5>Find VMware Certification Training Course in other Country:</h5>
+                                    <h5>
+                                        Find {{ $course_name }} Certification Training Course in other Country:
+                                    </h5>
                                     <ul class="elementor-icon-list-items">
                                         @foreach ($cms_alias_country as $row)
                                             <li>
