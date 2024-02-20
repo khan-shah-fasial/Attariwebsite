@@ -19,7 +19,6 @@
 
 @endphp
 
-<!----================================= Review Video ====================-------------->
 
 <div class="large-12 columns">
     <div class="owl-carousel owl-theme video_testiminials">
@@ -53,4 +52,3 @@
     </div>
 </div>
 
-<!----================================= Review Video ====================-------------->

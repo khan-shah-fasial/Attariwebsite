@@ -1,10 +1,8 @@
-<!----================================= virtualization & Cloud Computing ===========================------------------------>
-
 
 <section class="services">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mb-3 mt-5">
+            <div class="col-12 text-center mb-lg-3 mb-0 mt-5">
                 <h4 class="services_headign">Virtualization & Cloud Computing</h4>
             </div>
         
@@ -62,5 +60,3 @@
         </div>
     </div>
 </section>
-
-<!----================================= virtualization & Cloud Computing ===========================------------------------>

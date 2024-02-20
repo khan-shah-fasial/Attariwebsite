@@ -1,12 +1,12 @@
 
-<!-------------- Top Header ----------------->
 
 @php
 $course = DB::table('cms')->where('status', 1)->where('zone', 0)->get(['menu_title','slug','status']);
 @endphp
 
-<!-------------- Top Header ----------------->
-<!--------------Header start----------------->
+
+<!--header  start-->
+
     <header class="header">
         <div class="container">
             <div class="row">
@@ -95,8 +95,3 @@ $course = DB::table('cms')->where('status', 1)->where('zone', 0)->get(['menu_tit
         </div>
     </header>
 
-
-
-
-
-    <!--------------header end-------------------->

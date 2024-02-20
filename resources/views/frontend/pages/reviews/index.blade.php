@@ -35,7 +35,7 @@
     <!-----------------------Reviews Section------------------------------>
 
 
-    <section id="testimonials" class="testiminilas_sec pt-lg-5 pb-lg-5 pt-4 pb-4 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-lg-5 pb-lg-5 pt-5 pb-5 slider_content_dots">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">VMwere Google Reviews</h3>
             <div class="large-12 columns">
@@ -81,7 +81,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank"
                         href="https://www.google.com/maps/place/Attari+Classes+VMwareMCSE%2FMCSA,+AWS,+Azure,+CCNA+Training+Institute+in+Mumbai/@19.076195,72.876574,16z/data=!4m7!3m6!1s0x0:0xfc9b452c90e0db0a!8m2!3d19.0761945!4d72.8765735!9m1!1b1?hl=en-US">
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
@@ -150,12 +150,12 @@
 
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank"
                         href="https://www.google.com/maps/place/Attari+Classes+VMwareMCSE%2FMCSA,+AWS,+Azure,+CCNA+Training+Institute+in+Mumbai/@19.076195,72.876574,16z/data=!4m7!3m6!1s0x0:0xfc9b452c90e0db0a!8m2!3d19.0761945!4d72.8765735!9m1!1b1?hl=en-US">
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
                 </div>
-                <div class="training_btn none">
+                <div class="training_btn none ">
 
                     @include('frontend.component.modal_form', [
                         'section' => 'AWS Google Reviews - Reviews Page',
@@ -225,7 +225,7 @@
 
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank"
                         href="https://www.google.com/maps/place/Attari+Classes+VMwareMCSE%2FMCSA,+AWS,+Azure,+CCNA+Training+Institute+in+Mumbai/@19.076195,72.876574,16z/data=!4m7!3m6!1s0x0:0xfc9b452c90e0db0a!8m2!3d19.0761945!4d72.8765735!9m1!1b1?hl=en-US">
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
@@ -293,7 +293,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank"
                         href="https://www.google.com/maps/place/Attari+Classes+VMwareMCSE%2FMCSA,+AWS,+Azure,+CCNA+Training+Institute+in+Mumbai/@19.076195,72.876574,16z/data=!4m7!3m6!1s0x0:0xfc9b452c90e0db0a!8m2!3d19.0761945!4d72.8765735!9m1!1b1?hl=en-US">
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
@@ -360,7 +360,7 @@
             </div>
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank"
                         href="https://www.google.com/maps/place/Attari+Classes+VMwareMCSE%2FMCSA,+AWS,+Azure,+CCNA+Training+Institute+in+Mumbai/@19.076195,72.876574,16z/data=!4m7!3m6!1s0x0:0xfc9b452c90e0db0a!8m2!3d19.0761945!4d72.8765735!9m1!1b1?hl=en-US">
                         View more on Google <i aria-hidden="true" class="fab fa-google-plus-g"></i></a>
@@ -396,7 +396,7 @@
 
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank" href="https://www.youtube.com/channel/UCvY5iTFZdZ0I5FpzZL8g8Yw"> View more on
                         YouTube <i aria-hidden="true" class="fab fa-youtube"></i></a>
                 </div>
@@ -464,7 +464,7 @@
 
 
             <div class="col-12 d-flex justify-content-center gap-2">
-                <div class="training_btn">
+                <div class="training_btn mt-4 mt-lg-0">
                     <a target="_blank" href="https://www.facebook.com/AttariClass/reviews"> View more on Facebook <i
                             aria-hidden="true" class="fab fa-facebook-square"></i></a>
                 </div>
