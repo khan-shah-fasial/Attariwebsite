@@ -16,7 +16,6 @@
         
 @endphp
 
-<!-----======================= review comment ============-------------------->
 
 <div class="large-12 columns mt-4 slider_content_dots">
     <div class="owl-carousel owl-theme">
@@ -54,5 +53,3 @@
 
     </div>
 </div>
-
-<!------========================= review comment ============------------------>

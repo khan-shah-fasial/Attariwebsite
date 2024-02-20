@@ -3341,6 +3341,11 @@ button.owl-dot.active span {
   border-radius: 50px;
 }
 
+section#overviews ul li {
+  font-size: 15px !important;
+  line-height: 28px !important;
+}
+
 .mediaPlayer {
   display: none !important;
 }

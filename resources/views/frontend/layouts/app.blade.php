@@ -15,23 +15,11 @@
 
 
 
-    <!---========Header======----->
-
         @include('frontend.partials.header')
-
-    <!---========end Header======----->
-
-    <!---======== page content ====-------->
 
         @yield('page.content')
 
-    <!---======== page content ===== -------->
-
-    <!-----------------------Footer Start------------------------------------------->
-
         @include('frontend.partials.footer')
-
-    <!--Footer Ends-->
 
 
     <!--javascript-->

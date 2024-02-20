@@ -1,9 +1,8 @@
-<!------======================= server networking =================----------->
 
-<section class="services">
+<section class="services mrgtop50">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 text-center mt-1 mb-3">
+            <div class="col-12 text-center mt-1 mb-lg-3 mb-0">
                 <h4 class="services_headign">Server & Networking</h4>
             </div>
 
@@ -40,4 +39,3 @@
     </div>
 </section>
 
-<!------======================= server networking =================----------->

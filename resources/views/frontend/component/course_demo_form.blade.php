@@ -1,7 +1,7 @@
 @php
 $session_data = json_decode(session('user_ip'), true);
 @endphp
-<!------------============================ Demo Form ===============-------------------->
+
 <form id="add_demo_form{{$form}}" action="{{url(route('contact.create'))}}" method="post"
 enctype="multipart/form-data">
 @csrf
@@ -44,5 +44,3 @@ enctype="multipart/form-data">
 </form>
 
 
-
-<!----------========================= Demo Form =================----------------------->
