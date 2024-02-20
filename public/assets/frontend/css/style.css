@@ -1689,9 +1689,6 @@ p .home_breadcrumb a:hover {
   background: #f7f7f7;
   padding: 10px 0px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .35);
-  position: sticky;
-  top: 0;
-  z-index: 99;
 }
 
 

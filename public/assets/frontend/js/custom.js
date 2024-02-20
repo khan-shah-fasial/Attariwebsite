@@ -231,88 +231,137 @@ $(document).ready(function () {
 });
 
 // tab functionality start
+class TabSlider {
+    constructor(
+        containerSelector,
+        sectionSelector,
+        navSelector,
+        menuSelector,
+        activeLineSelector
+    ) {
+        this.sectionsContainer = document.querySelector(containerSelector);
+        this.sections = document.querySelectorAll(sectionSelector);
+        this.nav = document.querySelector(navSelector);
+        this.menu = this.nav.querySelector(menuSelector);
+        this.links = this.nav.querySelectorAll(".menu-item-link");
+        this.activeLine = this.nav.querySelector(activeLineSelector);
+        this.activeClass = "active";
+        this.activeIndex = 0;
+        this.sectionOffset = this.nav.offsetHeight + 24;
+        this.isScrolling = true;
+        this.userScroll = true;
 
-/*
-const sectionsContainer = document.querySelector('.page-sections');
-const sections = document.querySelectorAll('.page-section');
-const nav = document.querySelector('.nav-sections');
-//const menu34 = nav.querySelector('.menu34');
-const links = nav.querySelectorAll('.menu-item-link');
-const activeLine = nav.querySelector('.active-line');
-const sectionOffset = nav.offsetHeight + 24;
-const activeClass = 'active';
-let activeIndex = 0;
-let isScrolling = true;
-let userScroll = true;
+        this.init();
+    }
 
-const setActiveClass = () => {
-  links[activeIndex].classList.add(activeClass);
-};
+    setActiveClass() {
+        this.links[this.activeIndex].classList.add(this.activeClass);
+    }
 
-const removeActiveClass = () => {
-  links[activeIndex].classList.remove(activeClass);
-};
+    removeActiveClass() {
+        this.links[this.activeIndex].classList.remove(this.activeClass);
+    }
 
-const moveActiveLine = () => {
-  const link = links[activeIndex];
-  const linkX = link.getBoundingClientRect().x;
-  const menuX = menu34.getBoundingClientRect().x;
+    moveActiveLine() {
+        const link = this.links[this.activeIndex];
+        const linkX = link.getBoundingClientRect().x;
+        const menuX = this.menu.getBoundingClientRect().x;
 
-  activeLine.style.transform = `translateX(${(menu34.scrollLeft - menuX) + linkX}px)`;
-  activeLine.style.width = `${link.offsetWidth}px`;
+        this.activeLine.style.transform = `translateX(${
+            this.menu.scrollLeft - menuX + linkX
+        }px)`;
+        this.activeLine.style.width = `${link.offsetWidth}px`;
+    }
+
+    setMenuLeftPosition(position) {
+        this.menu.scrollTo({
+            left: position,
+            behavior: "smooth",
+        });
+    }
+
+    checkMenuOverflow() {
+        const activeLink = this.links[this.activeIndex].getBoundingClientRect();
+        const offset = 30;
+
+        if (Math.floor(activeLink.right) > window.innerWidth) {
+            this.setMenuLeftPosition(
+                this.menu.scrollLeft +
+                    activeLink.right -
+                    window.innerWidth +
+                    offset
+            );
+        } else if (activeLink.left < 0) {
+            this.setMenuLeftPosition(
+                this.menu.scrollLeft + activeLink.left - offset
+            );
+        }
+    }
+
+    handleActiveLinkUpdate(current) {
+        this.removeActiveClass();
+        this.activeIndex = current;
+        this.checkMenuOverflow();
+        this.setActiveClass();
+        this.moveActiveLine();
+    }
+
+    init() {
+        this.moveActiveLine();
+        document.documentElement.style.setProperty(
+            "--section-offset",
+            this.sectionOffset
+        );
+
+        this.links.forEach((link, index) =>
+            link.addEventListener("click", () => {
+                this.userScroll = false;
+                this.handleActiveLinkUpdate(index);
+            })
+        );
+
+        window.addEventListener("scroll", () => {
+            const currentIndex =
+                this.sectionsContainer.getBoundingClientRect().top < 0
+                    ? this.sections.length -
+                      1 -
+                      [...this.sections]
+                          .reverse()
+                          .findIndex(
+                              (section) =>
+                                  window.scrollY >=
+                                  section.offsetTop - this.sectionOffset * 2
+                          )
+                    : 0;
+
+            if (this.userScroll && this.activeIndex !== currentIndex) {
+                this.handleActiveLinkUpdate(currentIndex);
+            } else {
+                window.clearTimeout(this.isScrolling);
+                this.isScrolling = setTimeout(
+                    () => (this.userScroll = true),
+                    100
+                );
+            }
+        });
+    }
 }
 
-const setMenuLeftPosition = position => {
-  menu34.scrollTo({
-    left: position,
-    behavior: 'smooth',
-  });
-};
+// Initialize the first tab slider
+const tabSlider1 = new TabSlider(
+    ".page-sections",
+    ".page-section",
+    ".nav-sections",
+    ".menu34",
+    ".active-line"
+);
 
-const checkMenuOverflow = () => {
-  const activeLink = links[activeIndex].getBoundingClientRect();
-  const offset = 30;
-  
-  if (Math.floor(activeLink.right) > window.innerWidth) {
-    setMenuLeftPosition(menu34.scrollLeft + activeLink.right - window.innerWidth + offset);
-  } else if (activeLink.left < 0) {
-    setMenuLeftPosition(menu34.scrollLeft + activeLink.left - offset)
-  }
-}
-
-const handleActiveLinkUpdate = current => {
-  removeActiveClass();
-  activeIndex = current;
-  checkMenuOverflow();
-  setActiveClass();
-  moveActiveLine();
-};
-
-
-
-const init = () => {
-  moveActiveLine(links[0]);
-  document.documentElement.style.setProperty('--section-offset', sectionOffset);
-}
-
-links.forEach((link, index) => link.addEventListener('click', () => {
-  userScroll = false;
-  handleActiveLinkUpdate(index);
-}))
-
-window.addEventListener("scroll", () => {
-  const currentIndex = sectionsContainer.getBoundingClientRect().top < 0
-    ? (sections.length - 1) - [...sections].reverse().findIndex(section => window.scrollY >= section.offsetTop - sectionOffset * 2)
-    : 0;
-  
-  if (userScroll && activeIndex !== currentIndex) {
-    handleActiveLinkUpdate(currentIndex);
-  } else {
-   	window.clearTimeout(isScrolling);
-	  isScrolling = setTimeout(() => userScroll = true, 100); 
-  }
-});
-
-init();
+// Initialize the second tab slider
+const tabSlider2 = new TabSlider(
+    ".batch_main_section",
+    ".page-section1",
+    ".nav-sections",
+    ".menu34",
+    ".active-line"
+);
 // tab functionality end
-*/
