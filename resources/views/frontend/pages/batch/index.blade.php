@@ -30,25 +30,41 @@
         </div>
     </section>
 
-    <section class="vm_nav batch_space" id="vm_nav">
+
+    <section class="vm_nav" id="vm_nav">
         <div class="container">
-            <nav>
-                <ul>
-                    <li> <a href="#vmware_batch">VMware Training Batch Schedule</a> </li>
-                    <li> <a href="#aws_batch">AWS Training Batch Schedule</a> </li>
-                    <li> <a href="#azure_batch">Azure Training Batch Schedule</a> </li>
-                    <li> <a href="#mcse_batch">MCSE Training Batch Schedule</a> </li>
-                    <li> <a href="#ccna_batch">CCNA Training Batch Schedule</a> </li>
-                </ul>
-            </nav>
+            <div id="version" class="version highlight-bar">
+                <nav class="nav-sections">
+                    <ul class="menu34">
+                        <li class="menu-item">
+                            <a class="menu-item-link active" href="#vmware_batch">VMware Training Batch Schedule</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item-link" href="#aws_batch">AWS Training Batch Schedule</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item-link" href="#azure_batch">Azure Training Batch Schedule</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item-link" href="#mcse_batch">MCSE Training Batch Schedule</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-item-link" href="#ccna_batch">CCNA Training Batch Schedule</a>
+                        </li>
+                       
+                        <div class="active-line"></div>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </section>
 
 
+    <div class="batch_main_section">
 <!---------=============================== VMware =========================-------------------->
 
     <!------------------========================== schedule ===============================-------------------->
-    <section id="vmware_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
+    <section id="vmware_batch" class="page-section1 prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -241,7 +257,7 @@
 <!-------================================== AWS =============================----------------------------------->
 
     <!------------------========================== schedule ===============================-------------------->
-    <section id="aws_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
+    <section id="aws_batch" class="page-section1 prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -432,7 +448,7 @@
 
 
     <!------------------========================== schedule ===============================-------------------->
-    <section id="azure_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
+    <section id="azure_batch" class="page-section1 prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -624,7 +640,7 @@
 <!-------================================== MCSE =============================----------------------------------->
 
     <!------------------========================== schedule ===============================-------------------->
-    <section id="mcse_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
+    <section id="mcse_batch" class="page-section1 prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -815,7 +831,7 @@
 <!-------================================== CCNA =============================----------------------------------->
 
     <!------------------========================== schedule ===============================-------------------->
-    <section id="ccna_batch" class="prje_cove_section light_gray_bg pt-5 pb-5">
+    <section id="ccna_batch" class="page-section1 prje_cove_section light_gray_bg pt-5 pb-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -1002,5 +1018,5 @@
 
 
 <!-------------=============== batch end =============== -------------------->
-
+</div>
 @endsection
