@@ -717,12 +717,28 @@
                 <div class="col-12">
 
                     <div class="location_box">
+                        @php
+
+                            if($cms->course_id == '5'){
+                                $course_name = 'VMware ';
+                            } elseif ($cms->course_id == '5') {
+                                $course_name = 'AWS';
+                            } elseif ($cms->course_id == '5') {
+                                $course_name = 'Azure';
+                            } elseif ($cms->course_id == '5') {
+                                $course_name = 'MCSE';
+                            } else {
+                                $course_name = 'CCNA';
+                            }
+
+                        @endphp
+
                         <h5>
-                            Find VMware Certification Training Course in other Cities:
+                            Find {{ $course_name }} Certification Training Course in other Cities:
                         </h5>
 
                         @php
-                            $cms_alias_city = DB::table('cms')->where('status', 1)->where('zone', 1)->whereNot('id', $cms->id)->get(['alias', 'slug']);
+                            $cms_alias_city = DB::table('cms')->where('status', 1)->where('zone', 1)->where('course_id', $cms->course_id)->whereNot('id', $cms->id)->get(['alias', 'slug']);
                         @endphp
 
                         <ul class="">
@@ -739,25 +755,33 @@
 
                     </div>
 
-                    @php
-                        $cms_alias_country = DB::table('cms')->where('status', 1)->where('zone', 2)->whereNot('id', $cms->id)->get(['alias', 'slug']);
-                    @endphp
+                    <div class="row" >
+                        @php
+                            $cms_alias_country = DB::table('cms')->where('status', 1)->where('zone', 2)->where('course_id', $cms->course_id)->whereNot('id', $cms->id)->get(['alias', 'slug']);
+                        @endphp
 
-                    @if($cms_alias_country->isNotEmpty())
-                        <div class="location_box">
-                            <h5>Find VMware Certification Training Course in other Country:</h5>
-                            <ul class="elementor-icon-list-items">
-                                @foreach ($cms_alias_country as $row)
-                                    <li>
-                                        <a href="{{ url(route('course.detail', ['slug' => $row->slug])) }}">
-                                            <span>{{ $row->alias }}</span>
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        
-                    @endif
+                        @if(!empty($cms_alias_country))
+                            <h5>
+                                Find {{ $course_name }} Certification Training Course in other Country:
+                            </h5>
+
+                            @if($cms_alias_country->isNotEmpty())
+                                <div class="location_box">
+                                    <h5>Find VMware Certification Training Course in other Country:</h5>
+                                    <ul class="elementor-icon-list-items">
+                                        @foreach ($cms_alias_country as $row)
+                                            <li>
+                                                <a href="{{ url(route('course.detail', ['slug' => $row->slug])) }}">
+                                                    <span>{{ $row->alias }}</span>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                
+                            @endif
+                        @endif
+                    </div>
 
                 </div>
             </div>

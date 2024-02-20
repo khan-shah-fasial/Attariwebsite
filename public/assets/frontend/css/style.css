@@ -3340,3 +3340,7 @@ button.owl-dot.active span {
   text-decoration: none;
   border-radius: 50px;
 }
+
+.mediaPlayer {
+  display: none !important;
+}
