@@ -244,7 +244,7 @@
                         </div>
 
                         @if (!empty($detail->faq))
-                            <div class="accordion main_accrdion_cls" id="accordionExample">
+                            <div class="accordion--container1 accordion_style1">
 
                                 @php
                                     $course_faq = json_decode($detail->faq);
@@ -253,26 +253,16 @@
 
                                 @foreach ($course_faq as $faq1)
                                     @foreach ($faq1 as $title => $description)
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="heading{{ $i }}">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapse{{ $i }}"
-                                                    aria-expanded="@if ($i == 1) true @else false @endif"
-                                                    aria-controls="collapse{{ $i }}">
-                                                    @php echo ReplaceKeyword($title, $cms->replace_keyword) @endphp
-                                                </button>
-                                            </h2>
-                                            <div id="collapse{{ $i }}"
-                                                class="accordion-collapse collapse @if ($i == 1) show @endif"
-                                                aria-labelledby="heading{{ $i }}"
-                                                data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
+                                        <li class="accordion1">
+                                            <span> @php echo ReplaceKeyword($title, $cms->replace_keyword) @endphp <i class="fa fa-angle-up"></i>
+                                            </span>
+                                            <div class="contentsillabus_div">
+                                                <div class="txt">
                                                     @php echo ReplaceKeyword($description, $cms->replace_keyword) @endphp
                                                 </div>
                                             </div>
-                                        </div>
+                                        </li>
                                     @endforeach
-                                    @php $i++ @endphp
                                 @endforeach
 
                             </div>
