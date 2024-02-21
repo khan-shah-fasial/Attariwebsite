@@ -1665,19 +1665,6 @@ p .home_breadcrumb a:hover {
   border-radius: 50px;
 }
 
-.vm_banner .check_curriculum {
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 25px;
-  padding: 9px 24px;
-  color: #fff;
-  margin-left: 0;
-  top: 1px !important;
-  left: 12px;
-  text-decoration: none;
-  position: relative;
-}
-
 .vm_banner .imagebox img {
   width: 100%;
 }
@@ -3348,4 +3335,40 @@ section#overviews ul li {
 
 .mediaPlayer {
   display: none !important;
+}
+
+body .show_mobileview {
+  display: none !important;
+}
+
+.coursepg_enquiryform {
+
+  float: inline-start;
+}
+
+.vm_banner .check_curriculum {
+  color: #fff;
+  text-decoration: none;
+}
+
+.check_carriculam {
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-image: initial;
+  border-radius: 25px;
+  padding: 9px 24px;
+  width: auto;
+  text-align: center;
+  float: left;
+  margin-top: 0px;
+  margin-left: 15px;
+}
+
+.enquiry_modal .modal-dialog h5 {
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 13px;
+  color: #333;
 }
