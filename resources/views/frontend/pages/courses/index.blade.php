@@ -295,35 +295,30 @@
 
 
                         <div style="clear:both"></div>
-                        @if (!empty($syllabus))
-                            <div class="accordion main_accrdion_cls" id="Syllabus">
+
                                 @php $i = 1; @endphp
 
-                                @foreach ($syllabus as $row)
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading{{ $i }}">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse1{{ $i }}"
-                                                aria-expanded="@if ($i == 1) true @else false @endif"
-                                                aria-controls="collapse{{ $i }}">
-                                                Module {{ $i }}:- @php echo ReplaceKeyword($row->title, $cms->replace_keyword) @endphp
-                                            </button>
-                                        </h2>
-                                        <div id="collapse1{{ $i }}"
-                                            class="accordion-collapse collapse @if ($i == 1) show @endif"
-                                            aria-labelledby="heading{{ $i }}" data-bs-parent="#Syllabus">
-                                            <div class="accordion-body">
-                                                @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
-                                            </div>
-                                        </div>
+                                @if (!empty($syllabus))
+                                    <div class="accordion--container accordion_style">
+        
+                                        @foreach ($syllabus as $row)
+                                            <li class="accordion">
+                                                <span> Module {{ $i }}:- @php echo ReplaceKeyword($row->title, $cms->replace_keyword) @endphp <i class="fa fa-angle-up"></i>
+                                                </span>
+                                                <ul>
+                                                    <div class="txt">
+                                                        @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
+                                                    </div>
+                                                </ul>
+                                            </li>
+                                            @php $i++ @endphp
+                                        @endforeach
+        
+        
                                     </div>
-                                    @php $i++ @endphp
-                                @endforeach
+                                @endif
 
 
-
-                            </div>
-                        @endif
 
                     </div>
 

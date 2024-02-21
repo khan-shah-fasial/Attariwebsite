@@ -33,6 +33,8 @@ class SyllabusController extends Controller
             'course_id' => $request->input('course_id'),
         ]);
 
+        store_log($sentence = 'Course Content ADD in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Syllabus added successfully!',
@@ -58,6 +60,8 @@ class SyllabusController extends Controller
         }
         $syllabus->delete();
 
+        store_log($sentence = 'Delete Course Content in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Syllabus deleted successfully!',
@@ -70,6 +74,8 @@ class SyllabusController extends Controller
         $syllabus = Syllabus::find($id);
         $syllabus->status = $status;
         $syllabus->save();
+
+        store_log($sentence = 'Status Change Course Content in Course Page by');
     
         return redirect()->back()->with('success', 'Status Change successfully!');
     }  
@@ -98,6 +104,8 @@ class SyllabusController extends Controller
         $syllabus->description = $request->input('description');
 
         $syllabus->save();
+
+        store_log($sentence = 'Update Course Content in Course Page by');
 
         $response = [
             'status' => true,

@@ -45,6 +45,7 @@ class ProjectCoveredController extends Controller
             'course_id' => $request->input('course_id'),
         ]);
 
+        store_log($sentence = 'Projects Covered Add in Course Page by');
 
     
         $response = [
@@ -72,6 +73,8 @@ class ProjectCoveredController extends Controller
         }
         $project_covered->delete();
 
+        store_log($sentence = 'Delete Projects Covered in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Project Covered Deleted successfully!',
@@ -85,6 +88,7 @@ class ProjectCoveredController extends Controller
         $project_covered->status = $status;
         $project_covered->save();
         
+        store_log($sentence = 'Status Change Projects Covered in Course Page by');
     
         return redirect()->back()->with('success', 'Status Change successfully!');
     }  
@@ -126,6 +130,8 @@ class ProjectCoveredController extends Controller
         $project_covered->course_id = $request->input('course_id');
      
         $project_covered->save();
+
+        store_log($sentence = 'Update Projects Covered in Course Page by');
 
         $response = [
             'status' => true,

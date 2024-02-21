@@ -56,7 +56,7 @@
 
                         <li class="side-nav-item">
                             <a href="{{ route('contact.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                                <i class="ri-bar-chart-2-line"></i> 
+                                <i class="ri-file-paper-line"></i> 
                                 <span> Leads </span>
                             </a>
                         </li>
@@ -188,6 +188,13 @@
                                     
                                 </ul>
                             </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="{{ route('log.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-file-list-3-line"></i> 
+                                <span> Logs </span>
+                            </a>
                         </li>
                     
                         {{--

@@ -47,6 +47,11 @@ class BusinessSettingController extends Controller
                     BusinessSetting::where('type', $type)->update(['value' => $imagePath]);
                 } else {
                     BusinessSetting::where('type', $key)->update(['value' => $value]);
+
+
+                    $transformedSentence = ucwords(str_replace('_', ' ', $key));
+
+                    store_log($sentence = $transformedSentence .' Update by');
                 }
             }
         }

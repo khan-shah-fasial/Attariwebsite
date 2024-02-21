@@ -39,6 +39,8 @@ class CertificateController extends Controller
             'course_id' => $request->input('course_id'),
             'alt_image' => $request->input('alt_image'),
         ]);
+
+        store_log($sentence = 'Upload a New Certificate in Course Page by');
     
         $response = [
             'status' => true,
@@ -65,6 +67,8 @@ class CertificateController extends Controller
         }
         $certificate->delete();
 
+        store_log($sentence = 'Delete a Certificate in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Certificate Deleted successfully!',
@@ -79,6 +83,7 @@ class CertificateController extends Controller
         
         $certificate->save();
         
+        store_log($sentence = 'Status Change a Certificate in Course Page by');
     
         return redirect()->back()->with('success', 'Status Change successfully!');
     }  
@@ -115,6 +120,8 @@ class CertificateController extends Controller
         $certificate->alt_image = $request->input('alt_image');
      
         $certificate->save();
+
+        store_log($sentence = 'Update a Certificate in Course Page by');
 
         $response = [
             'status' => true,

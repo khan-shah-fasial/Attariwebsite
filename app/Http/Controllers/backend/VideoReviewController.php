@@ -37,6 +37,8 @@ class VideoReviewController extends Controller
             'course_id' => $request->input('course_id'),
             'image' => $imagePath,
         ]);
+
+        store_log($sentence = 'Upload a New Video Review URL in Course Page by');
     
         $response = [
             'status' => true,
@@ -63,6 +65,8 @@ class VideoReviewController extends Controller
         }
         $videoreview->delete();
 
+        store_log($sentence = 'Delete a Video Review URL in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Video Deleted successfully!',
@@ -76,6 +80,7 @@ class VideoReviewController extends Controller
         $videoreview->status = $status;
         $videoreview->save();
         
+        store_log($sentence = 'Status Change a Video Review URL in Course Page by');
     
         return redirect()->back()->with('success', 'Status Change successfully!');
     }  
@@ -113,6 +118,8 @@ class VideoReviewController extends Controller
         $videoreview->course_id = $request->input('course_id');
      
         $videoreview->save();
+
+        store_log($sentence = 'Update a Video Review URL in Course Page by');
 
         $response = [
             'status' => true,

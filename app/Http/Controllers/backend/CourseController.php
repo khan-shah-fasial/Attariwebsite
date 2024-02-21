@@ -92,6 +92,8 @@ class CourseController extends Controller
             'faq' => $data['faq'],
             'overview_section_heading' => $request->input('overview_section_heading'),
         ]);
+
+        store_log($sentence = 'Create a New Course Page by');
     
         $response = [
             'status' => true,
@@ -111,6 +113,8 @@ class CourseController extends Controller
         $course = Course::find($id);
         $course->delete();
 
+        store_log($sentence = 'Delete a Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Course deleted successfully!',
@@ -123,6 +127,8 @@ class CourseController extends Controller
         $course = Course::find($id);
         $course->status = $status;
         $course->save();
+
+        store_log($sentence = 'Status Change a Course Page by');
     
         return redirect(route('course.index'))->with('success', 'Status changed successfully!');
     }  
@@ -205,6 +211,8 @@ class CourseController extends Controller
 
         $course->save();
 
+        store_log($sentence = 'Update a Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Course updated successfully!',
@@ -251,6 +259,8 @@ class CourseController extends Controller
         $course->{$section . '_section_heading'} = $request->input('heading');
     
         $course->save();
+
+        store_log($sentence = ucfirst($section) . ' Section Heading is Update Course Page by');
     
         $response = [
             'status' => true,

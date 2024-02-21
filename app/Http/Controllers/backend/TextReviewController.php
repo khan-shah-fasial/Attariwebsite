@@ -46,6 +46,8 @@ class TextReviewController extends Controller
             'profile'   => $request->input('profile'),
             'url' => $request->input('url'),
         ]);
+
+        store_log($sentence = 'Text Review ADD in Course Page by');
     
         $response = [
             'status' => true,
@@ -72,6 +74,8 @@ class TextReviewController extends Controller
         }
         $textreview->delete();
 
+        store_log($sentence = 'Delete Text Review in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'TextReview Deleted successfully!',
@@ -85,6 +89,7 @@ class TextReviewController extends Controller
         $textreview->status = $status;
         $textreview->save();
         
+        store_log($sentence = 'Status Change Text Review in Course Page by');
     
         return redirect()->back()->with('success', 'Status Change successfully!');
     }  
@@ -128,6 +133,8 @@ class TextReviewController extends Controller
         $textreview->url = $request->input('url');
      
         $textreview->save();
+
+        store_log($sentence = 'Update Text Review in Course Page by');
 
         $response = [
             'status' => true,

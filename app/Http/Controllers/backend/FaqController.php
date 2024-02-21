@@ -33,6 +33,8 @@ class FaqController extends Controller
             'title_no' => $request->input('title_no'),
         ]);
 
+        store_log($sentence = 'Create a New Faq in Course Page by');
+
         $response = [
             'status' => true,
             'notification' => 'Faq added successfully!',
@@ -93,6 +95,8 @@ class FaqController extends Controller
         $id = $request->input('id');
         $faq = Faq::find($id);
         $faq->update($request->all());
+
+        store_log($sentence = 'Update a Faq in Course Page by');
 
         $response = [
             'status' => true,

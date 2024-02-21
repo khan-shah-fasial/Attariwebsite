@@ -232,6 +232,8 @@ class CmsController extends Controller
         $cms = Cms::find($id);
         $cms->delete();
 
+        store_log($sentence = 'Delete CMS by');
+
         $response = [
             'status' => true,
             'notification' => 'CMS deleted successfully!',
@@ -244,6 +246,8 @@ class CmsController extends Controller
         $cms = Cms::find($id);
         $cms->status = $status;
         $cms->save();
+
+        store_log($sentence = 'Status Change in CMS by');
     
         return redirect(route('cms.index'))->with('success', 'Status changed successfully!');
     }  

@@ -22,9 +22,10 @@
             </tr>
         </thead>
         <tbody>
+            @php $i = 1; @endphp
             @foreach($log as $row)
             <tr>
-                <td>{{$row->id}}</td>
+                <td>{{ $i++ }}</td>
                 <td>{{$row->remark}}</td>
                 <td>{{$row->created_at}}</td>
             </tr>
