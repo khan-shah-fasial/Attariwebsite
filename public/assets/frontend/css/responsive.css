@@ -573,9 +573,14 @@
         margin-bottom: 0;
     }
 
+    section#testimonials h3.heading_title.text-center.pddtop_0.pb-3.textcolor_wht {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
     .section_heading {
         font-weight: 400;
-        font-size: 22px;
+        font-size: 20px;
         text-align: center;
         float: none;
     }
@@ -621,7 +626,7 @@
 
     .batch_table td div {
         font-size: 9px;
-        padding-left: 5px !important;
+        padding-left: 0px !important;
         margin: 8px 3px;
         height: 30px;
     }
@@ -724,6 +729,36 @@
         position: relative;
         top: 4px;
     }
+
+    section#overviews .accordion-body {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 0;
+    }
+
+    section#syllabuse .accordion-body {
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+
+    .accordion_style li.accordion ul .txt {
+        padding: 10px 10px;
+        margin: 0;
+    }
+
+    tr.pdd_14 td:nth-child(1) {
+        width: 20% !important;
+    }
+
+    tr.pdd_14 td:nth-child(2) {
+        width: 41%;
+    }
+
+    tr.pdd_14 td:nth-child(3) {
+        width: 39%;
+    }
+
+
 }
 
 @media(min-width:768px) and (max-width:991px) {

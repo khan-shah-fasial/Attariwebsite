@@ -65,7 +65,7 @@
 
 
                     <a href="{{ $youtube_url_detail }}" data-fancybox="gallery">
-                        <img data-src="{{ asset('storage/' . $detail->other_thumbnail) }}"
+                        <img src="{{ asset('storage/' . $detail->other_thumbnail) }}"
                             class="img-fluid d-block w-100 lazyload" alt="">
                         <div class="pulse-button space_1"></div>
                     </a>
@@ -105,7 +105,7 @@
 
 
                     <a href="{{ $youtube_url_detail }}" data-fancybox="gallery">
-                        <img data-src="{{ asset('storage/' . $detail->other_thumbnail) }}"
+                        <img src="{{ asset('storage/' . $detail->other_thumbnail) }}"
                             class="img-fluid d-block w-100 lazyload" alt="">
                         <div class="pulse-button space_1"></div>
                     </a>
