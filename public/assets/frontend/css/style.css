@@ -2827,7 +2827,7 @@ span.customSelect {
 
 .video_testiminials button.owl-prev {
   position: relative;
-  right: 78px;
+  right: 10px;
 }
 
 .reviews_demo {
@@ -3004,7 +3004,7 @@ button.owl-dot.active span {
   position: absolute;
   bottom: 8px;
   right: 24px;
-  width: 95px;
+  width: 188px;
   margin-left: auto;
   display: block !important;
 }
@@ -3015,7 +3015,7 @@ button.owl-dot.active span {
 
 .certificate_section button.owl-prev {
   position: relative;
-  right: 83px;
+  right: 180px;
 }
 
 .prje_cove_section .owl-theme .owl-dots .owl-dot span {

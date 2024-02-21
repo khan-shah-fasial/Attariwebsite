@@ -758,6 +758,13 @@
         width: 39%;
     }
 
+    .accordion_style1 li.accordion1 span {
+        padding-right: 25px;
+    }
+
+    .accordion_style1 li.accordion1 span i {
+        right: 10px;
+    }
 
 }
 
@@ -922,6 +929,36 @@
 
     .social_media .icon_content .icons div {
         width: 215px;
+    }
+
+    .width70 {
+        width: 60% !important;
+    }
+
+    .width30 {
+        width: 40% !important;
+    }
+
+    .top_content_section .desc p {
+        text-align: justify;
+        line-height: 26px !important;
+    }
+
+    .section_heading {
+        font-weight: 400;
+        text-align: center;
+        float: none;
+    }
+
+    .float_right {
+        float: none;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .button_main a {
+        padding: 10px 20px;
+        font-size: 14px;
     }
 
 }
