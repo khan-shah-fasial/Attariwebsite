@@ -322,17 +322,17 @@
                                 @php $i = 1; @endphp
 
                                 @if (!empty($syllabus))
-                                    <div class="accordion--container accordion_style">
+                                    <div class="accordion--container1 accordion_style1">
         
                                         @foreach ($syllabus as $row)
-                                            <li class="accordion">
+                                            <li class="accordion1">
                                                 <span> Module {{ $i }}:- @php echo ReplaceKeyword($row->title, $cms->replace_keyword) @endphp <i class="fa fa-angle-up"></i>
                                                 </span>
-                                                <ul>
+                                                <div class="contentsillabus_div">
                                                     <div class="txt">
                                                         @php echo ReplaceKeyword($row->description, $cms->replace_keyword) @endphp
                                                     </div>
-                                                </ul>
+                                                </div>
                                             </li>
                                             @php $i++ @endphp
                                         @endforeach

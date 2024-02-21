@@ -3372,3 +3372,67 @@ body .show_mobileview {
   padding-bottom: 13px;
   color: #333;
 }
+
+.accordion--container1 {
+  display: block;
+}
+
+.accordion_style1 li.accordion1 .contentsillabus_div {
+  margin: 0;
+  padding: 0;
+  margin: 0 !important;
+  border-top: 1px solid #fff;
+  display: none;
+  background: #fff;
+}
+
+.accordion_style1 li.accordion1 .contentsillabus_div .txt {
+  padding: 10px 15px;
+  margin: 0;
+}
+
+.accordion_style1 li.accordion1 span {
+  display: block;
+  background: #ebf1f8;
+  font-weight: 400;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+}
+
+.accordion_style1 li.accordion1 {
+  list-style: none;
+}
+
+.accordion_style1 li.accordion1 span i {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  height: fit-content;
+  margin: auto;
+
+  transition: .3s;
+}
+
+.accordion_style1 li.accordion1.open span i {
+  transform: rotate(540deg);
+  transition: .3s;
+}
+
+.contentsillabus_div li {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.contentsillabus_div p {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.contentsillabus_div li p {
+  font-size: 15px;
+  line-height: 28px;
+}

@@ -94,6 +94,18 @@ $("li.accordion span").click(function () {
     }
 });
 
+$("li.accordion1 span").click(function () {
+    if ($(this).parent().hasClass("open")) {
+        $("li.accordion1").removeClass("open");
+        $("li.accordion1 .contentsillabus_div").slideUp();
+    } else {
+        $("li.accordion1 .contentsillabus_div").slideUp();
+        $(this).parent().children(".contentsillabus_div").slideDown();
+        $("li.accordion1").removeClass("open");
+        $(this).parent().addClass("open");
+    }
+});
+
 window.onscroll = function () {
     myFunction();
 };
