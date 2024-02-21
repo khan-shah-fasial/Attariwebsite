@@ -84,7 +84,7 @@ $(".professional_students").owlCarousel({
     ],
     responsive: {
         0: {
-            items: 1,
+            items: 1.1,
         },
         768: {
             items: 2,
@@ -134,7 +134,7 @@ $(".trending_course").owlCarousel({
     ],
     responsive: {
         0: {
-            items: 1,
+            items: 1.1,
         },
         768: {
             items: 5,
