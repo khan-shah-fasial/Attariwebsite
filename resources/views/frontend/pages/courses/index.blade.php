@@ -24,7 +24,7 @@
 @section('page.content')
 
     <!----------========== courses start ===============-------------------->
-    <section class="vm_banner pb-5 pt-5">
+    <section class="vm_banner pb-lg-5 pt-lg-5 pb-4 pt-4">
         <div class="container">
             <div class="row">
                 <div class="col-9 width70">
@@ -50,6 +50,29 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i> ({{ $detail->total_review }}) Rating
                         </p>
+
+                        <div class="show_mobileview imagebox d-flex align-items-center justify-content-center">
+
+                    @php
+                        // Assuming $row->url contains the YouTube URL
+                        if (strpos($detail->url, 'embed/') === false) {
+                            $videoID = basename($detail->url);
+                            $youtube_url_detail = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                        } else {
+                            $youtube_url_detail = $detail->url; // URL already in the correct format
+                        }
+                    @endphp
+
+
+                    <a href="{{ $youtube_url_detail }}" data-fancybox="gallery">
+                        <img data-src="{{ asset('storage/' . $detail->other_thumbnail) }}"
+                            class="img-fluid d-block w-100 lazyload" alt="">
+                        <div class="pulse-button space_1"></div>
+                    </a>
+
+                </div>
+
+
                         <div class="desc pe-lg-5 pe-0">
                             @php echo ReplaceKeyword($cms->description, $cms->replace_keyword) @endphp
                         </div>
@@ -66,9 +89,9 @@
                     <button type="button" class="btn coursepg_enquiryform" data-bs-toggle="modal"
                         data-bs-target="#enquiry_modal_coursepg1"> Enquire Now</button>
 
-                    <a href="#syllabuse" class="check_curriculum"> Check Curriculum </a>
+                    <div class="check_carriculam"><a href="#syllabuse" class="check_curriculum"> Check Curriculum </a></div>
                 </div>
-                <div class="col-3 width30 imagebox d-flex align-items-center justify-content-center">
+                <div class="show_desktopview col-3 width30 imagebox d-flex align-items-center justify-content-center">
 
                     @php
                         // Assuming $row->url contains the YouTube URL
@@ -137,7 +160,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck mb-3">{{ $detail->key_title }} Key
+                        <h4 class="section_heading pb-lg-3 pb-0 text-center textcolor_blck mb-3">{{ $detail->key_title }} Key
                             Features
                         </h4>
                     </div>
@@ -518,7 +541,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <div class="button_main">
+                                    <div class="button_main mt-2 mt-lg-0">
                                         <a href="https://lms.attariclasses.in/" target="_blank">Visit Video Portal</a>
                                     </div>
                                 </div>
@@ -564,7 +587,7 @@
 
                                 <div class="col-md-3">
                                     <div class="button_main getin_touch_bx">
-                                        <h5>Get In Touch to Avail <span>{{ $batch->off_percentage }} OFF</span></h5>
+                                        <h5 class="pb-2">Get In Touch to Avail <span>{{ $batch->off_percentage }} OFF</span></h5>
 
 
                                         @include('frontend.component.course_enquire_form', [
