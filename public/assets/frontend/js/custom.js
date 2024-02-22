@@ -1,3 +1,76 @@
+$(".video_testiminials").owlCarousel({
+    loop: true,
+    margin: 10,
+    dots: true,
+    navText: [
+        '<i class="fa fa-chevron-left"></i>',
+        '<i class="fa fa-chevron-right"></i>',
+    ],
+    responsive: {
+        0: {
+            items: 1.1,
+        },
+        768: {
+            items: 2,
+        },
+        960: {
+            items: 3,
+        },
+        1200: {
+            items: 3,
+        },
+    },
+});
+
+$(".slider_content_dots").owlCarousel({
+    loop: true,
+    margin: 10,
+    dots: true,
+    navText: [
+        '<i class="fa fa-chevron-left"></i>',
+        '<i class="fa fa-chevron-right"></i>',
+    ],
+    responsive: {
+        0: {
+            items: 1.1,
+        },
+        768: {
+            items: 2,
+        },
+        960: {
+            items: 3,
+        },
+        1200: {
+            items: 3,
+        },
+    },
+});
+
+$(".other_courses_slider").owlCarousel({
+    loop: true,
+    margin: 20,
+    autoplayTimeout: 2000,
+    nav: false,
+    navText: [
+        '<i class="fa fa-caret-left"></i>',
+        '<i class="fa fa-caret-right"></i>',
+    ],
+    responsive: {
+        0: {
+            items: 1.1,
+        },
+        768: {
+            items: 4,
+        },
+        960: {
+            items: 4,
+        },
+        1200: {
+            items: 4,
+        },
+    },
+});
+
 $(document).ready(function () {
     if ($("#counter").length > 0) {
         var a = 0;
@@ -272,31 +345,6 @@ $(".professional_students").owlCarousel({
         },
         1200: {
             items: 2,
-        },
-    },
-});
-
-$(".other_courses_slider").owlCarousel({
-    loop: true,
-    margin: 20,
-    autoplayTimeout: 2000,
-    nav: false,
-    navText: [
-        '<i class="fa fa-caret-left"></i>',
-        '<i class="fa fa-caret-right"></i>',
-    ],
-    responsive: {
-        0: {
-            items: 1.1,
-        },
-        768: {
-            items: 4,
-        },
-        960: {
-            items: 4,
-        },
-        1200: {
-            items: 4,
         },
     },
 });

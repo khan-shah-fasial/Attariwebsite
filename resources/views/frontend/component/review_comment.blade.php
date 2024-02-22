@@ -17,8 +17,8 @@
 @endphp
 
 
-<div class="large-12 columns mt-4 slider_content_dots">
-    <div class="owl-carousel owl-theme">
+<div class="large-12 columns mt-4">
+    <div class="owl-carousel owl-theme slider_content_dots">
 
         @foreach ($text_rev as $row)
             <div class="item">
