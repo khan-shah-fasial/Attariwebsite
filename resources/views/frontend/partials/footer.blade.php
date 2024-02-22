@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="row footer_links_container">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="logo">
                     <a href="index.php" aria-label="Logo Link">
                         <img src="/assets/frontend/images/cropped-header-logo-1.webp" width="180" height="50"
@@ -73,7 +73,7 @@
                         aria-label="Linkedin Link"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <h6 class="footer_links_heading">Courses</h6>
                 <ul class="footer_links">
                     <li><a href="https://attariclasses.in/vmware-training-certification-online/">VMware</a></li>
@@ -85,7 +85,7 @@
                     <li><a href="https://lms.attariclasses.in/">Self Paced Video Learning Management System</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <h6 class="footer_links_heading">Quick Links</h6>
                 <ul class="footer_links">
                     <li><a href="{{ url(route('training-option')) }}">Training</a></li>
@@ -98,7 +98,7 @@
                     <li><a href="{{ url(route('contact')) }}">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-12">
                 <div class="footer_info">
                     <div class="footer_info_icon">
                         <i class="fa-solid fa-location-dot"></i>
@@ -133,10 +133,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-5">
                 <p class="copyright">© 2023 Attari Class. All Rights Reserved</p>
             </div>
-            <div class="col-md-6 text-end footer_privacy">
+            <div class="col-lg-6 col-md-7 text-end footer_privacy">
                 <ul>
                     <li><a href="{{ url(route('refund-policy')) }}" class="text-secondary">Refunds & Cancellations</a>
                     </li>
