@@ -35,11 +35,11 @@
     <!-----------------------Reviews Section------------------------------>
 
 
-    <section id="testimonials" class="testiminilas_sec pt-lg-5 pb-lg-5 pt-5 pb-5 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-lg-5 pb-lg-5 pt-5 pb-5">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">VMwere Google Reviews</h3>
             <div class="large-12 columns">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
 
                 @php
@@ -104,11 +104,11 @@
 
 
 
-    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">AWS Google Reviews</h3>
             <div class="large-12 columns">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
                     $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type','google')->get();
@@ -179,11 +179,11 @@
         </div>
     </section>
 
-    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-5 pb-5">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">Azure Google Reviews</h3>
             <div class="large-12 columns">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
                     $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
@@ -248,11 +248,11 @@
 
 
 
-    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">MCSE Google Reviews</h3>
             <div class="large-12 columns">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
                     $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type','google')->get();
@@ -315,11 +315,11 @@
 
 
 
-    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-5 pb-5">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">CCNA Google Reviews</h3>
             <div class="large-12 columns">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
                     $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
@@ -418,11 +418,11 @@
     </section>
 
 
-    <section id="testimonials" class="testiminilas_sec pt-5 pb-5 slider_content_dots">
+    <section id="testimonials" class="testiminilas_sec pt-5 pb-5">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">Facebook Reviews</h3>
             <div class="large-12 columns">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
                     $text_facebook_review = DB::table('text_reviews')->where('status', 1)->where('type','facebook')->get();
