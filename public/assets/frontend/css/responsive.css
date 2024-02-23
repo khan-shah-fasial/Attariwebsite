@@ -801,6 +801,10 @@
         font-weight: 500;
         padding-top: 20px;
     }
+
+    form .error {
+        color: #fff !important;
+    }
 }
 
 @media(min-width:768px) and (max-width:991px) {

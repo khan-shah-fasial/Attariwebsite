@@ -981,7 +981,7 @@ li.menu_item i {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 23;
+  z-index: 9999;
   position: relative;
 }
 
@@ -2659,8 +2659,12 @@ select.form-select.form-control {
   opacity: 1 !important;
   height: 45px !important;
   font-size: 15px !important;
-  color: #646067;
+  color: #646067 !important;
   font-weight: 400;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+  color: #13aff0 !important;
 }
 
 span.customSelect.form-select.form-control {
@@ -2802,7 +2806,7 @@ span.customSelect {
 }
 
 .bookfreedemo_button {
-  padding: 10px 0px !important;
+  padding: 8px 0px !important;
   background: #13aff0 !important;
   color: #fff !important;
   text-decoration: none !important;
@@ -2832,7 +2836,7 @@ span.customSelect {
 
 .reviews_demo {
   position: relative;
-  top: -10px;
+  top: -21px;
 }
 
 .slider_content_dots .owl-dots {
@@ -3435,4 +3439,15 @@ body .show_mobileview {
 .contentsillabus_div li p {
   font-size: 15px;
   line-height: 28px;
+}
+
+.loadmore_button {
+  text-decoration: none;
+}
+
+form .error {
+  color: #f00 !important;
+  font-size: 13px;
+  text-align: left;
+  display: block;
 }
