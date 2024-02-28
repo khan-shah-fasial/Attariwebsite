@@ -1,5 +1,6 @@
 @php
 
+    /*
     $text_rev = DB::table('text_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
         ->where('c1.status', '1')
@@ -10,6 +11,25 @@
                         GROUP BY course_id) as c2'), function ($join) {
                             $join->on('c1.course_id', '=', 'c2.course_id')
                                 ->on('c1.created_at', '=', 'c2.max_created_at');
+                        })
+        ->orderBy('c1.created_at', 'ASC')
+        ->get();
+    */
+
+
+    $text_rev = DB::table('text_reviews as c1')
+        ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
+        ->where('c1.status', '1')
+        ->select('c1.course_id', 'c1.thumbnail', 'c1.name', 'c1.description', 'c1.profile', 'c1.url', 'c1.type', 'c1.created_at as latest_created_at')
+        ->join(DB::raw('(SELECT id, course_id, thumbnail, name, description, profile, url, type, created_at
+                        FROM (
+                            SELECT id, course_id, thumbnail, name, description, profile, url, type, created_at,
+                                ROW_NUMBER() OVER (PARTITION BY course_id ORDER BY created_at ASC) AS row_num
+                            FROM text_reviews
+                            WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\' AND type IN (\'google\', \'google_mcse\')
+                        ) AS ranked_reviews
+                        WHERE row_num <= 2) as c2'), function ($join) {
+                            $join->on('c1.id', '=', 'c2.id');
                         })
         ->orderBy('c1.created_at', 'ASC')
         ->get();

@@ -60,6 +60,11 @@ Route::get('/login', [AuthenticateController::class, 'index'])->name('backend.lo
 Route::post('/login', [AuthenticateController::class, 'login'])->name('backend.login');
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name('backend.logout');
 
+Route::get('/verify-otp', [AuthenticateController::class, 'verify_otp_form'])->name('verify-otp');
+Route::post('/verify-otp', [AuthenticateController::class, 'verifyOtp'])->name('verify-otp');
+
+Route::post('/resend-otp', [AuthenticateController::class, 'resendOtp'])->name('resend-otp');
+
 //dashborad
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
 

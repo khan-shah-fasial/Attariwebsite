@@ -139,3 +139,10 @@ Route::get('/send-test-email', function () {
 
     return 'Test email sent!';
 });
+
+Route::get('/test-otp', function () {
+    $sessionData = Session()->all();
+
+    // Print session data
+    dd($sessionData);
+});

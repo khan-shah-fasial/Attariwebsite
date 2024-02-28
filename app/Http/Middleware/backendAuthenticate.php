@@ -18,8 +18,9 @@ class backendAuthenticate
         if(isset(auth()->user()->id) && auth()->user()->id && auth()->user()->role_id == 1):
                 return $next($request);               
         else:
-            if($request->route()->getName() == 'backend.login'):
+            if($request->route()->getName() == 'backend.login' || $request->route()->getName() == 'verify-otp'):
                 return $next($request);
+                
             else:
                 return  redirect(route('backend.login'));
             endif;

@@ -198,8 +198,7 @@
 
     <!-----------============= video testimonials ===============---------------------------------->
     @php
-        $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->get();
-        
+        $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->whereIn('type', ['google', 'google_mcse'])->get();
     @endphp
     
         @if(!empty($text_vm_review))
@@ -391,7 +390,7 @@
 
     <!-----------============= video testimonials ===============---------------------------------->
     @php
-        $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->get();
+        $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->whereIn('type', ['google', 'google_mcse'])->get();
         
     @endphp
     
@@ -582,7 +581,7 @@
 
     <!-----------============= video testimonials ===============---------------------------------->
     @php
-        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->get();
+        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->whereIn('type', ['google', 'google_mcse'])->get();
         
     @endphp
     
@@ -774,7 +773,7 @@
 
     <!-----------============= video testimonials ===============---------------------------------->
     @php
-        $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->get();
+        $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->whereIn('type', ['google', 'google_mcse'])->get();
         
     @endphp
     
@@ -965,7 +964,7 @@
 
     <!-----------============= video testimonials ===============---------------------------------->
     @php
-        $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->get();
+        $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->whereIn('type', ['google', 'google_mcse'])->get();
     @endphp
     
         @if(!empty($text_ccna_review))

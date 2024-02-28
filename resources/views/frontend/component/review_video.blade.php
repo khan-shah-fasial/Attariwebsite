@@ -1,6 +1,6 @@
 @php
 
-
+    /*
     $video_rev = DB::table('video_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
         ->where('c1.status', '1')
@@ -14,7 +14,25 @@
                         })
         ->orderBy('c1.created_at', 'ASC')
         ->get();
-        
+
+    */
+    
+    $video_rev = DB::table('video_reviews as c1')
+        ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
+        ->where('c1.status', '1')
+        ->select('c1.course_id', 'c1.image', 'c1.url', 'c1.created_at as latest_created_at')
+        ->join(DB::raw('(SELECT id, course_id, image, url, created_at
+                        FROM (
+                            SELECT id, course_id, image, url, created_at,
+                                ROW_NUMBER() OVER (PARTITION BY course_id ORDER BY created_at ASC) AS row_num
+                            FROM video_reviews
+                            WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\'
+                        ) AS ranked_reviews
+                        WHERE row_num <= 2) as c2'), function ($join) {
+                            $join->on('c1.id', '=', 'c2.id');
+                        })
+        ->orderBy('c1.created_at', 'ASC')
+        ->get();
 
 
 @endphp

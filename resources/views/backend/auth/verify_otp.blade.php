@@ -38,51 +38,37 @@
 
                 <div class="my-auto">
                     <!-- title-->
-                    <h4 class="mt-0">Sign In</h4>
-                    <p class="text-muted mb-4">Enter your email address and password to access account.</p>
+                    <h4 class="mt-0">Verify OTP</h4>
+                    <p class="text-muted mb-4">Enter your OTP to access account.</p>
 
-                    @if($errors->has('invalid_credential'))  
+                    @if($errors->has('otp'))  
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ $errors->first('invalid_credential') }}
+                        {{ $errors->first('otp') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>                                                 
-                    @endif  
+                    @endif
+                    
+                    @if(session('message'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('message') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
 
                     <!-- form -->
-                    <form method="post" action="{{route('backend.login')}}">
+                    <form method="post" action="{{route('verify-otp')}}">
                         @csrf
-                        <div class="mb-3">
-                            <label for="emailaddress" class="form-label">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <!--<a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>-->
-                            <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
-                        </div>
-
 
                         <div class="mb-3">
-                            <label for="contact" class="form-label">Request OTP To</label>
-                            <select class="form-select" name="contact" id="contact">
-                                <option value="">-- Select --</option>
-                                <option value="8433625599">Developer</option>
-                                <option value="webdeveloper@nexgeno.in">webdeveloper@nexgeno.in</option>
-                                <option value="ms122592@gmail.com">ms122592@gmail.com</option>
-                            </select> 
+                            <label for="otp" class="form-label">Email address</label>
+                            <input class="form-control" type="text" id="otp" name="otp" required placeholder="Enter OTP">
                         </div>
 
-                        <input type="hidden" class="form-check-input" name="method" id="method">
-
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="checkbox-signin">
-                                <label class="form-check-label" for="checkbox-signin">Remember me</label>
-                            </div>
-                        </div>
                         <div class="d-grid mb-0 text-center">
                             <button class="btn btn-primary" type="submit"><i class="mdi mdi-login"></i> Log In </button>
                         </div>
+
+
                         <!-- social-->
                         {{--
                         <div class="text-center mt-4">
@@ -104,6 +90,28 @@
                         </div>
                         --}}
                     </form>
+
+                    @if(session('method') != 'email')
+
+                        <form action="{{ route('resend-otp') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="method" value="sms">
+                            <button type="submit">Resend OTP via SMS</button>
+                        </form>
+
+                    @else
+
+                        <form action="{{ route('resend-otp') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="method" value="email">
+                            <button type="submit">Resend OTP via Email</button>
+                        </form>
+
+                    @endif
+
+
+                    <a href="{{ url(route('backend.login')) }}"><button type="submit">Back to Login</button>
+
                     <!-- end form-->
                 </div>
 
@@ -139,20 +147,5 @@
 
     <!-- Include Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-    <script>
-        document.getElementById('contact').addEventListener('change', function() {
-            var selectedValue = this.value;
-            var methodInput = document.getElementById('method');
-    
-            // Check if the selected value contains '@'
-            if (selectedValue.includes('@')) {
-                methodInput.value = 'email';
-            } else {
-                methodInput.value = 'phone';
-            }
-        });
-    </script>
-
 </body>
 </html>
