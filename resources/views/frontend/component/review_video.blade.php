@@ -1,6 +1,6 @@
 @php
 
-    /*
+    
     $video_rev = DB::table('video_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
         ->where('c1.status', '1')
@@ -15,8 +15,8 @@
         ->orderBy('c1.created_at', 'ASC')
         ->get();
 
-    */
     
+    /*
     $video_rev = DB::table('video_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
         ->where('c1.status', '1')
@@ -33,6 +33,8 @@
                         })
         ->orderBy('c1.created_at', 'ASC')
         ->get();
+
+        */
 
 
 @endphp
