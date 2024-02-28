@@ -202,8 +202,8 @@
     @endphp
     
         @if(!empty($text_vm_review))
-            <div class="large-12 columns slider_content_dots mt-4">
-                <div class="owl-carousel owl-theme">
+            <div class="large-12 columns mt-4">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                     @foreach ($text_vm_review as $row)
     
@@ -395,8 +395,8 @@
     @endphp
     
         @if(!empty($text_aws_review))
-            <div class="large-12 columns slider_content_dots mt-4">
-                <div class="owl-carousel owl-theme">
+            <div class="large-12 columns mt-4">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                     @foreach ($text_aws_review as $row)
     
@@ -586,8 +586,8 @@
     @endphp
     
         @if(!empty($text_azure_review))
-            <div class="large-12 columns slider_content_dots mt-4">
-                <div class="owl-carousel owl-theme">
+            <div class="large-12 columns mt-4">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                     @foreach ($text_azure_review as $row)
     
@@ -778,8 +778,8 @@
     @endphp
     
         @if(!empty($text_mcse_review))
-            <div class="large-12 columns slider_content_dots mt-4">
-                <div class="owl-carousel owl-theme">
+            <div class="large-12 columns mt-4">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                     @foreach ($text_aws_review as $row)
     
@@ -968,8 +968,8 @@
     @endphp
     
         @if(!empty($text_ccna_review))
-            <div class="large-12 columns slider_content_dots mt-4">
-                <div class="owl-carousel owl-theme">
+            <div class="large-12 columns mt-4">
+                <div class="owl-carousel owl-theme slider_content_dots">
 
                     @foreach ($text_ccna_review as $row)
     

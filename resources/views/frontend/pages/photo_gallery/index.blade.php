@@ -32,98 +32,98 @@
 
 
 
-    <section class="photo_gallery pt-5 pb-5">
+    <section class="photo_gallery pt-lg-5 pb-lg-5 pt-4 pb-4">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">Online Training</h3>
             <div class="row">
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/vmvare_gllaery11.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/vmvare_gllaery11.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/vmvare_gllaery11.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/vmvare_gllaery22.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/vmvare_gllaery22.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/vmvare_gllaery22.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/vmvare_gllaery33.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/vmvare_gllaery33.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/vmvare_gllaery33.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/aws_gallery11.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/aws_gallery11.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/aws_gallery11.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/aws_gallery22.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/aws_gallery22.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/aws_gallery22.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/aws_gallery33.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/aws_gallery33.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/aws_gallery33.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/azure_gllaery11.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/azure_gllaery11.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/azure_gllaery11.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/azure_gllaery22.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/azure_gllaery22.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/azure_gllaery22.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/azure_gllaery33.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/azure_gllaery33.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/azure_gllaery33.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/mcse_gllaery11.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/mcse_gllaery11.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/mcse_gllaery11.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/mcse_gllaery22.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/mcse_gllaery22.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/mcse_gllaery22.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_one">
+                <div class="col-md-3 col-6 p-1 content_one">
                     <div class="gallery_box">
-                        <a href="images/mcse_gllaery33.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/mcse_gllaery33.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/mcse_gllaery33.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
@@ -143,281 +143,281 @@
     </section>
 
 
-    <section class="photo_gallery pt-5 pb-5 gray_bg1 classroom_tr">
+    <section class="photo_gallery pt-lg-5 pb-lg-5 pt-4 pb-4 gray_bg1 classroom_tr">
         <div class="container">
             <h3 class="heading_title text-center pddtop_0 pb-3 ">Classroom Training</h3>
             <div class="row">
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/2-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/2-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/2-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/3-2.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/3-2.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/3-2.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/4-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/4-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/4-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/5-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/5-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/5-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/6-2.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/6-2.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/6-2.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/7-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/7-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/7-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/8-2.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/8-2.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/8-2.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/9-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/9-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/9-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/10-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/10-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/10-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/11.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/11.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/11.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/12.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/12.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/12.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/13.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/13.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/13.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/14.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/14.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/14.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/15.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/15.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/15.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/16-1.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/16-1.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/16-1.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-17.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-17.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-17.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-18.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-18.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-18.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-19.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-19.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-19.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-20.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-20.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-20.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-21.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-21.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-21.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-22.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-22.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-22.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-23.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-23.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-23.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-24.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-24.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-24.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-25.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-25.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-25.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-26.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-26.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-26.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-27.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-27.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-27.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-28.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-28.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-28.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-29.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-29.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-29.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-30.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-30.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-30.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-31.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-31.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-31.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-32.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-32.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-32.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-33.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-33.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-33.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-34.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-34.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-34.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-35.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-35.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-35.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-md-3 p-1 content_two">
+                <div class="col-md-3 col-6 p-1 content_two">
                     <div class="gallery_box">
-                        <a href="images/img-36.jpg" data-fancybox="gallery">
+                        <a href="/assets/frontend/images/img-36.jpg" data-fancybox="gallery">
                             <img src="/assets/frontend/images/img-36.jpg" class="img-fluid d-block w-100 lazyload" alt>
                         </a>
                     </div>

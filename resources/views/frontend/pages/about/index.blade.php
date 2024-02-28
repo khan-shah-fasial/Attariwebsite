@@ -177,13 +177,13 @@
                         <div class="row">
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/our_infraimg5.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/our_infraimg5.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg5.jpg" data-src="/assets/frontend/images/our_infraimg5.jpg" /> </a>
                                 </div>
                             </div>
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/our_infraimg6.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/our_infraimg6.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg6.jpg" data-src="/assets/frontend/images/our_infraimg6.jpg" /> </a>
                                 </div>
                             </div>
@@ -191,13 +191,13 @@
                         <div class="row">
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/our_infraimg7.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/our_infraimg7.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg7.jpg" data-src="/assets/frontend/images/our_infraimg7.jpg" /> </a>
                                 </div>
                             </div>
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/our_infraimg8.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/our_infraimg8.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/our_infraimg8.jpg" data-src="/assets/frontend/images/our_infraimg8.jpg" /> </a>
                                 </div>
                             </div>
@@ -224,13 +224,13 @@
                         <div class="row">
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/Photo-Gallery-4.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/Photo-Gallery-4.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-4.jpg" data-src="/assets/frontend/images/Photo-Gallery-4.jpg" /> </a>
                                 </div>
                             </div>
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/Photo-Gallery-11.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/Photo-Gallery-11.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-11.jpg" data-src="/assets/frontend/images/Photo-Gallery-11.jpg" />
                                     </a>
                                 </div>
@@ -239,13 +239,13 @@
                         <div class="row">
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/Photo-Gallery-6.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/Photo-Gallery-6.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-6.jpg" data-src="/assets/frontend/images/Photo-Gallery-6.jpg" /> </a>
                                 </div>
                             </div>
                             <div class="col-6 padd4 marginleftright0">
                                 <div class="gallery_boxex">
-                                    <a href="images/Photo-Gallery-2.jpg" data-fancybox="gallery"> <img
+                                    <a href="/assets/frontend/images/Photo-Gallery-2.jpg" data-fancybox="gallery"> <img
                                             src="/assets/frontend/images/Photo-Gallery-2.jpg" data-src="/assets/frontend/images/Photo-Gallery-2.jpg" /> </a>
                                 </div>
                             </div>

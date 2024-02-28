@@ -158,7 +158,7 @@
     <section class="social_media gray_bgg1">
         <div class="">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="text_content pt70">
                         <h1 class="socail_head">#Social Media</h1>
                         <p class="socail_para">
@@ -169,7 +169,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="row">
                         <div class="col-md-4 col-6 contact_pdd0">
                             <div class="icons">

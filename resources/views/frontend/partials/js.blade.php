@@ -26,5 +26,4 @@
 
 <!--Custom Js-->
 <script src="/assets/frontend/js/Init.js"></script>
-<script src="/assets/frontend/js/script.js"></script>
 <script src="/assets/frontend/js/custom.js"></script>

@@ -569,7 +569,7 @@
         padding-right: 10px;
     }
 
-    .key_features .col-md-3 {
+    .key_features .col-6 {
         margin-bottom: 0;
     }
 
@@ -758,13 +758,146 @@
         width: 39%;
     }
 
+    .accordion_style1 li.accordion1 span {
+        padding-right: 25px;
+    }
 
+    .accordion_style1 li.accordion1 span i {
+        right: 10px;
+    }
+
+    .getin_touch_bx h5 {
+        padding-bottom: 5px;
+    }
+
+    .button_main .view_coursebtn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .photo_gallery {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .sm-aboutus {
+        margin-bottom: 0 !important;
+        padding-bottom: 2px !important;
+        font-size: 20px;
+    }
+
+    .our_website {
+        padding-top: 15px !important;
+    }
+
+    .privecy_policy ul {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    .privecy_policy h3 {
+        font-size: 20px;
+        font-weight: 500;
+        padding-top: 20px;
+    }
+
+    form .error {
+        color: #fff !important;
+    }
 }
 
 @media(min-width:768px) and (max-width:991px) {
 
     .none {
         display: none;
+    }
+
+    .classroom {
+        padding: 3rem 0;
+    }
+
+    .Certificate .Certificate_heading {
+        font-size: 26px;
+        line-height: 1.5em;
+    }
+
+    .social_icon {
+        margin-top: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .getin_touch_bx h5 span {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .accordion_style1 li.accordion1 span {
+        padding-right: 25px;
+    }
+
+    .accordion_style1 li.accordion1 span i {
+        right: 10px;
+    }
+
+    .accordion_style li.accordion span {
+        padding-right: 25px;
+    }
+
+    .accordion_style li.accordion span i {
+        right: 10px;
+    }
+
+    .footer_privacy ul li {
+        margin-left: 15px;
+    }
+
+    .getin_touch_bx h5 {
+        line-height: 30px;
+    }
+
+    .lms_img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .lms {
+        padding-bottom: 50px;
+    }
+
+    .course_buttom_form .form-group:nth-child(4) {
+        width: 100%;
+        float: left;
+        margin-right: 4px;
+    }
+
+    .course_buttom_form .form-group:nth-child(5) {
+        width: 100%;
+        float: none;
+        margin-left: 0px !important;
+    }
+
+    .course_buttom_form .form-group:nth-child(6) {
+        width: 100%;
+        float: left;
+        margin-right: 0px !important;
+    }
+
+    .course_buttom_form .form-group:nth-child(7) {
+        width: 100%;
+        float: left;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+
+    .course_buttom_form .form-group:nth-child(8) {
+        width: 100%;
+        float: left;
+        margin-left: 0px;
+    }
+
+    section.Certificate .carousel-item img {
+        height: auto;
     }
 
     .enquire_now_btn {
@@ -924,4 +1057,134 @@
         width: 215px;
     }
 
+    .width70 {
+        width: 60% !important;
+    }
+
+    .width30 {
+        width: 40% !important;
+    }
+
+    .top_content_section .desc p {
+        text-align: justify;
+        line-height: 26px !important;
+    }
+
+    .section_heading {
+        font-weight: 400;
+        text-align: center;
+        float: none;
+    }
+
+    .float_right {
+        float: none;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .button_main a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .bookfreedemo_button {
+        padding: 7px 0px !important;
+        font-size: 18px !important;
+        width: 100% !important;
+    }
+
+    .loadmore_button {
+        text-decoration: none;
+    }
+
+    .fix_footer h4 {
+        margin-bottom: 4px;
+        font-size: 18px;
+        padding-top: 6px;
+    }
+
+    .query_heading h5 {
+        margin-bottom: 3px;
+        padding-top: 3px;
+        font-size: 18px;
+    }
+
+    .classroom_tr .gallery_box img {
+        height: 172px;
+        object-fit: cover;
+    }
+
+    section.contact_form {
+        margin-top: 30px;
+    }
+
+    .contact_form .info_contact {
+        padding: 6rem 2rem;
+    }
+
+    .contact_form .form_container {
+        padding: 2rem 2rem;
+    }
+
+    .pt70 {
+        padding-top: 49px !important;
+    }
+}
+
+
+@media(min-width:992px) and (max-width:1200px) {
+    .nav_row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .header .menu>ul>li {
+        display: inline-block;
+        line-height: 50px;
+        margin-left: 10px;
+        position: relative;
+        top: 5px;
+    }
+
+    .header .menu>ul>li>a {
+        font-size: 15px;
+    }
+
+    .enquire_now_btn {
+        margin-top: 200px;
+    }
+
+    .lms {
+        padding-bottom: 50px;
+    }
+
+    section.classroom .carousel-item img {
+        height: auto;
+    }
+
+    .lms_img img {
+        width: 100%;
+        height: auto;
+    }
+
+    section.Certificate .carousel-item img {
+        height: auto;
+    }
+
+    .training .img_content img {
+        height: auto;
+    }
+
+    .classroom_tr .gallery_box img {
+        height: 180px;
+        object-fit: cover;
+    }
+
+    section.contact_form {
+        margin-top: 30px;
+    }
+
+    .social_media .icons div {
+        padding: 1.5rem 0rem;
+    }
 }

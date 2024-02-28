@@ -164,7 +164,7 @@
                             Features
                         </h4>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-chalkboard-user"></i>
@@ -172,7 +172,7 @@
                             <p> Instructor led live Training </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-laptop"></i>
@@ -180,7 +180,7 @@
                             <p> Hands-on Practical Training </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-headset"></i>
@@ -188,7 +188,7 @@
                             <p> Trainer Support on WhatsApp </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-users"></i>
@@ -196,7 +196,7 @@
                             <p> Recorded lectures on LMS </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i aria-hidden="true" class="fas fa-book-open"></i>
@@ -204,7 +204,7 @@
                             <p> Access to Learning Portal </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-file"></i>
@@ -212,7 +212,7 @@
                             <p> Certificate from Attari classes </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-users-gear"></i>
@@ -220,7 +220,7 @@
                             <p> Access to forum for new Job Openings </p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
+                    <div class="col-lg-3 col-md-6 col-6 mb-md-2">
                         <div class="key_boxes">
                             <div class="key_features_icon">
                                 <i class="fa-solid fa-clock"></i>
@@ -469,8 +469,8 @@
                 @endif
 
                 @if (!empty($text_review))
-                    <div class="large-12 columns mt-4 slider_content_dots">
-                        <div class="owl-carousel owl-theme">
+                    <div class="large-12 columns mt-4 ">
+                        <div class="owl-carousel owl-theme slider_content_dots">
 
                             @foreach ($text_review as $row)
                                 <div class="item">
