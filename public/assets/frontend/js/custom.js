@@ -255,21 +255,23 @@ $("li.accordion1 span").click(function () {
 });
 
 window.onscroll = function () {
-    myFunction();
+    //myFunction();
 };
 
 // navbar sticky //
 
 var navbar = document.getElementById("vm_nav");
-var sticky = navbar.offsetTop;
+//var sticky = navbar.offsetTop;
 
+/*
 function myFunction() {
     if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
+        //navbar.classList.add("sticky");
     } else {
-        navbar.classList.remove("sticky");
+        //navbar.classList.remove("sticky");
     }
 }
+*/
 
 $(".video_testiminials").owlCarousel({
     loop: true,
@@ -423,6 +425,7 @@ $(document).ready(function () {
 });
 
 // tab functionality start
+/*
 class TabSlider {
     constructor(
         containerSelector,
@@ -557,3 +560,5 @@ const tabSlider2 = new TabSlider(
     ".active-line"
 );
 // tab functionality end
+
+*/
