@@ -16,7 +16,7 @@
         ->get();
     */
 
-
+    /*
     $text_rev = DB::table('text_reviews as c1')
         ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
         ->where('c1.status', '1')
@@ -33,6 +33,27 @@
                         })
         ->orderBy('c1.created_at', 'ASC')
         ->get();
+    */
+
+    $text_rev = DB::table('text_reviews as c1')
+        ->whereIn('c1.course_id', [5, 7, 8, 9, 10])
+        ->where('c1.status', '1')
+        ->select('c1.course_id', 'c1.thumbnail', 'c1.name', 'c1.description', 'c1.profile', 'c1.url', 'c1.type', 'c1.created_at as latest_created_at')
+        ->join(DB::raw('(SELECT id, course_id, thumbnail, name, description, profile, url, type, created_at,
+                            @row_number:=CASE
+                                WHEN @course = course_id THEN @row_number + 1
+                                ELSE 1
+                            END AS row_number,
+                            @course:=course_id
+                        FROM (SELECT @row_number:=0, @course:=0) AS vars, text_reviews
+                        WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\' AND type IN (\'google\', \'google_mcse\')
+                        ORDER BY course_id, created_at) AS c2'), function ($join) {
+                            $join->on('c1.id', '=', 'c2.id');
+                        })
+        ->where('c2.row_number', '<=', 2)
+        ->orderBy('c1.created_at', 'ASC')
+        ->get();
+    
 
         
 @endphp
