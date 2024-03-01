@@ -82,8 +82,8 @@
 		@include('backend.pages.course.section.faq.index')
 	@elseif($section && $section == 'syllabus')
 		@include('backend.pages.course.section.syllabus.index')
-	@elseif($section && $section == 'project')
-		@include('backend.pages.course.section.project_covered.index')
+	@elseif($section && $section == 'practice_test')
+		@include('backend.pages.course.section.practice_test.practice_test_index')
 	@elseif($section && $section == 'certificate')
 		@include('backend.pages.course.section.certificate.index')
 	@else
