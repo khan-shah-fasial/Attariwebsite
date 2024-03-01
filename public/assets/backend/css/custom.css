@@ -29,3 +29,13 @@
     font-weight: 800;
     color: #555 !important;
 }
+
+.spl_active {
+    background: gold;
+    border: 1px solid !important;
+    border-bottom: none !important;
+}
+
+.active2{
+    background: burlywood;
+}

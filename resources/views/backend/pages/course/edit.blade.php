@@ -52,6 +52,14 @@
 				<a class="nav-link @if( $section == 'faq') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'faq'])) }}">FAQ</a>
 			</li>
 
+			<li class="nav-item">
+				<a class="nav-link spl_active @if( $section == 'practice_test') active2  @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'practice_test'])) }}">Practice Test</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link spl_active @if( $section == 'book_guides') active2 @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'book_guides'])) }}">Book & Guides</a>
+			</li>
+
 		
 		</ul>
 
