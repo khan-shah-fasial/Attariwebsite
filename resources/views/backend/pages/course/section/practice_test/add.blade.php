@@ -1,7 +1,7 @@
 <!------------------------- Add Form ------------------------------------>
 
 <section>
-    <form id="add_batch_form" action="{{ url(route('batch.create')) }}" method="post"
+    <form id="add_learning_form" action="{{ url(route('learning.create')) }}" method="post"
         enctype="multipart/form-data">
         @csrf
         <div class="row">
@@ -9,6 +9,18 @@
                     <div class="card-body">
 
                         <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
+
+
+                        <div class="col-sm-12">
+                            <div class="form-group mb-3">
+                                <label>Slug <span class="red">*</span></label>
+                                <input maxlength="255" type="text" class="form-control" name="slug" required>
+                            </div>
+
+                            <br>
+                            <input type="hidden" class="form-control" name="page" value="practice">
+                        </div>
+
 
                         <div class="row">
                             <div class="col-md-12">
@@ -33,7 +45,7 @@
                                                 <div class="row">
                                                     <input type="text" style="margin-bottom: 5px;" class="form-control" name="pdf_title[]" placeholder="Enter Title here..." required>
                                                     <span class="glyphicon form-control-feedback"></span>
-                                                    <input class="form-control" type="file" name="pdf_1" required>
+                                                    <input class="form-control" type="file" name="pdf_0" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_progress_bar"></i></div>
@@ -120,10 +132,10 @@
                             <div class="d-flex justify-content-start">
                                 <div class="form-check form-switch">
 
-                                    <input id="batch_check" class="form-check-input" type="checkbox"
-                                        name="batch_check" value="0">
+                                    <input id="learning_check" class="form-check-input" type="checkbox"
+                                        name="learning_check" value="0">
 
-                                    <label class="form-check-label" for="batch_check">Hide Batch Schedule
+                                    <label class="form-check-label" for="learning_check">Hide Batch Schedule
                                     </label>
 
                                 </div>
@@ -147,11 +159,11 @@
 @section('component.scripts')
     <script>
         $(document).ready(function() {
-            initValidate('#add_batch_form');
+            initValidate('#add_learning_form');
             initTrumbowyg('#trumbowyg_0');
         });
 
-        $("#add_batch_form").submit(function(e) {
+        $("#add_learning_form").submit(function(e) {
             var form = $(this);
             ajaxSubmit(e, form, responseHandler);
         });
@@ -200,7 +212,7 @@
             initTrumbowyg(`#trumbowyg_${textareaIdCounter}`);
         });
 
-        var pdfCounter = 1;
+        var pdfCounter = 0;
 
         $("#add_progress_bar").on("click", function() {
             pdfCounter++;
@@ -210,7 +222,7 @@
                 <div class="row">
                     <div class="col-md-11">
                         <div class="row">
-                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="progress_bar[]" placeholder="Enter Title here..." required>
+                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="pdf_title[]" placeholder="Enter Title here..." required>
                             <span class="glyphicon form-control-feedback"></span>
 
                             <input class="form-control" type="file" name="pdf_${pdfCounter}" required>

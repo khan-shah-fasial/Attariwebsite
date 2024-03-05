@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PracticeTest extends Model
+class Learnings extends Model
 {
     use HasFactory;
 
-    protected $table = 'practice_tests';
+    protected $table = 'learnings';
 
     protected $fillable = [
         'course_id',
@@ -20,6 +20,7 @@ class PracticeTest extends Model
         'testimonials_title',
         'faq_title',
         'faq',
+        'page',
         'status',
     ];
 }

@@ -1,6 +1,6 @@
 <!-----==================== Batch schedule Course ==========----------------------->
 @php 
-    $batch = DB::table('batches')->where('course_id',$course->id)->get()->first();
+    $learning = DB::table('learnings')->where('course_id',$course->id)->get()->first();
 @endphp
 <div class="card">
     <div class="card-body">
@@ -9,6 +9,7 @@
             <hr>
         </div>
         <!-----========================== Dection Heading ==================------------------------->
+        
         {{---
         <section>
             @php 
@@ -36,15 +37,13 @@
 
         <!-----========================== Dection Heading ==================------------------------->
 
-        @if(!empty($batch))
+        @if(empty($learning))
 <!----================================= Add Form ========================-------------------->
             @include('backend.pages.course.section.practice_test.add')
 <!----================================== Add Form end ======================-------------------->
         @else
-
-            update
 <!----================================== Edit Form ========================-------------------->
-            {{--@include('backend.pages.course.section.practice_test.edit')--}}
+            @include('backend.pages.course.section.practice_test.edit')
 <!----================================== Edit Form end ======================-------------------->
 
         @endif

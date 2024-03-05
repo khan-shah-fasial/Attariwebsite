@@ -43,6 +43,8 @@ use App\Http\Controllers\backend\CmsController;
 use App\Http\Controllers\backend\NewsletterController;
 use App\Http\Controllers\backend\LogController;
 
+use App\Http\Controllers\backend\LearningsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -380,4 +382,10 @@ Route::group(['prefix' => 'cms'], function () {
 //logs
 Route::group(['prefix' => 'logs'], function () {
     Route::get('/index', [LogController::class, 'index'])->name('log.index');
+});
+
+//learnings
+Route::group(['prefix' => 'learning'], function () {
+    Route::post('/create', [LearningsController::class, 'create'])->name('learning.create');
+    Route::post('/update', [LearningsController::class, 'update'])->name('learning.update');
 });

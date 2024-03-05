@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('practice_tests', function (Blueprint $table) {
+        Schema::create('learnings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('course_id');
             $table->string('slug');
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('testimonials_title')->nullable();
             $table->string('faq_title')->nullable();
             $table->string('faq')->nullable();
+            $table->string('page')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

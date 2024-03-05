@@ -1,16 +1,26 @@
 <!---------------------------------- edit form --------------------------------------->
 
 <section>
-    <form id="edit_batch_form" action="{{ url(route('batch.update')) }}" method="post"
+    <form id="edit_learning_form" action="{{ url(route('learning.update')) }}" method="post"
         enctype="multipart/form-data">
         @csrf
         <div class="row">
                 <div class="card">
                     <div class="card-body">
 
-                        <input type="hidden" class="form-control" name="id" value="{{ $batch->id }}">
+                        <input type="hidden" class="form-control" name="id" value="{{ $learning->id }}">
 
                         <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
+
+                        <div class="col-sm-12">
+                            <div class="form-group mb-3">
+                                <label>Slug <span class="red">*</span></label>
+                                <input maxlength="255" type="text" class="form-control" name="slug" value="{{ $learning->slug }}" required>
+                            </div>
+
+                            <br>
+                            <input type="hidden" class="form-control" name="page" value="practice">
+                        </div>
 
                         <div class="row">
                             <div class="col-md-12">
@@ -20,43 +30,61 @@
 
                             <div class="col-sm-4">
                                 <div class="form-group mb-3">
-                                    <label>Title <span class="red">*</span></label>
-                                    <input type="text" class="form-control" name="paced_title" value="{{ $batch->paced_title }}" required>
+                                    <label>Heading Title <span class="red">*</span></label>
+                                    <input type="text" class="form-control" name="heading_pdf_title" value="{{ $learning->heading_pdf_title }}" required>
                                 </div>
                             </div>
-                                    
+                                   
+                            
                             <div class="col-sm-8">
                                 <div class="form-group mb-3">
-                                    <label>Pointer <span class="red">*</span></label>
-                                    <div id="pointer_list_add_more1" style=""> @php $i = 1; $paced_pointer_list = json_decode($batch->paced_pointer_list); 
-                                    if(!empty($paced_pointer_list)) { foreach ($paced_pointer_list as $row){  @endphp
-                                        <div class="pointer_list">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-                                                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="paced_pointer_list[]" placeholder="Enter pointer List here..." value="{{ $row }}" required>
+                                    <label>PDF File</label>
+                                    <div id="progress_bar_add_more" style="margin: 10px;"> 
+
+                                    @php $i = 0; $pdf = json_decode($learning->pdf); 
+
+                                    if(!empty($pdf)) { 
+                                        foreach ($pdf as $row) { 
+                                    @endphp
+
+                                    <div class="progress_bar">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-11">
+                                                            <div class="row">
+                                                                <input type="text" style="margin-bottom: 3px;" class="form-control" name="pdf_title[]" placeholder="Enter Title here..." value="{{ $row->title }}"> <span class="glyphicon form-control-feedback"></span>
+                                                                <input class="form-control" type="file" name="pdf_{{$i}}" required>
+
+                                                                    <a target="_blank" href="{{ asset('storage/' . $row->pdf) }}">
+                                                                        View
+                                                                    </a>
+
+                                                            </div>
                                                         </div>
+                                                        <div class="col-md-1"> @if($i == 0) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_progress_bar"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_progress_bar($(this));"></i> @endif </div>
                                                     </div>
-                                                    <div class="col-md-1"> @if($i == 1) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_pointer_list1"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 5px;" class="ri-delete-bin-2-fill" onclick="remove_pointer_list1($(this));"></i> @endif </div>
                                                 </div>
-                                            </div>
-                                            </br>
-                                        </div> @php $i++; } @endphp  @php } else { @endphp
-                                            <div class="form-group">
+                                                </br>
+                                            </div> @php $i++; } @endphp @php } else { @endphp
+                                                <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-                                                            <input type="text" style="margin-bottom: 5px;" class="form-control" name="paced_pointer_list[]" placeholder="Enter pointer List here..." required>
-                                                        </div>
+                                                <div class="col-md-11">
+                                                    <div class="row">
+                                                        <input type="text" style="margin-bottom: 5px;" class="form-control" name="pdf_title[]" placeholder="Enter Title here...">
+                                                        <span class="glyphicon form-control-feedback"></span>
+                                                        <input class="form-control" type="file" name="pdf_0" required>
                                                     </div>
-                                                    <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_pointer_list1"></i>
-                                                    </div>
-                                            </div>
-                                            </br>
-                                        </div> @php } @endphp </div>
+                                                </div>
+                                                <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_progress_bar"></i></div>
+                                                </div>
+                                                </br>
+                                            </div> @php } @endphp 
+                                        </div>
+
                                 </div>
+
                             </div>
+
 
 
                         </div>
@@ -65,175 +93,73 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <h4 class="header-title"><b>Online / Classroom</b></h4>
+                                <h4 class="header-title"><b>Schedule / Testimonials</b></h4>
                                 <hr>
                             </div>
 
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label>Title <span class="red">*</span></label>
-                                    <input type="text" class="form-control" name="oc_title" value="{{ $batch->oc_title }}" required>
+                                    <label>Schedule Heading <span class="red">*</span></label>
+                                    <input type="text" class="form-control" name="schedule_title" value="{{ $learning->schedule_title }}" required>
                                 </div>
                             </div>
                                     
-                            <div class="col-sm-8">
+
+                            <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label>Pointer <span class="red">*</span></label>
-                                    <div id="oc_pointer_list_add_more1" style=""> 
-                                    @php $i = 1; $oc_pointer_list = json_decode($batch->oc_pointer_list); 
-                                    if(!empty($oc_pointer_list)) { foreach ($oc_pointer_list as $row){  @endphp
-                                        <div class="oc_pointer_list">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-                                                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="oc_pointer_list[]" placeholder="Enter pointer List here..." value="{{ $row }}" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1"> @if($i == 1) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_oc_pointer_list1"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 5px;" class="ri-delete-bin-2-fill" onclick="remove_oc_pointer_list1($(this));"></i> @endif </div>
-                                                </div>
-                                            </div>
-                                            </br>
-                                        </div> @php $i++; } @endphp  @php } else { @endphp
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-                                                            <input type="text" style="margin-bottom: 5px;" class="form-control" name="oc_pointer_list[]" placeholder="Enter pointer List here..." required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_oc_pointer_list1"></i>
-                                                    </div>
-                                            </div>
-                                            </br>
-                                        </div> @php } @endphp </div>
+                                    <label>Testimonials Heading <span class="red">*</span></label>
+                                    <input type="text" class="form-control" name="testimonials_title" value="{{ $learning->testimonials_title }}" required>
                                 </div>
+                            </div>
+
+                        </div>
+<!-------==========================================================-------------------->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="header-title"><b>Faq Manage</b></h4>
+                                <hr>
                             </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group mb-3">
-                                    <label>Date / Schedule / Time <span class="red">*</span></label>
-                                    <div id="batch_detail_add_more1" style=""> 
-                                    @php $i = 1; $batch_detail = json_decode($batch->batch_detail, true); 
-                                    if(!empty($batch_detail)) { foreach ($batch_detail as $row){  @endphp
-                                        <div class="batch_detail">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-
-                                                            <div class="col col-md-3">
-                                                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here..." 
-                                                                value="{{ $row['date'] }}" required>
-                                                            </div>
-
-                                                            <div class="col col-md-3">
-                                                                <input class="form-control" name="batch_detail_sch[]" placeholder="Enter Schedule here..." 
-                                                                value="{{ $row['schedule'] }}" required>
-                                                            </div>
-
-                                                            <div class="col col-md-3">
-                                                                <input class="form-control" name="batch_detail_remark[]" placeholder="Enter Remark here..." value="{{ $row['remark'] }}" required>
-                                                            </div>
-
-                                                            <div class="col col-md-3">
-                                                                <input class="form-control" name="batch_detail_time[]" placeholder="Enter Time here..." value="{{ $row['time'] }}" required>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1"> @if($i == 1) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_batch_detail1"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 5px;" class="ri-delete-bin-2-fill" onclick="remove_batch_detail1($(this));"></i> @endif </div>
-                                                </div>
-                                            </div>
-                                            </br>
-                                        </div> @php $i++; } @endphp  @php } else { @endphp
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-
-                                                            <div class="col col-md-3">
-                                                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here..." required>
-                                                            </div>
-
-                                                            <div class="col col-md-3">
-                                                                <input class="form-control" name="batch_detail_sch[]" placeholder="Enter Schedule here..." required>
-                                                            </div>
-
-                                                            <div class="col col-md-3">
-                                                                <input class="form-control" name="batch_detail_remark[]" placeholder="Enter Remark here..." required>
-                                                            </div>
-
-                                                            <div class="col col-md-3">
-                                                                <input class="form-control" name="batch_detail_time[]" placeholder="Enter Time here..." required>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_batch_detail1"></i>
-                                                    </div>
-                                                </div>
-                                            </br>
-                                        </div> @php } @endphp </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="form-group mb-3">
-                                    <label>OFF Percentage <span class="red">*</span></label>
-                                    <input type="text" class="form-control" name="off_percentage" value="{{ $batch->off_percentage }}" required>
-                                </div>
-                            </div>
-
-                        </div>
-<!-------==========================================================-------------------->
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4 class="header-title"><b>Corporate Training</b></h4>
-                                <hr>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="form-group mb-3">
-                                    <label>Title <span class="red">*</span></label>
-                                    <input type="text" class="form-control" name="corp_title" value="{{ $batch->corp_title }}" required>
+                                    <label>FAQ Heading <span class="red">*</span></label>
+                                    <input type="text" class="form-control" name="faq_title" value="{{ $learning->faq_title }}" required>
                                 </div>
                             </div>
                                     
-                            <div class="col-sm-8">
+                            <div class="col-sm-12">
                                 <div class="form-group mb-3">
-                                    <label>Pointer <span class="red">*</span></label>
-                                    <div id="corp_pointer_list_add_more1" style=""> 
-                                    @php $i = 1; $corp_pointer_list = json_decode($batch->corp_pointer_list); 
-                                    if(!empty($corp_pointer_list)) { foreach ($corp_pointer_list as $row){  @endphp
-                                        <div class="corp_pointer_list">
+                                    <label>FAQs</label>
+                                    <div id="faq_add_more" style="margin: 10px;"> @php $i = 1; $faq = json_decode($learning->faq); if (!empty($faq)) { foreach ($faq as $fkey => $fvalue) { $farr_value = (array)$fvalue; foreach ($farr_value as $fkey1 => $fvalue1) { @endphp
+                                        <div class="faq">
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-11">
                                                         <div class="row">
-                                                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="corp_pointer_list[]" placeholder="Enter pointer List here..." value="{{ $row }}" required>
+                                                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="faq[]" placeholder="Enter Question here..." value="{{ $fkey1 }}"> <span class="glyphicon form-control-feedback"></span>
+                                                            <textarea class="form-control trumbowyg" name="faq_description[]" rows="5" placeholder="Enter Answer here...">{{ $fvalue1 }}</textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-1"> @if($i == 1) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_corp_pointer_list1"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 5px;" class="ri-delete-bin-2-fill" onclick="remove_corp_pointer_list1($(this));"></i> @endif </div>
+                                                    <div class="col-md-1"> @if($i == 1) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_faq"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_faq($(this));"></i> @endif </div>
                                                 </div>
                                             </div>
                                             </br>
-                                        </div> @php $i++; } @endphp  @php } else { @endphp
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-11">
-                                                        <div class="row">
-                                                            <input type="text" style="margin-bottom: 5px;" class="form-control" name="corp_pointer_list[]" placeholder="Enter pointer List here..." required>
-                                                        </div>
+                                        </div> @php $i++; } @endphp @php } @endphp @php } else { @endphp
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-11">
+                                                    <div class="row">
+                                                        <input type="text" style="margin-bottom: 3px;" class="form-control" name="faq[]" placeholder="Enter Question here..."> <span class="glyphicon form-control-feedback"></span>
+                                                        <textarea class="form-control trumbowyg" name="faq_description[]" rows="5" placeholder="Enter Answer here..."></textarea>
                                                     </div>
-                                                    <div class="col-md-1"><i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 5px;" class="ri-add-circle-fill" id="add_corp_pointer_list1"></i>
-                                                    </div>
+                                                </div>
+                                                <div class="col-md-1"> <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_faq"></i> </div>
                                             </div>
                                             </br>
                                         </div> @php } @endphp </div>
                                 </div>
-                            </div>
+                            </div>    
 
 
                         </div>
@@ -244,10 +170,10 @@
                            {{-- <div class="d-flex justify-content-start">
                                 <div class="form-check form-switch">
 
-                                    <input id="batch_check" class="form-check-input" type="checkbox"
-                                    name="batch_check" value="0" @if($batch->status == '0') checked @endif>
+                                    <input id="learning_check" class="form-check-input" type="checkbox"
+                                    name="learning_check" value="0" @if($learning->status == '0') checked @endif>
 
-                                    <label class="form-check-label" for="batch_check">Hide Batch Schedule
+                                    <label class="form-check-label" for="learning_check">Hide Batch Schedule
                                     </label>
 
                                 </div>
@@ -281,11 +207,15 @@
 
 
         $(document).ready(function() {
-            initValidate('#add_batch_form');
-            initTrumbowyg('#trumbowyg_0');
+            initValidate('#add_learning_form');
+            initTrumbowyg('#trumbowyg');
         });
 
-        $("#add_batch_form").submit(function(e) {
+
+			initTrumbowyg('.trumbowyg');
+
+
+        $("#add_learning_form").submit(function(e) {
             var form = $(this);
             ajaxSubmit(e, form, responseHandler);
         });
@@ -334,7 +264,7 @@
                 <div class="row">
                     <div class="col-md-11">
                         <div class="row">
-                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="progress_bar[]" placeholder="Enter Title here..." required>
+                            <input type="text" style="margin-bottom: 3px;" class="form-control" name="pdf_title[]" placeholder="Enter Title here..." required>
                             <span class="glyphicon form-control-feedback"></span>
 
                             <input class="form-control" type="file" name="pdf_${pdfCounter}" required>
