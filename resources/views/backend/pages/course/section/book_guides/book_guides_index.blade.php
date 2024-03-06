@@ -1,11 +1,11 @@
 <!-----==================== Batch schedule Course ==========----------------------->
 @php 
-    $learning = DB::table('learnings')->where('course_id',$course->id)->where('page','practice')->get()->first();
+    $learning = DB::table('learnings')->where('course_id',$course->id)->where('page','book')->get()->first();
 @endphp
 <div class="card">
     <div class="card-body">
         <div class="col-md-12">
-            <h4 class="header-title"><b>Practice Test</b></h4>
+            <h4 class="header-title"><b>Book & Guides</b></h4>
             <hr>
         </div>
         <!-----========================== Dection Heading ==================------------------------->
@@ -39,11 +39,11 @@
 
         @if(empty($learning))
 <!----================================= Add Form ========================-------------------->
-            @include('backend.pages.course.section.practice_test.add')
+            @include('backend.pages.course.section.book_guides.add')
 <!----================================== Add Form end ======================-------------------->
         @else
 <!----================================== Edit Form ========================-------------------->
-            @include('backend.pages.course.section.practice_test.edit')
+            @include('backend.pages.course.section.book_guides.edit')
 <!----================================== Edit Form end ======================-------------------->
 
         @endif

@@ -53,18 +53,18 @@
                         @csrf
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email">
+                            <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email" required>
                         </div>
                         <div class="mb-3">
                             <!--<a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>-->
                             <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
+                            <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password" required>
                         </div>
 
 
                         <div class="mb-3">
                             <label for="contact" class="form-label">Request OTP To</label>
-                            <select class="form-select" name="contact" id="contact">
+                            <select class="form-select required" name="contact" id="contact" required>
                                 <option value="">-- Select --</option>
                                 <option value="8433625599">Developer</option>
                                 <option value="webdeveloper@nexgeno.in">webdeveloper@nexgeno.in</option>

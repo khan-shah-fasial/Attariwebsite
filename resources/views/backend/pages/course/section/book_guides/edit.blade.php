@@ -19,7 +19,7 @@
                             </div>
 
                             <br>
-                            <input type="hidden" class="form-control" name="page" value="practice">
+                            <input type="hidden" class="form-control" name="page" value="book">
                         </div>
 
                         <div class="row">
