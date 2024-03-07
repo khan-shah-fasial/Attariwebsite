@@ -12,7 +12,7 @@
 
     <section class="sm-at banner1 bookguide_banner" 
     @if($learning->page == 'practice')
-        style="background-image:url('/assets/frontend/images/Test.jpg')"
+        style="background-image:url('/assets/frontend/images/test.jpg')"
     @else
         style="background-image:url('/assets/frontend/images/Book.jpg')"
     @endif
