@@ -269,4 +269,53 @@ class CourseController extends Controller
     
         return response()->json($response);
     }
+
+
+
+    public function update_schema(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'section_schema' => 'required',
+        ]);
+
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'notification' => 'Something Went Wrong',
+            ]);
+        }
+    
+        $id = $request->input('course_id');
+        $course = Course::find($id);
+    
+        if (!$course) {
+            return response()->json([
+                'status' => false,
+                'notification' => 'Course not found',
+            ]);
+        }
+    
+        $section = $request->input('section');
+        $course->{$section . '_section_schema'} = $request->input('section_schema');
+    
+        $course->save();
+
+        store_log($sentence = ucfirst($section) . ' Section Schema is Update Course Page by');
+    
+        $response = [
+            'status' => true,
+            'notification' => ucfirst($section) . ' Schema updated successfully!',
+        ];
+    
+        return response()->json($response);
+    }
+
+
+
+
+
+
+
+
+
 }

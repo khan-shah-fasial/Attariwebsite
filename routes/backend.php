@@ -292,6 +292,8 @@ Route::group(['prefix' => 'course'], function () {
     Route::post('/update/heading', [CourseController::class, 'update_heading'])->name('course.update_heading');
     Route::post('/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
     Route::get('/status/{id}/{status}', [CourseController::class, 'status'])->name('course.status');
+
+    Route::post('/update/schema', [CourseController::class, 'update_schema'])->name('course.update_schema');
 });
 
 //Batch

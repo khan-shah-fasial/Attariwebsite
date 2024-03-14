@@ -1,29 +1,83 @@
-<!---================================ SECTION heading =======================--->
-<section>
-    @php 
-        $heading = DB::table('courses')->where('id', $course->id)->value('testimonials_section_heading');
-    @endphp
-    <form id="updating_heading_form" action="{{ url(route('course.update_heading')) }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
-        <input type="hidden" class="form-control" name="section" value="testimonials">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-group mb-3">
-                    <label>Testimonials Section Title <span class="red">*</span></label>
-                    <input maxlength="255" type="text" class="form-control" name="heading" value="{{ $heading }}" required>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="form-group mb-3 text-end">
-                    <button type="submit" class="btn btn-block btn-primary">Update</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</section>
 
-<!---================================ SECTION heading =======================--->
+<div class="row">
+
+    <div class="col-sm-6">
+
+    <div class="col-md-12">
+        <h4 class="header-title"><b>Text Heading</b></h4>
+    </div>    
+
+    <!---================================ SECTION heading =======================--->
+    <section>
+        @php 
+            $heading = DB::table('courses')->where('id', $course->id)->value('testimonials_section_heading');
+        @endphp
+        <form id="updating_heading_form" action="{{ url(route('course.update_heading')) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
+            <input type="hidden" class="form-control" name="section" value="testimonials">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-3">
+                        <label>Testimonials Section Title <span class="red">*</span></label>
+                        <input maxlength="255" type="text" class="form-control" name="heading" value="{{ $heading }}" required>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group mb-3 text-end">
+                        <button type="submit" class="btn btn-block btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!---================================ SECTION heading =======================--->
+    </div>
+
+
+    <div class="col-sm-6" >
+    <!---================================ SECTION schema =======================--->
+
+    <div class="col-md-12">
+        <h4 class="header-title"><b>Text Schema</b></h4>
+    </div>
+
+    <section>
+        @php 
+            $section_schema = DB::table('courses')->where('id', $course->id)->value('testimonials_section_schema');
+        @endphp
+        <form id="updating_schema_form" action="{{ url(route('course.update_schema')) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
+            <input type="hidden" class="form-control" name="section" value="testimonials">
+    
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-3">
+                        <label>Testimonials Schema <span class="red">*</span></label>
+                    <textarea class="form-control" name="section_schema" id="section_schema" rows="5" required>
+                        @php echo html_entity_decode($section_schema) @endphp</textarea>
+                    </div> 
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group mb-3 text-end">
+                        <button type="submit" class="btn btn-block btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+    <!---================================ SECTION schema =======================--->
+    </div>
+
+</div>
+
+<hr>
+<br>
 
 <!----------======================Text Add Form =============================----------------->
 <section>
@@ -96,6 +150,7 @@
     $(document).ready(function() {
         initValidate('#add_text_form');
         initValidate('updating_heading_form');
+        initValidate('updating_schema_form');
         initSelect2('.select2');
         initTrumbowyg('.trumbowyg');
     });
@@ -106,6 +161,11 @@
     });
 
     $("#updating_heading_form").submit(function(e) {
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
+    });
+
+    $("#updating_schema_form").submit(function(e) {
         var form = $(this);
         ajaxSubmit(e, form, responseHandler);
     });

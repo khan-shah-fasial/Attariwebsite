@@ -31,6 +31,8 @@ class Course extends Model
         'testimonials_section_heading',
         'batch_section_heading',
         'faq_section_heading',
+        'testimonials_section_schema',
+        'video_section_schema',
         'status'
     ];
 }

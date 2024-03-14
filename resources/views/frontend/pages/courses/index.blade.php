@@ -15,6 +15,10 @@
 
     // Join the limited words back into a string
     $tem_desc = implode(' ', $limitedWords);
+
+    $meta_title = $cms->title;
+    $meta_description = $tem_desc;
+    $meta_url = url()->current();
 @endphp
 
 @section('page.description', $tem_desc)
@@ -466,7 +470,17 @@
 
                         </div>
                     </div>
+
+                    <!--------------------- video Review -------------------------------------->
+
+                    @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($detail->video_section_schema));
+                    @endphp
+
+                    <!--------------------- video Review -------------------------------------->
+
                 @endif
+
 
                 @if (!empty($text_review))
                     <div class="large-12 columns mt-4 ">
@@ -504,7 +518,18 @@
 
                         </div>
                     </div>
+
+                    <!--------------------- Text Review -------------------------------------->
+
+                    @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($detail->testimonials_section_schema));
+                    @endphp
+
+                    <!--------------------- Text Review -------------------------------------->
+
                 @endif
+
+
 
             </div>
         </section>
