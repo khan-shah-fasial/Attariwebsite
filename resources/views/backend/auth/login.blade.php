@@ -67,6 +67,7 @@
                             <select class="form-select required" name="contact" id="contact" required>
                                 <option value="">-- Select --</option>
                                 <option value="8433625599">Developer</option>
+                                <option value="8369965265">SEO</option>
                                 <option value="webdeveloper@nexgeno.in">webdeveloper@nexgeno.in</option>
                                 <option value="ms122592@gmail.com">ms122592@gmail.com</option>
                             </select> 
