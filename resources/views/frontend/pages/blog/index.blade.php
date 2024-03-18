@@ -90,7 +90,7 @@
                         <div class="post_box">
                             <div class="row align-items-center">
                                 <div class="col-md-3 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg " alt="" /></a>
+                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg" alt="" /></a>
                                 </div>
                                 <div class="col-md-9 text_box_post">
                                     <h6>
@@ -98,7 +98,8 @@
                                     </h6>
                                     <p><strong>Last Update:</strong> September 28, 2022</p>
                                     <p>
-                                       VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications…
+                                      
+VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications can help you advance in your IT career: 
                                     </p>
                                 </div>
                             </div>
@@ -109,7 +110,7 @@
                         <div class="post_box">
                             <div class="row align-items-center">
                                 <div class="col-md-3 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg " alt="" /></a>
+                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg" alt="" /></a>
                                 </div>
                                 <div class="col-md-9 text_box_post">
                                     <h6>
@@ -117,16 +118,16 @@
                                     </h6>
                                     <p><strong>Last Update:</strong> September 28, 2022</p>
                                     <p>
-                                       VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications…
+                                        
+VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications can help you advance in your IT career: 
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                </div>
                 </div>
             </div>
-        </div>
     </section>
 
 
