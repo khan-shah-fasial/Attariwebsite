@@ -52,6 +52,14 @@
 				<a class="nav-link @if( $section == 'faq') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'faq'])) }}">FAQ</a>
 			</li>
 
+			<li class="nav-item">
+				<a class="nav-link spl_active @if( $section == 'practice_test') active2  @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'practice_test'])) }}">Practice Test</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link spl_active @if( $section == 'book_guides') active2 @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'book_guides'])) }}">Book & Guides</a>
+			</li>
+
 		
 		</ul>
 
@@ -78,6 +86,10 @@
 		@include('backend.pages.course.section.project_covered.index')
 	@elseif($section && $section == 'certificate')
 		@include('backend.pages.course.section.certificate.index')
+	@elseif($section && $section == 'practice_test')
+		@include('backend.pages.course.section.practice_test.practice_test_index')
+	@elseif($section && $section == 'book_guides')
+		@include('backend.pages.course.section.book_guides.book_guides_index')
 	@else
 		no page
 	@endif

@@ -20,7 +20,7 @@
                         <h1 class="sm-aboutus">Learning</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                 <li class="breadcrumb-item"><a>»</a></li>
                                 <li class="breadcrumb-item"><a><b>Learning</b></a></li>
                             </ol>
@@ -33,88 +33,157 @@
     </section>
 
 
+    @php
+        $learning = DB::table('learnings')->where('status', 1)->get(['course_id','slug','page']);
+    @endphp
 
 
     <section class="services courses_learning">
         <div class="container">
+
+
             <div class="row">
                 <div class="col-12 text-center my-4">
                     <h1 class="services_headign">Virtualization & Cloud Computing</h1>
                 </div>
-                <div class="col-md-4 box_services">
-                    <img src="/assets/frontend/images/vmvare_coursimg.jpg" alt="" />
-                    <div class="text_box">
-                        <h5 class="text_services_heading">
-                            <a href=""> VMware vSphere 7 </a>
-                        </h5>
-                        <div class="course_button">
-                            <a href="{{ url(route('vmware-practice-test')) }}">Practice Test</a>
-                            <a href="{{ url(route('vmware-books-guides')) }}">Books &amp; Guides</a>
+
+                @php $filtered1 = $learning->where('course_id', 5); @endphp
+
+                @if(count($filtered1) > 0)
+                    <div class="col-md-4 box_services">
+                        <img src="/assets/frontend/images/vmvare_coursimg.jpg" alt="" />
+                        <div class="text_box">
+                            <h5 class="text_services_heading">
+                                <a href=""> VMware vSphere 7 </a>
+                            </h5>
+                            <div class="course_button">
+                                @php
+                                    $practice = $filtered1->where('page','practice');
+                                    $book = $filtered1->where('page','book');
+                                @endphp
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 box_services">
-                    <img src="/assets/frontend/images/azure_courseimg.jpg" alt="" />
-                    <div class="text_box">
-                        <h5 class="text_services_heading">
-                            <a href=""> AWS Cloud Solution Architect </a>
-                        </h5>
-                        <div class="course_button">
-                            <a href="{{ url(route('aws-practice-test')) }}">Practice Test</a>
-                            <a href="{{ url(route('aws-books-guides')) }}">Books &amp; Guides</a>
+                @endif
+
+                @php $filtered2 = $learning->where('course_id', 7); @endphp
+
+                @if(count($filtered2) > 0)
+                    <div class="col-md-4 box_services">
+                        <img src="/assets/frontend/images/azure_courseimg.jpg" alt="" />
+                        <div class="text_box">
+                            <h5 class="text_services_heading">
+                                <a href=""> AWS Cloud Solution Architect </a>
+                            </h5>
+                            <div class="course_button">
+                                @php
+                                    $practice = $filtered2->where('page','practice');
+                                    $book = $filtered2->where('page','book');
+                                @endphp
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 box_services">
-                    <img src="/assets/frontend/images/aws_courseimg.jpg" alt="" />
-                    <div class="text_box">
-                        <h5 class="text_services_heading">
-                            <a href="">AZURE Cloud Administrator</a>
-                        </h5>
-                        <div class="course_button">
-                            <a href="{{ url(route('azure-practice-test')) }}">Practice Test</a>
-                            <a href="{{ url(route('azure-books-guides')) }}">Books &amp; Guides</a>
+                @endif
+
+                @php $filtered3 = $learning->where('course_id', 8); @endphp
+
+                @if(count($filtered3) > 0)
+                    <div class="col-md-4 box_services">
+                        <img src="/assets/frontend/images/aws_courseimg.jpg" alt="" />
+                        <div class="text_box">
+                            <h5 class="text_services_heading">
+                                <a href="">AZURE Cloud Administrator</a>
+                            </h5>
+                            <div class="course_button">
+                                @php
+                                    $practice = $filtered3->where('page','practice');
+                                    $book = $filtered3->where('page','book');
+                                @endphp
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
+
             </div>
+
+
         </div>
     </section>
 
+    @php $filtered4 = $learning->whereIn('course_id', ['9','10']); @endphp
     <!----------------Server & Networking------------------  -->
-    <section class="services courses_learning">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center my-4">
-                    <h1 class="services_headign">Server & Networking</h1>
-                </div>
-                <div class="col-md-4 box_services">
-                    <img src="/assets/frontend/images/vmvare_coursimg.jpg" alt="" />
-                    <div class="text_box">
-                        <h5 class="text_services_heading">
-                            <a href=""> Microsoft Windows Server MCSE </a>
-                        </h5>
-                        <div class="course_button">
-                            <a href="{{ url(route('mcse-practice-test')) }}">Practice Test</a>
-                            <a href="{{ url(route('mcse-books-guides')) }}">Books &amp; Guides</a>
-                        </div>
+
+    @if(count($filtered4) > 0)
+        <section class="services courses_learning">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center my-4">
+                        <h1 class="services_headign">Server & Networking</h1>
                     </div>
-                </div>
-                <div class="col-md-4 box_services">
-                    <img src="/assets/frontend/images/azure_courseimg.jpg" alt="" />
-                    <div class="text_box">
-                        <h5 class="text_services_heading">
-                            <a href=""> Cisco Networking CCNA </a>
-                        </h5>
-                        <div class="course_button">
-                            <a href="{{ url(route('ccna-practice-test')) }}">Practice Test</a>
-                            <a href="{{ url(route('ccna-books-guides')) }}">Books &amp; Guides</a>
+
+                    @php $filtered5 = $learning->where('course_id', 9); @endphp
+
+                    @if(count($filtered5) > 0)
+                        <div class="col-md-4 box_services">
+                            <img src="/assets/frontend/images/vmvare_coursimg.jpg" alt="" />
+                            <div class="text_box">
+                                <h5 class="text_services_heading">
+                                    <a href=""> Microsoft Windows Server MCSE </a>
+                                </h5>
+                                <div class="course_button">
+                                @php
+                                    $practice = $filtered5->where('page','practice');
+                                    $book = $filtered5->where('page','book');
+                                @endphp
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endif
+
+                    @php $filtered6 = $learning->where('course_id', 10); @endphp
+
+                    @if(count($filtered6) > 0)
+                        <div class="col-md-4 box_services">
+                            <img src="/assets/frontend/images/azure_courseimg.jpg" alt="" />
+                            <div class="text_box">
+                                <h5 class="text_services_heading">
+                                    <a href=""> Cisco Networking CCNA </a>
+                                </h5>
+                                <div class="course_button">
+                                @php
+                                    $practice = $filtered6->where('page','practice');
+                                    $book = $filtered6->where('page','book');
+                                @endphp
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
+
+                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
 
     <!-------------=============== Learning Page end =============== -------------------->

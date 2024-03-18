@@ -43,6 +43,8 @@ use App\Http\Controllers\backend\CmsController;
 use App\Http\Controllers\backend\NewsletterController;
 use App\Http\Controllers\backend\LogController;
 
+use App\Http\Controllers\backend\LearningsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +61,11 @@ Route::get('/', function () { return redirect(route('backend.login')); });
 Route::get('/login', [AuthenticateController::class, 'index'])->name('backend.login');
 Route::post('/login', [AuthenticateController::class, 'login'])->name('backend.login');
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name('backend.logout');
+
+Route::get('/verify-otp', [AuthenticateController::class, 'verify_otp_form'])->name('verify-otp');
+Route::post('/verify-otp', [AuthenticateController::class, 'verifyOtp'])->name('verify-otp');
+
+Route::post('/resend-otp', [AuthenticateController::class, 'resendOtp'])->name('resend-otp');
 
 //dashborad
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('backend.dashboard');
@@ -285,6 +292,8 @@ Route::group(['prefix' => 'course'], function () {
     Route::post('/update/heading', [CourseController::class, 'update_heading'])->name('course.update_heading');
     Route::post('/delete/{id}', [CourseController::class, 'delete'])->name('course.delete');
     Route::get('/status/{id}/{status}', [CourseController::class, 'status'])->name('course.status');
+
+    Route::post('/update/schema', [CourseController::class, 'update_schema'])->name('course.update_schema');
 });
 
 //Batch
@@ -375,4 +384,10 @@ Route::group(['prefix' => 'cms'], function () {
 //logs
 Route::group(['prefix' => 'logs'], function () {
     Route::get('/index', [LogController::class, 'index'])->name('log.index');
+});
+
+//learnings
+Route::group(['prefix' => 'learning'], function () {
+    Route::post('/create', [LearningsController::class, 'create'])->name('learning.create');
+    Route::post('/update', [LearningsController::class, 'update'])->name('learning.update');
 });

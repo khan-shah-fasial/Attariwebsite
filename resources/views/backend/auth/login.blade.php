@@ -53,13 +53,28 @@
                         @csrf
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email">
+                            <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email" required>
                         </div>
                         <div class="mb-3">
                             <!--<a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>-->
                             <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
+                            <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password" required>
                         </div>
+
+
+                        <div class="mb-3">
+                            <label for="contact" class="form-label">Request OTP To</label>
+                            <select class="form-select required" name="contact" id="contact" required>
+                                <option value="">-- Select --</option>
+                                <option value="8433625599">Developer</option>
+                                <option value="8369965265">SEO</option>
+                                <option value="webdeveloper@nexgeno.in">webdeveloper@nexgeno.in</option>
+                                <option value="ms122592@gmail.com">ms122592@gmail.com</option>
+                            </select> 
+                        </div>
+
+                        <input type="hidden" class="form-check-input" name="method" id="method">
+
                         <div class="mb-3">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="checkbox-signin">
@@ -125,5 +140,20 @@
 
     <!-- Include Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('contact').addEventListener('change', function() {
+            var selectedValue = this.value;
+            var methodInput = document.getElementById('method');
+    
+            // Check if the selected value contains '@'
+            if (selectedValue.includes('@')) {
+                methodInput.value = 'email';
+            } else {
+                methodInput.value = 'phone';
+            }
+        });
+    </script>
+
 </body>
 </html>

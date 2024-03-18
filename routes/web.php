@@ -91,21 +91,9 @@ Route::get('/{slug}', [IndexController::class, 'course_detail'])
 
 Route::get('/photo-gallery', [IndexController::class, 'photo_gallery'])->name('photo-gallery');
 
-Route::get('/vmware-practice-test', [IndexController::class, 'vmware_practice_test'])->name('vmware-practice-test');
-Route::get('/vmware-books-guides', [IndexController::class, 'vmware_books_guides'])->name('vmware-books-guides');
-
-Route::get('/aws-practice-test', [IndexController::class, 'aws_practice_test'])->name('aws-practice-test');
-Route::get('/aws-books-guides', [IndexController::class, 'aws_books_guides'])->name('aws-books-guides');
-
-Route::get('/azure-practice-test', [IndexController::class, 'azure_practice_test'])->name('azure-practice-test');
-Route::get('/azure-books-guides', [IndexController::class, 'azure_books_guides'])->name('azure-books-guides');
 
 
-Route::get('/mcse-practice-test', [IndexController::class, 'mcse_practice_test'])->name('mcse-practice-test');
-Route::get('/mcse-books-guides', [IndexController::class, 'mcse_books_guides'])->name('mcse-books-guides');
-
-Route::get('/ccna-practice-test', [IndexController::class, 'ccna_practice_test'])->name('ccna-practice-test');
-Route::get('/ccna-books-guides', [IndexController::class, 'ccna_books_guides'])->name('ccna-books-guides');
+Route::get('learning/{slug}', [IndexController::class, 'learning_detail'])->name('learning.detail');
 
 
 Route::get('/clear-cache', function () {
@@ -138,4 +126,11 @@ Route::get('/send-test-email', function () {
     });
 
     return 'Test email sent!';
+});
+
+Route::get('/test-otp', function () {
+    $sessionData = Session()->all();
+
+    // Print session data
+    dd($sessionData);
 });

@@ -6,7 +6,7 @@
         ->select('c1.course_id', 'c1.thumbnail', 'c1.name', 'c1.description','c1.url','c1.type', 'c1.created_at as latest_created_at')
         ->join(DB::raw('(SELECT course_id, MAX(created_at) as max_created_at
                         FROM text_reviews
-                        WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\'
+                        WHERE course_id IN (5, 7, 8, 9, 10) AND status = \'1\' AND type IN (\'google\', \'google_mcse\')
                         GROUP BY course_id) as c2'), function ($join) {
                             $join->on('c1.course_id', '=', 'c2.course_id')
                                 ->on('c1.created_at', '=', 'c2.max_created_at');
