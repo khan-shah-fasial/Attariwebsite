@@ -1600,6 +1600,8 @@ p .home_breadcrumb a:hover {
 
 .text_box_post h6 a {
   color: #333;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .boxtop_box i {
@@ -1807,12 +1809,30 @@ p .home_breadcrumb a:hover {
 
 
 .post_box .img img {
-  width: 250px;
-  height: 130px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.text_box_post {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.boxtop_box a {
+  text-decoration: none;
+}
+
+ol.breadcrumb.mb-0 a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  padding-right: 6px;
 }
 
 .post_box .text_box_post p {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .key_features {
@@ -2916,6 +2936,10 @@ button.owl-dot.active span {
   color: #fff;
   font-size: 13px;
   text-decoration: none;
+}
+
+.breadcrumb-item+.breadcrumb-item {
+  padding-left: 0 !important;
 }
 
 .coursepg_enquiryform {

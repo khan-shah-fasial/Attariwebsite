@@ -84,24 +84,21 @@
     <section class="recent_post py-4 bggray1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <h3 class="py-2">Recent Post</h3>
                     <div class="col-md-12 mb-4">
-                        <div class="post_box pt-5 pb-5 ps-5 pe-5">
-                            <div class="row">
-                                <div class="col-md-4 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/locks-neww-2.webp" alt="" /></a>
+                        <div class="post_box">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 img">
+                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg " alt="" /></a>
                                 </div>
-                                <div class="col-md-8 text_box_post">
+                                <div class="col-md-9 text_box_post">
                                     <h6>
-                                        <a href="blog-details.php">Azure Locks Protects Azure Resources From Accidental
-                                            Deletion</a>
+                                        <a href="blog-details.php">10 Ways on How VMware Certifications Can Boost Your IT Career</a>
                                     </h6>
                                     <p><strong>Last Update:</strong> September 28, 2022</p>
                                     <p>
-                                        A resource lock on Azure cloud resources enables you to
-                                        restrict changes to production environment when modifying or
-                                        deleting a…
+                                       VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications…
                                     </p>
                                 </div>
                             </div>
@@ -109,280 +106,22 @@
                     </div>
 
                     <div class="col-md-12 mb-4">
-                        <div class="post_box pt-5 pb-5 ps-5 pe-5">
-                            <div class="row">
-                                <div class="col-md-4 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/locks-neww-2.webp" alt="" /></a>
+                        <div class="post_box">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 img">
+                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg " alt="" /></a>
                                 </div>
-                                <div class="col-md-8 text_box_post">
+                                <div class="col-md-9 text_box_post">
                                     <h6>
-                                        <a href="blog-details.php">Azure Locks Protects Azure Resources From Accidental
-                                            Deletion</a>
+                                        <a href="blog-details.php">10 Ways on How VMware Certifications Can Boost Your IT Career</a>
                                     </h6>
                                     <p><strong>Last Update:</strong> September 28, 2022</p>
                                     <p>
-                                        A resource lock on Azure cloud resources enables you to
-                                        restrict changes to production environment when modifying or
-                                        deleting a…
+                                       VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications…
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-12 mb-4">
-                        <div class="post_box pt-5 pb-5 ps-5 pe-5">
-                            <div class="row">
-                                <div class="col-md-4 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/locks-neww-2.webp" alt="" /></a>
-                                </div>
-                                <div class="col-md-8 text_box_post">
-                                    <h6>
-                                        <a href="blog-details.php">Azure Locks Protects Azure Resources From Accidental
-                                            Deletion</a>
-                                    </h6>
-                                    <p><strong>Last Update:</strong> September 28, 2022</p>
-                                    <p>
-                                        A resource lock on Azure cloud resources enables you to
-                                        restrict changes to production environment when modifying or
-                                        deleting a…
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 mb-4">
-                        <div class="post_box pt-5 pb-5 ps-5 pe-5">
-                            <div class="row">
-                                <div class="col-md-4 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/locks-neww-2.webp" alt="" /></a>
-                                </div>
-                                <div class="col-md-8 text_box_post">
-                                    <h6>
-                                        <a href="blog-details.php">Azure Locks Protects Azure Resources From Accidental
-                                            Deletion</a>
-                                    </h6>
-                                    <p><strong>Last Update:</strong> September 28, 2022</p>
-                                    <p>
-                                        A resource lock on Azure cloud resources enables you to
-                                        restrict changes to production environment when modifying or
-                                        deleting a…
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 mb-4">
-                        <div class="post_box pt-5 pb-5 ps-5 pe-5">
-                            <div class="row">
-                                <div class="col-md-4 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/locks-neww-2.webp" alt="" /></a>
-                                </div>
-                                <div class="col-md-8 text_box_post">
-                                    <h6>
-                                        <a href="blog-details.php">Azure Locks Protects Azure Resources From Accidental
-                                            Deletion</a>
-                                    </h6>
-                                    <p><strong>Last Update:</strong> September 28, 2022</p>
-                                    <p>
-                                        A resource lock on Azure cloud resources enables you to
-                                        restrict changes to production environment when modifying or
-                                        deleting a…
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 mb-4">
-                        <div class="post_box pt-5 pb-5 ps-5 pe-5">
-                            <div class="row">
-                                <div class="col-md-4 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/locks-neww-2.webp" alt="" /></a>
-                                </div>
-                                <div class="col-md-8 text_box_post">
-                                    <h6>
-                                        <a href="blog-details.php">Azure Locks Protects Azure Resources From Accidental
-                                            Deletion</a>
-                                    </h6>
-                                    <p><strong>Last Update:</strong> September 28, 2022</p>
-                                    <p>
-                                        A resource lock on Azure cloud resources enables you to
-                                        restrict changes to production environment when modifying or
-                                        deleting a…
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4">
-                    <div class="post_box main_blog_box">
-                        <input type="text" name="search" class="form-control" placeholder="search" />
-                    </div>
-
-
-                    <div class="blog_courses_box post_box main_blog_box">
-                        <h4>Courses We Offer</h4>
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/vmware-training-certification-online/" class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/vmware-vsphere-e1627535142798.jpg">
-                                <div class="blog_content_box">
-                                    <p>VMware</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/aws-certification-training-online/" class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/aws.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>AWS</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/microsoft-azure-certification-training-online/"
-                                class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/azure.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>Microsoft Azure</p>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/mcsa-mcse-windows-server-training-online/"
-                                class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/microsft.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>MCSE</p>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/ccna-training-certification-online/" class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/ccna.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>CCNA</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div class="blog_courses_box post_box main_blog_box recent_posts">
-                        <h4>Recent Posts</h4>
-                        <div class="main_blog_courses">
-                            <div class="post_image_box widths40">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
-                                </a>
-                            </div>
-                            <div class="blog_content_box widths60">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
-                                </a>
-                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
-                            </div>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <div class="post_image_box widths40">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
-                                </a>
-                            </div>
-                            <div class="blog_content_box widths60">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
-                                </a>
-                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
-                            </div>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <div class="post_image_box widths40">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
-                                </a>
-                            </div>
-                            <div class="blog_content_box widths60">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
-                                </a>
-                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="blog_form">
-                        <h5>Enquire Now</h5>
-                        <form>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control" placeholder="Enter Name"
-                                    required="">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control" placeholder="Enter Email"
-                                    required="">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control" placeholder="Your Country"
-                                    required="">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control"
-                                    placeholder="Mobile Number with Country code" required="">
-                            </div>
-
-                            <div class="form-group">
-                                <select class="form-select form-control" aria-label="Default select example">
-                                    <option selected="">-Select Course-</option>
-                                    <option value="vmware">VMware</option>
-                                    <option value="aws">AWS Cloud</option>
-                                    <option value="azure">Azure Cloud</option>
-                                    <option value="mcse">MCSE</option>
-                                    <option value="ccna">CCNA</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="3" placeholder="Message"></textarea>
-                            </div>
-
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-primary">Send</button>
-                            </div>
-                        </form>
                     </div>
 
                 </div>
