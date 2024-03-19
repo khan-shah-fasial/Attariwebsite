@@ -81,7 +81,7 @@
         </div>
     </section>
     <!-----------------------------Recent Posts------------------------ -->
-    <section class="recent_post py-4 bggray1">
+    <section class="recent_post py-5 bggray1">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -96,11 +96,12 @@
                                     <h6>
                                         <a href="blog-details.php">10 Ways on How VMware Certifications Can Boost Your IT Career</a>
                                     </h6>
-                                    <p><strong>Last Update:</strong> September 28, 2022</p>
+                                    
                                     <p>
                                       
 VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications can help you advance in your IT career: 
                                     </p>
+                                    <p class="pt-3"><strong>Last Update:</strong> September 28, 2022</p>
                                 </div>
                             </div>
                         </div>
@@ -116,11 +117,12 @@ VMware certifications can be highly beneficial for boosting your IT career in se
                                     <h6>
                                         <a href="blog-details.php">10 Ways on How VMware Certifications Can Boost Your IT Career</a>
                                     </h6>
-                                    <p><strong>Last Update:</strong> September 28, 2022</p>
+                                   
                                     <p>
                                         
 VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications can help you advance in your IT career: 
                                     </p>
+                                     <p class="pt-3"><strong>Last Update:</strong> September 28, 2022</p>
                                 </div>
                             </div>
                         </div>

@@ -8,9 +8,11 @@ use App\Http\Controllers\backend\FaqController;
 use App\Http\Controllers\backend\TestimonialController;
 use App\Http\Controllers\backend\TeamController;
 use App\Http\Controllers\backend\AwardController;
+*/
 use App\Http\Controllers\backend\BlogCategoryController;
 use App\Http\Controllers\backend\BlogCommentController;
 use App\Http\Controllers\backend\BlogController;
+/*
 use App\Http\Controllers\backend\NewsCategoryController;
 use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\PracticeAreaController;
@@ -110,7 +112,7 @@ Route::group(['prefix' => 'award'], function () {
 });
 */
 
-/*
+
 //blogcategory
 Route::group(['prefix' => 'blogs/category'], function () {
     Route::get('/index', [BlogCategoryController::class, 'index'])->name('blogcategory.index');
@@ -140,7 +142,7 @@ Route::group(['prefix' => 'blogs'], function () {
     Route::post('/delete/{id}', [BlogController::class, 'delete'])->name('blogs.delete');
     Route::get('/status/{id}/{status}', [BlogController::class, 'status'])->name('blogs.status');
 });
-*/
+
 
 //Newscategory
 /*
