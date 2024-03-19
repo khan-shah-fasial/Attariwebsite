@@ -1,8 +1,15 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@php
+    $meta_title = '';
+    $meta_description = '';
+    $meta_url = url()->current();
+@endphp
 
-@section('page.description', ' ')
+
+@section('page.title', $meta_title)
+
+@section('page.description', $meta_description)
 
 @section('page.type', 'website')
 
@@ -84,6 +91,14 @@
                     $batch = DB::table('batches')->where('status', 1)->where('course_id', $learning->course_id)->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_ccna_pointer = json_decode($batch->oc_pointer_list);
                     $batch_ccna_detail = json_decode($batch->batch_detail, true);
+
+                    $batch_vm_dates = array_column($batch_ccna_detail, 'date');
+
+                    $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
+                    $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
+
+                    $course_schema = DB::table('courses')->where('status', 1)->where('id',$learning->course_id)->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+
                 @endphp
 
                 @if(!empty($batch))
@@ -107,7 +122,7 @@
                                             </tr>
                                             @foreach ($batch_ccna_detail as $row)
                                                 <tr class="pdd_19">
-                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>{{ formatDate($row['date']) }}</div></td>
                                                     <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                     <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
@@ -156,6 +171,18 @@
 
                         </div>
                     </div>
+
+        <!-----------------================== Batch Schema =========================------------------------------>
+
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                                        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
+                                        html_entity_decode($course_schema->batch_section_schema));
+                    @endphp
+    
+        <!-----------------================== Batch Schema =========================------------------------------>
+
+
                 @endif
 
 
@@ -172,40 +199,51 @@
             @php
                 $video_review = DB::table('video_reviews')->where('status', 1)->where('course_id', $learning->course_id)->get();
             @endphp
+            
+            @if(count($video_review) > 0)
+                <div class="large-12 columns">
+                    <div class="owl-carousel owl-theme video_testiminials">
 
-            <div class="large-12 columns">
-                <div class="owl-carousel owl-theme video_testiminials">
 
+                        @foreach ($video_review as $row)
+                            <div class="item">
+                                <div class="testimonial_video">
 
-                    @foreach ($video_review as $row)
-                        <div class="item">
-                            <div class="testimonial_video">
+                                    @php
+                                        // Assuming $row->url contains the YouTube URL
+                                        if (strpos($row->url, 'embed/') === false) {
+                                            $videoID = basename($row->url);
+                                            $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
+                                        } else {
+                                            $youtube_url = $row->url; // URL already in the correct format
+                                        }
+                                    @endphp
 
-                                @php
-                                    // Assuming $row->url contains the YouTube URL
-                                    if (strpos($row->url, 'embed/') === false) {
-                                        $videoID = basename($row->url);
-                                        $youtube_url = 'https://youtu.be/embed/' . $videoID; // Corrected the concatenation
-                                    } else {
-                                        $youtube_url = $row->url; // URL already in the correct format
-                                    }
-                                @endphp
-
-                                <a href="{{ $youtube_url }}" data-fancybox="gallery">
-                                    <div class="pulse-button"></div>
-                                    {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
-                                        class="img-fluid d-block w-100 lazyload" alt=""> --}}
-                                    <img data-src="{{ asset('storage/' . $row->image) }}"
-                                        class="img-fluid d-block w-100 lazyload" alt="">
-                                </a>
+                                    <a href="{{ $youtube_url }}" data-fancybox="gallery">
+                                        <div class="pulse-button"></div>
+                                        {{--<img data-src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="img-fluid d-block w-100 lazyload" alt=""> --}}
+                                        <img data-src="{{ asset('storage/' . $row->image) }}"
+                                            class="img-fluid d-block w-100 lazyload" alt="">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
 
 
 
+                    </div>
                 </div>
-            </div>
+
+            <!--------------------- video Review schema -------------------------------------->
+
+                @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema->video_section_schema));
+                @endphp
+
+            <!--------------------- video Review schema -------------------------------------->
+
+            @endif
 
 
 
@@ -254,6 +292,16 @@
 
                     </div>
                 </div>
+
+    <!--------------------- Text Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema->testimonials_section_schema));
+        @endphp
+
+    <!--------------------- Text Review -------------------------------------->
+
+
             @endif
 
         </div>
