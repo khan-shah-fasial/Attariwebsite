@@ -91,7 +91,7 @@
 
                         @endif
                         
-                        @if(in_array(auth()->user()->role_id, [1, 2, 3]))
+                        @if(in_array(auth()->user()->role_id, [1, 2]))
 
                         <li class="side-nav-item">
                             <a href="{{ route('cms.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -184,39 +184,44 @@
                         </li>
                         --}}
 
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail') }}" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                                <i class="ri-article-line"></i>
-                                <span> Page </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarEmail">
-                                <ul class="side-nav-second-level">
-                                    {{--
-                                    <li>
-                                        <a href="{{ route('contactpage.index') }}">Contact Page</a>
-                                    </li> --}}
+                        @if(in_array(auth()->user()->role_id, [1, 2]))
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="{{ url('#sidebarEmail') }}" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                                    <i class="ri-article-line"></i>
+                                    <span> Page </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="sidebarEmail">
+                                    <ul class="side-nav-second-level">
+                                        {{--
+                                        <li>
+                                            <a href="{{ route('contactpage.index') }}">Contact Page</a>
+                                        </li> --}}
 
-                                    <li>
-                                        <a href="{{ route('setting.privacy') }}">Privacy Policy Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('setting.terms') }}">Terms & Conditions Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('setting.refund_policy') }}">Refund Policy</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="side-nav-item">
-                            <a href="{{ route('log.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                                <i class="ri-file-list-3-line"></i> 
-                                <span> Logs </span>
-                            </a>
-                        </li>
+                                        <li>
+                                            <a href="{{ route('setting.privacy') }}">Privacy Policy Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setting.terms') }}">Terms & Conditions Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('setting.refund_policy') }}">Refund Policy</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                        @endif
+                        
+                        
+                        @if(auth()->user()->role_id == 1)
+                            <li class="side-nav-item">
+                                <a href="{{ route('log.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                    <i class="ri-file-list-3-line"></i> 
+                                    <span> Logs </span>
+                                </a>
+                            </li>
+                        @endif
                     
                         {{--
                         <li class="side-nav-item">

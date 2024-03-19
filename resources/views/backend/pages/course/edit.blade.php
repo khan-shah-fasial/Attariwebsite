@@ -12,34 +12,53 @@
 
 		<ul class="nav nav-tabs admin_nav">
 
-			<li class="nav-item">
-			  <a class="nav-link @if( $section == 'course') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'course'])) }}">Key Feature & Overview</a>
-			</li>
+			@if(in_array(auth()->user()->role_id, [1, 2, 3]))
+				<li class="nav-item">
+				<a class="nav-link @if( $section == 'course') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'course'])) }}">Key Feature & Overview</a>
+				</li>
+			@endif
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'syllabus') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'syllabus'])) }}">Course Content</a>
-			</li>
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'project') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'project'])) }}">Project Covered</a>
-			</li>
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'syllabus') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'syllabus'])) }}">Course Content</a>
+				</li>
+			@endif
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'certificate') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'certificate'])) }}">Certificate</a>
-			</li>
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'text') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'text'])) }}">Text Reviews</a>
-			</li>
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'project') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'project'])) }}">Project Covered</a>
+				</li>
+			@endif
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'video') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'video'])) }}">Video Reviews</a>
-			</li>
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'batch') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'batch'])) }}">Batch Schedule</a>
-			</li>
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'certificate') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'certificate'])) }}">Certificate</a>
+				</li>
+			@endif
 
+
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'text') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'text'])) }}">Text Reviews</a>
+				</li>
+			@endif
+
+
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'video') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'video'])) }}">Video Reviews</a>
+				</li>
+			@endif
+
+
+			@if(in_array(auth()->user()->role_id, [1, 2, 3]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'batch') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'batch'])) }}">Batch Schedule</a>
+				</li>
+			@endif
 
 
 			{{--
@@ -47,18 +66,25 @@
 				<a class="nav-link @if( $section == 'images') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'images'])) }}">Images Reviews</a>
 			</li> --}}
 
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link @if( $section == 'faq') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'faq'])) }}">FAQ</a>
+				</li>
+			@endif
 
-			<li class="nav-item">
-				<a class="nav-link @if( $section == 'faq') active @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'faq'])) }}">FAQ</a>
-			</li>
 
-			<li class="nav-item">
-				<a class="nav-link spl_active @if( $section == 'practice_test') active2  @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'practice_test'])) }}">Practice Test</a>
-			</li>
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link spl_active @if( $section == 'practice_test') active2  @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'practice_test'])) }}">Practice Test</a>
+				</li>
+			@endif
 
-			<li class="nav-item">
-				<a class="nav-link spl_active @if( $section == 'book_guides') active2 @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'book_guides'])) }}">Book & Guides</a>
-			</li>
+
+			@if(in_array(auth()->user()->role_id, [1, 2]))
+				<li class="nav-item">
+					<a class="nav-link spl_active @if( $section == 'book_guides') active2 @endif" aria-current="page" href="{{ url(route('course.edit',['id' => $course->id, 'section' => 'book_guides'])) }}">Book & Guides</a>
+				</li>
+			@endif
 
 		
 		</ul>

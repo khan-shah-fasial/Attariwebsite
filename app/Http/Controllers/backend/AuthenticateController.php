@@ -87,7 +87,12 @@ class AuthenticateController extends Controller
         }
 
         if ($request->otp == $otp) {
-            return redirect()->route('backend.dashboard');
+            if(auth()->user()->role_id == 1){
+                return redirect()->route('backend.dashboard');
+            } else {
+                return redirect()->route('course.index');
+            }
+
         } else {
             return back()->withInput()->withErrors(['otp' => 'Invalid OTP']);
         }
