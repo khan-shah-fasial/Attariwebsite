@@ -123,8 +123,8 @@
                                                         <div class="row">
 
                                                             <div class="col col-md-3">
-                                                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here..." 
-                                                                value="{{ $row['date'] }}" required>
+                                                                <input type="date" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here..." 
+                                                                value="{{ date('Y-m-d', strtotime($row['date'])) }}" required>
                                                             </div>
 
                                                             <div class="col col-md-3">
@@ -153,7 +153,7 @@
                                                         <div class="row">
 
                                                             <div class="col col-md-3">
-                                                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here..." required>
+                                                                <input type="date" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here..." required>
                                                             </div>
 
                                                             <div class="col col-md-3">
@@ -290,12 +290,18 @@
 
         $(document).ready(function() {
             initValidate('#edit_batch_form');
-            initValidate('updating_heading_form');
+            initValidate('#updating_batch_schema_form');
+            initValidate('#updating_heading_form');
             initSelect2('.select2');
             initTrumbowyg('.trumbowyg');
         });
 
         $("#edit_batch_form").submit(function(e) {
+            var form = $(this);
+            ajaxSubmit(e, form, responseHandler);
+        });
+
+        $("#updating_batch_schema_form").submit(function(e) {
             var form = $(this);
             ajaxSubmit(e, form, responseHandler);
         });
@@ -357,7 +363,7 @@
                         <div class="row">
 
                             <div class="col col-md-3">
-                                <input type="text" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here...">
+                                <input type="date" style="margin-bottom: 5px;" class="form-control" name="batch_detail_date[]" placeholder="Enter Date here...">
                             </div>
 
                             <div class="col col-md-3">

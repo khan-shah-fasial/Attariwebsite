@@ -1,9 +1,15 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@php
+    $meta_title = '';
+    $meta_description = '';
+    $meta_url = url()->current();
+@endphp
 
-@section('page.description',
-    ' ')
+
+@section('page.title', $meta_title)
+
+@section('page.description',$meta_description)
 
 @section('page.type', 'website')
 
@@ -44,6 +50,8 @@
 
                 @php
                     $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
+
+                    $course_schema_vm = DB::table('courses')->where('status', 1)->where('id','5')->get(['testimonials_section_schema'])->first();
                 @endphp
 
                 @if(!empty($text_vm_review))
@@ -75,6 +83,16 @@
                             </div>
                         </div>
                     @endforeach
+
+        <!--------------------- Text vm Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_vm->testimonials_section_schema));
+        @endphp
+
+        <!--------------------- Text vm Review -------------------------------------->
+
+
                 @endif
 
                 </div>
@@ -112,6 +130,8 @@
 
                 @php
                     $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type','google')->get();
+
+                    $course_schema_aws = DB::table('courses')->where('status', 1)->where('id','7')->get(['testimonials_section_schema'])->first();
                 @endphp
 
                 @if(!empty($text_aws_review))
@@ -143,6 +163,16 @@
                             </div>
                         </div>
                     @endforeach
+
+    <!--------------------- Text aws Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_aws->testimonials_section_schema));
+        @endphp
+
+    <!--------------------- Text aws Review -------------------------------------->
+
+
                 @endif
 
                 </div>
@@ -186,7 +216,9 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
-                    $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
+                    $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type','google')->get();
+
+                    $course_schema_azure = DB::table('courses')->where('status', 1)->where('id','8')->get(['testimonials_section_schema'])->first();
                 @endphp
 
                 @if(!empty($text_azure_review))
@@ -218,6 +250,17 @@
                             </div>
                         </div>
                     @endforeach
+
+<!--------------------- Text azure Review -------------------------------------->
+
+    @php 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_azure->testimonials_section_schema));
+    @endphp
+
+<!--------------------- Text azure Review -------------------------------------->
+
+
+
                 @endif
 
                 </div>
@@ -256,6 +299,8 @@
 
                 @php
                     $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type','google')->get();
+
+                    $course_schema_mcse = DB::table('courses')->where('status', 1)->where('id','9')->get(['testimonials_section_schema'])->first();
                 @endphp
 
                 @if(!empty($text_mcse_review))
@@ -287,6 +332,16 @@
                             </div>
                         </div>
                     @endforeach
+
+<!--------------------- Text mcse Review -------------------------------------->
+
+    @php 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_mcse->testimonials_section_schema));
+    @endphp
+
+<!--------------------- Text mcse Review -------------------------------------->
+
+
                 @endif
 
                 </div>
@@ -322,7 +377,9 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                 @php
-                    $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
+                    $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->where('type','google')->get();
+
+                    $course_schema_ccna = DB::table('courses')->where('status', 1)->where('id','10')->get(['testimonials_section_schema'])->first();
                 @endphp
 
                 @if(!empty($text_ccna_review))
@@ -354,6 +411,16 @@
                             </div>
                         </div>
                     @endforeach
+                    
+<!--------------------- Text ccna Review -------------------------------------->
+
+    @php 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_ccna->testimonials_section_schema));
+    @endphp
+
+<!--------------------- Text ccna Review -------------------------------------->
+
+
                 @endif
 
                 </div>

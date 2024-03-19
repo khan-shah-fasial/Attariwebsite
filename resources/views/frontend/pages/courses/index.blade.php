@@ -235,7 +235,9 @@
                 </div>
             </div>
         </section>
-        <!--overviews------------------------------->
+
+        <!---------============== overviews ====================----------------------->
+
         <section id="overviews" class="page-section overview py-5">
             <div class="container">
                 <div class="row">
@@ -292,7 +294,7 @@
 
 
 
-        <!--syllabas section -->
+    <!---------===================== syllabas section ==================-------------------------------->
 
 
         <section id="syllabuse" class="page-section syllabus_section gradiant_bg pt-5 pb-5">
@@ -339,6 +341,42 @@
 
                     </div>
 
+            <!----=============================== Syllabus Schema ==============------------------------------->
+
+        @php
+            $s = 1;    
+        @endphp
+        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "itemListElement": [
+                        @foreach ($syllabus as $row) @if($s <= 5)
+                            {
+                                "@type": "ListItem",
+                                "position": {{ $s }},
+                                "item": {
+                                    "@type": "Course",
+                                    "url":"{{ $meta_url }}#CourseContent",
+                                    "name": "Module {{ $s }}:- @php echo ReplaceKeyword($row->title, $cms->replace_keyword) @endphp",
+                                    "description": "@php echo schema_ReplaceKeyword($row->description, $cms->replace_keyword) @endphp",
+                                    "provider": {
+                                        "@type": "Organization",
+                                        "name": "Attari Classes",
+                                        "sameAs": "https://attariclasses.in/"
+                                    }
+                                }
+                            },
+                            @endif @php $s++ @endphp @endforeach
+                ]
+            }
+        </script>
+
+
+
+            <!----=============================== Syllabus Schema ==============------------------------------->  
+
 
                     <div class="col-md-3 width30 position_sticky">
                         <div class="bookdemofreeform_course gray_bgg1 margin-top55">
@@ -357,7 +395,7 @@
             </div>
         </section>
 
-
+    <!---------===================== syllabas section ==================-------------------------------->
 
         <!--Projects Covered section -->
         @if (!empty($project_covered))
@@ -576,7 +614,16 @@
                                         @endforeach
                                     </ul>
                                     @php
+
                                         $batch_detail = json_decode($batch->batch_detail, true);
+                                        $batch_dates = array_column($batch_detail, 'date');
+
+                                        //sort($batch_dates);
+
+                                        // Get the start and end dates
+                                        $batch_start_date = reset($batch_dates); // Get the first date
+                                        $batch_start_date2 = end($batch_dates); // Get the last date
+
                                     @endphp
 
                                     @if (!empty($batch_detail))
@@ -589,7 +636,7 @@
                                                 </tr>
                                                 @foreach ($batch_detail as $row)
                                                     <tr class="pdd_19">
-                                                        <td><div class="">@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                        <td><div class="">{{ formatDate($row['date']) }}</div></td>
                                                         <td><div class="">@php echo html_entity_decode($row['schedule']) @endphp<span
                                                                 class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                         <td><div class="">@php echo html_entity_decode($row['time']) @endphp</div></td>
@@ -653,6 +700,17 @@
                 </div>
     </div>
     </section>
+
+    <!-----------------================== Batch Schema =========================------------------------------>
+
+    @php 
+    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                        [$meta_title, $meta_description, $meta_url, $batch_start_date, $batch_start_date2], 
+                        html_entity_decode($detail->batch_section_schema));
+    @endphp
+
+    <!-----------------================== Batch Schema =========================------------------------------>
+
     @endif
 
 

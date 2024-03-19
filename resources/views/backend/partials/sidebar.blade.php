@@ -47,12 +47,17 @@
 
                         <li class="side-nav-title">Navigation</li>
 
+                        @if(auth()->user()->role_id == 1)
+
                         <li class="side-nav-item"> <!--menuitem-active-->
                             <a href="{{ route('backend.dashboard') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span> Dashboards </span>
                             </a>
                         </li>
+                        @endif
+
+                        @if(auth()->user()->role_id == 1)
 
                         <li class="side-nav-item">
                             <a href="{{ route('contact.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -61,12 +66,21 @@
                             </a>
                         </li>
 
+                        @endif
+
+                        @if(auth()->user()->role_id == 1)
+
                         <li class="side-nav-item">
                             <a href="{{ route('newsletter.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-bar-chart-2-line"></i> 
                                 <span> Newsletter </span>
                             </a>
                         </li>
+
+                        @endif
+
+
+                        @if(in_array(auth()->user()->role_id, [1, 2, 3]))
                         
                         <li class="side-nav-item">
                             <a href="{{ route('course.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
@@ -74,13 +88,20 @@
                                 <span> Course </span>
                             </a>
                         </li>
+
+                        @endif
                         
+                        @if(in_array(auth()->user()->role_id, [1, 2, 3]))
+
                         <li class="side-nav-item">
                             <a href="{{ route('cms.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-suitcase-line"></i> 
                                 <span> Manage Course CMS </span>
                             </a>
                         </li>
+
+                        @endif
+                        
                         {{--
                         <li class="side-nav-item">
                             <a href="{{ route('practicearea.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">

@@ -50,7 +50,7 @@ class BatchesController extends Controller
             $batch_detail = [];
             for ($j = 0; $j < count($date); $j++) {
                 $batch_detail[] = [
-                    'date' => $date[$j],
+                    'date' => $date[$j].' '.date('H:i:s'),
                     'schedule' => $schedule[$j],
                     'remark' => $remark[$j],
                     'time' => $time[$j],    
@@ -124,7 +124,7 @@ class BatchesController extends Controller
             $batch_detail = [];
             for ($j = 0; $j < count($date); $j++) {
                 $batch_detail[] = [
-                    'date' => $date[$j],
+                    'date' => $date[$j].' '.date('H:i:s'),
                     'schedule' => $schedule[$j],
                     'remark' => $remark[$j],
                     'time' => $time[$j],    

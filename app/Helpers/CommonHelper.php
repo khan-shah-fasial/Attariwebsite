@@ -163,6 +163,27 @@ use Illuminate\Support\Str;
         }
     }
 
+    if (!function_exists('schema_ReplaceKeyword')) {
+        function schema_ReplaceKeyword($sentence, $replaceKeywordJson)
+        {
+
+            $replaceKeywords = json_decode($replaceKeywordJson, true);
+    
+            foreach ($replaceKeywords as $replacementArray) {
+                foreach ($replacementArray as $original => $replacement) {
+                    $sentence = str_ireplace($original, $replacement, $sentence);
+                }
+            }
+
+            $paragraph = $sentence;
+    
+            return $paragraph;
+    
+        }
+    }
+
+
+
     if (!function_exists('SendinBlueContact')) {
         function SendinBlueContact($email)
         {
@@ -261,3 +282,19 @@ use Illuminate\Support\Str;
                 
         }
     }
+
+
+    if(!function_exists('formatDate')){
+        function formatDate($date) {
+            // Convert the date to "DDth MONTH" format
+            $formatted_date = date('jS F', strtotime($date));
+            // Uppercase the month name
+            $formatted_date = preg_replace_callback('/(\d{1,2})(st|nd|rd|th) (\w+)/', function($matches) {
+                return $matches[1] . $matches[2] . ' ' . strtoupper($matches[3]);
+            }, $formatted_date);
+            return $formatted_date;
+        }
+    }
+
+
+

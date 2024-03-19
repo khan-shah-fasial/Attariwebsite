@@ -1,14 +1,23 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@php
+    $meta_title = '';
+    $meta_description = '';
+    $meta_url = url()->current();
+@endphp
 
-@section('page.description', ' ')
+@section('page.title', $meta_title)
+
+@section('page.description', $meta_description)
 
 @section('page.type', 'website')
 
 @section('page.content')
 
-    <!----------========== batch start ===============-------------------->
+
+
+
+<!----------========== batch start ===============-------------------->
 
     <section class="sm-at banner1 batch_banner">
         <div class="container">
@@ -73,8 +82,17 @@
 
                 @php
                     $vmware_batch = DB::table('batches')->where('status', 1)->where('course_id','5')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
+
                     $oc_vm_pointer = json_decode($vmware_batch->oc_pointer_list);
+
                     $batch_vm_detail = json_decode($vmware_batch->batch_detail, true);
+                    $batch_vm_dates = array_column($batch_vm_detail, 'date');
+
+                    $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
+                    $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
+
+                    $course_schema_vm = DB::table('courses')->where('status', 1)->where('id','5')->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+                    
                 @endphp
 
                 @if(!empty($vmware_batch))
@@ -98,7 +116,7 @@
                                             </tr>
                                             @foreach ($batch_vm_detail as $row)
                                                 <tr class="pdd_19">
-                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>{{ formatDate($row['date']) }}</div></td>
                                                     <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                     <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
@@ -142,6 +160,18 @@
 
                         </div>
                     </div>
+
+    <!-----------------================== Batch vm Schema =========================------------------------------>
+
+                @php 
+                echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                                    [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
+                                    html_entity_decode($course_schema_vm->batch_section_schema));
+                @endphp
+
+    <!-----------------================== Batch vm Schema =========================------------------------------>
+
+
                 @endif
 
             </div>
@@ -192,6 +222,16 @@
 
                     </div>
                 </div>
+
+            <!--------------------- video vm Review schema -------------------------------------->
+
+            @php 
+                echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_vm->video_section_schema));
+            @endphp
+
+            <!--------------------- video vm Review schema -------------------------------------->
+
+
             @endif
 
 
@@ -240,6 +280,17 @@
 
                 </div>
             </div>
+
+        <!--------------------- Text vm Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_vm->testimonials_section_schema));
+        @endphp
+
+        <!--------------------- Text vm Review -------------------------------------->
+
+
+
         @endif
       
         </div>
@@ -267,6 +318,14 @@
                     $aws_batch = DB::table('batches')->where('status', 1)->where('course_id','7')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_aws_pointer = json_decode($aws_batch->oc_pointer_list);
                     $batch_aws_detail = json_decode($aws_batch->batch_detail, true);
+
+                    $batch_aws_dates = array_column($batch_aws_detail, 'date');
+
+                    $batch_aws_start_date = reset($batch_aws_dates); // Get the first date
+                    $batch_aws_start_date2 = end($batch_aws_dates); // Get the last date
+
+                    $course_schema_aws = DB::table('courses')->where('status', 1)->where('id','7')->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+
                 @endphp
 
                 @if(!empty($aws_batch))
@@ -334,6 +393,18 @@
 
                         </div>
                     </div>
+
+        <!-----------------================== Batch aws Schema =========================------------------------------>
+
+                @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                                    [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
+                                    html_entity_decode($course_schema_aws->batch_section_schema));
+                @endphp
+
+    <!-----------------================== Batch aws Schema =========================------------------------------>
+
+
                 @endif
 
             </div>
@@ -384,6 +455,17 @@
 
                     </div>
                 </div>
+
+
+        <!--------------------- video aws Review schema -------------------------------------->
+
+            @php 
+                echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_aws->video_section_schema));
+            @endphp
+
+        <!--------------------- video aws Review schema -------------------------------------->
+
+
             @endif
 
 
@@ -433,6 +515,15 @@
 
                 </div>
             </div>
+
+    <!--------------------- Text aws Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_aws->testimonials_section_schema));
+        @endphp
+
+    <!--------------------- Text aws Review -------------------------------------->
+
         @endif
       
         </div>
@@ -458,6 +549,14 @@
                     $azure_batch = DB::table('batches')->where('status', 1)->where('course_id','8')->get(['oc_pointer_list', 'batch_detail','off_percentage','status','course_id'])->first();
                     $oc_azure_pointer = json_decode($azure_batch->oc_pointer_list);
                     $batch_azure_detail = json_decode($azure_batch->batch_detail, true);
+
+                    $batch_azure_dates = array_column($batch_azure_detail, 'date');
+
+                    $batch_azure_start_date = reset($batch_azure_dates); // Get the first date
+                    $batch_azure_start_date2 = end($batch_azure_dates); // Get the last date
+
+                    $course_schema_azure = DB::table('courses')->where('status', 1)->where('id','8')->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+
                 @endphp
 
                 @if(!empty($azure_batch))
@@ -525,6 +624,17 @@
 
                         </div>
                     </div>
+
+<!-----------------================== Batch azure Schema =========================------------------------------>
+
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                                        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
+                                        html_entity_decode($course_schema_azure->batch_section_schema));
+                    @endphp
+
+<!-----------------================== Batch azure Schema =========================------------------------------>
+
                 @endif
 
             </div>
@@ -575,6 +685,16 @@
 
                     </div>
                 </div>
+
+    <!--------------------- video azure Review schema -------------------------------------->
+
+            @php 
+                echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_azure->video_section_schema));
+            @endphp
+
+    <!--------------------- video azure Review schema -------------------------------------->
+
+
             @endif
 
 
@@ -624,6 +744,16 @@
 
                 </div>
             </div>
+
+    <!--------------------- Text azure Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_azure->testimonials_section_schema));
+        @endphp
+
+    <!--------------------- Text azure Review -------------------------------------->
+
+
         @endif
       
         </div>
@@ -650,6 +780,14 @@
                     $mcse_batch = DB::table('batches')->where('status', 1)->where('course_id','9')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_mcse_pointer = json_decode($mcse_batch->oc_pointer_list);
                     $batch_mcse_detail = json_decode($mcse_batch->batch_detail, true);
+
+                    $batch_mcse_dates = array_column($batch_mcse_detail, 'date');
+
+                    $batch_mcse_start_date = reset($batch_mcse_dates); // Get the first date
+                    $batch_mcse_start_date2 = end($batch_mcse_dates); // Get the last date
+
+                    $course_schema_mcse = DB::table('courses')->where('status', 1)->where('id','9')->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+
                 @endphp
 
                 @if(!empty($mcse_batch))
@@ -717,6 +855,17 @@
 
                         </div>
                     </div>
+
+<!-----------------================== Batch mcse Schema =========================------------------------------>
+
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                                        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
+                                        html_entity_decode($course_schema_mcse->batch_section_schema));
+                    @endphp
+
+<!-----------------================== Batch mcse Schema =========================------------------------------>
+
                 @endif
 
             </div>
@@ -767,6 +916,16 @@
 
                     </div>
                 </div>
+
+    <!--------------------- video mcse Review schema -------------------------------------->
+
+                @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_mcse->video_section_schema));
+                @endphp
+
+    <!--------------------- video mcse Review schema -------------------------------------->
+
+
             @endif
 
 
@@ -781,7 +940,7 @@
             <div class="large-12 columns mt-4">
                 <div class="owl-carousel owl-theme slider_content_dots">
 
-                    @foreach ($text_aws_review as $row)
+                    @foreach ($text_mcse_review as $row)
     
                         <div class="item">
                             <div class="testimonial_box">
@@ -816,6 +975,16 @@
 
                 </div>
             </div>
+
+    <!--------------------- Text mcse Review -------------------------------------->
+
+        @php 
+            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_mcse->testimonials_section_schema));
+        @endphp
+
+    <!--------------------- Text mcse Review -------------------------------------->
+
+
         @endif
       
         </div>
@@ -841,6 +1010,14 @@
                     $ccna_batch = DB::table('batches')->where('status', 1)->where('course_id','10')->get(['oc_pointer_list', 'batch_detail', 'off_percentage', 'status','course_id'])->first();
                     $oc_ccna_pointer = json_decode($ccna_batch->oc_pointer_list);
                     $batch_ccna_detail = json_decode($ccna_batch->batch_detail, true);
+
+                    $batch_ccna_dates = array_column($batch_ccna_detail, 'date');
+
+                    $batch_ccna_start_date = reset($batch_ccna_dates); // Get the first date
+                    $batch_ccna_start_date2 = end($batch_ccna_dates); // Get the last date
+
+                    $course_schema_ccna = DB::table('courses')->where('status', 1)->where('id','10')->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+
                 @endphp
 
                 @if(!empty($ccna_batch))
@@ -908,6 +1085,17 @@
 
                         </div>
                     </div>
+
+<!-----------------================== Batch ccna Schema =========================------------------------------>
+
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
+                                        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
+                                        html_entity_decode($course_schema_ccna->batch_section_schema));
+                    @endphp
+
+<!-----------------================== Batch ccna Schema =========================------------------------------>
+
                 @endif
 
             </div>
@@ -958,6 +1146,16 @@
 
                     </div>
                 </div>
+
+    <!--------------------- video ccna Review schema -------------------------------------->
+
+                @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_ccna->video_section_schema));
+                @endphp
+
+    <!--------------------- video ccna Review schema -------------------------------------->
+
+
             @endif
 
 
@@ -1006,6 +1204,16 @@
 
                 </div>
             </div>
+
+    <!--------------------- Text ccna Review -------------------------------------->
+
+    @php 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_ccna->testimonials_section_schema));
+    @endphp
+
+<!--------------------- Text ccna Review -------------------------------------->
+
+
         @endif
       
         </div>

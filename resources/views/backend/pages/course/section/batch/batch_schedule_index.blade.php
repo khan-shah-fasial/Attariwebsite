@@ -34,6 +34,43 @@
         </section>
 
         <!-----========================== Dection Heading ==================------------------------->
+        <hr>
+        <br>
+        <!---================================ SECTION schema =======================--->
+
+        <div class="col-md-12">
+            <h4 class="header-title"><b>Batch Schema</b></h4>
+        </div>
+
+        <section>
+            @php 
+                $section_schema = DB::table('courses')->where('id', $course->id)->value('batch_section_schema');
+            @endphp
+            <form id="updating_batch_schema_form" action="{{ url(route('course.update_schema')) }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" class="form-control" name="course_id" value="{{ $course->id }}">
+                <input type="hidden" class="form-control" name="section" value="batch">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group mb-3">
+                            <label>Batch Schema <span class="red">*</span></label>
+                        <textarea class="form-control" name="section_schema" id="section_schema" rows="5" required>
+                            @php echo html_entity_decode($section_schema) @endphp</textarea>
+                        </div> 
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group mb-3 text-end">
+                            <button type="submit" class="btn btn-block btn-primary">Update</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <!---================================ SECTION schema =======================--->
+
 
         @if(empty($batch))
 <!----================================= Add Form ========================-------------------->
