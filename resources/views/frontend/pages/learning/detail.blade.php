@@ -97,6 +97,9 @@
                     $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
                     $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
 
+                    $batch_end_date = date('Y-m-d H:i:s', strtotime($batch_vm_start_date . ' +5 weeks'));
+                    $batch_end_date2 = date('Y-m-d H:i:s', strtotime($batch_vm_start_date2 . ' +5 weeks'));
+
                     $course_schema = DB::table('courses')->where('status', 1)->where('id',$learning->course_id)->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
 
                 @endphp
@@ -172,15 +175,15 @@
                         </div>
                     </div>
 
-        <!-----------------================== Batch Schema =========================------------------------------>
+<!-----------------================== Batch Schema =========================------------------------------>
 
-                    @php 
-                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
-                                        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2], 
-                                        html_entity_decode($course_schema->batch_section_schema));
-                    @endphp
-    
-        <!-----------------================== Batch Schema =========================------------------------------>
+    @php 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2, $batch_end_date, $batch_end_date2], 
+        html_entity_decode($course_schema->batch_section_schema));
+    @endphp
+
+<!-----------------================== Batch Schema =========================------------------------------>
 
 
                 @endif

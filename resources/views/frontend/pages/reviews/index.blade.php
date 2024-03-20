@@ -461,6 +461,24 @@
 
             @include('frontend.component.review_video');
 
+            @php
+                $course_schema_video = DB::table('courses')->where('status', 1)->whereNotNull('video_section_schema')
+                ->get(['video_section_schema']);
+            @endphp
+
+
+            <!--------------------- video Review schema -------------------------------------->
+
+                @php 
+                    foreach($course_schema_video as $row){
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($row->video_section_schema));
+                    }
+                @endphp
+
+            <!--------------------- video Review schema -------------------------------------->
+
+
+
 
             <div class="col-12 d-flex justify-content-center gap-2">
                 <div class="training_btn mt-4 mt-lg-0">

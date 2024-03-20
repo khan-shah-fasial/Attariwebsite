@@ -618,11 +618,16 @@
                                         $batch_detail = json_decode($batch->batch_detail, true);
                                         $batch_dates = array_column($batch_detail, 'date');
 
+                                        
+
                                         //sort($batch_dates);
 
                                         // Get the start and end dates
                                         $batch_start_date = reset($batch_dates); // Get the first date
                                         $batch_start_date2 = end($batch_dates); // Get the last date
+
+                                        $batch_end_date = date('Y-m-d H:i:s', strtotime($batch_start_date . ' +5 weeks'));
+                                        $batch_end_date2 = date('Y-m-d H:i:s', strtotime($batch_start_date2 . ' +5 weeks'));
 
                                     @endphp
 
@@ -704,9 +709,7 @@
     <!-----------------================== Batch Schema =========================------------------------------>
 
     @php 
-    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]'],
-                        [$meta_title, $meta_description, $meta_url, $batch_start_date, $batch_start_date2], 
-                        html_entity_decode($detail->batch_section_schema));
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],[$meta_title, $meta_description, $meta_url, $batch_start_date, $batch_start_date2, $batch_end_date, $batch_end_date2], html_entity_decode($detail->batch_section_schema));
     @endphp
 
     <!-----------------================== Batch Schema =========================------------------------------>
