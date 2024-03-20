@@ -129,14 +129,12 @@
         </div>
     </section>
     <!-----------------------------Recent Posts------------------------ -->
-    <section class="recent_post py-4 bggray1">
+    <section class="recent_post py-5 bggray1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 width__70">
                     <div class="mb-4">
                         <div class="post_box pb-1">
-                            <img class="img-fluid" src="/assets/frontend/images/VMware-Training.jpg" alt="" />
-
                             <div class="text_box_post pt-4 pb-4 ps-4 pe-4">
                                 <h6 class="mb-0">
                                     Azure Locks Protects Azure Resources From Accidental Deletion
@@ -156,6 +154,7 @@
                                 </p>
                             </div>
 
+
                             <div class="text_box_post pb-4 ps-4 pe-4">
                                 <h6 class="mb-0">
                                     Benefits of VMware vSphere Training Certification
@@ -166,6 +165,7 @@
                                     networking and servers is essential when building and managing virtualized environments.
                                 </p>
                             </div>
+
 
                             <div class="text_box_post pb-4 ps-4 pe-4">
                                 <h6 class="mb-0">
@@ -515,283 +515,35 @@
                                     </div>
                                 </div>
                             </section>
-
-                            <div class="dark_bluebg bookdemofreeform_course mt-4 ms-3 me-3 mb-4">
-                                <h4 class="text-left textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="coursename" class="form-control"
-                                                    placeholder="VMware Training" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="coursename" class="form-control"
-                                                    placeholder="Enter Name" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input type="text" name="coursename" class="form-control"
-                                                    placeholder="Enter Email" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input type="text" name="coursename" class="form-control"
-                                                    placeholder="Your Country" required>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <input type="text" name="coursename" class="form-control"
-                                                    placeholder="Mobile Number with Country code" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group text-center">
-                                                <button type="submit" class="btn btn-primary">Send</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </form>
-                            </div>
-
                         </div>
                     </div>
 
 
                 </div>
-                <div class="col-md-4">
-                    <div class="post_box main_blog_box">
-                        <input type="text" name="search" class="form-control" placeholder="search" />
-                    </div>
-
-                    <div class="blog_courses_box post_box main_blog_box post_category">
-                        <h4>Post Category</h4>
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/vmware-training-certification-online/" class="no-lightbox">
-                                <div class="blog_content_box">
-                                    <p>VMware</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/aws-certification-training-online/" class="no-lightbox">
-
-                                <div class="blog_content_box">
-                                    <p>AWS</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/microsoft-azure-certification-training-online/"
-                                class="no-lightbox">
-                                <div class="blog_content_box">
-                                    <p>Microsoft Azure</p>
-                                </div>
-                            </a>
-                        </div>
 
 
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/mcsa-mcse-windows-server-training-online/"
-                                class="no-lightbox">
-
-                                <div class="blog_content_box">
-                                    <p>MCSE</p>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/ccna-training-certification-online/" class="no-lightbox">
-
-                                <div class="blog_content_box">
-                                    <p>CCNA</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-
-
-                    <div class="blog_courses_box post_box main_blog_box">
-                        <h4>Courses We Offer</h4>
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/vmware-training-certification-online/" class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/vmware-vsphere-e1627535142798.jpg">
-                                <div class="blog_content_box">
-                                    <p>VMware</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/aws-certification-training-online/" class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/aws.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>AWS</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/microsoft-azure-certification-training-online/"
-                                class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/azure.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>Microsoft Azure</p>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/mcsa-mcse-windows-server-training-online/"
-                                class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/microsft.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>MCSE</p>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <div class="main_blog_courses">
-                            <a href="https://attariclasses.in/ccna-training-certification-online/" class="no-lightbox">
-                                <br>
-                                <img decoding="async" src="/assets/frontend/images/ccna.jpg">
-                                <p></p>
-                                <div class="blog_content_box">
-                                    <p>CCNA</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div class="blog_courses_box post_box main_blog_box recent_posts">
-                        <h4>Recent Posts</h4>
-                        <div class="main_blog_courses">
-                            <div class="post_image_box widths40">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
-                                </a>
-                            </div>
-                            <div class="blog_content_box widths60">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
-                                </a>
-                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
-                            </div>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <div class="post_image_box widths40">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
-                                </a>
-                            </div>
-                            <div class="blog_content_box widths60">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
-                                </a>
-                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
-                            </div>
-                        </div>
-
-                        <div class="main_blog_courses">
-                            <div class="post_image_box widths40">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <img decoding="async" src="/assets/frontend/images/locks-neww-2-150x150.webp">
-                                </a>
-                            </div>
-                            <div class="blog_content_box widths60">
-                                <a href="https://attariclasses.in/vmware-training-certification-online/"
-                                    class="no-lightbox">
-                                    <h5>Azure Locks Protects Azure Resources From Accidental Deletion</h5>
-                                </a>
-                                <div class="recent-posts-date">September 28, 2022<span class="sep">/</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="blog_form">
-                        <h5>Enquire Now</h5>
-                        <form>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control" placeholder="Enter Name"
-                                    required="">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control" placeholder="Enter Email"
-                                    required="">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control" placeholder="Your Country"
-                                    required="">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="coursename" class="form-control"
-                                    placeholder="Mobile Number with Country code" required="">
-                            </div>
-
-                            <div class="form-group">
-                                <select class="form-select form-control" aria-label="Default select example">
-                                    <option selected="">-Select Course-</option>
-                                    <option value="vmware">VMware</option>
-                                    <option value="aws">AWS Cloud</option>
-                                    <option value="azure">Azure Cloud</option>
-                                    <option value="mcse">MCSE</option>
-                                    <option value="ccna">CCNA</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="3" placeholder="Message"></textarea>
-                            </div>
-
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-primary">Send</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col-md-4 width__30">
+                    <div class="succes_page_form d-block sticky-top blue_gradianbg blog_rights">
+                 @include('frontend.component.book_free_Demo_form',[
+                    'section' => 'Book a Free Demo - Success Story Page',
+                ])
+            </div>
 
                 </div>
             </div>
         </div>
     </section>
+
+
+
+    
+                        <div class="bookdemofreeform_course blue_gradianbg blogdt_from">
+                        <div class="container">     
+                        @include('frontend.component.book_free_Demo_form',[
+                    'section' => 'Book a Free Demo - Success Story Page',
+                ])
+                        </div>
+                        </div>
 
 
     <section class="related_courses1 pt-5 pb-5">
@@ -813,8 +565,6 @@
                         <div class="related_updated">
                             <p>Last Updated: October 21, 2022 </p>
                         </div>
-
-
                     </div>
                 </div>
 
