@@ -1629,9 +1629,10 @@ p .home_breadcrumb a:hover {
   margin-top: 66px;
   font-size: 16px;
   float: right;
-  color: #fff;
+  color: #fff !important;
   border-radius: 50px;
   text-align: center;
+  text-decoration: none;
 }
 
 /* -----------------vmwere pages-------------------  */
@@ -1807,12 +1808,14 @@ p .home_breadcrumb a:hover {
 
 
 .post_box .img img {
-  width: 250px;
-  height: 130px;
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .post_box .text_box_post p {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .key_features {
@@ -2456,7 +2459,7 @@ tr.pdd_14 td div {
 
 .text_box_post h6 {
   font-size: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   line-height: 28px;
   font-weight: 800;
 }
@@ -3450,4 +3453,93 @@ form .error {
   font-size: 13px;
   text-align: left;
   display: block;
+}
+
+.boxtop_box a {
+  text-decoration: none;
+}
+
+ol.breadcrumb.mb-0 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  padding-right: 7px;
+}
+
+.breadcrumb-item+.breadcrumb-item {
+  padding-left: 0rem !important;
+}
+
+.text_box_post h6 a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.text_box_post {
+  padding-left: 20px !important;
+  padding-right: 40px !important;
+}
+
+.blue_gradianbg {
+  background: #290743 !important;
+}
+
+.blogdt_from .form-group {
+  width: 19%;
+  float: left;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+
+
+.blogdt_from {
+  clear: both;
+  width: 100%;
+  display: inline-block;
+}
+
+.blogdt_from .form-group:nth-child(10) {
+  width: 99%;
+}
+
+.blogdt_from .form-group.text-center {
+  text-align: center;
+  width: 100%;
+}
+
+.blogdt_from h5 {
+  color: #fff;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.blogdt_from .submit_button {
+  background: linear-gradient(270deg, #FF630B 0%, #FF7A00 100%) !important;
+  border: 0;
+  border-radius: 0;
+  font-size: 14px !important;
+  padding: 8px 20px;
+  height: 40px;
+  line-height: 22px;
+}
+
+.blog_rights .submit_button {
+  background: linear-gradient(270deg, #FF630B 0%, #FF7A00 100%) !important;
+  border: 0;
+  border-radius: 0;
+  font-size: 14px !important;
+  padding: 8px 20px;
+  height: 40px;
+  line-height: 22px;
+}
+
+.width__70 {
+  width: 70% !important;
+}
+
+
+.width__30 {
+  width: 30% !important;
 }
