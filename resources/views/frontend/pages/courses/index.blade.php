@@ -743,6 +743,39 @@
 
 
                             </div>
+                    <!----================== Faq Schema ==================------------------->
+                            @php
+                                $f = 1;
+                            @endphp
+                            
+                            <script type="application/ld+json">
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    @foreach ($faq as $row)
+                                        @if ($f <= 5)
+                                            {
+                                                "@type": "Question",
+                                                "name": "@php echo ReplaceKeyword($row->question, $cms->replace_keyword) @endphp",
+                                                "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "@php echo ReplaceKeyword($row->answer, $cms->replace_keyword) @endphp"
+                                                }
+                                            }
+                                            @if ($f < 5),
+                                            @endif
+                                        @endif
+                                        @php
+                                            $f++;
+                                        @endphp
+                                    @endforeach
+                                ]
+                            }
+                            </script>
+
+                    <!----================== Faq Schema ==================------------------->
+
                         @endif
 
 
