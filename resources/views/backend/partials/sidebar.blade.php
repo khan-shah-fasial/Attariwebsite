@@ -160,7 +160,7 @@
 
                         @if(in_array(auth()->user()->role_id, [1, 2]))
 
-                        {{--
+                    
 
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="{{ url('#sidebarEcommerce') }}" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
@@ -186,8 +186,7 @@
                             </div>
                         </li>
 
-                        --}}
-                      
+                              
                         @endif
 
                         @if(in_array(auth()->user()->role_id, [1, 2]))
