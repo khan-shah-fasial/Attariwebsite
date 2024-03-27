@@ -8,12 +8,12 @@
                 <input type="text" class="form-control" name="name" value="{{ $blogcategory->name }}" required>
             </div>
         </div>        
-        <div class="col-sm-12">
+        <!-- <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Slug <span class="red">*</span></label>
                 <input type="text" class="form-control" name="slug" value="{{ $blogcategory->slug }}" @if(in_array($blogcategory->slug, ['blog', 'news', 'deal-update'])) readonly @endif required>
             </div>
-        </div>
+        </div> -->
         <input type="hidden" name="parent_id" value="{{ $blogcategory->parent_id }}"> 
         <div class="col-sm-12">
             <div class="form-group mb-3 text-end">

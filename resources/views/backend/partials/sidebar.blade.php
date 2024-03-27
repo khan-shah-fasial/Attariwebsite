@@ -176,12 +176,12 @@
                                     <li>
                                         <a href="{{ route('blogcategory.index') }}">Category</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="{{ route('blogcomment.index') }}">Comment</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('author.index') }}">Author</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </li>

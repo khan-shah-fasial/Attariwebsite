@@ -7,12 +7,12 @@
                 <input type="text" class="form-control" name="name" value="" required>
             </div>
         </div>      
-        <div class="col-sm-12">
+        <!-- <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Slug <span class="red">*</span></label>
                 <input type="text" class="form-control" name="slug" value="" required>
             </div>
-        </div>
+        </div> -->
         <input type="hidden" name="parent_id" value="0">
         <div class="col-sm-12">
             <div class="form-group mb-3 text-end">

@@ -63,26 +63,51 @@ class IndexController extends Controller
         return view('frontend.pages.blog.index', compact('blog'));
     }
 
-    public function blog_detail($category, $slug){
+    public function blog_detail($category, $slug)
+    {
 
-        $category_id = BlogCategory::where('slug',$category)->first();
+        $category_id = BlogCategory::where('slug', $category)->first();
 
         $detail = Blog::where('slug', $slug)->where('status', 1)->first();
 
-        //$author = json_decode($detail->user_id, true);
-        $author = $detail->user_id;
+        if ($detail) {
+            $blog_category_ids = json_decode($detail->blog_category_ids);
+            $first_category_id = $blog_category_ids[0];
 
-        $blog = Blog::where('status', 1)->whereJsonContains('blog_category_ids', json_decode($detail->blog_category_ids)['0'])->where('id', '!=', $detail->id)->limit(3)->orderBy('id', 'desc')->get();
+            if ($first_category_id == $category_id->id) {
+                $author = json_decode($detail->user_id, true);
 
-        $current_id = $detail->id;
+                //$blog = Blog::where('status', 1)->whereJsonContains('blog_category_ids', ''.$category_id->id.'')->where('id', '!=', $detail->id)->limit(3)->orderBy('id', 'desc')->get();
 
-        $previous = Blog::where('status', 1)->whereJsonContains('blog_category_ids', ''.$category_id->id.'')->where('id', '<', $current_id)->orderBy('id', 'desc')->first();
-        $next = Blog::where('status', 1)->whereJsonContains('blog_category_ids', ''.$category_id->id.'')->where('id', '>', $current_id)->orderBy('id', 'asc')->first();
+                $blog = Blog::where('status', 1)
+                    ->whereJsonContains('blog_category_ids', json_decode($detail->blog_category_ids))
+                    ->whereJsonContains('blog_category_ids', '' . $category_id->id . '')
+                    ->where('id', '!=', $detail->id)->limit(4)
+                    ->orderBy('id', 'desc')
+                    ->get();
 
-        $previous_slug = $previous ? $previous->slug : null;
-        $next_slug = $next ? $next->slug : null;
+                $current_id = $detail->id;
 
-        return view('frontend.pages.blog.detail', compact('detail','author','blog','previous_slug','next_slug'));
+                $previous = Blog::where('status', 1)
+                    ->whereJsonContains('blog_category_ids', '' . $category_id->id . '')
+                    ->where('id', '<', $current_id)
+                    ->orderBy('id', 'desc')
+                    ->first();
+
+                $next = Blog::where('status', 1)
+                    ->whereJsonContains('blog_category_ids', '' . $category_id->id . '')
+                    ->where('id', '>', $current_id)
+                    ->orderBy('id', 'asc')
+                    ->first();
+
+                $previous_slug = $previous ? $previous->slug : null;
+                $next_slug = $next ? $next->slug : null;
+
+                return view('frontend.pages.blog.detail', compact('detail', 'author', 'blog', 'previous_slug', 'next_slug'));
+            }
+        }
+        return view('frontend.pages.404.index');
+
     }
 
 //--------------=============================== Blog end ================================------------------------------

@@ -90,32 +90,37 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrums_section pt-5 pb-4">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item"><a>»</a></li>
-                                <li class="breadcrumb-item"><a href="blog.php"><b>Blog</b></a></li>
-                                <li class="breadcrumb-item"><a>»</a></li>
-                                <li class="breadcrumb-item"><a><b>How to Install And Configure Windows Server Distributed
-                                            File System (DFS)</b></a></li>
-                            </ol>
+                    <nav aria-label="breadcrumb">
+                            <ul class="d-flex align-items-center breadcrumb gap-md-3 gap-1 list-unstyled" data-aos="fade-up" data-aos-once="true">
+                                <li>
+                                    <a href="{{ url(route('index')) }}" class="text-decoration-none" data-aos="fade-up"
+                                        data-aos-once="true">Home</a>
+                                </li>
+                                <li>></li>
+                                @if($url == 'blog' || $url == 'news' || $url == 'deal-update')
+                                <li>
+                                    <a href="{{ url(route(''. $url.'')) }}" class="text-decoration-none" data-aos="fade-up"
+                                        data-aos-once="true">
+                                        {{ ucfirst($page->name) }}
+                                    </a>
+                                </li>
+                                <li>></li>
+                                @endif
+                                <li>{{ $detail->title }}</li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
 
-
                 <div class="col-md-9">
                     <div class="blog_dt_top">
                         <h3 class="pb-3">
-                            VMware vSphere Training Certification Guide: Career Benefits & Salary
+                        {{ $detail->title }}
                         </h3>
 
-                        <b><span>Last Update: November 8, 2021 </span> <span class="ms-3"><i
+                        <b><span>Last Update: {{ date('Y-m-d', strtotime($detail->updated_at)) }}</span><span class="ms-3"><i
                                     class="fa-regular fa-eye"></i> Post Views: 413</span></b>
-                        <p class="pt-2"> Virtualization leader VMware is known for its vSphere and is a leading provider
-                            of virtualization software and services. VMware vSphere is a smart investment for IT
-                            professionals of all levels, from systems administrators to mobility administrators, owing to
-                            its long-standing reputation. </p>
+                        <p class="pt-2">{{ $detail->short_description }}</p>
                     </div>
                 </div>
 
@@ -134,49 +139,23 @@
             <div class="row">
                 <div class="col-md-8 width__70">
                     <div class="mb-4">
-                        <div class="post_box pb-1">
-                            <div class="text_box_post pt-4 pb-4 ps-4 pe-4">
-                                <h6 class="mb-0">
-                                    Azure Locks Protects Azure Resources From Accidental Deletion
-                                </h6>
-                                <p><strong>Last Update:</strong> September 28, 2022</p>
-                                <p>
-                                    The key to IT transformation in Virtualization world is VMware vSphere. VSphere uses
-                                    virtualization to turn traditional data
-                                    centers into simplified cloud computing infrastructures to provide IT organizations with
-                                    reliable and flexible service delivery.
-                                    By using VMware vSphere, it is possible to virtualize the underlying physical hardware
-                                    resources across multiple systems and
-                                    provide pools of virtual resources to the data center. With VMware vSphere, you can
-                                    manage extensive collections of
-                                    infrastructure (like CPUs, storage, and networking) seamlessly and dynamically and
-                                    manage a data center’s complexities.
-                                </p>
-                            </div>
+                        <div class="post_box pb-1">                          
+<style>
+.content {
+    width: 100%; /* Adjust the width as needed */
+    overflow-wrap: break-word; /* This property ensures that long words break and wrap to the next line */
+}
 
+</style>
+<div class="text_box_post pb-4 ps-4 pe-4">
+    <h6 class="mb-0">
+        {{ $detail->title }}
+    </h6>
+    <p class="content">
+        @php echo html_entity_decode($detail->content) @endphp
+    </p>
+</div>
 
-                            <div class="text_box_post pb-4 ps-4 pe-4">
-                                <h6 class="mb-0">
-                                    Benefits of VMware vSphere Training Certification
-                                </h6>
-                                <p>
-                                    There is a high demand for VMware virtualization skills. It is a win-win situation to
-                                    learn skills that are in need. Taking advantage of your existing experience with
-                                    networking and servers is essential when building and managing virtualized environments.
-                                </p>
-                            </div>
-
-
-                            <div class="text_box_post pb-4 ps-4 pe-4">
-                                <h6 class="mb-0">
-                                    How It Will Benefit Your Career
-                                </h6>
-                                <p>
-                                    There is a high demand for VMware virtualization skills. It is a win-win situation to
-                                    learn skills that are in need. Taking advantage of your existing experience with
-                                    networking and servers is essential when building and managing virtualized environments.
-                                </p>
-                            </div>
 
                             <section id="vmware_batch" class="prje_cove_section pt-5 border-top">
                                 <div class="container">
@@ -525,7 +504,7 @@
                 <div class="col-md-4 width__30">
                     <div class="succes_page_form d-block sticky-top blue_gradianbg blog_rights">
                  @include('frontend.component.book_free_Demo_form',[
-                    'section' => 'Book a Free Demo - Success Story Page',
+                    'section' => 'Enquire Now - Blog detail Page',
                 ])
             </div>
 
@@ -540,10 +519,12 @@
                         <div class="bookdemofreeform_course blue_gradianbg blogdt_from">
                         <div class="container">     
                         @include('frontend.component.book_free_Demo_form',[
-                    'section' => 'Book a Free Demo - Success Story Page',
+                    'section' => 'Book a Free Demo - Blog Detail Page',
                 ])
                         </div>
                         </div>
+
+@if(count($blog) > 0)
 
 
     <section class="related_courses1 pt-5 pb-5">
@@ -553,76 +534,33 @@
                     <h4 class="section_heading pb-3 text-left"> Related Articles</h4>
                 </div>
 
-                <div class="col-md-3">
+                @foreach ($blog as $row)
+            <div class="col-md-3">
                     <div class="related_boxex1">
                         <div class="related_img">
-                            <img src="/assets/frontend/images/Azure-1.jpg">
+                        <img src="{{ asset('storage/' . $row->main_image) }}" alt="" class="blog_img" />
                         </div>
                         <div class="related_content">
-                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
+                            <h5>
+                                <a href="{{ url(route('blog.detail', ['category' => $url, 'slug' => strtolower(str_replace(' ', '-',$row->slug))] )) }}">{{ $row->title }}</a> 
+                            </h5>
                         </div>
 
                         <div class="related_updated">
-                            <p>Last Updated: October 21, 2022 </p>
+                            <p>Last Updated: {{ date('F j, Y', strtotime($detail->updated_at)) }} </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
-                    <div class="related_boxex1">
-                        <div class="related_img">
-                            <img src="/assets/frontend/images/Azure-1.jpg">
-                        </div>
-                        <div class="related_content">
-                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
-                        </div>
 
-                        <div class="related_updated">
-                            <p>Last Updated: October 21, 2022 </p>
-                        </div>
+            @endforeach
 
-
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="related_boxex1">
-                        <div class="related_img">
-                            <img src="/assets/frontend/images/Azure-1.jpg">
-                        </div>
-                        <div class="related_content">
-                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
-                        </div>
-
-                        <div class="related_updated">
-                            <p>Last Updated: October 21, 2022 </p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="related_boxex1">
-                        <div class="related_img">
-                            <img src="/assets/frontend/images/Azure-1.jpg">
-                        </div>
-                        <div class="related_content">
-                            <h5>Azure Locks Protects Azure Resources From Accidental Deletion </h5>
-                        </div>
-
-                        <div class="related_updated">
-                            <p>Last Updated: October 21, 2022 </p>
-                        </div>
-
-
-                    </div>
-                </div>
+              
             </div>
         </div>
         </div>
     </section>
-
+    @endif
 
     <section class="bggray1 other_courses pt-5 pb-5">
         <div class="container">
