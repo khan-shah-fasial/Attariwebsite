@@ -43,41 +43,7 @@
 }
 </script>
 
-    @if ($page->name != 'Deal Update')
-        <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "{{ $page->name }}Posting",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ url()->current() }}"
-    },
-    "headline": "{{ strip_tags(htmlspecialchars_decode($detail->title)) }}",
-    "description": "{{ strip_tags(htmlspecialchars_decode($detail->short_description)) }}",
-    "image": "{{ asset('storage/' . $detail->main_image) }}",
-    "author": {
-        "@type": "Person",
-        "name": [
-            
-            @php $author_name = DB::table('users')-> where('id', $author)->
-            first();@endphp "{{ $author_name->name }}",
-        ],
-        "url": "{{ url('') }}/"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "{{ url('') }}/",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "{{ asset('/assets/frontend/images/cropped-header-logo-1') }}"
-        }
-    },
-    "datePublished": "{{ $detail->updated_at }}"
-}
-</script>
-    @endif
-
-    <!--------------------------- Page Schema end--------------------------------->
+<!--------------------------- Page Schema end--------------------------------->
 @endsection
 
 @section('page.content')

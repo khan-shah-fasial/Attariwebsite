@@ -164,6 +164,7 @@ function initTrumbowyg(target) {
             ["superscript", "subscript"],
             ["link"],
             ["image"], // Our fresh created dropdown
+            ['noembed'],
             ["table"],
             ["justifyLeft", "justifyCenter", "justifyRight", "justifyFull"],
             ["unorderedList", "orderedList"],
