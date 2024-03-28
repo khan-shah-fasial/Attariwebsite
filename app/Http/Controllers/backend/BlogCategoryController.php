@@ -22,7 +22,7 @@ class BlogCategoryController extends Controller
 
         // Validate form data
         $validator = Validator::make($request->all(), [
-            'slug' => 'required|unique:blog_categories',
+            // 'slug' => 'required|unique:blog_categories',
         ]);
 
         if ($validator->fails()) {
@@ -83,7 +83,7 @@ class BlogCategoryController extends Controller
 
         // Validate form data
         $validator = Validator::make($request->all(), [
-            'slug' => 'required|unique:blog_categories,slug,'. $request->input('id'),
+            // 'slug' => 'required|unique:blog_categories,slug,'. $request->input('id'),
         ]);
 
         if ($validator->fails()) {

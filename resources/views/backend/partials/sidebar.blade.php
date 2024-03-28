@@ -160,7 +160,7 @@
 
                         @if(in_array(auth()->user()->role_id, [1, 2]))
 
-                        
+                        {{--
 
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="{{ url('#sidebarEcommerce') }}" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
@@ -176,17 +176,17 @@
                                     <li>
                                         <a href="{{ route('blogcategory.index') }}">Category</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="{{ route('blogcomment.index') }}">Comment</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('author.index') }}">Author</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </li>
 
-                        
+                        --}}
                       
                         @endif
 
