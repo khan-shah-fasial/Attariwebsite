@@ -105,22 +105,25 @@
             <div class="row">
                 <div class="col-md-8 width__70">
                     <div class="mb-4">
-                        <div class="post_box pb-1">                          
-<style>
-.content {
-    width: 100%; /* Adjust the width as needed */
-    overflow-wrap: break-word; /* This property ensures that long words break and wrap to the next line */
-}
+                        <div class="post_box pb-1"> 
 
-</style>
-<div class="text_box_post pb-4 ps-4 pe-4">
-    <h6 class="mb-0">
-        {{ $detail->title }}
-    </h6>
-    <p class="content">
-        @php echo html_entity_decode($detail->content) @endphp
-    </p>
-</div>
+                            <style>
+                            .content {
+                                width: 100%; /* Adjust the width as needed */
+                                overflow-wrap: break-word; /* This property ensures that long words break and wrap to the next line */
+                            }
+
+                            </style>
+
+                            
+                            <div class="text_box_post pb-4 ps-4 pe-4">
+                                <h6 class="mb-0">
+                                    {{ $detail->title }}
+                                </h6>
+                                <p class="content">
+                                    @php echo html_entity_decode($detail->content) @endphp
+                                </p>
+                            </div>
 
 
                             <section id="vmware_batch" class="prje_cove_section pt-5 border-top">
