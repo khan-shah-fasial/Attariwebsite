@@ -136,7 +136,7 @@
 
 <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1 ">
   <div class="container">
-    <h3 class="main_heads text-center mb-3"> What Our Students Says About Online Training </h3>
+    <h2 class="main_heads text-center mb-3"> What Our Students Says About Online Training </h2>
     <div class="large-12 columns mt-4">
       <div class="owl-carousel owl-theme slider_content_dots">
         <div class="item">
@@ -507,7 +507,7 @@
 
 <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1 ">
   <div class="container">
-    <h3 class="main_heads text-center mb-3"> What Our Students Says About Classroom Training </h3>
+    <h2 class="main_heads text-center mb-3"> What Our Students Says About Classroom Training </h2>
     <div class="large-12 columns mt-4">
       <div class="owl-carousel owl-theme slider_content_dots">
         <div class="item">
@@ -911,7 +911,7 @@ Mohammad Firoz Mansuri</span>
 
     <section id="testimonials" class="testiminilas_sec pt-5 pb-5 gray_bgg1 ">
   <div class="container">
-    <h3 class="main_heads text-center mb-3"> What Our Students Says About LMS </h3>
+    <h2 class="main_heads text-center mb-3"> What Our Students Says About LMS </h2>
     <div class="large-12 columns mt-4">
       <div class="owl-carousel owl-theme slider_content_dots">
         <div class="item">
