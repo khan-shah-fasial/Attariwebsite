@@ -334,7 +334,7 @@
                             for VMware vSphere, AWS Cloud, Azure Cloud, MCSE, and CCNA Courses, you can learn at your own
                             pace and do practicals using cloud-based labs or download the software required for labs using
                             the guidance given in our LMS. </p>
-                        <h5 class="faq_inner_head">Attari Classes Training Programs</h5>
+                        <h2 class="faq_inner_head">Attari Classes Training Programs</h2>
                         <div class="test_heading_inner"> <i> We provide Hands-on Live Practical training for</i> </div>
                         <ul class="test_ul">
                             <li> <a href="https://attariclasses.in/vmware-training-certification-online/">1. VMware
