@@ -3543,3 +3543,12 @@ ol.breadcrumb.mb-0 a {
 .width__30 {
   width: 30% !important;
 }
+
+.counter-value {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.contact_pdd0 .icons h4 {
+  font-size: 32px;
+}
