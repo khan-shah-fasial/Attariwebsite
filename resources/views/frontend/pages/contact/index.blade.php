@@ -113,7 +113,7 @@
             <div class="row">
                 <div class="col-md-6 text_location_content">
                     <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
-                    <h1>Head Office</h1>
+                    <h3>Head Office</h3>
                     <p>
                         Attari Classes, Kanakia Zillion, F wing, 4th Floor, 438, LBS
                         Marg-CST Road Junction Kurla (West), Mumbai-400070 (Entry from
@@ -130,7 +130,7 @@
             <div class="row">
                 <div class="col-md-6 order-md-2 text_location_content">
                     <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
-                    <h1>Branch Office</h1>
+                    <h3>Branch Office</h3>
                     <p>
                         C Wing, Baitun Noor Appartment, 504-505, 5th, SG Barve Marg,
                         Mumbai, Maharashtra 400070
@@ -160,7 +160,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="text_content pt70">
-                        <h1 class="socail_head">#Social Media</h1>
+                        <h3 class="socail_head">#Social Media</h3>
                         <p class="socail_para">
                             Social media refers to the means of interactions among people in which
                             they create, share, and/or exchange information and ideas in virtual
@@ -175,7 +175,7 @@
                             <div class="icons">
                                 <div class="facebook">
                                     <i aria-hidden="true" class="fab fa-facebook-f"></i>
-                                    <h2>16K</h2>
+                                    <h4>16K</h4>
                                     <p>Followers</p>
                                     <a target="_blank" href="https://www.facebook.com/AttariClass">Check Our Facebook</a>
                                 </div>
@@ -185,7 +185,7 @@
                             <div class="icons">
                                 <div class="instagram">
                                     <i aria-hidden="true" class="fab fa-instagram"></i>
-                                    <h2>2.2K</h2>
+                                    <h4>2.2K</h4>
                                     <p>Followers</p>
                                     <a target="_blank" href="https://www.instagram.com/attari.classes/">Check Our
                                         Instagram</a>
@@ -197,7 +197,7 @@
                             <div class="icons">
                                 <div class="linkedIn">
                                     <i aria-hidden="true" class="fab fa-linkedin-in"></i>
-                                    <h2>6.3K</h2>
+                                    <h4>6.3K</h4>
                                     <p>Followers</p>
                                     <a target="_blank"
                                         href="https://www.linkedin.com/company/attari-classes-vmware-aws-azure-mcsa-ccna-training-in-mumbai/">Check
@@ -210,7 +210,7 @@
                             <div class="icons">
                                 <div class="youtupe">
                                     <i aria-hidden="true" class="fab fa-youtube"></i>
-                                    <h2>10.3K</h2>
+                                    <h4>10.3K</h4>
                                     <p>Subscribers</p>
                                     <a target="_blank" href="https://www.youtube.com/c/AttariClasses-IT-Trainings">Check
                                         Our YouTube Channel</a>
@@ -222,7 +222,7 @@
                             <div class="icons">
                                 <div class="telegram">
                                     <i aria-hidden="true" class="fab fa-telegram"></i>
-                                    <h2>190+</h2>
+                                    <h4>190+</h4>
                                     <p>Subscribers</p>
                                     <a target="_blank" href="https://t.me/attariclasses">Check Our Telegram</a>
                                 </div>
@@ -233,7 +233,7 @@
                             <div class="icons">
                                 <div class="twitter">
                                     <i aria-hidden="true" class="fab fa-twitter"></i>
-                                    <h2>32+</h2>
+                                    <h4>32+</h4>
                                     <p>Followers</p>
                                     <a target="_blank"
                                         href="https://twitter.com/i/flow/login?redirect_after_login=%2FAttariClasses">Check

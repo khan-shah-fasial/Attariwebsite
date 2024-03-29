@@ -7,37 +7,37 @@
             </div>
             <div class="col-lg-2 col-md-4 col-6 counter_box">
                 <div class="counter_inner_box">
-                    <h2 class="counter-value" data-count="5000">1000</h2>
+                    <span class="counter-value" data-count="5000">1000</span>
                     <p>Sessions</p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-6 counter_box">
                 <div class="counter_inner_box">
-                    <h2 class="counter-value" data-count="10">0</h2>
+                    <span class="counter-value" data-count="10">0</span>
                     <p>Years of Delivering Innovative Training</p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-6 counter_box">
                 <div class="counter_inner_box">
-                    <h2 class="counter-value" data-count="7000">2000</h2>
+                    <span class="counter-value" data-count="7000">2000</span>
                     <p>Candidates Trained</p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-6 counter_box">
                 <div class="counter_inner_box">
-                    <h2 class="counter-value" data-count="1000">100</h2>
+                    <span class="counter-value" data-count="1000">100</span>
                     <p>Students Working in Top MNCs</p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-6 counter_box">
                 <div class="counter_inner_box">
-                    <h2 class="counter-value" data-count="4.9">0.0</h2>
+                    <span class="counter-value" data-count="4.9">0.0</span>
                     <p>Google Rating</p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-6 counter_box">
                 <div class="counter_inner_box">
-                    <h2 class="counter-value" data-count="4.9">0.0</h2>
+                    <span class="counter-value" data-count="4.9">0.0</span>
                     <p>Facebook Rating</p>
                 </div>
             </div>
