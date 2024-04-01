@@ -1,9 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'VMware, AWS, AZURE, MCSE / MCSA, and CCNA -Attari Classes Blog')
 
 @section('page.description',
-    ' ')
+    'Attari Classes blog is the right place to get latest content related to VMware, AWS Cloud , Azure Cloud, MCSE, and CCNA.')
 
 @section('page.type', 'blogs')
 

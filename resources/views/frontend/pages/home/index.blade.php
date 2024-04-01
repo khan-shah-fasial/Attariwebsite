@@ -1,10 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', 'VMware, AWS, Azure, MCSE & CCNA Training Institute, Book Free DEMO - Attari Classes')
+@section('page.title', 'VMware, AWS, Azure, MCSE & CCNA Training Institute, Book Free DEMO -Attari Classes')
 
 @section('page.description',
-    'Attari Classes provides Hands-on Practical Training, Book FREE DEMO, Topic wise Recorded
-    Lectures on LMS, Online & Classroom Training options')
+    'Attari Classes provides Hands-on Practical Training, Book FREE DEMO, Topic wise Recorded Lectures on LMS, Online & Classroom Training options')
 
 @section('page.type', 'website')
 

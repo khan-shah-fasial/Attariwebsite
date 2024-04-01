@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'Terms of Service')
 
-@section('page.description', ' ')
+@section('page.description', 'Check out for our website conditions and rules and regulations.')
 
 @section('page.type', 'website')
 

@@ -1,9 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'Attari Classes provides Online Training, Classroom Training & Video Learning')
 
 @section('page.description',
-    ' ')
+    'Attari Classes provides classroom and online training for domestic and international students all over the world for for VMware vSphere, AWS Cloud, Azure Cloud, MCSE, and CCNA Courses')
 
 @section('page.type', 'website')
 

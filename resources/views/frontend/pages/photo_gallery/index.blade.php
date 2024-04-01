@@ -1,9 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'Photo Gallery')
 
 @section('page.description',
-    ' ')
+    'Check out for photo gallery.')
 
 @section('page.type', 'website')
 

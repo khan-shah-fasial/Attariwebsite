@@ -724,7 +724,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 width70">
-                        <h4 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->faq_section_heading }} </h4>
+                        <h2 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->faq_section_heading }} </h2>
 
                         @if (!empty($faq))
                             <div class="accordion--container accordion_style">
@@ -860,9 +860,9 @@
 
                         @endphp
 
-                        <h5>
+                        <h2>
                             Find {{ $course_name }} Certification Training Course in other Cities:
-                        </h5>
+                        </h2>
 
                         @php
                             $cms_alias_city = DB::table('cms')->where('status', 1)->where('zone', 1)->where('course_id', $cms->course_id)->whereNot('id', $cms->id)->get(['alias', 'slug']);
@@ -892,9 +892,9 @@
 
                             @if($cms_alias_country->isNotEmpty())
                                 <div class="location_box">
-                                    <h5>
+                                    <h2>
                                         Find {{ $course_name }} Certification Training Course in other Country:
-                                    </h5>
+                                    </h2>
                                     <ul class="elementor-icon-list-items">
                                         @foreach ($cms_alias_country as $row)
                                             <li>

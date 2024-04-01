@@ -1,9 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'Refunds & Cancellations')
 
-@section('page.description', 'Seedling & Associates is one of the best law firms in Delhi, India. We provide legal
-    assistance for startups, FDI, Property law, IP, and more')
+@section('page.description', 'Please check for the Attari Classes return and cancellation policy.')
 
 @section('page.type', 'website')
 
