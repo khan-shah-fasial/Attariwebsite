@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\Course;
 use App\Models\BlogCategory;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
@@ -20,8 +21,9 @@ class BlogController extends Controller
 
     public function add() {
         $blogcategory = BlogCategory::where('status', 1)->get();
+        $course = Course::where('status', 1)->get(['id', 'name']);
         $users = User::all();
-        return view('backend.pages.blog.add', compact('blogcategory', 'users'));
+        return view('backend.pages.blog.add', compact('blogcategory', 'users', 'course'));
     }  
     
     public function create(Request $request) {
@@ -55,6 +57,10 @@ class BlogController extends Controller
             'meta_title' => $request->input('meta_title'),
             'meta_description' => $request->input('meta_description'),
             'user_id' => $request->input('user_id'),
+            'course_id' => $request->input('course_id'),
+            'text_testimonial' => $request->has('text_testimonial') ? '1' : '0',
+            'video_testimonial' => $request->has('video_testimonial') ? '1' : '0',
+            'batch_schedule' => $request->has('batch_schedule') ? '1' : '0',
             'created_at' => date('Y-m-d H:i:s', strtotime($request->input('updated_at'))),
             'updated_at' => date('Y-m-d H:i:s', strtotime($request->input('updated_at'))),
         ]);
@@ -70,8 +76,9 @@ class BlogController extends Controller
     public function edit($id) {
         $blog = Blog::find($id);
         $blogcategory = BlogCategory::where('status', 1)->get();
+        $course = Course::where('status', 1)->get(['id', 'name']);
         $users = User::all();        
-        return view('backend.pages.blog.edit', compact('blog', 'blogcategory','users'));
+        return view('backend.pages.blog.edit', compact('blog', 'blogcategory','users', 'course'));
     }
     
     public function view($id) {
@@ -141,6 +148,10 @@ class BlogController extends Controller
         $blog->meta_title = $request->input('meta_title');
         $blog->meta_description = $request->input('meta_description');
         $blog->user_id = $request->input('user_id');
+        $blog->course_id = $request->input('course_id');
+        $blog->text_testimonial = $request->has('text_testimonial') ? '1' : '0';
+        $blog->video_testimonial = $request->has('video_testimonial') ? '1' : '0';
+        $blog->batch_schedule = $request->has('batch_schedule') ? '1' : '0';
         $blog->updated_at = date('Y-m-d H:i:s', strtotime($request->input('updated_at')));
         $blog->save();
 

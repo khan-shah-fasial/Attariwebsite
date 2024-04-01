@@ -67,9 +67,9 @@ class IndexController extends Controller
     {
 
         $category_id = BlogCategory::where('slug', $category)->first();
-
-        $detail = Blog::where('slug', $slug)->where('status', 1)->first();
-
+        $detail = Blog::where('slug', $slug)->where('status', 1)->first();        
+        $course = Course::where('status', 1)->where('id', $detail->course_id)->first(['id', 'name', 'alias']);
+    
         if ($detail) {
             $blog_category_ids = json_decode($detail->blog_category_ids);
             $first_category_id = $blog_category_ids[0];
@@ -103,7 +103,7 @@ class IndexController extends Controller
                 $previous_slug = $previous ? $previous->slug : null;
                 $next_slug = $next ? $next->slug : null;
 
-                return view('frontend.pages.blog.detail', compact('detail', 'author', 'blog', 'previous_slug', 'next_slug'));
+                return view('frontend.pages.blog.detail', compact('detail', 'author', 'blog', 'previous_slug', 'next_slug', 'course'));
             }
         }
         return view('frontend.pages.404.index');
