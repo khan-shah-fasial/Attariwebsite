@@ -82,55 +82,31 @@
     </section>
     <!-----------------------------Recent Posts------------------------ -->
     <section class="recent_post py-5 bggray1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="py-2">Recent Post</h3>
-                    <div class="col-md-12 mb-4">
-                        <div class="post_box">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-md-9 text_box_post">
-                                    <h6>
-                                        <a href="blog-details.php">10 Ways on How VMware Certifications Can Boost Your IT Career</a>
-                                    </h6>
-                                    
-                                    <p>
-                                      
-VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications can help you advance in your IT career: 
-                                    </p>
-                                    <p class="pt-3"><strong>Last Update:</strong> September 28, 2022</p>
-                                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="py-2">Recent Posts</h3>
+                @foreach($blog as $blogs)
+                <div class="col-md-12 mb-4">
+                    <div class="post_box">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 img">
+                                <a href="{{ url(route('blog.detail', ['category' =>'blog','slug' => $blogs->slug] )) }}"><img src="{{ asset('storage/' . $blogs->main_image) }}" alt="" /></a>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 mb-4">
-                        <div class="post_box">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 img">
-                                    <a href="blog-details.php"><img src="/assets/frontend/images/VMware-Training-blog.jpg" alt="" /></a>
-                                </div>
-                                <div class="col-md-9 text_box_post">
-                                    <h6>
-                                        <a href="blog-details.php">10 Ways on How VMware Certifications Can Boost Your IT Career</a>
-                                    </h6>
-                                   
-                                    <p>
-                                        
-VMware certifications can be highly beneficial for boosting your IT career in several ways. Here are 10 ways VMware certifications can help you advance in your IT career: 
-                                    </p>
-                                     <p class="pt-3"><strong>Last Update:</strong> September 28, 2022</p>
-                                </div>
+                            <div class="col-md-9 text_box_post">
+                                <h6><a href="{{ url(route('blog.detail', ['category' =>'blog','slug' => $blogs->slug] )) }}">{{ $blogs->title }}</a></h6>
+                                <p>{{ $blogs->short_description }}</p>
+                                <p class="pt-3"><strong>Last Update:</strong> {{ $blogs->updated_at->format('F j, Y') }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
+                @endforeach
+                {{ $blog->links() }} <!-- Pagination links -->
             </div>
-    </section>
+        </div>
+    </div>
+</section>
 
 
     <section class="other_courses pt-5 pb-5">

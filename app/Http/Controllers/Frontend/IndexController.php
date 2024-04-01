@@ -38,7 +38,7 @@ class IndexController extends Controller
 
 //--------------=============================== Blog  ================================------------------------------
 
-    public function blog(){
+    public function blog(Request $request){
         $blog = Blog::where('status', 1)->whereJsonContains('blog_category_ids', '3')->orderBy('updated_at', 'desc')->paginate(6);
 
         return view('frontend.pages.blog.index', compact('blog'));
