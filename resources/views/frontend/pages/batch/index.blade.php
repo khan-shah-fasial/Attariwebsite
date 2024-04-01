@@ -6,9 +6,9 @@
     $meta_url = url()->current();
 @endphp
 
-@section('page.title', $meta_title)
+@section('page.title', 'VMware, AWS, Azure, MCSE/MCSA, CCNA Training Institute in Mumbai')
 
-@section('page.description', $meta_description)
+@section('page.description', 'Best Training & Certification institute for VMware, AWS, Azure, MCSE/MCSA, CCNA in Mumbai & across India. Online & Classroom Training options')
 
 @section('page.type', 'website')
 

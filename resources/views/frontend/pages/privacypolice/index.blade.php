@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'Privacy Policy')
 
-@section('page.description', ' ')
+@section('page.description', 'Read for Attari Classes privacy policy.')
 
 @section('page.type', 'website')
 

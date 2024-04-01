@@ -1,9 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'Contact us - Attari Classes')
 
 @section('page.description',
-    ' ')
+    'Attari Classes is located in Mumbai, Kurla West. Get in touch with our support team on +91998708851 or email to info@attariclasses.in')
 
 @section('page.type', 'website')
 

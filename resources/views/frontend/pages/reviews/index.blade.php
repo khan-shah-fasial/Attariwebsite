@@ -7,9 +7,9 @@
 @endphp
 
 
-@section('page.title', $meta_title)
+@section('page.title', 'Reviews')
 
-@section('page.description',$meta_description)
+@section('page.description', 'Check out for Attari Classes reviews.')
 
 @section('page.type', 'website')
 

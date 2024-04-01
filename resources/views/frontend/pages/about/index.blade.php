@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', ' ')
+@section('page.title', 'About Us - Attari Classes')
 
-@section('page.description', ' ')
+@section('page.description', 'Attari Classes is one of the leading IT Training Center. Google and Facebook reviews are enough to prove our excellency in teaching')
 
 @section('page.type', 'website')
 
