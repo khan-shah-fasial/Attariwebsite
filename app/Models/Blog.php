@@ -22,6 +22,10 @@ class Blog extends Model
         'meta_description',
         'status',
         'user_id',
+        'course_id',
+        'text_testimonial',
+        'video_testimonial',
+        'batch_schedule',
     ];
 
 }

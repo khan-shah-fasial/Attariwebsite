@@ -86,6 +86,7 @@ class IndexController extends Controller
                     ->orderBy('id', 'desc')
                     ->get();
 
+                /*
                 $current_id = $detail->id;
 
                 $previous = Blog::where('status', 1)
@@ -104,6 +105,9 @@ class IndexController extends Controller
                 $next_slug = $next ? $next->slug : null;
 
                 return view('frontend.pages.blog.detail', compact('detail', 'author', 'blog', 'previous_slug', 'next_slug', 'course'));
+                */
+
+                return view('frontend.pages.blog.detail', compact('detail', 'author', 'blog', 'course'));
             }
         }
         return view('frontend.pages.404.index');

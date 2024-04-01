@@ -21,6 +21,15 @@
                             <input type="hidden" class="form-control" name="page" value="practice">
                         </div>
 
+                        <div class="col-sm-12">
+                            <div class="form-group mb-3">
+                                <label>More Info <span class="red">*</span></label>
+                                <input maxlength="255" type="text" class="form-control" name="more_info" required>
+                            </div>
+
+                            <br>
+                        </div>
+
 
                         <div class="row">
                             <div class="col-md-12">

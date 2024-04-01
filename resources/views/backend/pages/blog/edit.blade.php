@@ -32,7 +32,7 @@
                 <input type="text" class="form-control" name="short_description" value="{{ $blog->short_description }}" required>
             </div>
         </div>
-<div class="col-sm-12 d-none">
+        <div class="col-sm-12 d-none">
             <div class="form-group mb-3">
                 <label>Category <span class="red">*</span></label>
                 <select class="form-select select2" name="blog_category_ids[]" multiple required>
@@ -49,7 +49,7 @@
         <div class="col-sm-4">
             <div class="form-group mb-3">
                 <label>Course</label>
-                <select class="form-select select2" name="course_id">
+                <select class="form-select select2" name="course_id" required>
                     <option value="">--Select--</option>
                     @foreach ($course as $row)
                         <option value="{{ $row->id }}" {{ $row->id == $blog->course_id ? 'selected' : '' }}>
@@ -79,7 +79,7 @@
         </div>
 
 
-<div class="col-sm-12">
+        <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Meta Title <span class="red">*</span></label>
                 <input type="text" class="form-control" name="meta_title" value="{{ $blog->meta_title }}" required>

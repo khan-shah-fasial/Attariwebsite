@@ -48,37 +48,36 @@
                 <div class="col-sm-4">
                     <div class="form-group mb-3">
                         <label>Course</label>
-                        <select class="form-select select2" name="course_id">
+                        <select class="form-select select2" name="course_id" required>
                             <option value="">--Select--</option>
                             @foreach ($course as $row)
                             <option value="{{ $row->id }}">{{ $row->name }}</option>
                             @endforeach
-
-
                         </select>
                     </div>
                 </div>
+
                 <div class="col-sm-8">
                     <div class="row">
 
-                    <div class="form-group col-4 mb-3">
-                        <label>Text Testimonial</label><br>
-                        <input type="checkbox" name="text_testimonial" value="1">
-                    </div>
+                        <div class="form-group col-4 mb-3">
+                            <label>Text Testimonial</label><br>
+                            <input type="checkbox" name="text_testimonial" value="1">
+                        </div>
 
-                    <div class="form-group col-4 mb-3">
-                        <label>Video Testimonial</label><br>
-                        <input type="checkbox" name="video_testimonial" value="1">
-                    </div>
+                        <div class="form-group col-4 mb-3">
+                            <label>Video Testimonial</label><br>
+                            <input type="checkbox" name="video_testimonial" value="1">
+                        </div>
 
-                    <div class="form-group col-4 mb-3">
-                        <label>Batch Schedule</label><br>
-                        <input type="checkbox" name="batch_schedule" value="1">
-                    </div>
-
+                        <div class="form-group col-4 mb-3">
+                            <label>Batch Schedule</label><br>
+                            <input type="checkbox" name="batch_schedule" value="1">
+                        </div>
 
                     </div>
                 </div>
+
                 <div class="col-sm-12">
                     <div class="form-group mb-3">
                         <label>Meta Title <span class="red">*</span></label>
@@ -103,6 +102,7 @@
                         </select>
                     </div>
                 </div>
+                
                 <div class="col-sm-6">
                     <div class="form-group mb-3">
                         <label>Updated Date <span class="red">*</span></label>

@@ -31,6 +31,7 @@ class BlogController extends Controller
         $validator = Validator::make($request->all(), [
             'image' => 'image|mimes:jpeg,png,jpg,gif',
             'slug' => 'required|unique:blogs',
+            'course_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -57,10 +58,12 @@ class BlogController extends Controller
             'meta_title' => $request->input('meta_title'),
             'meta_description' => $request->input('meta_description'),
             'user_id' => $request->input('user_id'),
+
             'course_id' => $request->input('course_id'),
             'text_testimonial' => $request->has('text_testimonial') ? '1' : '0',
             'video_testimonial' => $request->has('video_testimonial') ? '1' : '0',
             'batch_schedule' => $request->has('batch_schedule') ? '1' : '0',
+
             'created_at' => date('Y-m-d H:i:s', strtotime($request->input('updated_at'))),
             'updated_at' => date('Y-m-d H:i:s', strtotime($request->input('updated_at'))),
         ]);
@@ -119,6 +122,7 @@ class BlogController extends Controller
         $validator = Validator::make($request->all(), [
             'image' => 'image|mimes:jpeg,png,jpg,gif',
             'slug' => 'required|unique:blogs,slug,'. $request->input('id'),
+            'course_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -148,10 +152,12 @@ class BlogController extends Controller
         $blog->meta_title = $request->input('meta_title');
         $blog->meta_description = $request->input('meta_description');
         $blog->user_id = $request->input('user_id');
+
         $blog->course_id = $request->input('course_id');
         $blog->text_testimonial = $request->has('text_testimonial') ? '1' : '0';
         $blog->video_testimonial = $request->has('video_testimonial') ? '1' : '0';
         $blog->batch_schedule = $request->has('batch_schedule') ? '1' : '0';
+
         $blog->updated_at = date('Y-m-d H:i:s', strtotime($request->input('updated_at')));
         $blog->save();
 
