@@ -21,6 +21,7 @@ class Learnings extends Model
         'faq_title',
         'faq',
         'page',
+        'more_info',
         'status',
     ];
 }

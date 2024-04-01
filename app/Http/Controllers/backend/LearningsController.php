@@ -24,6 +24,7 @@ class LearningsController extends Controller
             'testimonials_title' => 'required',
             'faq_title' => 'required',
             'faq' => 'required',
+            'more_info' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -90,6 +91,7 @@ class LearningsController extends Controller
             'faq' => $data['faq'],
 
             'page' => $request->input('page'),
+            'more_info' => $request->input('more_info'),
         ]);
     
         $response = [
@@ -113,6 +115,7 @@ class LearningsController extends Controller
             'testimonials_title' => 'required',
             'faq_title' => 'required',
             'faq' => 'required',
+            'more_info' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -190,6 +193,7 @@ class LearningsController extends Controller
         $Learnings->faq = $data['faq'];
 
         $Learnings->page = $request->input('page');
+        $Learnings->more_info = $request->input('more_info');
 
         $Learnings->save();
 

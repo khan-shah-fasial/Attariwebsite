@@ -32,7 +32,7 @@
                 <input type="text" class="form-control" name="short_description" value="{{ $blog->short_description }}" required>
             </div>
         </div>
-<div class="col-sm-12">
+        <div class="col-sm-12 d-none">
             <div class="form-group mb-3">
                 <label>Category <span class="red">*</span></label>
                 <select class="form-select select2" name="blog_category_ids[]" multiple required>
@@ -45,7 +45,41 @@
                 </select> 
             </div>
         </div>
-<div class="col-sm-12">
+
+        <div class="col-sm-4">
+            <div class="form-group mb-3">
+                <label>Course</label>
+                <select class="form-select select2" name="course_id" required>
+                    <option value="">--Select--</option>
+                    @foreach ($course as $row)
+                        <option value="{{ $row->id }}" {{ $row->id == $blog->course_id ? 'selected' : '' }}>
+                            {{ $row->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="form-group col-4 mb-3">
+                    <label>Text Testimonial</label><br>
+                    <input type="checkbox" name="text_testimonial" value="1" {{ $blog->text_testimonial == '1' ? 'checked' : '' }}>
+                </div>
+
+                <div class="form-group col-4 mb-3">
+                    <label>Video Testimonial</label><br>
+                    <input type="checkbox" name="video_testimonial" value="1" {{ $blog->video_testimonial == '1' ? 'checked' : '' }}>
+                </div>
+
+                <div class="form-group col-4 mb-3">
+                    <label>Batch Schedule</label><br>
+                    <input type="checkbox" name="batch_schedule" value="1" {{ $blog->batch_schedule == '1' ? 'checked' : '' }}>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12">
             <div class="form-group mb-3">
                 <label>Meta Title <span class="red">*</span></label>
                 <input type="text" class="form-control" name="meta_title" value="{{ $blog->meta_title }}" required>

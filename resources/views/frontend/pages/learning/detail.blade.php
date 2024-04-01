@@ -70,7 +70,9 @@
                         @endforeach
 
 
-                        <div class="more_info_btn"><a href=""><i class="fas fa-arrow-right"></i> More Info</a></div>
+                        <div class="more_info_btn"><a href=""><i class="fas fa-arrow-right"></i> More Info</a>
+                            <p>{{ $learning->more_info }}</p>
+                        </div>
                     </div>
 
 
