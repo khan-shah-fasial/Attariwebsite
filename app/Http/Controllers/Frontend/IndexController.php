@@ -44,6 +44,7 @@ class IndexController extends Controller
         return view('frontend.pages.blog.index', compact('blog'));
     }
 
+    //  category filter post
     public function blog_course($course, Request $request)
     {
         // Fetch the course based on the provided alias
