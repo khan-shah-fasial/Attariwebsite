@@ -44,6 +44,29 @@ class IndexController extends Controller
         return view('frontend.pages.blog.index', compact('blog'));
     }
 
+    public function blog_course($course, Request $request)
+    {
+        // Fetch the course based on the provided alias
+        $course = Course::where('status', 1)->where('alias', $course)->first();
+    
+        // Check if the course is found
+        if ($course) {
+            // Fetch blogs related to the course
+            $blog = Blog::where('status', 1)
+                ->whereJsonContains('blog_category_ids', '3') // Assuming '3' is the category ID for blogs related to this course
+                ->where('course_id', $course->id)
+                ->orderBy('updated_at', 'desc')
+                ->paginate(6);
+    
+            return view('frontend.pages.blog.index', compact('blog'));
+        } else {
+            // Handle case where the course is not found
+            // For example, return a 404 page or redirect to another page
+            abort(404); // This will return a 404 page
+        }
+    }
+    
+
     public function blog_data(Request $request)
     {
         $page = $request->input('page', 1);
