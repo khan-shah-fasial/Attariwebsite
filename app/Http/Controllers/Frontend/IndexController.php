@@ -38,11 +38,35 @@ class IndexController extends Controller
 
 //--------------=============================== Blog  ================================------------------------------
 
-    public function blog(){
+    public function blog(Request $request){
         $blog = Blog::where('status', 1)->whereJsonContains('blog_category_ids', '3')->orderBy('updated_at', 'desc')->paginate(6);
 
         return view('frontend.pages.blog.index', compact('blog'));
     }
+
+    //  category filter post
+    public function blog_course($course, Request $request)
+    {
+        // Fetch the course based on the provided alias
+        $course_id = Course::where('status', 1)->where('alias', $course)->value('id');
+
+        // Check if the course is found
+        if ($course_id) {
+            // Fetch blogs related to the course
+            $blog = Blog::where('status', 1)
+                ->whereJsonContains('blog_category_ids', '3') // Assuming '3' is the category ID for blogs related to this course
+                ->where('course_id', $course_id)
+                ->orderBy('updated_at', 'desc')
+                ->paginate(6);
+    
+            return view('frontend.pages.blog.index', compact('blog'));
+        } else {
+            return view('frontend.pages.404.index');
+
+        }
+        
+    }
+    
 
     public function blog_data(Request $request)
     {

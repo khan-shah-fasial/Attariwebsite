@@ -26,6 +26,8 @@ Route::get('/area-of-practice/{slug}', [IndexController::class, 'practice_area_d
 Route::get('/blog', [IndexController::class, 'blog'])->name('blog');
 Route::get('/blogs-data', [IndexController::class, 'blog_data'])->name('blog-data');
 
+Route::get('/category/{course}', [IndexController::class, 'blog_course'])->name('blog-course-view');
+
 $postCategories = DB::table('blog_categories')->pluck('slug')->toArray();
 Route::get('/{category}/{slug}', [IndexController::class, 'blog_detail'])
     ->where('category', implode('|', $postCategories))
