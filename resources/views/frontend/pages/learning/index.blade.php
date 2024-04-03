@@ -58,14 +58,16 @@
                             </h5>
                             <div class="course_button">
                                 @php
-                                    $practice = $filtered1->where('page','practice');
-                                    $book = $filtered1->where('page','book');
+                                    $practice_vm = $filtered1->where('page','practice')->first();
+                                    $book_vm = $filtered1->where('page','book')->first();
                                 @endphp
+                                @if($practice_vm)
+                                    <a href="{{ url(route('learning.detail', ['slug' => $practice_vm->slug] )) }}">Practice Test</a>
+                                @endif
 
-                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
-
+                                @if($book_vm)
+                                    <a href="{{ url(route('learning.detail', ['slug' => $book_vm->slug] )) }}">Books &amp; Guides</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -82,13 +84,16 @@
                             </h5>
                             <div class="course_button">
                                 @php
-                                    $practice = $filtered2->where('page','practice');
-                                    $book = $filtered2->where('page','book');
+                                    $practice_aws = $filtered2->where('page','practice')->first();
+                                    $book_aws = $filtered2->where('page','book')->first();
                                 @endphp
+                                @if($practice_aws)
+                                    <a href="{{ url(route('learning.detail', ['slug' => $practice_aws->slug] )) }}">Practice Test</a>
+                                @endif
 
-                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                                @if($book_aws)
+                                    <a href="{{ url(route('learning.detail', ['slug' => $book_aws->slug] )) }}">Books &amp; Guides</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -105,13 +110,16 @@
                             </h5>
                             <div class="course_button">
                                 @php
-                                    $practice = $filtered3->where('page','practice');
-                                    $book = $filtered3->where('page','book');
+                                    $practice_azure = $filtered3->where('page','practice')->first();
+                                    $book_azure = $filtered3->where('page','book')->first();
                                 @endphp
+                                @if($practice_azure)
+                                    <a href="{{ url(route('learning.detail', ['slug' => $practice_azure->slug] )) }}">Practice Test</a>
+                                @endif
 
-                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                                @if($book_azure)
+                                    <a href="{{ url(route('learning.detail', ['slug' => $book_azure->slug] )) }}">Books &amp; Guides</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -144,14 +152,17 @@
                                     <a href=""> Microsoft Windows Server MCSE </a>
                                 </h5>
                                 <div class="course_button">
-                                @php
-                                    $practice = $filtered5->where('page','practice');
-                                    $book = $filtered5->where('page','book');
-                                @endphp
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                                    @php
+                                        $practice_mcse = $filtered5->where('page','practice')->first();
+                                        $book_mcse = $filtered5->where('page','book')->first();
+                                    @endphp
+                                    @if($practice_mcse)
+                                        <a href="{{ url(route('learning.detail', ['slug' => $practice_mcse->slug] )) }}">Practice Test</a>
+                                    @endif
+    
+                                    @if($book_mcse)
+                                        <a href="{{ url(route('learning.detail', ['slug' => $book_mcse->slug] )) }}">Books &amp; Guides</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -167,14 +178,17 @@
                                     <a href=""> Cisco Networking CCNA </a>
                                 </h5>
                                 <div class="course_button">
-                                @php
-                                    $practice = $filtered6->where('page','practice');
-                                    $book = $filtered6->where('page','book');
-                                @endphp
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $practice[0]->slug] )) }}">Practice Test</a>
-
-                                <a href="{{ url(route('learning.detail', ['slug' => $book[1]->slug] )) }}">Books &amp; Guides</a>
+                                    @php
+                                        $practice_ccna = $filtered6->where('page','practice')->first();
+                                        $book_ccna = $filtered6->where('page','book')->first();
+                                    @endphp
+                                    @if($practice_ccna)
+                                        <a href="{{ url(route('learning.detail', ['slug' => $practice_ccna->slug] )) }}">Practice Test</a>
+                                    @endif
+    
+                                    @if($book_ccna)
+                                        <a href="{{ url(route('learning.detail', ['slug' => $book_ccna->slug] )) }}">Books &amp; Guides</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
