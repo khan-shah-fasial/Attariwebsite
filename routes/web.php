@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-
+use App\Http\Middleware\BlogSessionLifetime;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,11 +27,14 @@ Route::get('/blog', [IndexController::class, 'blog'])->name('blog');
 Route::get('/blogs-data', [IndexController::class, 'blog_data'])->name('blog-data');
 
 Route::get('/category/{course}', [IndexController::class, 'blog_course'])->name('blog-course-view');
-
 $postCategories = DB::table('blog_categories')->pluck('slug')->toArray();
-Route::get('/{category}/{slug}', [IndexController::class, 'blog_detail'])
-    ->where('category', implode('|', $postCategories))
-    ->name('blog.detail');
+
+Route::middleware([BlogSessionLifetime::class, 'track.views'])->group(function () use ($postCategories) {
+    Route::get('/{category}/{slug}', [IndexController::class, 'blog_detail'])
+        ->where('category', implode('|', $postCategories))
+        ->name('blog.detail');
+});
+
     
 /*
 Route::get('/news', [IndexController::class, 'news'])->name('news');
