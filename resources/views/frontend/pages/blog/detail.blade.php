@@ -133,7 +133,30 @@ $i = 1;
                                 @php echo html_entity_decode($detail->content) @endphp
                             </p>
                         </div>
+                        
+<!------------------========================== for text review ===============================-------------------->
+            @php
+                $vmware_batch = DB::table('batches')->where('status',
+                1)->where('course_id', $detail->course_id)->get(['oc_pointer_list', 'batch_detail',
+                'off_percentage', 'status','course_id'])->first();
 
+                $oc_vm_pointer = json_decode($vmware_batch->oc_pointer_list);
+
+                $batch_vm_detail = json_decode($vmware_batch->batch_detail, true);
+                $batch_vm_dates = array_column($batch_vm_detail, 'date');
+
+                $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
+                $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
+
+                $batch_vm_end_date = date('Y-m-d H:i:s', strtotime($batch_vm_start_date . ' +5
+                weeks'));
+                $batch_vm_end_date2 = date('Y-m-d H:i:s', strtotime($batch_vm_start_date2 . ' +5
+                weeks'));
+
+                $course_schema_vm = DB::table('courses')->where('status', 1)->where('id', $detail->course_id)->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
+
+            @endphp
+<!------------------========================== for text review ===============================-------------------->
 
             <!------------------========================== schedule ===============================-------------------->
             @if($detail->batch_schedule === 1)
@@ -143,28 +166,6 @@ $i = 1;
                             <div class="col-12">
                             <h4 class="section_heading pb-3 text-center"> <b>{{ ucfirst($course->alias) }} Training Schedule</b></h4>
                             </div>
-
-                            @php
-                            $vmware_batch = DB::table('batches')->where('status',
-                            1)->where('course_id', $detail->course_id)->get(['oc_pointer_list', 'batch_detail',
-                            'off_percentage', 'status','course_id'])->first();
-
-                            $oc_vm_pointer = json_decode($vmware_batch->oc_pointer_list);
-
-                            $batch_vm_detail = json_decode($vmware_batch->batch_detail, true);
-                            $batch_vm_dates = array_column($batch_vm_detail, 'date');
-
-                            $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
-                            $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
-
-                            $batch_vm_end_date = date('Y-m-d H:i:s', strtotime($batch_vm_start_date . ' +5
-                            weeks'));
-                            $batch_vm_end_date2 = date('Y-m-d H:i:s', strtotime($batch_vm_start_date2 . ' +5
-                            weeks'));
-
-                            $course_schema_vm = DB::table('courses')->where('status', 1)->where('id', $detail->course_id)->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
-
-                            @endphp
 
                             @if(!empty($vmware_batch))
                             <div class="batch_shedule_box">
