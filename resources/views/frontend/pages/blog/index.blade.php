@@ -105,8 +105,32 @@
                 </div>
                 @endforeach
                 <div class="pagination">
-                    {{ $blog->links() }} <!-- Pagination links -->
-                </div>
+    <ul class="pagination justify-content-center">
+        <!-- Previous Page Link -->
+        @if ($blog->onFirstPage())
+            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+        @else
+            <li class="page-item"><a class="page-link" href="{{ $blog->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+        @endif
+        
+        <!-- Pagination Elements -->
+        @foreach ($blog as $page => $url)
+            @if ($page == $blog->currentPage())
+                <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
+            @else
+                <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+            @endif
+        @endforeach
+
+        <!-- Next Page Link -->
+        @if ($blog->hasMorePages())
+            <li class="page-item"><a class="page-link" href="{{ $blog->nextPageUrl() }}" rel="next">&raquo;</a></li>
+        @else
+            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+        @endif
+    </ul>
+</div>
+
             </div>
         </div>
     </div>
