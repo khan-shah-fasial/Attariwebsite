@@ -62,9 +62,9 @@ $i = 1;
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="breadcrums_section pt-5 pb-4">
+                <div class="breadcrums_section pt-4 pb-1">
                     <nav aria-label="breadcrumb">
-                        <ul class="d-flex align-items-center breadcrumb gap-md-3 gap-1 list-unstyled" data-aos="fade-up"
+                        <ul class="d-flex align-items-center breadcrumb gap-md-2 gap-1 list-unstyled" data-aos="fade-up"
                             data-aos-once="true">
                             <li>
                                 <a href="{{ url(route('index')) }}" class="text-decoration-none" data-aos="fade-up"
@@ -88,7 +88,7 @@ $i = 1;
 
             <div class="col-md-9">
                 <div class="blog_dt_top">
-                    <h3 class="pb-3">
+                    <h3 class="pb-2 pt-2">
                         {{ $detail->title }}
                     </h3>
 
@@ -125,7 +125,7 @@ $i = 1;
                         </style>
 
 
-                        <div class="text_box_post pb-4 ps-4 pe-4">
+                        <div class="text_box_post pb-4 ps-4 pe-4 pt-4">
                             <h6 class="mb-0">
                                 {{ $detail->title }}
                             </h6>
