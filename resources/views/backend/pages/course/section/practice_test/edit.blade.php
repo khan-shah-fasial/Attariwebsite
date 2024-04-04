@@ -50,7 +50,7 @@
                                     <label>PDF File</label>
                                     <div id="progress_bar_add_more" style="margin: 10px;"> 
 
-                                    @php $i = 0; $pdf = json_decode($learning->pdf); 
+                                    @php $p = 0; $pdf = json_decode($learning->pdf); 
 
                                     if(!empty($pdf)) { 
                                         foreach ($pdf as $row) { 
@@ -66,7 +66,7 @@
 
                                                                 <span class="glyphicon form-control-feedback"></span>
 
-                                                                <input class="form-control" type="file" name="pdf_{{$i}}">
+                                                                <input class="form-control" type="file" name="pdf_{{$p}}">
 
                                                                 <input type="hidden" name="view[]" value="{{ $row->pdf }}" >
 
@@ -76,11 +76,11 @@
 
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-1"> @if($i == 0) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_progress_bar"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_progress_bar($(this));"></i> @endif </div>
+                                                        <div class="col-md-1"> @if($p == 0) <i style="font-size: 25px; color: #0b0; cursor: pointer; margin-left: 10px;" class="ri-add-circle-fill" id="add_progress_bar"></i> @else <i style="font-size: 25px; color: red; cursor: pointer; margin-left: 10px;" class="ri-delete-bin-2-fill" onclick="remove_progress_bar($(this));"></i> @endif </div>
                                                     </div>
                                                 </div>
                                                 </br>
-                                            </div> @php $i++; } @endphp @php } else { @endphp
+                                            </div> @php $p++; } @endphp @php } else { @endphp
                                                 <div class="form-group">
                                                 <div class="row">
                                                 <div class="col-md-11">
@@ -269,10 +269,10 @@
             initTrumbowyg(`#trumbowyg_${textareaIdCounter}`);
         });
 
-        var pdfCounter = 1;
+        var pdfCounter = {{ $p }};
 
         $("#add_progress_bar").on("click", function() {
-            pdfCounter++;
+            
 
         var new_progress_bar = `
             <div class="progress_bar form-group">
@@ -291,11 +291,13 @@
                 </br>
             </div>
         `;
+        
+        pdfCounter++;
 
         $("#progress_bar_add_more").append(new_progress_bar);
         });
 
-
+        
 
     </script>
 @endsection
