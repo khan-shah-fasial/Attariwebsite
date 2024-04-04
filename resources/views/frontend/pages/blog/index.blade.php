@@ -112,15 +112,13 @@
         @else
             <li class="page-item"><a class="page-link" href="{{ $blog->previousPageUrl() }}" rel="prev">&laquo;</a></li>
         @endif
-        
+
         <!-- Pagination Elements -->
-        @foreach ($blog as $page => $url)
-            @if ($page == $blog->currentPage())
-                <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
-            @else
-                <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-            @endif
-        @endforeach
+        @for ($i = 1; $i <= $blog->lastPage(); $i++)
+            <li class="page-item @if ($i === $blog->currentPage()) active @endif">
+                <a class="page-link" href="{{ $blog->url($i) }}">{{ $i }}</a>
+            </li>
+        @endfor
 
         <!-- Next Page Link -->
         @if ($blog->hasMorePages())
@@ -130,6 +128,7 @@
         @endif
     </ul>
 </div>
+
 
             </div>
         </div>
