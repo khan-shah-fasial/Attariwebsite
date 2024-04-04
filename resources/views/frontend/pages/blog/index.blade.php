@@ -10,12 +10,12 @@
 @section('page.content')
 
     <!----------------=============== blog start ================------------->
-    <section class="blog_banner">
+    <section class="blog_banner pb-md-5 pb-3">
         <div class="container">
             <div class="row">
 
                 <div class="col-12">
-                    <div class="breadcrums_section pt-5 pb-3">
+                    <div class="breadcrums_section pt-4 pb-3">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0">
                                 <li class="{{ url(route('index')) }}"><a href="index.php">Home</a></li>

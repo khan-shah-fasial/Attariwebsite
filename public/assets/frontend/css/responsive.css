@@ -805,6 +805,96 @@
     form .error {
         color: #fff !important;
     }
+
+    .banner_boxs .col-md-2 {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .banner_boxs .col-md-2:nth-child(odd) {
+        padding-right: 5px;
+    }
+
+    .banner_boxs .col-md-2:nth-child(even) {
+        padding-left: 5px;
+    }
+
+    .boxtop_box {
+        background: #fbfbfb;
+        padding: 15px 2px 15px 5px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .boxtop_box p {
+        font-size: 13px !important;
+        color: #333;
+        margin-bottom: 0px;
+        line-height: 19px !important;
+    }
+
+    .boxtop_box i {
+        margin-bottom: 10px;
+    }
+
+    body .text_box_post {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-top: 15px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .cirtified_button a {
+
+        margin-top: 0px;
+        float: left;
+        margin-bottom: 15px;
+    }
+
+    .width__70 {
+        width: 100% !important;
+    }
+
+    .post_box iframe {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .post_box .bookfreedemo_button {
+        width: 220px !important;
+    }
+
+    .width__30 {
+        width: 100% !important;
+    }
+
+    .blogdt_from .form-group {
+        width: 100%;
+        float: left;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .bookdemofreeform_course {
+        padding: 32px 10px 30px 10px !important;
+    }
+
+    .blogdt_from .form-group:nth-child(10) {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .pagination .hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between div:nth-child(1) {
+        width: 40%;
+        float: left;
+    }
+
+    .pagination .hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between div:nth-child(2) {
+        float: right;
+        width: 60%;
+    }
+
 }
 
 @media(min-width:768px) and (max-width:991px) {
