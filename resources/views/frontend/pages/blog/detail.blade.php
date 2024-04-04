@@ -93,7 +93,7 @@ $i = 1;
                     </h3>
 
                     <b><span>Last Update: {{ date('Y-m-d', strtotime($detail->updated_at)) }}</span><span
-                            class="ms-3"><i class="fa-regular fa-eye"></i> Post Views: 413</span></b>
+                            class="ms-3"><i class="fa-regular fa-eye"></i> Post Views: {{ $detail->views }}</b>
                     <p class="pt-2">{{ $detail->short_description }}</p>
                 </div>
             </div>
