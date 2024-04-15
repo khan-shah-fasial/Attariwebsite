@@ -18,6 +18,15 @@
                         value="{{ $faq->question }}" required>
                 </div>
             </div>
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Zone</label>
+                    <select class="form-select" name="zone" id="typeSelect" onclick="toggleInput1();" required>
+                        <option value="0" @if($faq->zone == "0") selected @endif>Main</option>
+                        <option value="1" @if($faq->zone == "1") selected @endif>City/Country</option>
+                    </select> 
+                </div>
+            </div>
             <div class="col-sm-12">
                 <div class="form-group mb-3">
                     <label>Answer <span class="red">*</span></label>

@@ -17,6 +17,7 @@ class FaqController extends Controller
             'answer' => 'required',
             'course_id' => 'required',
             'title_no'  => 'required',
+            'zone' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -29,6 +30,7 @@ class FaqController extends Controller
         $faq = Faq::create([
             'question' => $request->input('question'),
             'answer' => $request->input('answer'),
+            'zone' => $request->input('zone'),
             'course_id' => $request->input('course_id'),
             'title_no' => $request->input('title_no'),
         ]);
@@ -81,6 +83,7 @@ class FaqController extends Controller
         $validator = Validator::make($request->all(), [
             'question' => 'required',
             'answer' => 'required',
+            'zone' => 'required',
             'course_id' => 'required',
             'title_no' => 'required',
         ]);

@@ -146,9 +146,12 @@
                         <li class="menu-item">
                             <a class="menu-item-link" href="#batch_shedule">Batch Schedule</a>
                         </li>
+                        @if (!empty($faq) && $faq->count() > 0)
                         <li class="menu-item">
                             <a class="menu-item-link" href="#faqs">FAQ</a>
                         </li>
+                        @endif
+                        
                         <div class="active-line"></div>
                     </ul>
                 </nav>
@@ -719,13 +722,14 @@
 
     <!--Faq section-->
 
-
         <section id="faqs" class="page-section overview py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 width70">
+                    @if (!empty($faq) && $faq->count() > 0)
                         <h2 class="section_heading pb-3 text-center textcolor_blck"> {{ $detail->faq_section_heading }} </h2>
-
+                    @endif
+  
                         @if (!empty($faq))
                             <div class="accordion--container accordion_style">
 

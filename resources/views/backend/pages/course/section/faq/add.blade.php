@@ -37,10 +37,19 @@
                     <input maxlength="255" type="text" class="form-control" name="title_no" value="" required>
                 </div>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-7">
                 <div class="form-group mb-3">
                     <label>Question <span class="red">*</span></label>
                     <input maxlength="255" type="text" class="form-control" name="question" value="" required>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group mb-3">
+                    <label>Zone</label>
+                    <select class="form-select" name="zone" id="typeSelect" onclick="toggleInput();" required>
+                        <option value="0">Main</option>
+                        <option value="1">City/Country</option>
+                    </select> 
                 </div>
             </div>
             <div class="col-sm-12">

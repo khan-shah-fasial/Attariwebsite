@@ -29,6 +29,7 @@
                         <th>Question</th>
                         <th>Answer</th>
                         <th>Status</th>
+                        <th>Zone</th>
                         <th>Date</th>
                         <th>Action</th>
                     </tr>
@@ -47,6 +48,14 @@
                                     <span class="badge bg-danger">Inctive</span>
                                 @endif
                             </td>
+                            <td>
+                                @if ($row->zone == 1)
+                                    <span class="badge bg-secondary">City/Country</span>
+                                @else
+                                    <span class="badge bg-success">Main</span>
+                                @endif
+                            </td>
+
                             <td>{{ datetimeFormatter($row->created_at) }}</td>
                             <td>
                                 <a href="{{ url(route('faq.status', ['id' => $row->id, 'status' => $row->status == '1' ? '0' : '1'])) }}"

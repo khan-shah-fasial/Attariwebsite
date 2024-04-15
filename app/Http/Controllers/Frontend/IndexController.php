@@ -409,7 +409,19 @@ class IndexController extends Controller
         $text_review = TextReview::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->get();
         $image_review= ImagesReview::where('course_id', $cms->course_id)->where('status', 1)->get();
         $video_review = VideoReview::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->get();
-        $faq = Faq::where('course_id', $cms->course_id)->where('status', 1)->orderBy('title_no', 'ASC')->get();
+        
+        $faq = Faq::where('course_id', $cms->course_id)
+        ->where('status', 1)
+        ->where(function ($query) use ($cms) {
+            if ($cms->zone == 1 || $cms->zone == 2) {
+                $query->where('zone', 1);
+            } else {
+                $query->where('zone', 0);
+            }
+        })
+        ->orderBy('title_no', 'ASC')        
+        ->get();
+
         $syllabus = Syllabus::where('course_id', $cms->course_id)->where('status', 1)->orderBy('title_no', 'ASC')->get();
         $project_covered = ProjectCovered::where('course_id', $cms->course_id)->where('status', 1)->orderBy('title_no', 'ASC')->get();
         $certificate = Certificate::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->get();
