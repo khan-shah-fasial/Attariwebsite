@@ -1,10 +1,17 @@
 @extends('frontend.layouts.app')
 
 @php
-    $meta_title = '';
+    if($learning->page == 'practice') {
+        $title = $alias . " Exam Dumps | " . $alias . " Practice Test Questions and Answers";
+    } else {
+        $title = $alias . " Books | Best " . $alias . " Certification Study Material";
+    }
+
+    $meta_title = ucfirst($title);
     $meta_description = '';
     $meta_url = url()->current();
 @endphp
+
 
 
 @section('page.title', $meta_title)

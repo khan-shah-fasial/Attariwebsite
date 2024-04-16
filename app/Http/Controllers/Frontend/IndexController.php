@@ -455,10 +455,21 @@ class IndexController extends Controller
         return view('frontend.pages.learning.index');
     }
 
+    // public function learning_detail($slug){
+    //     $learning = Learnings::where('slug', $slug)->where('status', 1)->first();
+    //     return view('frontend.pages.learning.detail', compact('learning'));
+    // }
     public function learning_detail($slug){
         $learning = Learnings::where('slug', $slug)->where('status', 1)->first();
-        return view('frontend.pages.learning.detail', compact('learning'));
+        $alias = null;
+        if ($learning) {
+            $course_id = $learning->course_id;
+            $course = Course::where('id', $course_id)->first();
+            if ($course) {
+                $alias = $course->alias;
+            }
+        }
+        return view('frontend.pages.learning.detail', compact('learning', 'alias'));
     }
-
 
 }
