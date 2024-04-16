@@ -562,3 +562,8 @@ const tabSlider2 = new TabSlider(
 // tab functionality end
 
 */
+
+/**More Info Learning Page */
+$(".moreinfo_button").on("click", function () {
+    $(".moreinfo_box").slideToggle("slow");
+});

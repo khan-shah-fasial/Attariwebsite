@@ -15,6 +15,7 @@
 
 @section('page.content')
 
+
     <!----------========== Vmware Book guides start ===============-------------------->
 
     <section class="sm-at banner1 bookguide_banner" 
@@ -70,9 +71,10 @@
                         @endforeach
 
 
-                        <div class="more_info_btn"><a href=""><i class="fas fa-arrow-right"></i> More Info</a>
-                            <p>{{ $learning->more_info }}</p>
-                        </div>
+                      <div class="moreinfo_button"><i class="fas fa-arrow-right"></i> More Info</div>
+                      <div class="moreinfo_box" style="display:none;"><p>{{ $learning->more_info }}</p></div>
+
+
                     </div>
 
 
@@ -354,3 +356,5 @@
     <!-------------=============== Vmware Book guides end =============== -------------------->
 
 @endsection
+
+
