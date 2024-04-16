@@ -18,6 +18,21 @@
     <!-- Icons css -->
     <link href="/assets/backend/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+    <style>
+        .go-back {
+    margin-top: 17px;
+    float: right;
+}
+
+.resend_top_cls {
+    margin-top: 11px;
+    border: 0;
+    background: transparent;
+    color: #00BCD4;
+    text-align: center;
+    font-weight: 600;
+}
+    </style>
 </head>
 <body class="authentication-bg pb-0">
 
@@ -38,8 +53,17 @@
 
                 <div class="my-auto">
                     <!-- title-->
-                    <h4 class="mt-0">Verify OTP</h4>
-                    <p class="text-muted mb-4">Enter your OTP to access account.</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="mt-0">Verify OTP</h4>
+                            <p class="text-muted mb-4">Enter your OTP to access account.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="btn btn-sm btn-danger go-back" href="{{ url(route('backend.login')) }}"> <i class="mdi mdi-share"></i> Back</a>
+                        </div>
+                    </div>
+                    
+                    
 
                     @if($errors->has('otp'))  
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -80,16 +104,16 @@
 
                     @else
 
-                        <form action="{{ route('resend-otp') }}" method="post">
+                        <form class="text-center" action="{{ route('resend-otp') }}" method="post">
                             @csrf
                             <input type="hidden" name="method" value="email">
-                            <button type="submit">Resend OTP via Email</button>
+                            <button class="resend_top_cls" type="submit">Resend OTP via Email</button>
                         </form>
 
                     @endif
 
 
-                    <a href="{{ url(route('backend.login')) }}"><button type="submit">Back to Login</button>
+                    
 
                     <!-- end form-->
                 </div>

@@ -3588,3 +3588,28 @@ ol.breadcrumb.mb-0 a {
   color: #000;
   font-weight: 500;
 }
+
+section.not_found {
+  background: #f4f4f4;
+  padding: 60px 0px;
+}
+
+img.not_found_img {
+  width: 400px;
+}
+
+.moreinfo_button {
+  padding: 0 !important;
+  border-bottom: 0 !important;
+  font-size: 18px;
+  color: #012749;
+  font-weight: 600;
+  margin-top: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.moreinfo_box p {
+  font-size: 11px !important;
+  padding-left: 21px;
+}
