@@ -101,6 +101,16 @@
                         </li>
 
                         @endif
+                        @if(in_array(auth()->user()->role_id, [1, 2]))
+
+                        <li class="side-nav-item">
+                            <a href="{{ route('company.index') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="ri-suitcase-line"></i> 
+                                <span> Franchise Company</span>
+                            </a>
+                        </li>
+
+                        @endif
                         
                         {{--
                         <li class="side-nav-item">

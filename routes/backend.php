@@ -31,7 +31,7 @@ use App\Http\Controllers\backend\ContactSettingController;
 */
 use App\Http\Controllers\backend\AuthorController;
 use App\Http\Controllers\backend\UserController;
-
+use App\Http\Controllers\backend\CompanyController;
 use App\Http\Controllers\backend\CourseController;
 use App\Http\Controllers\backend\BatchesController;
 use App\Http\Controllers\backend\TextReviewController;
@@ -281,6 +281,15 @@ Route::group(['prefix' => 'profile'], function () {
     Route::post('/reset', [UserController::class, 'reset'])->name('user.reset');    
 });
 
+//company
+Route::group(['prefix' => 'company'], function () {
+    Route::get('/index', [CompanyController::class, 'index'])->name('company.index');
+    Route::get('/add', [CompanyController::class, 'create'])->name('company.add');
+    Route::post('/store', [CompanyController::class, 'store'])->name('company.store');
+    Route::get('/edit/{id}', [CompanyController::class, 'edit'])->name('company.edit');
+    Route::post('/update/{id}', [CompanyController::class, 'update'])->name('company.update');
+    Route::post('/delete/{id}', [CompanyController::class, 'destroy'])->name('company.delete');
+});
 
 //course
 Route::group(['prefix' => 'course'], function () {
