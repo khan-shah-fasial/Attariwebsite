@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 
@@ -121,14 +122,52 @@ class CompanyController extends Controller
 
         return response()->json($response);
     }
-    // public function destroy1($id)
-    // {
-    //     $company = Company::find($id);
-    //     if (!$company) {
-    //         return redirect()->route('company.index')->with('error', 'Company not found.');
-    //     }        
-    //     $company->delete();        
-    //     return redirect()->route('company.index')->with('success', 'Company deleted successfully');
-    // }
+    public function savepoliciesForm()
+    {
+        // Fetch policy values from the database
+        $company = Company::first(); // Assuming you have a model named 'Company'
+
+        // Pass the policy values to the view
+        return view('backend.pages.company.policy', compact('company'));
+    }
+    public function savepoliciesPost(Request $request)
+    {
+      // Validate form data
+    $validator = Validator::make($request->all(), [
+        'terms_and_conditions' => 'required',
+        'refund_policy' => 'required',
+        'privacy_policy' => 'required',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => false,
+            'notification' => $validator->errors()->all()
+        ]);
+    }
+
+    // Retrieve all companies
+    $companies = Company::all();
+
+    // Update each company with the new policies
+    foreach ($companies as $company) {
+        $company->update([
+            'terms_and_conditions' => $request->input('terms_and_conditions'),
+            'refund_policy' => $request->input('refund_policy'),
+            'privacy_policy' => $request->input('privacy_policy')
+        ]);
+    }
+
+    // Retrieve the first company from the database
+    $firstCompany = Company::first();
+
+    // Return the data of the first company
+    return response()->json([
+        'status' => true,
+        'notification' => 'Policies updated successfully for all companies!',
+        'firstCompany' => $firstCompany
+    ]);
+    } 
+    
 
 }

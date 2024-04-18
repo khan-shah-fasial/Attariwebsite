@@ -17,5 +17,8 @@ class Company extends Model
         'owner',
         'email',
         'address',
+        'terms_and_conditions',
+        'refund_policy',
+        'privacy_policy',
     ];
 }

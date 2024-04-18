@@ -7,7 +7,11 @@
     <div class="card-body">
         <div class="row mb-2">
             <div class="col-sm-5">
-                <!--<h3>List</h3>-->
+                <div class="text-sm-start">
+                    <a href="javascript:void(0);" class="btn btn-danger mb-2"
+                        onclick="largeModal('{{ route('company.savepoliciesForm') }}', 'Update  Policies')"><i
+                            class="mdi mdi-plus-circle me-2"></i> Update Policies</a>
+                </div>
             </div>
             <div class="col-sm-7">
                 <div class="text-sm-end">
@@ -34,9 +38,11 @@
                 </thead>
                 <tbody>
                     @if ($companies->isEmpty())
-                        <tr>
-                            <td colspan="8" class="text-center"><p>No data available</p></td>
-                        </tr>
+                    <tr>
+                        <td colspan="8" class="text-center">
+                            <p>No data available</p>
+                        </td>
+                    </tr>
                     @else
                     @foreach($companies as $company)
                     <tr id="companyRow{{ $loop->index + 1 }}">

@@ -289,6 +289,8 @@ Route::group(['prefix' => 'company'], function () {
     Route::get('/edit/{id}', [CompanyController::class, 'edit'])->name('company.edit');
     Route::post('/update/{id}', [CompanyController::class, 'update'])->name('company.update');
     Route::post('/delete/{id}', [CompanyController::class, 'destroy'])->name('company.delete');
+    Route::get('/save-policies-form', [CompanyController::class, 'savepoliciesForm'])->name('company.savepoliciesForm');
+    Route::post('/save-policies', [CompanyController::class, 'savepoliciesPost'])->name('company.savepoliciesPost');
 });
 
 //course
