@@ -151,7 +151,7 @@
 
                     <div class="col-sm-12">
                         <div class="form-group mb-3">
-                            <label>FAQs</label>
+                            <label>Course Overview FAQs</label>
                             <div id="faq_add_more" style="margin: 10px;"> @php $i = 1; $faq = json_decode($course->faq); if (!empty($faq)) { foreach ($faq as $fkey => $fvalue) { $farr_value = (array)$fvalue; foreach ($farr_value as $fkey1 => $fvalue1) { @endphp
                                 <div class="faq">
                                     <div class="form-group">

@@ -99,7 +99,7 @@
 
             <div class="col-sm-12">
                 <div class="form-group mb-3">
-                    <label>FAQs</label>
+                    <label>Course Overview FAQs</label>
                     <div id="faq_add_more" style="margin: 10px;">
                         <div class="form-group">
                             <div class="row">
