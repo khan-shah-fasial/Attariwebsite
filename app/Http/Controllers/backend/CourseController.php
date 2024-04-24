@@ -34,6 +34,10 @@ class CourseController extends Controller
 
             'rating' => 'required',
             'total_review' => 'required',
+
+            'slug_url' => 'required|unique:courses',
+            'meta_title' => 'required',
+            'meta_description' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -41,7 +45,10 @@ class CourseController extends Controller
                 'status' => false,
                 'notification' => $validator->errors()->all()
             ], 200);
-        }        
+        } 
+        
+        // slug_url
+        $slug_url = customSlug($request->input('slug_url'));
     
         // Upload image
         
@@ -91,6 +98,10 @@ class CourseController extends Controller
             'course_overview' => $request->input('course_overview'),
             'faq' => $data['faq'],
             'overview_section_heading' => $request->input('overview_section_heading'),
+
+            'slug_url' => $slug_url,
+            'meta_title' => $request->input('meta_title'),
+            'meta_description' => $request->input('meta_description'),
         ]);
 
         store_log($sentence = 'Create a New Course Page by');
@@ -145,6 +156,11 @@ class CourseController extends Controller
             
             'rating' => 'required',
             'total_review' => 'required',
+
+
+            'slug_url' => 'required',
+            'meta_title' => 'required',
+            'meta_description' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -153,6 +169,8 @@ class CourseController extends Controller
                 'notification' => $validator->errors()->all()
             ], 200);
         }
+
+        $slug_url = customSlug($request->input('slug_url'));
 
         $id = $request->input('id');
         $course = Course::find($id);
@@ -209,7 +227,14 @@ class CourseController extends Controller
         $course->total_review = $request->input('total_review');
         $course->key_title = $request->input('key_title');
 
+
+        $course->slug_url = $slug_url;
+        $course->meta_title = $request->input('meta_title');
+        $course->meta_description = $request->input('meta_description');
+
         $course->save();
+
+        
 
         store_log($sentence = 'Update a Course Page by');
 

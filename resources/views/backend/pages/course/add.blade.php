@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4>
+            <div class="col-sm-4">
                 <div class="form-group mb-3">
                     <label>Youtube URL</label>
                     <input type="url" class="form-control" name="url" value="" >
@@ -45,6 +45,28 @@
                     <input type="text" class="form-control" name="total_review" value="" required>
                 </div>
             </div>
+
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Slug ( Url ) </label>
+                    <input type="text" class="form-control" name="slug_url" value="" required>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Meta Title </label>
+                    <input type="text" class="form-control" name="meta_title" value="" required>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group mb-3">
+                    <label>Meta Description </label>
+                    <textarea class="form-control" name="meta_description" rows="2" required></textarea>
+                </div>
+            </div>
+
 
             <div class="col-sm-4">
                 <div class="form-group mb-3">

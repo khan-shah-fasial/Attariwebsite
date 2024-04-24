@@ -101,6 +101,27 @@
 
                     <div class="col-sm-4">
                         <div class="form-group mb-3">
+                            <label>Slug ( Url ) </label>
+                            <input type="text" class="form-control" name="slug_url" value="{{ $course->slug_url }}" required>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-4">
+                        <div class="form-group mb-3">
+                            <label>Meta Title </label>
+                            <input type="text" class="form-control" name="meta_title" value="{{ $course->meta_title }}" required>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-4">
+                        <div class="form-group mb-3">
+                            <label>Meta Description </label>
+                            <textarea class="form-control" name="meta_description" rows="2" required>{{ $course->meta_description }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group mb-3">
                             <label>Key Features Title </label>
                             <input type="text" class="form-control" name="key_title" value="{{ $course->key_title }}" required>
                         </div>

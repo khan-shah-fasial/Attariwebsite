@@ -120,7 +120,7 @@ class CmsController extends Controller
     }
 
     public function add() {
-        $course = Course::where('status', 1)->get(['id', 'name']);
+        $course = Course::where('status', 1)->get(['id', 'name', 'slug_url', 'meta_title', 'meta_description']);
         return view('backend.pages.cms.add', compact('course'));
     }  
     
@@ -222,7 +222,7 @@ class CmsController extends Controller
 
     public function edit($id) {
         $cms = Cms::find($id);
-        $course = Course::where('status', 1)->get(['id', 'name']);
+        $course = Course::where('status', 1)->get(['id', 'name', 'slug_url', 'meta_title', 'meta_description']);
         return view('backend.pages.cms.edit', compact('cms', 'course'));
     }
     

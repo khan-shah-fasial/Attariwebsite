@@ -19,13 +19,11 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Course</label>
-                                <select class="form-select select2" name="course_id">
-                                    <option value="">--Select--</option>
+                                <select class="form-select" name="course_id" onchange="toggleCourse();" id="course_id" required>
+                                    <option data-slug="Please Select Course" data-title="Please Select Course" data-descrip="Please Select Course"  value="">--Select--</option>
                                     @foreach ($course as $row)
-                                        <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                        <option data-slug="{{ $row->slug_url }}" data-title="{{ $row->meta_title }}" data-descrip="{{ $row->meta_description }}"  value="{{ $row->id }}">{{ $row->name }}</option>
                                     @endforeach
-                                    
-                                    
                                 </select> 
                             </div>
                         </div>
@@ -40,7 +38,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Slug</label>
-                                <input type="text" class="form-control" name="slug" value="" required>
+                                <input type="text" class="form-control" value="" id="slug_url" name="slug"  readonly>
                             </div>
                         </div>
 
@@ -73,6 +71,20 @@
                             <div class="form-group mb-3">
                                 <label>Course Alias</label>
                                 <input type="text" class="form-control" name="alias" value="" required>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Course Meta Title <span class="red">*</span></label>
+                                <input type="text" class="form-control" value="" id="meta_title" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Course Meta Description <span class="red">*</span></label>
+                                <textarea class="form-control" rows="2" id="meta_description" readonly></textarea>
                             </div>
                         </div>
 
@@ -222,5 +234,35 @@ function toggleMenuTitle(selectedOption) {
         document.getElementsByName('alias')[0].removeAttribute('required');
     }
 }
+
+
+
+/*------============================== auto slug and meta title and description ================----------*/ 
+
+
+    var slug_field = document.getElementById('slug_url');
+    var meta_title_field = document.getElementById('meta_title');
+    var meta_description_field = document.getElementById('meta_description');
+
+
+
+    function toggleCourse() {
+        var selected_course_Option = document.getElementById('course_id').querySelector('option:checked');
+        var course_slug = selected_course_Option.getAttribute('data-slug');
+        var course_title = selected_course_Option.getAttribute('data-title');
+        var course_decrip = selected_course_Option.getAttribute('data-descrip');
+
+        if (selected_course_Option.value === '') {
+            slug_field.value = '';
+            meta_title_field.value = '';
+            meta_description_field.value = '';
+        } else {
+            slug_field.value = course_slug;
+            meta_title_field.value = course_title;
+            meta_description_field.value = course_decrip;
+        }
+    }
+
+    toggleCourse();
 
 </script>
