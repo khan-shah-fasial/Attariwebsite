@@ -3486,11 +3486,32 @@ ol.breadcrumb.mb-0 a {
   background: #290743 !important;
 }
 
-.blogdt_from .form-group {
+/* .blogdt_from .form-group {
   width: 19%;
   float: left;
   margin-right: 6px;
   margin-left: 6px;
+} */
+@media screen and (min-width: 1024px) {
+  .blogdt_from .form-group {
+    width: 31%;
+    float: left;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .blogdt_from .form-group:nth-child(5) {width: 47%;}
+  .blogdt_from .form-group:nth-child(6) {width: 47%;}
+}
+@media screen and (min-width: 1200px) {
+  .blogdt_from .form-group {
+    width: 32%;
+    float: left;
+    margin-right: 4px;
+    margin-left: 5px;
+  }
+  .blogdt_from .form-group:nth-child(5) {width: 48%;}
+  .blogdt_from .form-group:nth-child(6) {width: 48%;}
+  .blogdt_from .form-group:nth-child(10) {width: 97%;}
 }
 
 

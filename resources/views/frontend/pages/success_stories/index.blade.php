@@ -37,7 +37,7 @@
 			<div class="row">
                 <div class="col-md-4 images content_loadmore">
                     <a href="/assets/frontend/images/succes_story_whtsp_24.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_24.jpg" data-src="images/succes_story_whtsp_24.jpg" />
+                        <img src="/assets/frontend/images/succes_story_whtsp_24.jpg" data-src="/assets/frontend/images/succes_story_whtsp_24.jpg" />
                     </a>
                 </div>
                 <div class="col-md-4 images content_loadmore">
@@ -58,8 +58,8 @@
                
 
                  <div class="col-md-4 images content_loadmore">
-                    <a href="images/succes_story_whtsp_28.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_28.jpg" data-src="images/succes_story_whtsp_28.jpg" />
+                    <a href="/assets/frontend/images/succes_story_whtsp_28.jpg" data-fancybox="gallery">
+                        <img src="/assets/frontend/images/succes_story_whtsp_28.jpg" data-src="/assets/frontend/images/succes_story_whtsp_28.jpg" />
                     </a>
                 </div>
 
@@ -81,8 +81,8 @@
                 
 
                 <div class="col-md-4 images content_loadmore">
-                    <a href="images/succes_story_whtsp_22.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_22.jpg" data-src="images/succes_story_whtsp_22.jpg" />
+                    <a href="/assets/frontend/images/succes_story_whtsp_22.jpg" data-fancybox="gallery">
+                        <img src="/assets/frontend/images/succes_story_whtsp_22.jpg" data-src="/assets/frontend/images/succes_story_whtsp_22.jpg" />
                     </a>
                 </div>
                 <div class="col-md-4 images content_loadmore">
@@ -103,8 +103,8 @@
                 </div>
                
                  <div class="col-md-4 images content_loadmore">
-                    <a href="images/succes_story_whtsp_16.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_16.jpg" data-src="images/succes_story_whtsp_16.jpg" />
+                    <a href="/assets/frontend/images/succes_story_whtsp_16.jpg" data-fancybox="gallery">
+                        <img src="/assets/frontend/images/succes_story_whtsp_16.jpg" data-src="/assets/frontend/images/succes_story_whtsp_16.jpg" />
                     </a>
                 </div>
                 <div class="col-md-4 images content_loadmore">
@@ -124,8 +124,8 @@
                 </div>
 
                 <div class="col-md-4 images content_loadmore">
-                    <a href="images/succes_story_whtsp_3.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_3.jpg" data-src="images/succes_story_whtsp_3.jpg" />
+                    <a href="/assets/frontend/images/succes_story_whtsp_3.jpg" data-fancybox="gallery">
+                        <img src="/assets/frontend/images/succes_story_whtsp_3.jpg" data-src="/assets/frontend/images/succes_story_whtsp_3.jpg" />
                     </a>
                 </div>
                 <div class="col-md-4 images content_loadmore">
@@ -146,8 +146,8 @@
             
         
                  <div class="col-md-4 images content_loadmore">
-                    <a href="images/succes_story_whtsp_7.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_7.jpg" data-src="images/succes_story_whtsp_7.jpg" />
+                    <a href="/assets/frontend/images/succes_story_whtsp_7.jpg" data-fancybox="gallery">
+                        <img src="/assets/frontend/images/succes_story_whtsp_7.jpg" data-src="/assets/frontend/images/succes_story_whtsp_7.jpg" />
                     </a>
                 </div>
                 <div class="col-md-4 images content_loadmore">
@@ -167,8 +167,8 @@
                 </div>
 
                  <div class="col-md-4 images content_loadmore">
-                    <a href="images/succes_story_whtsp_11.jpg" data-fancybox="gallery">
-                        <img src="/assets/frontend/images/succes_story_whtsp_11.jpg" data-src="images/succes_story_whtsp_11.jpg" />
+                    <a href="/assets/frontend/images/succes_story_whtsp_11.jpg" data-fancybox="gallery">
+                        <img src="/assets/frontend/images/succes_story_whtsp_11.jpg" data-src="/assets/frontend/images/succes_story_whtsp_11.jpg" />
                     </a>
                 </div>
                 <div class="col-md-4 images content_loadmore">

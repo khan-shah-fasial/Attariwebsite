@@ -882,7 +882,7 @@
 
     .blogdt_from .form-group:nth-child(10) {
         width: 100%;
-        margin-top: 10px;
+        margin: 10px 0 0;
     }
 
     .pagination .hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between div:nth-child(1) {

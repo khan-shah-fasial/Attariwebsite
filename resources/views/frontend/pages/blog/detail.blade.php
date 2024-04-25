@@ -112,7 +112,8 @@ $i = 1;
     <div class="container">
         <div class="row">
             <div class="col-md-8 width__70">
-                <div class="mb-4">
+                <div class="">
+                <!-- <div class="mb-4"> -->
                     <div class="post_box pb-1">
 
                         <style>
@@ -412,10 +413,17 @@ $i = 1;
 
                     </div>
                 </div>
+                <div class="bookdemofreeform_course blue_gradianbg blogdt_from">
+                    <div class="container">
+                        @include('frontend.component.book_free_Demo_form',[
+                        'section' => 'Book a Free Demo - Blog Detail Page',
+                        ])
+                    </div>
+                </div>
             </div>
 
 
-            <div class="col-md-4 width__30">
+            <div class="col-md-4 width__30 d-none d-md-block">
                 <div class="succes_page_form d-block sticky-top blue_gradianbg blog_rights">
                     @include('frontend.component.book_free_Demo_form',[
                     'section' => 'Enquire Now - Blog detail Page',
@@ -426,17 +434,6 @@ $i = 1;
         </div>
     </div>
 </section>
-
-
-
-
-<div class="bookdemofreeform_course blue_gradianbg blogdt_from">
-    <div class="container">
-        @include('frontend.component.book_free_Demo_form',[
-        'section' => 'Book a Free Demo - Blog Detail Page',
-        ])
-    </div>
-</div>
 
 @if(count($blog) > 0)
 
