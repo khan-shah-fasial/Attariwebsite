@@ -38,7 +38,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Slug</label>
-                                <input type="text" class="form-control" value="" id="slug_url" name="slug"  readonly>
+                                <input type="text" class="form-control opacity-50" value="" id="slug_url" name="slug"  readonly>
                             </div>
                         </div>
 
@@ -70,21 +70,21 @@
                         <div class="col-sm-4" id="alisa-select">
                             <div class="form-group mb-3">
                                 <label>Course Alias</label>
-                                <input type="text" class="form-control" name="alias" value="" required>
+                                <input type="text" class="form-control" id="alias" name="alias" value="" required>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Course Meta Title <span class="red">*</span></label>
-                                <input type="text" class="form-control" value="" id="meta_title" readonly>
+                                <input type="text" class="form-control opacity-50" value="" id="meta_title" readonly>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Course Meta Description <span class="red">*</span></label>
-                                <textarea class="form-control" rows="2" id="meta_description" readonly></textarea>
+                                <textarea class="form-control opacity-50" rows="2" id="meta_description" readonly></textarea>
                             </div>
                         </div>
 
@@ -244,6 +244,7 @@ function toggleMenuTitle(selectedOption) {
     var meta_title_field = document.getElementById('meta_title');
     var meta_description_field = document.getElementById('meta_description');
 
+    var old_slug;
 
 
     function toggleCourse() {
@@ -251,6 +252,8 @@ function toggleMenuTitle(selectedOption) {
         var course_slug = selected_course_Option.getAttribute('data-slug');
         var course_title = selected_course_Option.getAttribute('data-title');
         var course_decrip = selected_course_Option.getAttribute('data-descrip');
+
+        old_slug = course_slug;
 
         if (selected_course_Option.value === '') {
             slug_field.value = '';
@@ -264,5 +267,17 @@ function toggleMenuTitle(selectedOption) {
     }
 
     toggleCourse();
+
+
+    var alias_name = document.getElementById('alias');
+
+    alias_name.addEventListener('keyup', function() {
+        if (alias_name.value === "") {
+            slug_field.value = old_slug;
+        } else {
+            var new_slug = old_slug + '-' + alias_name.value;
+            slug_field.value = new_slug;
+        }
+    });
 
 </script>
