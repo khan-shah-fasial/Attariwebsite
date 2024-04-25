@@ -20,11 +20,11 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Course</label>
-                                <select class="form-select select2" name="course_id" required>
-                                    <option value="">--Select--</option>
+                                <select class="form-select" name="course_id" onchange="toggleCourse();" id="course_id" required>
+                                    <option data-slug="Please Select Course" data-title="Please Select Course" data-descrip="Please Select Course" data-zone="0" value="">--Select--</option>
                                     @foreach ($course as $row)
-                                        <option value="{{ $row->id }}"
-                                            @if ($cms->course_id == $row->id) selected @endif>{{ $row->name }}
+                                        @php $zone_count = DB::table('cms')->where('course_id', $row->id)->where('zone', 0)->count(); @endphp
+                                        <option data-slug="{{ $row->slug_url }}" data-title="{{ $row->meta_title }}" data-descrip="{{ $row->meta_description }}" data-zone="{{$zone_count}}" value="{{ $row->id }}" @if ($cms->course_id == $row->id) selected @endif>{{ $row->name }}
                                         </option>
                                     @endforeach
 
@@ -44,8 +44,8 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label>Slug</label>
-                                <input type="text" class="form-control" name="slug" value="{{ $cms->slug }}"
-                                    required>
+                                <input type="text" class="form-control opacity-50" id="slug_url" name="slug" value=""
+                                    readonly>
                             </div>
                         </div>
 
@@ -69,7 +69,8 @@
                             <div class="form-group mb-3">
                                 <label>Zone</label>
                                 <select class="form-select" name="zone" id="typeSelect" onclick="toggleInput1();" required>
-                                    <option value="0" @if($cms->zone == "0") selected @endif>Main</option>
+                                    <option value="">--Select--</option>
+                                    <option id="main_zone" value="0" @if($cms->zone == "0") selected @endif>Main</option>
                                     <option value="1" @if($cms->zone == "1") selected @endif>City</option>
                                     <option value="2"  @if($cms->zone == "2") selected @endif>Country</option>
                                 </select> 
@@ -79,10 +80,23 @@
                         <div class="col-sm-4" id="alisa-select">
                             <div class="form-group mb-3">
                                 <label>Course Alias</label>
-                                <input type="text" class="form-control" name="alias" value="{{ $cms->alias }}" required>
+                                <input type="text" class="form-control" id="alias" name="alias" value="{{ $cms->alias }}" required>
                             </div>
                         </div>
 
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Course Meta Title <span class="red">*</span></label>
+                                <input type="text" class="form-control opacity-50" value="" id="meta_title" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group mb-3">
+                                <label>Course Meta Description <span class="red">*</span></label>
+                                <textarea class="form-control opacity-50" rows="2" id="meta_description" readonly></textarea>
+                            </div>
+                        </div>
 
                         <div class="col-sm-8">
 
@@ -218,6 +232,7 @@
 
     // Initial check
     toggleMenuTitle1();
+    toggleInput1();
 
     // Function to toggle menu title visibility and required attribute
     function toggleInput1() {
@@ -243,6 +258,74 @@
             document.getElementsByName('menu_title')[0].setAttribute('required', 'required');
             document.getElementsByName('alias')[0].removeAttribute('required');
         }
+
     }
+
+
+
+    /*------============================== auto slug and meta title and description ================----------*/ 
+
+
+    var slug_field = document.getElementById('slug_url');
+    var meta_title_field = document.getElementById('meta_title');
+    var meta_description_field = document.getElementById('meta_description');
+
+    var main = document.getElementById('main_zone');
+
+    var old_slug;
+
+
+    function toggleCourse() {
+        var selected_course_Option = document.getElementById('course_id').querySelector('option:checked');
+        var course_slug = selected_course_Option.getAttribute('data-slug');
+        var course_title = selected_course_Option.getAttribute('data-title');
+        var course_decrip = selected_course_Option.getAttribute('data-descrip');
+
+        var course_zone = selected_course_Option.getAttribute('data-zone');
+
+        
+        if (course_zone !== "0") {
+            main.style.display = "none";
+        } else if (course_zone === "yes") {
+            main.style.display = "block";
+        } else {
+            main.style.display = "block";
+        }
+
+        old_slug = course_slug;
+
+        if (selected_course_Option.value === '') {
+            slug_field.value = '';
+            meta_title_field.value = '';
+            meta_description_field.value = '';
+        } else {
+            slug_field.value = course_slug;
+            meta_title_field.value = course_title;
+            meta_description_field.value = course_decrip;
+        }
+    }
+
+    toggleCourse();
+
+
+    var alias_name = document.getElementById('alias');
+
+    alias_name.addEventListener('keyup', function() {
+        if (alias_name.value === "") {
+            slug_field.value = old_slug;
+        } else {
+            var new_slug = old_slug + '-' + alias_name.value.replace(/\s+/g, '-').toLowerCase();
+            slug_field.value = new_slug;
+        }
+    });
+
+
+    if (alias_name.value !== "") {
+        var new_slug = old_slug + '-' + alias_name.value.replace(/\s+/g, '-').toLowerCase();
+        slug_field.value = new_slug;
+    }
+
+
+
 
     </script>
