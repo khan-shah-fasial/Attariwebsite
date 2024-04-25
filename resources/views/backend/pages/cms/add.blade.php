@@ -20,9 +20,10 @@
                             <div class="form-group mb-3">
                                 <label>Course</label>
                                 <select class="form-select" name="course_id" onchange="toggleCourse();" id="course_id" required>
-                                    <option data-slug="Please Select Course" data-title="Please Select Course" data-descrip="Please Select Course"  value="">--Select--</option>
+                                    <option data-slug="Please Select Course" data-title="Please Select Course" data-descrip="Please Select Course" data-zone="0" value="">--Select--</option>
                                     @foreach ($course as $row)
-                                        <option data-slug="{{ $row->slug_url }}" data-title="{{ $row->meta_title }}" data-descrip="{{ $row->meta_description }}"  value="{{ $row->id }}">{{ $row->name }}</option>
+                                        @php $zone_count = DB::table('cms')->where('course_id', $row->id)->where('zone', 0)->count(); @endphp
+                                        <option data-slug="{{ $row->slug_url }}" data-title="{{ $row->meta_title }}" data-descrip="{{ $row->meta_description }}" data-zone="{{$zone_count}}" value="{{ $row->id }}">{{ $row->name }}</option>
                                     @endforeach
                                 </select> 
                             </div>
@@ -60,7 +61,8 @@
                             <div class="form-group mb-3">
                                 <label>Zone</label>
                                 <select class="form-select" name="zone" id="typeSelect" onclick="toggleInput();" required>
-                                    <option value="0">Main</option>
+                                    <option value="">--Select--</option>
+                                    <option id="main_zone" value="0">Main</option>
                                     <option value="1">City</option>
                                     <option value="2">Country</option>
                                 </select> 
@@ -244,6 +246,8 @@ function toggleMenuTitle(selectedOption) {
     var meta_title_field = document.getElementById('meta_title');
     var meta_description_field = document.getElementById('meta_description');
 
+    var main = document.getElementById('main_zone');
+
     var old_slug;
 
 
@@ -252,6 +256,14 @@ function toggleMenuTitle(selectedOption) {
         var course_slug = selected_course_Option.getAttribute('data-slug');
         var course_title = selected_course_Option.getAttribute('data-title');
         var course_decrip = selected_course_Option.getAttribute('data-descrip');
+
+        var course_zone = selected_course_Option.getAttribute('data-zone');
+
+        if (course_zone !== "0") {
+            main.style.display = "none";
+        } else {
+            main.style.display = "block";
+        }
 
         old_slug = course_slug;
 
@@ -279,5 +291,9 @@ function toggleMenuTitle(selectedOption) {
             slug_field.value = new_slug;
         }
     });
+
+
+
+    
 
 </script>
