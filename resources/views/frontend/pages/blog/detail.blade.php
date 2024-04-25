@@ -126,9 +126,9 @@ $i = 1;
 
 
                         <div class="text_box_post pb-4 ps-4 pe-4 pt-4">
-                            <h6 class="mb-0">
-                                {{ $detail->title }}
-                            </h6>
+                            <!-- <h6 class="mb-0"> -->
+                                {{-- $detail->title --}}
+                            <!-- </h6> -->
                             <p class="content">
                                 @php echo html_entity_decode($detail->content) @endphp
                             </p>

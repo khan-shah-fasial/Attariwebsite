@@ -30,7 +30,7 @@
 
                         <div class="col-sm-4">
                             <div class="form-group mb-3">
-                                <label>Title <span class="red">*</span></label>
+                                <label>Course Title <span class="red">*</span></label>
                                 <input type="text" class="form-control" name="title" value="" required>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
 
                         <div class="col-sm-4" id="menu-title">
                             <div class="form-group mb-3">
-                                <label>Menu Title <span class="red">*</span></label>
+                                <label>Course Name in the menu <span class="red">*</span></label>
                                 <input type="text" class="form-control" name="menu_title" value="" required>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
 
                         <div class="col-sm-4" id="alisa-select">
                             <div class="form-group mb-3">
-                                <label>Course Alias</label>
+                                <label>Course Alias (bottom section)</label>
                                 <input type="text" class="form-control" name="alias" value="" required>
                             </div>
                         </div>

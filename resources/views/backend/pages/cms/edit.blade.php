@@ -78,7 +78,7 @@
 
                         <div class="col-sm-4" id="alisa-select">
                             <div class="form-group mb-3">
-                                <label>Course Alias</label>
+                                <label>Course Alias (bottom section)</label>
                                 <input type="text" class="form-control" name="alias" value="{{ $cms->alias }}" required>
                             </div>
                         </div>
