@@ -79,7 +79,7 @@
 
                         <div class="col-sm-4" id="alisa-select">
                             <div class="form-group mb-3">
-                                <label>Course Alias</label>
+                                <label>Course Alias (bottom Section)</label>
                                 <input type="text" class="form-control" id="alias" name="alias" value="{{ $cms->alias }}" required>
                             </div>
                         </div>
@@ -232,16 +232,9 @@
 
     // Initial check
     toggleMenuTitle1();
-    toggleInput1();
 
-    // Function to toggle menu title visibility and required attribute
-    function toggleInput1() {
-        // Get the value of the selected option
-        const selectedOption = document.getElementById('typeSelect').value;
 
-        // Call the toggleMenuTitle1 function with the selected option value
-        toggleMenuTitle1(selectedOption);
-    }
+
 
     // Function to toggle menu title visibility and required attribute based on the selected option
     function toggleMenuTitle1(selectedOption) {
@@ -325,7 +318,23 @@
         slug_field.value = new_slug;
     }
 
+        // Function to toggle menu title visibility and required attribute
+    function toggleInput1() {
+        // Get the value of the selected option
+        const selectedOption = document.getElementById('typeSelect').value;
 
+        // Call the toggleMenuTitle1 function with the selected option value
+        toggleMenuTitle1(selectedOption);
+
+        if(selectedOption === "0"){
+            slug_field.value = old_slug;
+        } else {
+            var new_slug = old_slug + '-' + alias_name.value.replace(/\s+/g, '-').toLowerCase();
+            slug_field.value = new_slug;
+        }
+    }
+
+    toggleInput1();
 
 
     </script>

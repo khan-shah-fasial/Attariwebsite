@@ -1,9 +1,15 @@
 @extends('frontend.layouts.app')
 
-@section('page.title', $cms->title)
+
+
+@php 
+    $page_title = ReplaceKeyword($detail->meta_title, $cms->replace_keyword);
+    $page_description = ReplaceKeyword($detail->meta_description, $cms->replace_keyword);  
+@endphp
 
 @php
-    $description = strip_tags(html_entity_decode($cms->description)); // Remove HTML tags
+
+    $description = strip_tags(html_entity_decode($page_description));
     $description = html_entity_decode($description);
     $wordLimit = 155; // Set your desired word limit
 
@@ -14,12 +20,15 @@
     $limitedWords = array_slice($words, 0, $wordLimit);
 
     // Join the limited words back into a string
-    $tem_desc = implode(' ', $limitedWords);
+    $tem_desc = implode(' ', $limitedWords); 
+    
 
     $meta_title = $cms->title;
     $meta_description = $tem_desc;
     $meta_url = url()->current();
-@endphp
+@endphp 
+
+@section('page.title', $page_title)
 
 @section('page.description', $tem_desc)
 
