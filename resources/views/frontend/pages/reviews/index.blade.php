@@ -48,54 +48,53 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
 
-                @php
-                    $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
+                    @php
+                        $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
 
-                    $course_schema_vm = DB::table('courses')->where('status', 1)->where('id','5')->get(['testimonials_section_schema'])->first();
-                @endphp
+                        $course_schema_vm = DB::table('courses')->where('status', 1)->where('id','5')->get(['testimonials_section_schema'])->first();
+                    @endphp
 
-                @if(!empty($text_vm_review))
-                    @foreach ($text_vm_review as $row)
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-9 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
-                                                    alt>
-                                                <span class="testimonial__name">{{ $row->name }}</span>
+                    @if(!empty($text_vm_review))
+                        @foreach ($text_vm_review as $row)
+                            <div class="item">
+                                <div class="testimonial_box">
+                                    <div class="testimonial__header">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-10">
+                                                <div class="testimonial__image">
+                                                    <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
+                                                        alt>
+                                                    <span class="testimonial__name">{{ $row->name }}</span>
+                                                </div>
+                                                <span>{{ $row->profile }}</span>
                                             </div>
-                                            <span>{{ $row->profile }}</span>
-                                        </div>
-                                        <div class="col-lg-3 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                            <div class="col-lg-3 col-2">
+                                                <div class="testimonial__icon">
+                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        @php echo html_entity_decode($row->description) @endphp
+                                    <div class="testimonial__content">
+                                        <div class="testimonial__text">
+                                            @php echo html_entity_decode($row->description) @endphp
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
 
-        <!--------------------- Text vm Review -------------------------------------->
-
-        @php 
-            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_vm->testimonials_section_schema));
-        @endphp
-
-        <!--------------------- Text vm Review -------------------------------------->
-
-
-                @endif
+                    @endif
 
                 </div>
+                <!--------------------- Text vm Review -------------------------------------->
+
+                @php 
+                    echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_vm->testimonials_section_schema));
+                @endphp
+
+                <!--------------------- Text vm Review -------------------------------------->
+
             </div>
 
             <div class="col-12 d-flex justify-content-center gap-2">
@@ -128,54 +127,52 @@
             <div class="large-12 columns">
                 <div class="owl-carousel owl-theme slider_content_dots">
 
-                @php
-                    $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type','google')->get();
+                    @php
+                        $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type','google')->get();
 
-                    $course_schema_aws = DB::table('courses')->where('status', 1)->where('id','7')->get(['testimonials_section_schema'])->first();
-                @endphp
+                        $course_schema_aws = DB::table('courses')->where('status', 1)->where('id','7')->get(['testimonials_section_schema'])->first();
+                    @endphp
 
-                @if(!empty($text_aws_review))
-                    @foreach ($text_aws_review as $row)
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-9 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
-                                                    alt>
-                                                <span class="testimonial__name">{{ $row->name }}</span>
+                    @if(!empty($text_aws_review))
+                        @foreach ($text_aws_review as $row)
+                            <div class="item">
+                                <div class="testimonial_box">
+                                    <div class="testimonial__header">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-10">
+                                                <div class="testimonial__image">
+                                                    <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
+                                                        alt>
+                                                    <span class="testimonial__name">{{ $row->name }}</span>
+                                                </div>
+                                                <span>{{ $row->profile }}</span>
                                             </div>
-                                            <span>{{ $row->profile }}</span>
-                                        </div>
-                                        <div class="col-lg-3 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                            <div class="col-lg-3 col-2">
+                                                <div class="testimonial__icon">
+                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        @php echo html_entity_decode($row->description) @endphp
+                                    <div class="testimonial__content">
+                                        <div class="testimonial__text">
+                                            @php echo html_entity_decode($row->description) @endphp
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-
-    <!--------------------- Text aws Review -------------------------------------->
-
-        @php 
-            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_aws->testimonials_section_schema));
-        @endphp
-
-    <!--------------------- Text aws Review -------------------------------------->
-
-
-                @endif
+                        @endforeach
+                    @endif
 
                 </div>
+                <!--------------------- Text aws Review -------------------------------------->
+
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_aws->testimonials_section_schema));
+                    @endphp
+
+                <!--------------------- Text aws Review -------------------------------------->
+
             </div>
 
 
@@ -215,55 +212,51 @@
             <div class="large-12 columns">
                 <div class="owl-carousel owl-theme slider_content_dots">
 
-                @php
-                    $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type','google')->get();
+                    @php
+                        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type','google')->get();
 
-                    $course_schema_azure = DB::table('courses')->where('status', 1)->where('id','8')->get(['testimonials_section_schema'])->first();
-                @endphp
+                        $course_schema_azure = DB::table('courses')->where('status', 1)->where('id','8')->get(['testimonials_section_schema'])->first();
+                    @endphp
 
-                @if(!empty($text_azure_review))
-                    @foreach ($text_azure_review as $row)
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-9 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
-                                                    alt>
-                                                <span class="testimonial__name">{{ $row->name }}</span>
+                    @if(!empty($text_azure_review))
+                        @foreach ($text_azure_review as $row)
+                            <div class="item">
+                                <div class="testimonial_box">
+                                    <div class="testimonial__header">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-10">
+                                                <div class="testimonial__image">
+                                                    <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
+                                                        alt>
+                                                    <span class="testimonial__name">{{ $row->name }}</span>
+                                                </div>
+                                                <span>{{ $row->profile }}</span>
                                             </div>
-                                            <span>{{ $row->profile }}</span>
-                                        </div>
-                                        <div class="col-lg-3 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                            <div class="col-lg-3 col-2">
+                                                <div class="testimonial__icon">
+                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        @php echo html_entity_decode($row->description) @endphp
+                                    <div class="testimonial__content">
+                                        <div class="testimonial__text">
+                                            @php echo html_entity_decode($row->description) @endphp
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-
-<!--------------------- Text azure Review -------------------------------------->
-
-    @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_azure->testimonials_section_schema));
-    @endphp
-
-<!--------------------- Text azure Review -------------------------------------->
-
-
-
-                @endif
-
+                        @endforeach
+                    @endif
                 </div>
+                        <!--------------------- Text azure Review -------------------------------------->
+
+                            @php 
+                                echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_azure->testimonials_section_schema));
+                            @endphp
+
+                        <!--------------------- Text azure Review -------------------------------------->
+
             </div>
 
 
@@ -297,54 +290,56 @@
             <div class="large-12 columns">
                 <div class="owl-carousel owl-theme slider_content_dots">
 
-                @php
-                    $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type','google')->get();
+                    @php
+                        $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type','google_mcse')->get();
+                        
+                        $course_schema_mcse = DB::table('courses')->where('status', 1)->where('id','9')->get(['testimonials_section_schema'])->first();
+                    @endphp
 
-                    $course_schema_mcse = DB::table('courses')->where('status', 1)->where('id','9')->get(['testimonials_section_schema'])->first();
-                @endphp
-
-                @if(!empty($text_mcse_review))
-                    @foreach ($text_mcse_review as $row)
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-9 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
-                                                    alt>
-                                                <span class="testimonial__name">{{ $row->name }}</span>
+                    @if(!empty($text_mcse_review))
+                        @foreach ($text_mcse_review as $row)
+                            <div class="item">
+                                <div class="testimonial_box">
+                                    <div class="testimonial__header">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-10">
+                                                <div class="testimonial__image">
+                                                    <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
+                                                        alt>
+                                                    <span class="testimonial__name">{{ $row->name }}</span>
+                                                </div>
+                                                <span>{{ $row->profile }}</span>
                                             </div>
-                                            <span>{{ $row->profile }}</span>
-                                        </div>
-                                        <div class="col-lg-3 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                            <div class="col-lg-3 col-2">
+                                                <div class="testimonial__icon">
+                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        @php echo html_entity_decode($row->description) @endphp
+                                    <div class="testimonial__content">
+                                        <div class="testimonial__text">
+                                            @php
+                                            echo html_entity_decode($row->description) 
+                                            @endphp
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-
-<!--------------------- Text mcse Review -------------------------------------->
-
-    @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_mcse->testimonials_section_schema));
-    @endphp
-
-<!--------------------- Text mcse Review -------------------------------------->
+                        @endforeach
 
 
-                @endif
+                    @endif
 
                 </div>
+                <!--------------------- Text mcse Review -------------------------------------->
+
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_mcse->testimonials_section_schema));
+                    @endphp
+
+                <!--------------------- Text mcse Review -------------------------------------->
+
             </div>
 
             <div class="col-12 d-flex justify-content-center gap-2">
@@ -376,54 +371,52 @@
             <div class="large-12 columns">
                 <div class="owl-carousel owl-theme slider_content_dots">
 
-                @php
-                    $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->where('type','google')->get();
+                    @php
+                        $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->where('type','google')->get();
 
-                    $course_schema_ccna = DB::table('courses')->where('status', 1)->where('id','10')->get(['testimonials_section_schema'])->first();
-                @endphp
+                        $course_schema_ccna = DB::table('courses')->where('status', 1)->where('id','10')->get(['testimonials_section_schema'])->first();
+                    @endphp
 
-                @if(!empty($text_ccna_review))
-                    @foreach ($text_ccna_review as $row)
-                        <div class="item">
-                            <div class="testimonial_box">
-                                <div class="testimonial__header">
-                                    <div class="row">
-                                        <div class="col-lg-9 col-10">
-                                            <div class="testimonial__image">
-                                                <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
-                                                    alt>
-                                                <span class="testimonial__name">{{ $row->name }}</span>
+                    @if(!empty($text_ccna_review))
+                        @foreach ($text_ccna_review as $row)
+                            <div class="item">
+                                <div class="testimonial_box">
+                                    <div class="testimonial__header">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-10">
+                                                <div class="testimonial__image">
+                                                    <img data-src="{{ asset('storage/' . $row->thumbnail) }}" class="img-fluid d-block w-100 lazyload"
+                                                        alt>
+                                                    <span class="testimonial__name">{{ $row->name }}</span>
+                                                </div>
+                                                <span>{{ $row->profile }}</span>
                                             </div>
-                                            <span>{{ $row->profile }}</span>
-                                        </div>
-                                        <div class="col-lg-3 col-2">
-                                            <div class="testimonial__icon">
-                                                <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                            <div class="col-lg-3 col-2">
+                                                <div class="testimonial__icon">
+                                                    <i aria-hidden="true" class="fab fa-google-plus"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <div class="testimonial__text">
-                                        @php echo html_entity_decode($row->description) @endphp
+                                    <div class="testimonial__content">
+                                        <div class="testimonial__text">
+                                            @php echo html_entity_decode($row->description) @endphp
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
-                    
-<!--------------------- Text ccna Review -------------------------------------->
+                        @endforeach
+                    @endif
 
-    @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_ccna->testimonials_section_schema));
-    @endphp
+                </div>     
+                <!--------------------- Text ccna Review -------------------------------------->
 
-<!--------------------- Text ccna Review -------------------------------------->
+                    @php 
+                        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]'],[$meta_title,$meta_description,$meta_url], html_entity_decode($course_schema_ccna->testimonials_section_schema));
+                    @endphp
 
+                <!--------------------- Text ccna Review -------------------------------------->
 
-                @endif
-
-                </div>
             </div>
 
             <div class="col-12 d-flex justify-content-center gap-2">
