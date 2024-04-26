@@ -35,6 +35,12 @@ class IndexController extends Controller
     public function index(){
         return view('frontend.pages.home.index');
     }
+    public function form() {
+        $section = request('section');
+        $title = request('title');    
+        return view('frontend.component.common_form', compact('section', 'title'));
+    }
+    
 
 //--------------=============================== Blog  ================================------------------------------
 

@@ -21,12 +21,17 @@
 
         @include('frontend.partials.footer')
 
+        <!--bootstrap modals-->
+        @include('frontend.component.modal')   
 
     <!--javascript-->
     @include('frontend.partials.js')
 
     @yield('page.scripts')
     @yield('component.scripts')
+
+    @yield('common_form.scripts')
+
 
 </body>
 

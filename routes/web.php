@@ -72,6 +72,8 @@ Route::get('/{slug}', [IndexController::class, 'course_detail'])
 
 Route::get('/photo-gallery', [IndexController::class, 'photo_gallery'])->name('photo-gallery');
 
+Route::get('/form-modal', [IndexController::class, 'form'])->name('component.form');
+
 
 
 Route::get('learning/{slug}', [IndexController::class, 'learning_detail'])->name('learning.detail');

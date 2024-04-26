@@ -1,5 +1,19 @@
 
 //bootstarp modals
+function formModal(url) {
+    $("#formModal .modal-body").html("Loading...");
+    // $("#formModal .modal-title").html("Loading...");
+
+    $("#formModal").modal("show");
+    $.ajax({
+        url: url,
+        success: function (response) {
+            $("#formModal .modal-body").html(response);
+            // $("#formModal .modal-title").html(header);
+        },
+    });
+}
+
 function largeModal(url, header) {  
     $('#largeModal .modal-body').html('Loading...');
     $('#largeModal .modal-title').html('Loading...');  
@@ -306,3 +320,4 @@ $(document).ready(function() {
         }, 2000);
     }
 });
+

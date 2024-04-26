@@ -34,7 +34,9 @@
             </div>
         </div>
     </div>
-
+    <div class="text-sm-end">
+        <a href="javascript:void(0);" class="btn btn-danger mb-2" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - Home Page&title=Enquire Now')"><i class="mdi mdi-plus-circle me-2"></i> Add PAGE</a>
+    </div>
     <!-- Virtualization & Cloud Computing -->
 
     @include('frontend.component.virtualization_cloud_computing_home_card')
