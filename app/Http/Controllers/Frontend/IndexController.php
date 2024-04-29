@@ -38,7 +38,13 @@ class IndexController extends Controller
     public function form() {
         $section = request('section');
         $title = request('title');    
-        return view('frontend.component.common_form', compact('section', 'title'));
+        $course_name = request('course_name');    
+        $Headingclassname = request('Headingclassname');    
+        $msgfield = request('msgfield');
+        $param1 = request('param1');    
+        $param2 = request('param2');    
+        $param3 = request('param3');    
+        return view('frontend.component.common_form', compact('section', 'title', 'course_name','Headingclassname', 'msgfield', 'param1', 'param2', 'param3'));
     }
     
 

@@ -21,21 +21,10 @@
         <div class="container">
             <div class="text-center">
                 <div class="banner_content">
-
-                    @include('frontend.component.modal_form', [
-                        'section' => 'Enquire Form Top - Home Page',
-                        'form' => '1',
-                        'title' => 'Enquire Now',
-                    ])
-
-                    <button type="button" class="btn enquire_now_btn" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal1"> Enquire Now </button>
+                    <button type="button" class="btn enquire_now_btn" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - Home Page&title=Enquire Now')"> Enquire Now </button>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="text-sm-end">
-        <a href="javascript:void(0);" class="btn btn-danger mb-2" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - Home Page&title=Enquire Now')"><i class="mdi mdi-plus-circle me-2"></i> Add PAGE</a>
     </div>
     <!-- Virtualization & Cloud Computing -->
 
@@ -81,15 +70,7 @@
                         </div>
                     </div>
                     <div class="training_btn d-none d-lg-block">
-
-                        @include('frontend.component.modal_form', [
-                            'section' => 'Instructor-Led Online Training - Home Page',
-                            'form' => '2',
-                            'title' => 'Book a Demo',
-                        ])
-
-                        <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal2"> Book a Demo </button>
+                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Instructor-Led Online Training - Home Page&title=Book a Demo')"> Book a Demo </button>
                     </div>
                 </div>
                 <div class="col-md-5 img_box"> <img data-src="/assets/frontend/images/dsvdfb.jpg" width="399"
@@ -137,15 +118,7 @@
                         </div>
                     </div>
                     <div class="training_btn d-none d-lg-block">
-
-                        @include('frontend.component.modal_form', [
-                            'section' => 'Classroom Training - Home Page',
-                            'form' => '3',
-                            'title' => 'Book a Demo',
-                        ])
-
-                        <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal3"> Book a Demo </button>
+                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Classroom Training - Home Page&title=Book a Demo')"> Book a Demo </button>
                     </div>
                 </div>
                 <div class="col-md-6 order-md-1">
@@ -243,15 +216,7 @@
                         provide Practice exams and learning material for free which prepares you to answer the question
                         asked in actual exam, most of the candidates have passed exam in one attempt </p>
                     <div class="training_btn none">
-
-                        @include('frontend.component.modal_form', [
-                            'section' => 'Certificate section - Home Page',
-                            'form' => '4',
-                            'title' => 'Get Certified',
-                        ])
-
-                        <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal4"> Get Certified</button>
+                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Certificate section - Home Page&title=Get Certified')"> Get Certified </button>
                     </div>
                 </div>
 

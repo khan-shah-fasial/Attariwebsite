@@ -83,15 +83,8 @@
                         </div>
                     </div>
                     <div class="training_btn none">
-
-                        @include('frontend.component.modal_form', [
-                            'section' => 'Online Training - Training Options Page',
-                            'form' => '1',
-                            'title' => 'Book a FREE Demo'
-                        ])
-
-                        <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal1"> Book a FREE Demo</button>
+                        <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=Online Training - Training Options Page&title=Book a FREE Demo')" 
+                        class="btn bookfreedemo_button"> Book a FREE Demo</button>
                     </div>
                 </div>
                 <div class="col-lg-6 img_content">
@@ -397,8 +390,9 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form',[
+            @include('frontend.component.common_form', [
                 'section' => 'Book a Free Demo - Mobile View',
+                'title'  => 'Book a <b>FREE</b> Demo',
             ])
         </div>
     </section>
@@ -1198,6 +1192,7 @@ From Attari classes I have done CCNA and Zameer sir has cleared many concept of 
             @include('frontend.component.book_free_Demo_form',[
                 'section' => 'Book a Free Demo - Mobile View',
             ])
+            
         </div>
     </section>
 

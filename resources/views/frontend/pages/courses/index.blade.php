@@ -90,18 +90,7 @@
                             @php echo ReplaceKeyword($cms->description, $cms->replace_keyword) @endphp
                         </div>
                     </div>
-
-                    @include('frontend.component.course_enquire_form', [
-                        'section' => 'Enquire Form Top - course Page',
-                        'form' => '1',
-                        'title' => 'Enquire Now',
-                        'courseName' =>  $cms->breadcrumb_title,
-                    ])
-
-
-                    <button type="button" class="btn coursepg_enquiryform" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal_coursepg1"> Enquire Now</button>
-
+                    <button type="button" class="btn coursepg_enquiryform" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - course Page&title=Enquire Now&course_name={{$cms->breadcrumb_title}}')"> Enquire Now </button>
                     <div class="check_carriculam"><a href="#syllabuse" class="check_curriculum"> Check Curriculum </a></div>
                 </div>
                 <div class="show_desktopview col-3 width30 imagebox d-flex align-items-center justify-content-center">
@@ -394,11 +383,12 @@
                         <div class="bookdemofreeform_course gray_bgg1 margin-top55">
                             <h4 class="text-center">Book a <b>FREE</b> Demo</h4>
 
-                            @include('frontend.component.course_demo_form', [
-                                'courseName' => $cms->breadcrumb_title,
-                                'form' => '1',
+                            @include('frontend.component.common_form', [
+                                'section' => 'Book a FREE Demo - Course Page',
+                                'title'  => '',  
+                                'course_name' => $cms->breadcrumb_title,
+                                'msgfield' => '0',
                             ])
-
                         </div>
                     </div>
 
@@ -668,16 +658,8 @@
                                     <div class="button_main getin_touch_bx">
                                         <h5 class="pb-2">Get In Touch to Avail <span>{{ $batch->off_percentage }} OFF</span></h5>
 
-
-                                        @include('frontend.component.course_enquire_form', [
-                                            'section' => 'Online / Classroom - course Page',
-                                            'form' => '2',
-                                            'title' => 'Book a Demo',
-                                            'courseName' =>  $cms->breadcrumb_title,
-                                        ])
-
-
-                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg2">Book a Demo</a>
+                                        <a onclick="formModal('{{ url(route('component.form')) }}?section=Online / Classroom - course Page&title=Book a Demo&course_name={{$cms->breadcrumb_title}}')">Book a Demo</a>
+                                     
                                     </div>
                                 </div>
                             </div>
@@ -699,15 +681,7 @@
 
                                 <div class="col-md-3">
                                     <div class="button_main">
-
-                                        @include('frontend.component.course_enquire_form', [
-                                             'section' => $batch->corp_title . ' - course Page',
-                                            'form' => '3',
-                                            'title' => 'Enquire Now',
-                                            'courseName' =>  $cms->breadcrumb_title,
-                                        ])
-
-                                        <a data-bs-toggle="modal" data-bs-target="#enquiry_modal_coursepg3">Enquire Now</a>
+                                        <a onclick="formModal('{{ url(route('component.form')) }}?section={{$batch->corp_title. ' - course Page'}}&title=Enquire Now&course_name={{$cms->breadcrumb_title}}')">Enquire Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -797,6 +771,18 @@
                             @include('frontend.component.course_demo_form', [
                                 'courseName' => $cms->breadcrumb_title,
                                 'form' => '2',
+                            ])
+                        </div>
+                        <div class="gradiant_bg bookdemofreeform_course course_buttom_form mt-4">
+                            <h4 class="text-center textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
+                            @include('frontend.component.common_form', [
+                                'section' => 'Book a FREE Demo - Course Page',
+                                'title'  => '',  
+                                'course_name' => $cms->breadcrumb_title,
+                                'msgfield' => '0',
+                                'param1' => NULL,
+                                'param2' => NULL,
+                                'param3' => NULL,
                             ])
                         </div>
 
