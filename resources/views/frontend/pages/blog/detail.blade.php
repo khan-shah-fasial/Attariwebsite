@@ -100,7 +100,7 @@ $i = 1;
 
             <div class="col-md-3">
                 <div class="cirtified_button">
-                    <a href="#">Become a Certified Professional</a>
+                    <a href="javascript:void(0)" onclick="formModal('{{ url(route('component.form')) }}?section=Blog Detail Page - Become a Certified Professional&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')">Become a Certified Professional</a>
                 </div>
             </div>
 
