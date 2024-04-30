@@ -58,23 +58,3 @@ $session_data = json_decode(session('user_ip'), true);
     </div>
 
 </form>
-
-@section("common_form.scripts")
-<script>
-    $(document).ready(function() {
-        initValidate('#common_form');
-        $("#common_form").submit(function(e) {
-            var form = $(this);
-        ajaxSubmit(e, form, responseHandler);
-    });
-    
-    var responseHandler = function(response) {
-        $('input, textarea').val('');
-        $("select option:first").prop('selected', true);
-        setTimeout(function() {
-            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
-        }, 2000);
-    }
-});
-</script>
-@endsection

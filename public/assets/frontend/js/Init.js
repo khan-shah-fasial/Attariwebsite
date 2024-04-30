@@ -320,4 +320,20 @@ $(document).ready(function() {
         }, 2000);
     }
 });
+$(document).ready(function() {
+    $(document).on('submit', '#common_form', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        var form = $(this);
+        ajaxSubmit(e, form, responseHandler);
+    });
+
+    var responseHandler = function(response) {
+        $('input, textarea').val('');
+        $("select option:first").prop('selected', true);
+        setTimeout(function() {
+            window.location.href = $('#baseUrl').attr('href') + '/thank-you';
+        }, 2000);
+    }
+});
+
 

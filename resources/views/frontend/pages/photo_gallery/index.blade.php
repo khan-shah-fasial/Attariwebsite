@@ -134,8 +134,8 @@
                 </div>
 
                 <div class="col-md-12 p-1 text-center">
-                    <button type="button" class="btn booka_demo_button" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a FREE Demo </button>
+                <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=Photo Gallery - Online Training Section&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                     class="btn booka_demo_button"> Book a FREE Demo </button>
                 </div>
 
             </div>
@@ -430,8 +430,8 @@
                 </div>
 
                 <div class="col-md-12 p-1 text-center">
-                    <button type="button" class="btn booka_demo_button" data-bs-toggle="modal"
-                        data-bs-target="#enquiry_modal"> Book a FREE Demo </button>
+                <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=Photo Gallery - Classroom Training Section&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                     class="btn booka_demo_button"> Book a FREE Demo </button>
                 </div>
 
             </div>
