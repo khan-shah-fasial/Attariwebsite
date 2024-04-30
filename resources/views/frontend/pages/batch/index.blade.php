@@ -145,14 +145,8 @@
                                     <h5>Get In Touch to Avail <span>{{ $vmware_batch->off_percentage }} OFF</span>
                                     </h5>
 
-                                    @include('frontend.component.modal_form', [
-                                        'section' => 'VMware Training Schedule - Batch Page',
-                                        'form' => '1',
-                                        'title' => 'Book a FREE Demo'
-                                    ])
-
-                                    <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                                        data-bs-target="#enquiry_modal1"> Book a Demo</button>
+                                    <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=VMware Training Schedule - Batch Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                                    class="btn bookfreedemo_button"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
                                         href="{{ url('vmware-training-certification-online') }}"
@@ -380,15 +374,9 @@
                                 <div class="button_main getin_touch_bx">
                                     <h5>Get In Touch to Avail <span>{{ $aws_batch->off_percentage }} OFF</span>
                                     </h5>
-
-                                    @include('frontend.component.modal_form', [
-                                        'section' => 'AWS Training Schedule - Batch Page',
-                                        'form' => '2',
-                                        'title' => 'Book a FREE Demo'
-                                    ])
-
-                                    <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                                        data-bs-target="#enquiry_modal2"> Book a Demo</button>
+                                    
+                                    <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=AWS Training Schedule - Batch Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                                    class="btn bookfreedemo_button"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
                                         href="{{ url('aws-certification-training-online') }}"
@@ -615,14 +603,8 @@
                                     <h5>Get In Touch to Avail <span>{{ $azure_batch->off_percentage }} OFF</span>
                                     </h5>
 
-                                    @include('frontend.component.modal_form', [
-                                        'section' => 'Azure Training Schedule - Batch Page',
-                                        'form' => '3',
-                                        'title' => 'Book a FREE Demo'
-                                    ])
-
-                                    <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                                        data-bs-target="#enquiry_modal3"> Book a Demo</button>
+                                    <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=Azure Training Schedule - Batch Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                                    class="btn bookfreedemo_button"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
                                         href="{{ url('microsoft-azure-certification-training-online') }}"
@@ -849,14 +831,8 @@
                                     <h5>Get In Touch to Avail <span>{{ $mcse_batch->off_percentage }} OFF</span>
                                     </h5>
 
-                                    @include('frontend.component.modal_form', [
-                                        'section' => 'MCSE Training Schedule - Batch Page',
-                                        'form' => '4',
-                                        'title' => 'Book a FREE Demo'
-                                    ])
-
-                                    <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                                        data-bs-target="#enquiry_modal4"> Book a Demo</button>
+                                    <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=MCSE Training Schedule - Batch Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                                    class="btn bookfreedemo_button"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
                                         href="{{ url('mcsa-mcse-windows-server-training-online') }}"
@@ -1081,14 +1057,8 @@
                                     <h5>Get In Touch to Avail <span>{{ $ccna_batch->off_percentage }} OFF</span>
                                     </h5>
 
-                                    @include('frontend.component.modal_form', [
-                                        'section' => 'CCNA Training Schedule - Batch Page',
-                                        'form' => '5',
-                                        'title' => 'Book a FREE Demo'
-                                    ])
-
-                                    <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
-                                        data-bs-target="#enquiry_modal5"> Book a Demo</button>
+                                    <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=CCNA Training Schedule - Batch Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                                    class="btn bookfreedemo_button"> Book a Demo</button>
 
                                     <a class="view_coursebtn"
                                         href="{{ url('ccna-training-certification-online') }}"

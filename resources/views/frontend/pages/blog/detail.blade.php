@@ -241,15 +241,8 @@ $i = 1;
                                                     OFF</span>
                                             </h5>
 
-                                            @include('frontend.component.modal_form', [
-                                            'section' => 'VMware Training Schedule - Batch Page',
-                                            'form' => '1',
-                                            'title' => 'Book a FREE Demo'
-                                            ])
-
-                                            <button type="button" class="btn bookfreedemo_button"
-                                                data-bs-toggle="modal" data-bs-target="#enquiry_modal1"> Book a
-                                                Demo</button>
+                                            <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=VMware Training Schedule - Batch Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')"
+                                             class="btn bookfreedemo_button"> Book a Demo</button>
 
                                             <a class="view_coursebtn"
                                                 href="{{ url('vmware-training-certification-online') }}"
@@ -415,8 +408,10 @@ $i = 1;
                 </div>
                 <div class="bookdemofreeform_course blue_gradianbg blogdt_from">
                     <div class="container">
-                        @include('frontend.component.book_free_Demo_form',[
-                        'section' => 'Book a Free Demo - Blog Detail Page',
+                        @include('frontend.component.common_form', [
+                            'section' => 'Book a Free Demo - Blog Detail Page',
+                            'title'  => 'Book a <b>FREE</b> Demo',
+                            'Headingclassname'  => 'color_white',
                         ])
                     </div>
                 </div>
@@ -425,9 +420,11 @@ $i = 1;
 
             <div class="col-md-4 width__30 d-none d-md-block">
                 <div class="succes_page_form d-block sticky-top blue_gradianbg blog_rights">
-                    @include('frontend.component.book_free_Demo_form',[
-                    'section' => 'Enquire Now - Blog detail Page',
-                    ])
+                @include('frontend.component.common_form', [
+                    'section' => 'Book a Free Demo - Blog Detail Page',
+                    'title'  => 'Book a <b>FREE</b> Demo',
+                    'Headingclassname'  => 'color_white',
+                ])
                 </div>
 
             </div>

@@ -21,7 +21,7 @@
         <div class="container">
             <div class="text-center">
                 <div class="banner_content">
-                    <button type="button" class="btn enquire_now_btn" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - Home Page&title=Enquire Now')"> Enquire Now </button>
+                    <button type="button" class="btn enquire_now_btn" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - Home Page&title=Enquire Now&current_page={{ urlencode(url()->current()) }}')"> Enquire Now </button>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Instructor-Led Online Training - Home Page&title=Book a Demo')"> Book a Demo </button>
+                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Instructor-Led Online Training - Home Page&title=Book a Demo&current_page={{ urlencode(url()->current()) }}')"> Book a Demo </button>
                     </div>
                 </div>
                 <div class="col-md-5 img_box"> <img data-src="/assets/frontend/images/dsvdfb.jpg" width="399"
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="training_btn d-none d-lg-block">
-                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Classroom Training - Home Page&title=Book a Demo')"> Book a Demo </button>
+                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Classroom Training - Home Page&title=Book a Demo&current_page={{ urlencode(url()->current()) }}')"> Book a Demo </button>
                     </div>
                 </div>
                 <div class="col-md-6 order-md-1">
@@ -216,7 +216,7 @@
                         provide Practice exams and learning material for free which prepares you to answer the question
                         asked in actual exam, most of the candidates have passed exam in one attempt </p>
                     <div class="training_btn none">
-                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Certificate section - Home Page&title=Get Certified')"> Get Certified </button>
+                        <button type="button" class="btn bookfreedemo_button" onclick="formModal('{{ url(route('component.form')) }}?section=Certificate section - Home Page&title=Get Certified&current_page={{ urlencode(url()->current()) }}')"> Get Certified </button>
                     </div>
                 </div>
 

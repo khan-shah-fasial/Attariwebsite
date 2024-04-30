@@ -76,14 +76,9 @@
                         <p> With high end IT infra for practical’s, Attari Classes have fulfilled the demand of candidates
                             for hands-on practical training </p>
 
-                            @include('frontend.component.modal_form', [
-                                'section' => 'Our Achievements - About-us Page',
-                                'form' => '1',
-                                'title' => 'Book a FREE Demo'
-                            ])
-                        
-                        <button type="button" class="btn bookfreedemo_button none" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal1"> Book a FREE Demo </button>
+                            <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=Our Achievements - About-us Page&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
+                                    class="btn bookfreedemo_button none"> Book a Demo</button>
+
                     </div>
         <!-----=================================   Certificates ===============----------------->
                     @php
@@ -145,9 +140,11 @@
 
         <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
             <div class="container">
-                @include('frontend.component.book_free_Demo_form',[
-                    'section' => 'Book a Free Demo - Mobile View',
-                ])
+                @include('frontend.component.common_form', [
+                'section' => 'Book a Free Demo - Mobile View',
+                'title'  => 'Book a <b>FREE</b> Demo',
+                'Headingclassname'  => 'color_white',
+            ])
             </div>
         </section>
 
@@ -159,16 +156,9 @@
                     <div class="col-md-5 d-flex pt-md-5 ps-md-5 justify-content-center flex-column order-md-2">
                         <h4 class="aboutpg_hed"> Our <span class="light display_black">Infrastructure</span> </h4>
                         <p class="para"> We Provide High end Labs for Hands-on practical training </p>
-
-
-                        @include('frontend.component.modal_form', [
-                            'section' => 'Our Infrastructure - About-us Page',
-                            'form' => '2',
-                            'title' => 'Enquire Now'
-                        ])
-
-                        <button type="button" class="btn bookfreedemo_button none d-none d-lg-block" data-bs-toggle="modal"
-                            data-bs-target="#enquiry_modal2"> Enquire Now </button>
+                        
+                        <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section=Our Infrastructure - About-us Page&title=Enquire Now&current_page={{ urlencode(url()->current()) }}')" 
+                        class="btn bookfreedemo_button none d-none d-lg-block"> Enquire Now </button>
                     </div>
 
 
@@ -259,8 +249,10 @@
 
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
-            @include('frontend.component.book_free_Demo_form',[
+            @include('frontend.component.common_form', [
                 'section' => 'Book a Free Demo - Mobile View',
+                'title'  => 'Book a <b>FREE</b> Demo',
+                'Headingclassname'  => 'color_white',
             ])
         </div>
     </section>

@@ -197,9 +197,12 @@
             <div class="col-md-4 col-12 widths30">
 
             <div class="succes_page_form d-block sticky-top">
-                 @include('frontend.component.book_free_Demo_form',[
-                    'section' => 'Book a Free Demo - Success Story Page',
-                ])
+                 
+                @include('frontend.component.common_form', [
+                'section' => 'Book a Free Demo - Success Story Page',
+                'title'  => 'Book a <b>FREE</b> Demo',
+                'Headingclassname'  => 'color_white',
+            ])
             </div>
         </div>
         </div>

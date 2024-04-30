@@ -2,14 +2,14 @@
 $session_data = json_decode(session('user_ip'), true);
 @endphp
 
-
 <form id="common_form" action="{{url(route('contact.create'))}}" method="post" enctype="multipart/form-data">
     @csrf
 
-    <h5 class="text-center">{{ $title }}</h5>
+    <h5 class="text-center {{ isset($Headingclassname) ? $Headingclassname : '' }}">{!! isset($title) ? $title : '' !!}</h5>
+
 
     <input type="hidden" name="section" value="{{$section}}" data-aos-once="true" data-aos="fade-up" />
-    <input type="hidden" name="url" value="{{ url()->current() }}" data-aos-once="true" data-aos="fade-up" />
+    <input type="hidden" name="url" value="{{ isset($_GET['current_page']) ? $_GET['current_page'] : url()->current() }}" data-aos-once="true" data-aos="fade-up" />
 
     <div class="form-group">
         <input type="text" class="form-control" name="name" placeholder="Enter Name" required />
@@ -43,11 +43,11 @@ $session_data = json_decode(session('user_ip'), true);
             </select>
         </div>
     @endif
-    @if(!isset($msgfield) || empty($msgfield) || $msgfield == 1)
+
         <div class="form-group">
             <textarea aria-labelledby="Message" name="description" class="form-control" placeholder="Message"></textarea>
         </div>
-    @endif
+
 
     <input type="hidden" name="ip" value="{{ $session_data['ip'] }}" data-aos-once="true" data-aos="fade-up" />
 
