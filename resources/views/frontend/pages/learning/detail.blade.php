@@ -162,8 +162,14 @@
                                     <h5>Get In Touch to Avail <span>{{ $batch->off_percentage }} OFF</span>
                                     </h5>
 
-                                    <button type="button" onclick="formModal('{{ url(route('component.form')) }}?section={{ucwords(str_replace('-', ' ', $learning->slug)) . ' - ' . ucwords($learning->page) . ' Page'}}&title=Book a FREE Demo&current_page={{ urlencode(url()->current()) }}')" 
-                                    class="btn bookfreedemo_button">Book a FREE Demo</button>
+                                    @include('frontend.component.modal_form', [
+                                        'section' => ucwords(str_replace('-', ' ', $learning->slug)) . ' - ' . ucwords($learning->page) . ' Page',
+                                        'form' => '5',
+                                        'title' => 'Book a FREE Demo'
+                                    ])
+
+                                    <button type="button" class="btn bookfreedemo_button" data-bs-toggle="modal"
+                                        data-bs-target="#enquiry_modal5"> Book a Demo</button>
 
                                     @php 
                                         $course = DB::table('cms')->where('status', 1)->where('zone', 0)->where('course_id',$learning->course_id)->first(['slug']);
