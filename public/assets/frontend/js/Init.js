@@ -236,6 +236,7 @@ $(document).ready(function() {
     }
 });
 
+/*
 //have_Any_question_form
 $(document).ready(function() {
     initValidate('#add_course_form','#add_course_form1', '#add_course_form2', '#add_course_form3', '#add_course_form4');
@@ -320,6 +321,9 @@ $(document).ready(function() {
         }, 2000);
     }
 });
+*/
+
+
 $(document).ready(function() {
     $(document).on('submit', '#common_form', function(e) {
         e.preventDefault(); // Prevent the default form submission
@@ -328,7 +332,8 @@ $(document).ready(function() {
     });
 
     var responseHandler = function(response) {
-        $('input, textarea').val('');
+        $('input, textarea').not('[type="submit"]').val('');
+
         $("select option:first").prop('selected', true);
         setTimeout(function() {
             window.location.href = $('#baseUrl').attr('href') + '/thank-you';

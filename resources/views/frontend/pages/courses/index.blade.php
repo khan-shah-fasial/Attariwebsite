@@ -90,7 +90,7 @@
                             @php echo ReplaceKeyword($cms->description, $cms->replace_keyword) @endphp
                         </div>
                     </div>
-                    <button type="button" class="btn coursepg_enquiryform" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - course Page&title=Enquire Now&course_name={{$cms->breadcrumb_title}}')"> Enquire Now </button>
+                    <button type="button" class="btn coursepg_enquiryform" onclick="formModal('{{ url(route('component.form')) }}?section=Enquire Form Top - course Page&title=Enquire Now&current_page={{ urlencode(url()->current()) }}&course_name={{$cms->breadcrumb_title}}')"> Enquire Now </button>
                     <div class="check_carriculam"><a href="#syllabuse" class="check_curriculum"> Check Curriculum </a></div>
                 </div>
                 <div class="show_desktopview col-3 width30 imagebox d-flex align-items-center justify-content-center">
@@ -658,7 +658,7 @@
                                     <div class="button_main getin_touch_bx">
                                         <h5 class="pb-2">Get In Touch to Avail <span>{{ $batch->off_percentage }} OFF</span></h5>
 
-                                        <a onclick="formModal('{{ url(route('component.form')) }}?section=Online / Classroom - course Page&title=Book a Demo&course_name={{$cms->breadcrumb_title}}')">Book a Demo</a>
+                                        <a onclick="formModal('{{ url(route('component.form')) }}?section=Online / Classroom - course Page&title=Book a Demo&current_page={{ urlencode(url()->current()) }}&course_name={{$cms->breadcrumb_title}}')">Book a Demo</a>
                                      
                                     </div>
                                 </div>
@@ -681,7 +681,7 @@
 
                                 <div class="col-md-3">
                                     <div class="button_main">
-                                        <a onclick="formModal('{{ url(route('component.form')) }}?section={{$batch->corp_title. ' - course Page'}}&title=Enquire Now&course_name={{$cms->breadcrumb_title}}')">Enquire Now</a>
+                                        <a onclick="formModal('{{ url(route('component.form')) }}?section={{$batch->corp_title. ' - course Page'}}&current_page={{ urlencode(url()->current()) }}&title=Enquire Now&course_name={{$cms->breadcrumb_title}}')">Enquire Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -765,14 +765,6 @@
 
                         @endif
 
-
-                        <div class="gradiant_bg bookdemofreeform_course course_buttom_form mt-4">
-                            <h4 class="text-center textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
-                            @include('frontend.component.course_demo_form', [
-                                'courseName' => $cms->breadcrumb_title,
-                                'form' => '2',
-                            ])
-                        </div>
                         <div class="gradiant_bg bookdemofreeform_course course_buttom_form mt-4">
                             <h4 class="text-center textcolor_wht pb-2">Book a <b>FREE</b> Demo</h4>
                             @include('frontend.component.common_form', [

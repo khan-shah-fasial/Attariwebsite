@@ -141,7 +141,7 @@
         <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
             <div class="container">
                 @include('frontend.component.common_form', [
-                'section' => 'Book a Free Demo - Mobile View',
+                'section' => 'About Us Page - After Our Achivement Section - Book A Free Demo - Mobile View',
                 'title'  => 'Book a <b>FREE</b> Demo',
                 'Headingclassname'  => 'color_white',
             ])
@@ -250,7 +250,7 @@
     <section class="enquiry_mobile_form d-block d-lg-none d-md-none">
         <div class="container">
             @include('frontend.component.common_form', [
-                'section' => 'Book a Free Demo - Mobile View',
+                'section' => 'About Us Page - Bottom Section - Book A Free Demo - Mobile View',
                 'title'  => 'Book a <b>FREE</b> Demo',
                 'Headingclassname'  => 'color_white',
             ])
