@@ -619,8 +619,9 @@
 
                                         $batch_detail = json_decode($batch->batch_detail, true);
                                         $batch_dates = array_column($batch_detail, 'date');
+                                        //$batch_times = array_column($batch_detail, 'time');
 
-                                        
+                                        //var_dump($batch_times);
 
                                         //sort($batch_dates);
 
