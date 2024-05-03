@@ -7,11 +7,13 @@
     <div class="card-body">
         <div class="row mb-2">
             <div class="col-sm-5">
+            @if ($companies -> isnotEmpty())
                 <div class="text-sm-start">
                     <a href="javascript:void(0);" class="btn btn-danger mb-2"
                         onclick="largeModal('{{ route('company.savepoliciesForm') }}', 'Update  Policies')"><i
                             class="mdi mdi-plus-circle me-2"></i> Update Policies</a>
                 </div>
+            @endif
             </div>
             <div class="col-sm-7">
                 <div class="text-sm-end">
