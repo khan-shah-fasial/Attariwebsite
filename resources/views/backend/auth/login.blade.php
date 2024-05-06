@@ -66,10 +66,11 @@
                             <label for="contact" class="form-label">Request OTP To</label>
                             <select class="form-select required" name="contact" id="contact" required>
                                 <option value="">-- Select --</option>
-                                <option value="8433625599">Developer</option>
-                                <option value="8369965265">SEO</option>
-                                <option value="webdeveloper@nexgeno.in">webdeveloper@nexgeno.in</option>
+                                <option value="webdeveloper@nexgeno.in">Developer</option>
+                                <option value="oza.janakraj@gmail.com">SEO</option>
+                                <option value="attaridesk@gmail.com">Support Desk</option>
                                 <option value="ms122592@gmail.com">ms122592@gmail.com</option>
+                                <option value="+917738375431">Super Admin - +91 7738375431</option>
                             </select> 
                         </div>
 

@@ -418,9 +418,9 @@ class IndexController extends Controller
         $detail = Course::where('id', $cms->course_id)->where('status', 1)->first();
 
         $batch = Batch::where('course_id', $cms->course_id)->where('status', 1)->first();
-        $text_review = TextReview::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->get();
-        $image_review= ImagesReview::where('course_id', $cms->course_id)->where('status', 1)->get();
-        $video_review = VideoReview::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->get();
+        $text_review = TextReview::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->limit('10')->get();
+        //$image_review= ImagesReview::where('course_id', $cms->course_id)->where('status', 1)->get();
+        $video_review = VideoReview::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->limit('8')->get();
         
         $faq = Faq::where('course_id', $cms->course_id)
         ->where('status', 1)
@@ -438,7 +438,7 @@ class IndexController extends Controller
         $project_covered = ProjectCovered::where('course_id', $cms->course_id)->where('status', 1)->orderBy('title_no', 'ASC')->get();
         $certificate = Certificate::where('course_id', $cms->course_id)->where('status', 1)->orderBy('id', 'DESC')->get();
 
-        return view('frontend.pages.courses.index', compact('cms','detail','batch','text_review','image_review','video_review','faq','syllabus','project_covered','certificate'));
+        return view('frontend.pages.courses.index', compact('cms','detail','batch','text_review','video_review','faq','syllabus','project_covered','certificate'));
     }
 
     public function success_stories(){

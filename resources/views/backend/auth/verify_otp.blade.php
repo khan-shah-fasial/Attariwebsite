@@ -96,10 +96,10 @@
 
                     @if(session('method') != 'email')
 
-                        <form action="{{ route('resend-otp') }}" method="post">
+                        <form class="text-center" action="{{ route('resend-otp') }}" method="post">
                             @csrf
                             <input type="hidden" name="method" value="sms">
-                            <button type="submit">Resend OTP via SMS</button>
+                            <button class="resend_top_cls" type="submit">Resend OTP via SMS</button>
                         </form>
 
                     @else

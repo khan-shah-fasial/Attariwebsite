@@ -151,7 +151,7 @@
             </div>
             <div class="testimonial__content">
               <div class="testimonial__text">
-                <p> I have just completed VMware vSphere 7 online training sessions from Attari classes. Its really a good experience, especially trainer Mr. Maqsood Sir gives training with very understanding examples of real time issues that make my concepts clear and its totally practical based training session. Also, online LMS is the best tool to revise concepts at any time. It’s really one of the best place to learn VMware vSphere concepts. </p>
+                <p> I have just completed VMware vSphere 8 online training sessions from Attari classes. Its really a good experience, especially trainer Mr. Maqsood Sir gives training with very understanding examples of real time issues that make my concepts clear and its totally practical based training session. Also, online LMS is the best tool to revise concepts at any time. It’s really one of the best place to learn VMware vSphere concepts. </p>
               </div>
             </div>
           </div>
