@@ -92,7 +92,8 @@ $i = 1;
                         {{ $detail->title }}
                     </h3>
 
-                    <b><span>Last Update: {{ date('Y-m-d', strtotime($detail->updated_at)) }}</span><span
+
+                    <b><span>Last Update: {{ date("F j, Y", strtotime($detail->updated_at)) }}</span><span
                             class="ms-3"><i class="fa-regular fa-eye"></i> Post Views: {{ $detail->views }}</b>
                     <p class="pt-2">{{ $detail->short_description }}</p>
                 </div>
@@ -111,7 +112,7 @@ $i = 1;
 <section class="recent_post py-5 bggray1">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 width__70">
+            <div class="col-md-9 col-12">
                 <div class="">
                 <!-- <div class="mb-4"> -->
                     <div class="post_box pb-1">
@@ -418,7 +419,7 @@ $i = 1;
             </div>
 
 
-            <div class="col-md-4 width__30 d-none d-md-block">
+            <div class="col-md-3 col-12 d-none d-md-block">
                 <div class="succes_page_form d-block sticky-top blue_gradianbg blog_rights">
                 @include('frontend.component.common_form', [
                     'section' => 'Book a Free Demo - Blog Detail Page',

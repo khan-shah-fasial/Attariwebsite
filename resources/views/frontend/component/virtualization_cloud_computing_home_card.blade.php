@@ -14,7 +14,7 @@
                 
                     <div class="text_box">
                         <h5 class="text_services_heading">
-                            VMware vSphere 7
+                            VMware vSphere 8
                         </h5>
                         <p class="text_services_para"> <i class="far fa-clock"></i> 40+ Hours
                             <br /> <i class="far fa-calendar-check"></i> View Batch Schedule

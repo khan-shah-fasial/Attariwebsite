@@ -638,14 +638,14 @@
                                         <table class="batch_table table">
                                             <tbody>
                                                 <tr class="pdd_14">
-                                                    <td width="20"><div class="">DATE</div></td>
-                                                    <td width="40"><div class="">SCHEDULE </div></td>
-                                                    <td width="40"><div class="">TIME </div></td>
+                                                    <td><div class="">DATE</div></td>
+                                                    <td><div class="">SCHEDULE </div></td>
+                                                    <td><div class="">TIME </div></td>
                                                 </tr>
                                                 @foreach ($batch_detail as $row)
                                                     <tr class="pdd_19">
-                                                        <td><div class="">{{ formatDate($row['date']) }}</div></td>
-                                                        <td><div class="">@php echo html_entity_decode($row['schedule']) @endphp<span
+                                                        <td ><div class="">{{ formatDate($row['date']) }}</div></td>
+                                                        <td ><div class="">@php echo html_entity_decode($row['schedule']) @endphp<span
                                                                 class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                         <td><div class="">@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                     </tr>

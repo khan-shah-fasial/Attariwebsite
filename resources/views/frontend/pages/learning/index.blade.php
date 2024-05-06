@@ -54,7 +54,7 @@
                         <img src="/assets/frontend/images/vmvare_coursimg.jpg" alt="" />
                         <div class="text_box">
                             <h5 class="text_services_heading">
-                                <a href=""> VMware vSphere 7 </a>
+                                <a href=""> VMware vSphere 8 </a>
                             </h5>
                             <div class="course_button">
                                 @php
