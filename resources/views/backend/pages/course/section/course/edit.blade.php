@@ -101,7 +101,7 @@
 
                     <div class="col-sm-4">
                         <div class="form-group mb-3">
-                            <label>Slug ( Url ) </label>
+                            <label>Slug ( Url-course alias )</label>
                             <input type="text" class="form-control" name="slug_url" value="{{ $course->slug_url }}" required>
                         </div>
                     </div>

@@ -243,13 +243,12 @@ Route::group(['prefix' => 'setting'], function () {
     Route::post('/update', [BusinessSettingController::class, 'update'])->name('setting.update');
 });
 
-/*
+
 //Contact Page setting
 Route::group(['prefix' => 'contact/page'], function () {
     Route::get('/index', [ContactSettingController::class, 'index'])->name('contactpage.index');
     Route::post('/update', [ContactSettingController::class, 'update'])->name('contactpage.update');
 });
-*/
 
 //clear cache
 Route::get('/clear-cache', function () {
