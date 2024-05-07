@@ -304,7 +304,7 @@ class IndexController extends Controller
     
         $response = [
             'status' => true,
-            'notification' => 'Contact added successfully!',
+            'notification' => 'Thank you, Attari Classes support desk will get in touch with you',
         ];
     
         return response()->json($response);
