@@ -1,8 +1,8 @@
 
 <script src="/assets/frontend/js/bootstrap.bundle.min.js"></script>
 
-
-
+<!---- combined  js --------->
+<script src="/assets/frontend/js/combined.js"></script>
 
 <!--owl carousel js-->
 <script src="/assets/frontend/js/owl.carousel.js"></script>

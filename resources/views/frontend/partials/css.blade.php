@@ -1,5 +1,4 @@
-<!---- combined  js --------->
-<script src="/assets/frontend/js/combined.js"></script>
+
 <link rel="shortcut icon" href="{{ asset('/assets/frontend/images/favicon.webp') }}">
 
 <link rel="stylesheet" href="/assets/frontend/css/style.css" /> 
