@@ -82,7 +82,7 @@
                             Cloud</a></li>
                     <li><a href="https://attariclasses.in/mcsa-mcse-windows-server-training-online/">MCSE</a></li>
                     <li><a href="https://attariclasses.in/ccna-training-certification-online/">CCNA</a></li>
-                    <li><a href="https://lms.attariclasses.in/">Self Paced Video Learning Management System</a></li>
+                    <li><a href="https://lms.attariclasses.in/">Self Paced Video LMS</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-3 col-6">
