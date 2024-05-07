@@ -81,10 +81,13 @@ use Illuminate\Support\Str;
         }
     }
 
+    /*
     if(!function_exists('sendEmail')){
-        function sendEmail($to, $subject, $body, $attachments = [])
+        function sendEmail($to, $subject, $body, $attachments = [], $replyTo = null)
         {
-            return \Illuminate\Support\Facades\Mail::raw($body, function ($message) use ($to, $subject, $attachments) {
+
+            
+            return \Illuminate\Support\Facades\Mail::raw($body, function ($message) use ($to, $subject, $attachments, $replyTo) {
                 $message->to($to)
                 //$message->to('khanfaisal.makent@gmail.com')
                         ->subject($subject);
@@ -93,9 +96,85 @@ use Illuminate\Support\Str;
                 foreach ($attachments as $attachment) {
                     $message->attach($attachment['path'], ['as' => $attachment['name']]);
                 }
+
+                // Reply-To
+                if ($replyTo) {
+                    $message->replyTo($replyTo);
+                }
+
+            });
+        }  
+    } */
+
+
+    if(!function_exists('sendEmail')){
+        function sendEmail($to, $subject, $body, $replyTo = null)
+        {
+            return \Illuminate\Support\Facades\Mail::raw($body, function ($message) use ($to, $subject, $replyTo) {
+                $message->to($to)
+                //$message->to('khanfaisal.makent@gmail.com')
+                        ->subject($subject);
+        
+                // Reply-To
+                if ($replyTo) {
+                    $message->replyTo($replyTo);
+                }
+
             });
         }  
     }
+
+
+
+    if (!function_exists('SendinBlueContact_lead')) {
+        function SendinBlueContact_lead($email)
+        {
+            // Set your API key
+            $api_key = env('SENDINBLUE_API_KEY');
+    
+            // Set the API endpoint
+            $endpoint = 'https://api.sendinblue.com/v3/contacts';
+    
+            // Set the data to be sent
+            $data = [
+                'updateEnabled'=> true,
+                'email' => $email,
+                'listIds' => [2]
+            ];
+    
+            // Initialize cURL session
+            $ch = curl_init();
+    
+            // Set the cURL options
+            curl_setopt($ch, CURLOPT_URL, $endpoint);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'api-key: ' . $api_key
+            ]);
+    
+            // Execute the cURL request
+            $response = curl_exec($ch);
+    
+            // Check for errors
+            if ($response === false) {
+                $error = curl_error($ch);
+                $result = 'cURL error: ' . $error;
+            } else {
+                // Print the response
+                $result = $response;
+            }
+    
+            // Close cURL session
+            curl_close($ch);
+    
+            return $result;
+        }
+    }
+
+
 
     if(!function_exists('ip_info')){
         function ip_info(){

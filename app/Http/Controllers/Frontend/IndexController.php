@@ -243,9 +243,23 @@ class IndexController extends Controller
         $user_data = json_decode(session('user_ip'), true);
 
         // Send email if $cvPath is not null
+
+        if($services == "VMware"){
+            $subject = "VMware Course Enquiry";
+        } elseif($services == "AWS Cloud") {
+            $subject = "AWS Cloud Course Enquiry";
+        } elseif($services == "Azure Cloud") {
+            $subject = "Azure Cloud Course Enquiry";
+        } elseif($services == "MCSE") {
+            $subject = "MCSE Course Enquiry";
+        } elseif($services == "CCNA") {
+            $subject = "CCNA Course Enquiry";
+        } else {
+            $subject = "Lead Enquiry";
+        }
        
         $recipient = 'khanfaisal.makent@gmail.com'; // Replace with the actual recipient email
-        $subject  =  'Lead Enquiry';
+        $subject  =  $subject;
      
 
         $body = '<table>';
@@ -281,6 +295,10 @@ class IndexController extends Controller
         $body .= "<tr><td style='width: 150px;'><strong>Submitted Data :</strong></td><td>" . date('Y-m-d') . "</td></tr></br>";
         $body .= '</table>';
 
+        $replyToEmail = $email;
+
+        SendinBlueContact_lead($email);
+
 
         if ($cvPath !== null) {
              // Optional attachments
@@ -293,10 +311,12 @@ class IndexController extends Controller
             ];
 
             // Send the email
-            sendEmail($recipient, $subject, $body, $attachments);
+            //sendEmail($recipient, $subject, $body, $replyToEmail, $attachments);
+
+            sendEmail($recipient, $subject, $body, $replyToEmail);
 
         } else {
-            sendEmail($recipient, $subject, $body);
+            sendEmail($recipient, $subject, $body, $replyToEmail);
         }
 
         
@@ -344,10 +364,10 @@ class IndexController extends Controller
         // Send email if $cvPath is not null
        
         $recipient = ''.$email.''; 
-        $subject  =  'News Letter Subscribe';
+        $subject  =  'Thanks for subscribing to Attari Classes Newsletter!';
      
 
-        $body = 'Thnaks For Subscribe the Attari Classes Newsletter';
+        $body = 'Thanks for subscribing to Attari Classes Newsletter!';
         
         sendEmail($recipient, $subject, $body);
         

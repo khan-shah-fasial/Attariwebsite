@@ -8,7 +8,7 @@
             <div class="col-sm-2">
                 <div class="form-group mb-3">
                     <label>Sr No <span class="red">*</span></label>
-                    <input maxlength="255" type="text" class="form-control" name="title_no" value="" required>
+                    <input maxlength="255" type="text" class="form-control" name="title_no" value="{{ $faq->title_no }}" required>
                 </div>
             </div>
             <div class="col-sm-10">
@@ -30,7 +30,7 @@
             <div class="col-sm-12">
                 <div class="form-group mb-3">
                     <label>Answer <span class="red">*</span></label>
-                    <textarea class="trumbowyg form-control" name="answer" rows="5" required>{{ $faq->answer }}</textarea>
+                    <textarea class="trumbowyg form-control" id="trumbowyg" name="answer" rows="5" required>{{ $faq->answer }}</textarea>
                 </div>
             </div>
             <div class="col-sm-12">
@@ -46,7 +46,7 @@
     <script>
         $(document).ready(function() {
             initValidate('#edit_faq_form');
-            initTrumbowyg('.trumbowyg');
+            initTrumbowyg('#trumbowyg');
         });
 
         $("#edit_faq_form").submit(function(e) {

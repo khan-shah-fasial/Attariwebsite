@@ -22,7 +22,7 @@
             <div class="col-sm-12">
                 <div class="form-group mb-3">
                     <label>Description <span class="red">*</span></label>
-                    <textarea class="trumbowyg form-control" name="description" rows="5" required>{{ $syllabus->description }}</textarea>
+                    <textarea class="trumbowyg form-control" id="trumbowyg" name="description" rows="5" required>{{ $syllabus->description }}</textarea>
                 </div>
             </div>
             <div class="col-sm-12">
@@ -38,7 +38,7 @@
     <script>
         $(document).ready(function() {
             initValidate('#edit_syllabus_form');
-            initTrumbowyg('.trumbowyg');
+            initTrumbowyg('#trumbowyg');
         });
 
         $("#edit_syllabus_form").submit(function(e) {
