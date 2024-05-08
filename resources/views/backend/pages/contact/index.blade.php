@@ -3,6 +3,9 @@
 @section('page.name', 'contact')
 
 @section('page.content')
+
+@include('backend.pages.contact.manage_email')
+
 <div class="card">
    <div class="card-body">
       <div class="row mb-2">
@@ -16,6 +19,7 @@
          </div> --}}
          <!-- end col-->
       </div>
+
       <div class="table-responsive">
       <table id="basic-datatable" class="table dt-responsive nowrap w-100">
         <thead>

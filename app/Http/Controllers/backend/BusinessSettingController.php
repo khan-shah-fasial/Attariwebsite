@@ -58,7 +58,7 @@ class BusinessSettingController extends Controller
 
         $response = [
             'status' => true,
-            'notification' => 'Blog updated successfully!',
+            'notification' => 'Data updated successfully!',
         ];
 
         return response()->json($response);

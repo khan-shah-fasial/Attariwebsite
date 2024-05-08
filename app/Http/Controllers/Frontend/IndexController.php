@@ -258,7 +258,7 @@ class IndexController extends Controller
             $subject = "Lead Enquiry";
         }
        
-        $recipient = 'khanfaisal.makent@gmail.com'; // Replace with the actual recipient email
+        $recipient = ''.get_settings('recive_email').''; // Replace with the actual recipient email
         $subject  =  $subject;
      
 
