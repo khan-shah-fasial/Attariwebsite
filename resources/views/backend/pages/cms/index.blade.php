@@ -122,6 +122,7 @@
                     { data: 'created_at'},
                     { data: 'action', name: 'action', orderable: false, searchable: false },
                 ],
+                dom: '<"row"<"col-md-6"l><"col-md-6"f>><"row"<"col-md-12"i>>tip',
             });
         }
 

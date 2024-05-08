@@ -201,7 +201,7 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                     @php
-                        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type','google')->get();
+                        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type','google_mcse')->get();
 
                         $course_schema_azure = DB::table('courses')->where('status', 1)->where('id','8')->get(['testimonials_section_schema'])->first();
                     @endphp

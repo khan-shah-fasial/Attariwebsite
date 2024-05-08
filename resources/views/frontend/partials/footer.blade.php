@@ -172,11 +172,11 @@
                     @php
                         $session_data = json_decode(session('user_ip'), true);
                     @endphp
-@include('frontend.component.common_form', [
-                'section' => 'Drop a Query Form',
-                'title'  => 'Drop a Query Form',
-            ])
-                  
+
+                    @include('frontend.component.common_form', [
+                                    'section' => 'Drop a Query Form',
+                                    'title'  => 'Drop a Query Form',
+                                ])                  
 
                 </div>
             </div>

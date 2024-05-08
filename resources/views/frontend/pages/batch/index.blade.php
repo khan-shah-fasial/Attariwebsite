@@ -349,7 +349,7 @@
                                             </tr>
                                             @foreach ($batch_aws_detail as $row)
                                                 <tr class="pdd_19">
-                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>{{ formatDate($row['date']) }}</div></td>
                                                     <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                     <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
@@ -577,7 +577,7 @@
                                             </tr>
                                             @foreach ($batch_azure_detail as $row)
                                                 <tr class="pdd_19">
-                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>{{ formatDate($row['date']) }}</div></td>
                                                     <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                     <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
@@ -805,7 +805,7 @@
                                             </tr>
                                             @foreach ($batch_mcse_detail as $row)
                                                 <tr class="pdd_19">
-                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>{{ formatDate($row['date']) }}</div></td>    
                                                     <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                     <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>
@@ -1031,7 +1031,7 @@
                                             </tr>
                                             @foreach ($batch_ccna_detail as $row)
                                                 <tr class="pdd_19">
-                                                    <td><div>@php echo html_entity_decode($row['date']) @endphp</div></td>
+                                                    <td><div>{{ formatDate($row['date']) }}</div></td>
                                                     <td><div>@php echo html_entity_decode($row['schedule']) @endphp<span class="text_red">@php echo html_entity_decode($row['remark']) @endphp</span></div></td>
                                                     <td><div>@php echo html_entity_decode($row['time']) @endphp</div></td>
                                                 </tr>

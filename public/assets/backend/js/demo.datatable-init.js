@@ -10,7 +10,8 @@ $(document).ready(function() {
         },
         drawCallback: function() {
             $(".dataTables_paginate > .pagination").addClass("pagination-rounded")
-        }
+        },
+        dom: '<"row"<"col-md-6"l><"col-md-6"f>><"row"<"col-md-6"i>>tip'
     });
     var a = $("#datatable-buttons").DataTable({
         lengthChange: !1,
