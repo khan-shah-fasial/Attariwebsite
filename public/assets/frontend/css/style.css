@@ -2025,6 +2025,12 @@ span.projects_covered__name {
   line-height: 26px;
 }
 
+/*---------------------certificates-------------- */
+
+#certificate_section .owl-carousel .owl-item{
+  border: 20px solid #000;
+}
+
 .accordion-button:not(.collapsed) {
 
   box-shadow: none !important;
