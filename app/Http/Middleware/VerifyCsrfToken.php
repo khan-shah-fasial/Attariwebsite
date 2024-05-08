@@ -12,6 +12,8 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'backend/trumbowyg/upload'
+        'backend/trumbowyg/upload',
+        'contact-save',
+        'newsletter-save'
     ];
 }

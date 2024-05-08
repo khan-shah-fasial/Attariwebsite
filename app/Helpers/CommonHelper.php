@@ -139,7 +139,7 @@ use Illuminate\Support\Str;
             $data = [
                 'updateEnabled'=> true,
                 'email' => $email,
-                'listIds' => [2]
+                'listIds' => [14]
             ];
     
             // Initialize cURL session
@@ -276,7 +276,7 @@ use Illuminate\Support\Str;
             $data = [
                 'updateEnabled'=> true,
                 'email' => $email,
-                'listIds' => [1]
+                'listIds' => [15]
             ];
     
             // Initialize cURL session
