@@ -49,7 +49,7 @@
 
 
                     @php
-                        $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type','google')->get();
+                        $text_vm_review = DB::table('text_reviews')->where('status', 1)->where('course_id','5')->where('type', '!=', 'facebook')->get();
 
                         $course_schema_vm = DB::table('courses')->where('status', 1)->where('id','5')->get(['testimonials_section_schema'])->first();
                     @endphp
@@ -121,7 +121,7 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                     @php
-                        $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type','google')->get();
+                        $text_aws_review = DB::table('text_reviews')->where('status', 1)->where('course_id','7')->where('type', '!=', 'facebook')->get();
 
                         $course_schema_aws = DB::table('courses')->where('status', 1)->where('id','7')->get(['testimonials_section_schema'])->first();
                     @endphp
@@ -201,7 +201,7 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                     @php
-                        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type','google_mcse')->get();
+                        $text_azure_review = DB::table('text_reviews')->where('status', 1)->where('course_id','8')->where('type', '!=', 'facebook')->get();
 
                         $course_schema_azure = DB::table('courses')->where('status', 1)->where('id','8')->get(['testimonials_section_schema'])->first();
                     @endphp
@@ -272,7 +272,7 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                     @php
-                        $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type','google_mcse')->get();
+                        $text_mcse_review = DB::table('text_reviews')->where('status', 1)->where('course_id','9')->where('type', '!=', 'facebook')->get();
                         
                         $course_schema_mcse = DB::table('courses')->where('status', 1)->where('id','9')->get(['testimonials_section_schema'])->first();
                     @endphp
@@ -346,7 +346,7 @@
                 <div class="owl-carousel owl-theme slider_content_dots">
 
                     @php
-                        $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->where('type','google')->get();
+                        $text_ccna_review = DB::table('text_reviews')->where('status', 1)->where('course_id','10')->where('type', '!=', 'facebook')->get();
 
                         $course_schema_ccna = DB::table('courses')->where('status', 1)->where('id','10')->get(['testimonials_section_schema'])->first();
                     @endphp

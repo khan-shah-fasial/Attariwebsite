@@ -91,6 +91,9 @@
                     $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
                     $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
 
+                    $batch_vm_start_date = date("Y-m-d", strtotime($batch_vm_start_date)); 
+                    $batch_vm_start_date2 = date("Y-m-d", strtotime($batch_vm_start_date2)); 
+
                     $batch_vm_end_date = date('Y-m-d H:i:s', strtotime($batch_vm_start_date . ' +5 weeks'));
                     $batch_vm_end_date2 = date('Y-m-d H:i:s', strtotime($batch_vm_start_date2 . ' +5 weeks'));
 
@@ -321,6 +324,9 @@
                     $batch_aws_start_date = reset($batch_aws_dates); // Get the first date
                     $batch_aws_start_date2 = end($batch_aws_dates); // Get the last date
 
+                    $batch_aws_start_date = date("Y-m-d", strtotime($batch_aws_start_date)); 
+                    $batch_aws_start_date2 = date("Y-m-d", strtotime($batch_aws_start_date2)); 
+
                     $batch_aws_end_date = date('Y-m-d H:i:s', strtotime($batch_aws_start_date . ' +5 weeks'));
                     $batch_aws_end_date2 = date('Y-m-d H:i:s', strtotime($batch_aws_start_date2 . ' +5 weeks'));
 
@@ -548,6 +554,9 @@
 
                     $batch_azure_start_date = reset($batch_azure_dates); // Get the first date
                     $batch_azure_start_date2 = end($batch_azure_dates); // Get the last date
+
+                    $batch_azure_start_date = date("Y-m-d", strtotime($batch_azure_start_date)); 
+                    $batch_azure_start_date2 = date("Y-m-d", strtotime($batch_azure_start_date2)); 
 
                     $batch_azure_end_date = date('Y-m-d H:i:s', strtotime($batch_azure_start_date . ' +5 weeks'));
                     $batch_azure_end_date2 = date('Y-m-d H:i:s', strtotime($batch_azure_start_date2 . ' +5 weeks'));
@@ -777,6 +786,9 @@
                     $batch_mcse_start_date = reset($batch_mcse_dates); // Get the first date
                     $batch_mcse_start_date2 = end($batch_mcse_dates); // Get the last date
 
+                    $batch_mcse_start_date = date("Y-m-d", strtotime($batch_mcse_start_date)); 
+                    $batch_mcse_start_date2 = date("Y-m-d", strtotime($batch_mcse_start_date2));
+
                     $batch_mcse_end_date = date('Y-m-d H:i:s', strtotime($batch_mcse_start_date . ' +5 weeks'));
                     $batch_mcse_end_date2 = date('Y-m-d H:i:s', strtotime($batch_mcse_start_date2 . ' +5 weeks'));
 
@@ -1002,6 +1014,9 @@
 
                     $batch_ccna_start_date = reset($batch_ccna_dates); // Get the first date
                     $batch_ccna_start_date2 = end($batch_ccna_dates); // Get the last date
+
+                    $batch_ccna_start_date = date("Y-m-d", strtotime($batch_ccna_start_date)); 
+                    $batch_ccna_start_date2 = date("Y-m-d", strtotime($batch_ccna_start_date2));
 
                     $batch_ccna_end_date = date('Y-m-d H:i:s', strtotime($batch_ccna_start_date . ' +5 weeks'));
                     $batch_ccna_end_date2 = date('Y-m-d H:i:s', strtotime($batch_ccna_start_date2 . ' +5 weeks'));

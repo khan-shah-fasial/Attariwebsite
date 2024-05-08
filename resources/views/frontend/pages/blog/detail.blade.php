@@ -150,6 +150,9 @@ $i = 1;
                 $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
                 $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
 
+                $batch_vm_start_date = date("Y-m-d", strtotime($batch_vm_start_date)); 
+                $batch_vm_start_date2 = date("Y-m-d", strtotime($batch_vm_start_date2));
+
                 $batch_vm_end_date = date('Y-m-d H:i:s', strtotime($batch_vm_start_date . ' +5
                 weeks'));
                 $batch_vm_end_date2 = date('Y-m-d H:i:s', strtotime($batch_vm_start_date2 . ' +5
