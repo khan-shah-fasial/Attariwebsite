@@ -82,6 +82,6 @@ $class = "form_" . $value;
     $("select option:first").prop("selected", !0);
     $("#formModal").modal("hide");
 };       
-    }, 2000);
+    }, 1000);
 
 </script>
