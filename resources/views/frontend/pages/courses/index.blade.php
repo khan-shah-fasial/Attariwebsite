@@ -619,11 +619,25 @@
 
                                         $batch_detail = json_decode($batch->batch_detail, true);
                                         $batch_dates = array_column($batch_detail, 'date');
-                                        //$batch_times = array_column($batch_detail, 'time');
-
-                                        //var_dump($batch_times);
-
-                                        //sort($batch_dates);
+                                        $batch_times = array_column($batch_detail, 'time');
+                    
+                                        foreach ($batch_times as $index => $time) {
+                                            // Extract start and end times for each date
+                                            $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                                            if (preg_match($pattern, $time, $matches)) {
+                                                $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                                                $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                                                
+                                                // Assign times to corresponding variables based on index
+                                                if ($index == 0) {
+                                                    $batch_startTime1 = $startTime;
+                                                    $batch_endTime1 = $endTime;
+                                                } elseif ($index == 1) {
+                                                    $batch_startTime2 = $startTime;
+                                                    $batch_endTime2 = $endTime;
+                                                }
+                                            }
+                                        }
 
                                         // Get the start and end dates
                                         $batch_start_date = reset($batch_dates); // Get the first date
@@ -635,7 +649,7 @@
                                         $batch_end_date = date('Y-m-d H:i:s', strtotime($batch_start_date . ' +5 weeks'));
                                         $batch_end_date2 = date('Y-m-d H:i:s', strtotime($batch_start_date2 . ' +5 weeks'));
 
-                                    @endphp
+                                    @endphp 
 
                                     @if (!empty($batch_detail))
                                         <table class="batch_table table">
@@ -699,7 +713,7 @@
     <!-----------------================== Batch Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],[$meta_title, $meta_description, $meta_url, $batch_start_date, $batch_start_date2, $batch_end_date, $batch_end_date2], html_entity_decode($detail->batch_section_schema));
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{start_time2}]','[{end_time1}]','[{end_time2}]'],[$meta_title, $meta_description, $meta_url, $batch_start_date, $batch_start_date2, $batch_end_date, $batch_end_date2, $batch_startTime1, $batch_startTime2, $batch_endTime1,  $batch_endTime2], html_entity_decode($detail->batch_section_schema));
     @endphp
 
     <!-----------------================== Batch Schema =========================------------------------------>

@@ -146,6 +146,25 @@ $i = 1;
 
                 $batch_vm_detail = json_decode($vmware_batch->batch_detail, true);
                 $batch_vm_dates = array_column($batch_vm_detail, 'date');
+                $batch_vm_times = array_column($batch_vm_detail, 'time');
+                    
+                    foreach ($batch_vm_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_vm_startTime1 = $startTime;
+                                $batch_vm_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_vm_startTime2 = $startTime;
+                                $batch_vm_endTime2 = $endTime;
+                            }
+                        }
+                    }
 
                 $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
                 $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
@@ -261,7 +280,7 @@ $i = 1;
             <!-----------------================== Batch vm Schema =========================------------------------------>
 
                             @php
-                            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'], [$detail->meta_title, $detail->meta_description,$meta_url,$batch_vm_start_date, $batch_vm_start_date2, $batch_vm_end_date, $batch_vm_end_date2], html_entity_decode($course_schema_vm->batch_section_schema));
+                            echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{start_time2}]','[{end_time1}]','[{end_time2}]'], [$detail->meta_title, $detail->meta_description,$meta_url,$batch_vm_start_date, $batch_vm_start_date2, $batch_vm_end_date, $batch_vm_end_date2, $batch_vm_startTime1, $batch_vm_startTime2, $batch_vm_endTime1,  $batch_vm_endTime2], html_entity_decode($course_schema_vm->batch_section_schema));
                             @endphp
 
             <!-----------------================== Batch vm Schema =========================------------------------------>

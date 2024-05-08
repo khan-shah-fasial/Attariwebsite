@@ -104,6 +104,25 @@
                     $batch_ccna_detail = json_decode($batch->batch_detail, true);
 
                     $batch_vm_dates = array_column($batch_ccna_detail, 'date');
+                    $batch_ccna_times = array_column($batch_ccna_detail, 'time');
+                    
+                    foreach ($batch_ccna_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_ccna_startTime1 = $startTime;
+                                $batch_ccna_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_ccna_startTime2 = $startTime;
+                                $batch_ccna_endTime2 = $endTime;
+                            }
+                        }
+                    }
 
                     $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
                     $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
@@ -115,7 +134,7 @@
                     $batch_end_date2 = date('Y-m-d H:i:s', strtotime($batch_vm_start_date2 . ' +5 weeks'));
 
                     $course_schema = DB::table('courses')->where('status', 1)->where('id',$learning->course_id)->get(['batch_section_schema','video_section_schema','testimonials_section_schema'])->first();
-
+ 
                 @endphp
 
                 @if(!empty($batch))
@@ -186,8 +205,8 @@
 <!-----------------================== Batch Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
-        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2, $batch_end_date, $batch_end_date2], 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{start_time2}]','[{end_time1}]','[{end_time2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2, $batch_end_date, $batch_end_date2, $batch_ccna_startTime1, $batch_ccna_startTime2, $batch_ccna_endTime1,  $batch_ccna_endTime2], 
         html_entity_decode($course_schema->batch_section_schema));
     @endphp
 
