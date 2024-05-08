@@ -87,6 +87,25 @@
 
                     $batch_vm_detail = json_decode($vmware_batch->batch_detail, true);
                     $batch_vm_dates = array_column($batch_vm_detail, 'date');
+                    $batch_vm_times = array_column($batch_vm_detail, 'time');
+                    
+                    foreach ($batch_vm_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_vm_startTime1 = $startTime;
+                                $batch_vm_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_vm_startTime2 = $startTime;
+                                $batch_vm_endTime2 = $endTime;
+                            }
+                        }
+                    }
 
                     $batch_vm_start_date = reset($batch_vm_dates); // Get the first date
                     $batch_vm_start_date2 = end($batch_vm_dates); // Get the last date
@@ -164,8 +183,8 @@
     <!-----------------================== Batch vm Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
-        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2, $batch_vm_end_date, $batch_vm_end_date2], 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{start_time2}]','[{end_time1}]','[{end_time2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_vm_start_date, $batch_vm_start_date2, $batch_vm_end_date, $batch_vm_end_date2, $batch_vm_startTime1, $batch_vm_startTime2, $batch_vm_endTime1,  $batch_vm_endTime2], 
         html_entity_decode($course_schema_vm->batch_section_schema));
     @endphp
 
@@ -320,7 +339,26 @@
                     $batch_aws_detail = json_decode($aws_batch->batch_detail, true);
 
                     $batch_aws_dates = array_column($batch_aws_detail, 'date');
-
+                    $batch_aws_times = array_column($batch_aws_detail, 'time');
+                    
+                    foreach ($batch_aws_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            var_dump($startTime);
+                            var_dump($endTime);
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_aws_startTime1 = $startTime;
+                                $batch_aws_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_aws_startTime2 = $startTime;
+                                $batch_aws_endTime2 = $endTime;
+                            }
+                        }
+                    }
                     $batch_aws_start_date = reset($batch_aws_dates); // Get the first date
                     $batch_aws_start_date2 = end($batch_aws_dates); // Get the last date
 
@@ -397,8 +435,8 @@
     <!-----------------================== Batch aws Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
-        [$meta_title, $meta_description, $meta_url, $batch_aws_start_date, $batch_aws_start_date2, $batch_aws_end_date, $batch_aws_end_date2], 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{end_time1}]','[{start_time2}]','[{end_time2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_aws_start_date, $batch_aws_start_date2, $batch_aws_end_date, $batch_aws_end_date2, $batch_aws_startTime1, $batch_aws_endTime1, $batch_aws_startTime2, $batch_aws_endTime2], 
         html_entity_decode($course_schema_aws->batch_section_schema));
     @endphp
 
@@ -551,7 +589,25 @@
                     $batch_azure_detail = json_decode($azure_batch->batch_detail, true);
 
                     $batch_azure_dates = array_column($batch_azure_detail, 'date');
-
+                    $batch_azure_times = array_column($batch_azure_detail, 'time');
+                    
+                    foreach ($batch_azure_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_azure_startTime1 = $startTime;
+                                $batch_azure_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_azure_startTime2 = $startTime;
+                                $batch_azure_endTime2 = $endTime;
+                            }
+                        }
+                    }
                     $batch_azure_start_date = reset($batch_azure_dates); // Get the first date
                     $batch_azure_start_date2 = end($batch_azure_dates); // Get the last date
 
@@ -628,8 +684,8 @@
 <!-----------------================== Batch azure Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
-        [$meta_title, $meta_description, $meta_url, $batch_azure_start_date, $batch_azure_start_date2, $batch_azure_end_date, $batch_azure_end_date2], 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{end_time1}]','[{start_time2}]','[{end_time2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_azure_start_date, $batch_azure_start_date2, $batch_azure_end_date, $batch_azure_end_date2, $batch_azure_startTime1, $batch_azure_endTime1, $batch_azure_startTime2, $batch_azure_endTime2], 
         html_entity_decode($course_schema_azure->batch_section_schema));
     @endphp
 
@@ -782,7 +838,25 @@
                     $batch_mcse_detail = json_decode($mcse_batch->batch_detail, true);
 
                     $batch_mcse_dates = array_column($batch_mcse_detail, 'date');
-
+                    $batch_mcse_times = array_column($batch_mcse_detail, 'time');
+                    
+                    foreach ($batch_mcse_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_mcse_startTime1 = $startTime;
+                                $batch_mcse_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_mcse_startTime2 = $startTime;
+                                $batch_mcse_endTime2 = $endTime;
+                            }
+                        }
+                    }
                     $batch_mcse_start_date = reset($batch_mcse_dates); // Get the first date
                     $batch_mcse_start_date2 = end($batch_mcse_dates); // Get the last date
 
@@ -859,8 +933,8 @@
 <!-----------------================== Batch mcse Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
-        [$meta_title, $meta_description, $meta_url, $batch_mcse_start_date, $batch_mcse_start_date2, $batch_mcse_end_date, $batch_mcse_end_date2], html_entity_decode($course_schema_mcse->batch_section_schema));
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{end_time1}]','[{start_time2}]','[{end_time2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_mcse_start_date, $batch_mcse_start_date2, $batch_mcse_end_date, $batch_mcse_end_date2, $batch_mcse_startTime1, $batch_mcse_endTime1, $batch_mcse_startTime2, $batch_mcse_endTime2], html_entity_decode($course_schema_mcse->batch_section_schema));
     @endphp
 
 <!-----------------================== Batch mcse Schema =========================------------------------------>
@@ -1011,7 +1085,25 @@
                     $batch_ccna_detail = json_decode($ccna_batch->batch_detail, true);
 
                     $batch_ccna_dates = array_column($batch_ccna_detail, 'date');
-
+                    $batch_ccna_times = array_column($batch_ccna_detail, 'time');
+                    
+                    foreach ($batch_ccna_times as $index => $time) {
+                        // Extract start and end times for each date
+                        $pattern = "/(\d{1,2}:\d{2} [AP]M) to (\d{1,2}:\d{2} [AP]M)/";
+                        if (preg_match($pattern, $time, $matches)) {
+                            $startTime = date('H:i:s', strtotime($matches[1])); // Convert to 24-hour format
+                            $endTime = date('H:i:s', strtotime($matches[2])); // Convert to 24-hour format
+                            
+                            // Assign times to corresponding variables based on index
+                            if ($index == 0) {
+                                $batch_ccna_startTime1 = $startTime;
+                                $batch_ccna_endTime1 = $endTime;
+                            } elseif ($index == 1) {
+                                $batch_ccna_startTime2 = $startTime;
+                                $batch_ccna_endTime2 = $endTime;
+                            }
+                        }
+                    }
                     $batch_ccna_start_date = reset($batch_ccna_dates); // Get the first date
                     $batch_ccna_start_date2 = end($batch_ccna_dates); // Get the last date
 
@@ -1088,8 +1180,8 @@
 <!-----------------================== Batch ccna Schema =========================------------------------------>
 
     @php 
-        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]'],
-        [$meta_title, $meta_description, $meta_url, $batch_ccna_start_date, $batch_ccna_start_date2, $batch_ccna_end_date, $batch_ccna_end_date2], 
+        echo str_replace(['[{meta_title}]','[{meta_desc}]','[{current_url}]','[{start_date1}]','[{start_date2}]','[{end_date1}]','[{end_date2}]','[{start_time1}]','[{end_time1}]','[{start_time2}]','[{end_time2}]'],
+        [$meta_title, $meta_description, $meta_url, $batch_ccna_start_date, $batch_ccna_start_date2, $batch_ccna_end_date, $batch_ccna_end_date2, $batch_ccna_startTime1, $batch_ccna_endTime1, $batch_ccna_startTime2, $batch_ccna_endTime2], 
         html_entity_decode($course_schema_ccna->batch_section_schema));
     @endphp
 
